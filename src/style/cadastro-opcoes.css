@@ -1,0 +1,11 @@
+/* Estilo da página de Escolha de Cadastro: ADMIN, SUPORT e CLIENT */
+.cadastro-opcao{
+    background-color: #FFFFFF;
+    margin:30px;
+    width: 300px;
+    height: 300px;
+}
+
+.cadastro-opcoes img{
+    width:300px;
+}
