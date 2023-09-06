@@ -7,7 +7,7 @@
 }
 
 header{
-    background-color: #437CDE;
+    background-color: #333840;
     display: flex;
     justify-content: space-between;
 }
@@ -21,7 +21,7 @@ header a{
 }
 
 body {
-    background: linear-gradient(to bottom, #5286DF, #5675A9);
+    background-color: #adc4ed;
     background-repeat: no-repeat;
     height: 100%;
 }
@@ -30,3 +30,4 @@ footer{
     color: white;
     text-align: center;
 }
+/* linear-gradient(to bottom, #5286DF, #5675A9) */

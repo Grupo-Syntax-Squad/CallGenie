@@ -23,12 +23,16 @@ header a{
 body {
     background: linear-gradient(to bottom, #5286DF, #5675A9);
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
 }
 
 footer{
     color: white;
     text-align: center;
+    position: fixed;
+    bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .fundo{
