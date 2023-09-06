@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/base.css">
-    <title>Login</title>
+    <title>Abrir Chamado</title>
 </head>
 <body>
     <header>
         <a href="/"><img src="assets/img/logo_callgenius.png" alt="Logo - CallGenius"></a>
+        <img src="../public/assets/img/user.png" alt="Usuário">
+        <p>Olá, user</p>
+        <!-- Ícone de Exit -->
     </header>
-    <div class="fundo">
-        <main>
-            <form action="/login" method="post">
-                <h1>Welcome!</h1>
-                <label for="username">Username:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" id="senha" name="senha" required><br><br>
-                <input type="button" value="Sing in">
-            </form>
-            <p>Novo no callgenie? <a href="/cadastrar">Cadastre-se</a></p>
-        </main>
-    </div>
+    <main>
+        <div class="fundo">
+            <div>
+                <h2>Meus Chamados</h2>
+            </div>
+            <div class="tabela-chamados">
+                <button>Abrir novo chamado</button>
+            </div>
+        </div>
+    </main>
     <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>
     <a href="/">Homepage</a>
     <a href="/entrar">Entrar</a>
     <a href="/cadastrar">Cadastro</a>
     <a href="/opcaoCadastro">Opções de Cadastro</a>
     <a href="/abrirChamado">Abrir Chamado</a>
-
 </body>
 </html>

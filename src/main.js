@@ -35,4 +35,8 @@ app.get("/abrirChamado", (req, res) => {
     res.render("abrirChamado");
 });
 
+app.get("/chamados", (req, res) => {
+    res.render("chamados");
+});
+
 app.listen(80);

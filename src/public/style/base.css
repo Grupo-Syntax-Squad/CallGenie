@@ -30,3 +30,13 @@ footer{
     color: white;
     text-align: center;
 }
+
+.fundo{
+    background-color: #ffffff72;
+    border-radius: 8%;
+}
+
+.texto-homepage{
+    width:300px;
+    color: #8CB7DD;
+}
