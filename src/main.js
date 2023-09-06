@@ -31,7 +31,7 @@ app.get("/sobre", (req, res) => {
     res.render("sobre");
 });
 
-app.get("abrirChamado", (req, res) => {
+app.get("/abrirChamado", (req, res) => {
     res.render("abrirChamado");
 });
 
