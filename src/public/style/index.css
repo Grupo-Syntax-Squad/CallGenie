@@ -1,0 +1,152 @@
+body {
+    background: linear-gradient(to bottom right, black, blue);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    text-align: left;
+    padding: 20px;
+}
+
+.fundo {
+    width: 100%;
+    height: auto;
+}
+
+h1{
+    text-align: center;
+    margin-top: 0;
+    color: white;
+}
+
+h2{
+    text-align: left;
+    padding-top: 5%;
+    color: white;
+}
+
+a{
+    text-align: center;
+    color: aliceblue;
+    padding-top: 3%;
+}
+
+footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #ffffff;
+    padding: 5px;
+    justify-content: center
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+main img {
+    max-width: 70%; 
+    height: auto; 
+    flex: 1; 
+    margin-right: 20px; 
+}
+
+main div {
+    text-align: center;
+    flex: 1; 
+    margin-left: 3%;
+}
+
+main div a {
+    text-align: left;
+    flex: 1; 
+    margin-top: 50%;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; 
+    }
+    nav .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 5%;
+    }
+
+    main img {
+        margin-right: 0; 
+    }
+
+    h1{
+        margin-top: 10%;
+    }
+}
+
+button.cadastro-button {
+background-color: #007BFF; /* Cor de fundo do botão */
+color: #FFFFFF; /* Cor do texto */
+border: none; /* Remove a borda padrão do botão */
+padding: 10px 20px; /* Espaçamento interno do botão */
+font-size: 16px; /* Tamanho do texto do botão */
+cursor: pointer; /* Cursor ao passar por cima */
+border-radius: 5px; /* Borda arredondada */
+}
+
+.button-container {
+margin-top: 20px; /* Margem superior para afastar do texto */
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+margin-right: 5%;
+}
+
+nav {
+display: flex;
+align-items: center; /* Centraliza verticalmente os itens */
+}
+
+.nav-buttons {
+display: flex ;
+gap: 100px; /* Ajuste o valor para alterar o espaço entre os botões */
+margin-left: 0; /* Move os botões para a direita, empurrando-os para mais perto do logo */
+}
+
+.nav-buttons a {
+color: white; /* Cor do texto dos botões */
+text-decoration: none; /* Remove o sublinhado do link */
+}
+
+
+
+
+
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+
+nav .nav-buttons {
+display: flex;
+}
+
+nav .nav-buttons a {
+color: #fff;
+text-decoration: none;
+}

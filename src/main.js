@@ -39,4 +39,8 @@ app.get("/chamados", (req, res) => {
     res.render("chamados");
 });
 
+app.get("/FAQ", (req, res) => {
+    res.render("FAQ");
+});
+
 app.listen(80);
