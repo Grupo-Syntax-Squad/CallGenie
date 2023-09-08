@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/baseChamados.css">
+    <link rel="stylesheet" href="./style/style-table.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Abrir Chamado</title>
+    <title>Chamados</title>
 </head>
 <body>
     <header>
@@ -17,14 +18,52 @@
         <p>Olá, user</p>
         <button><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
     </header>
+    <a id="ajuda" href="#">Preciso de ajuda</a>
     <main>
-        <a href="#">Preciso de ajuda</a>
         <div class="fundo">
-            <div>
+            <div id="meus-chamados">
                 <h2>Meus Chamados</h2>
             </div>
-            <div class="tabela-chamados">
-                <button>Abrir novo chamado</button>
+            <div class="main-table">
+                <section class="table-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Título </th>
+                                <th>Ordem </th>
+                                <th>Data de criação </th>
+                                <th>Status </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Teste 1</td>
+                                <td>#0001</td>
+                                <td>03/01/2023</td>
+                                <td>
+                                    <p class="status aberto">aberto</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Teste 2</td>
+                                <td>#0002</td>
+                                <td>02/01/2023</td>
+                                <td>
+                                    <p class="status andamento">em andamento</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Teste 3</td>
+                                <td>#0003</td>
+                                <td>01/01/2023</td>
+                                <td>
+                                    <p class="status concluido">concluído</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <button id="button-abrir-chamado">Abrir novo chamado</button>
             </div>
         </div>
     </main>

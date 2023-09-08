@@ -11,6 +11,11 @@ header{
     display: flex;
     justify-content: space-between;
 }
+
+header img{
+    width:300px;
+}
+
 header nav{
     padding-top:20px;
 }
@@ -30,4 +35,30 @@ footer{
     color: white;
     text-align: center;
 }
-/* linear-gradient(to bottom, #5286DF, #5675A9) */
+a{
+    text-decoration: none;
+}
+
+.fundo{
+    margin: auto;
+    background-color: #ffffff92;
+    padding:1.5rem;
+    border-radius: 20px;
+}
+#meus-chamados{
+    padding:.5rem;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+#button-abrir-chamado{
+    border: none;
+    background-color: #0085FF;
+    color:#FFFFFF;
+    padding: 10px;
+    font-size: 15pt;
+    border-radius: 10px;
+    margin-left: 5%;
+    cursor: pointer;
+}
