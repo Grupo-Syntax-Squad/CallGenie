@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/base.css">
+    <link rel="stylesheet" href="./style/cadastro.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Login</title>
 </head>
@@ -11,18 +12,22 @@
     <header>
         <a href="/"><img src="assets/img/logo_callgenius.png" alt="Logo - CallGenius"></a>
     </header>
-    <div class="fundo">
-        <main>
-            <form action="/login" method="post">
-                <h1>Welcome!</h1>
-                <label for="username">Username:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" id="senha" name="senha" required><br><br>
-                <input type="button" value="Sing in">
-            </form>
+    <div class="fundo-cadastro">
+        <div class="cadastro-container">
+            <main>
+                <h1>Bem-vindo(a)!</h1>
+                <form action="">
+                    <label>
+                        <input type="text" placeholder="Nome de usuário">
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Senha">
+                    </label>
+                    <input type="button" value="Sing in">
+                </form>
+            </main>
+            </div>
             <p>Novo no callgenie? <a href="/cadastrar">Cadastre-se</a></p>
-        </main>
     </div>
     <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>
     <a href="/">Homepage</a>

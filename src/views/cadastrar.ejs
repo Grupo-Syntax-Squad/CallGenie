@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/base.css">
+    <link rel="stylesheet" href="./style/cadastro.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Cadastre-se</title>
 </head>
@@ -11,30 +12,28 @@
     <header>
         <a href="/"><img src="assets/img/logo_callgenius.png" alt="Logo - CallGenius"></a>
     </header>
-    <div class="fundo">
+    <div class="fundo-cadastro">
         <main>
-            <h2>Cadastro</h2>
-            <label>
-                <p>Name</p>
-                <input type="text">
-            </label>
-            <label>
-                <p>CPF</p>
-                <input type="number">
-            </label>
-            <label>
-                <p>E-mail</p>
-                <input type="email">
-            </label>
-            <label>
-                <p>Telephone</p>
-                <input type="tel">
-            </label>
-            <label>
-                <p>Adresss</p>
-                <input type="text">
-            </label>
-            <input type="button" value="Sing Up">
+            <div class="cadastro-container">
+                <form action="">
+                    <label>
+                        <input type="text" placeholder="Nome">
+                    </label>
+                    <label>
+                        <input type="number" placeholder="CPF">
+                    </label>
+                    <label>
+                        <input type="email" placeholder="E-mail">
+                    </label>
+                    <label>
+                        <input type="tel" placeholder="Telefone">
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Endereço">
+                    </label>
+                    <input type="button" value="Cadastrar-se">
+                </form>
+            </div>
         </main>
     </div>
     <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>
