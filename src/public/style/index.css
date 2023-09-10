@@ -3,7 +3,7 @@
 *{
     margin:0px;
     padding: 0px;
-    font-family: 'DM Sans';
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -11,6 +11,23 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+}
+
+
+body h1, body h2{
+    color:#8CB7DD;
+}
+
+body h1{
+    text-align: left;
+    font-size: 40pt;
+}
+
+body h2{
+    text-indent: 8%;
+    width:523px;
+    text-align: justify;
+    padding-top: 5%;
 }
 
 header {
@@ -21,18 +38,6 @@ header {
 .fundo {
     width: 100%;
     height: auto;
-}
-
-h1{
-    text-align: center;
-    margin-top: 0;
-    color: white;
-}
-
-h2{
-    text-align: left;
-    padding-top: 5%;
-    color: white;
 }
 
 a{
@@ -61,10 +66,10 @@ main {
 }
 
 main img {
-    max-width: 70%; 
+    max-width: 80%; 
     height: auto; 
     flex: 1; 
-    margin-right: 20px; 
+    margin-right: 20%; 
 }
 
 main div {
@@ -94,27 +99,26 @@ main div a {
         margin-right: 0; 
     }
 
-    h1{
-        margin-top: 10%;
-    }
+
 }
 
 button.cadastro-button {
-background-color: #007BFF; /* Cor de fundo do botão */
-color: #FFFFFF; /* Cor do texto */
+background-color: #8CB7DD; /* Cor de fundo do botão */
 border: none; /* Remove a borda padrão do botão */
 padding: 10px 20px; /* Espaçamento interno do botão */
-font-size: 16px; /* Tamanho do texto do botão */
 cursor: pointer; /* Cursor ao passar por cima */
-border-radius: 5px; /* Borda arredondada */
+border-radius: 10px; /* Borda arredondada */
 }
 
 .button-container {
-margin-top: 20px; /* Margem superior para afastar do texto */
+    margin-top: 20px; /* Margem superior para afastar do texto */
 }
 
 .button-container a{
     text-decoration: none;
+    font-size: 16px; /* Tamanho do texto do botão */
+    font-weight: bolder;
+    color: #000000; /* Cor do texto */
 }
 
 nav {

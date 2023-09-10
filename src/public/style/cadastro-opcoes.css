@@ -1,4 +1,13 @@
 /* Estilo da página de Escolha de Cadastro: ADMIN, SUPORT e CLIENT */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
+
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+}
+
 main h2{
     color: #FFFFFF;
     text-align: center;
