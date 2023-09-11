@@ -54,13 +54,12 @@ a{
     margin-bottom: 1rem;
 }
 
-#button-abrir-chamado{
+.button-input{ 
+    /* Estilo de inputs do tipo 'button' */
     border: none;
-    background-color: #0085FF;
-    color:#FFFFFF;
-    padding: 10px;
+    color: #FFFFFF;
     font-size: 15pt;
+    width:200px;
+    background-color: #0085FF;
     border-radius: 10px;
-    margin-left: 5%;
-    cursor: pointer;
 }

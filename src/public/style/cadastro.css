@@ -11,6 +11,11 @@
     padding:7%;
 }
 
+h1{
+    text-align: center;
+    color: #FFFFFF;
+}
+
 input {
     width:500px;
     border: none;
@@ -22,4 +27,18 @@ input {
 
 ::placeholder{
     font-size: 18pt;
+}
+
+label{
+    display: flex;
+}
+ 
+.button-input{ 
+    /* Estilo de inputs do tipo 'button' */
+    border: none;
+    color: #FFFFFF;
+    font-size: 15pt;
+    width:200px;
+    background-color: #0085FF;
+    border-radius: 10px;
 }
