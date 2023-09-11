@@ -33,10 +33,6 @@ body {
     height: 100%;
 }
 
-footer{
-    color: white;
-    text-align: center;
-}
 a{
     text-decoration: none;
 }
@@ -47,6 +43,24 @@ a{
     padding:1.5rem;
     border-radius: 20px;
 }
+h1{
+    text-align: center;
+}
+
+input {
+    display: flex;
+    width:500px;
+    border: none;
+    border-radius: 2px;
+    padding: 20px;
+    background-color: #EBE9E9; /* cor do plano de fundo */
+    margin-bottom: 2%;
+}
+
+::placeholder{
+    font-size: 15pt;
+}
+
 #meus-chamados{
     padding:.5rem;
     background-color: #FFFFFF;
@@ -62,4 +76,9 @@ a{
     width:200px;
     background-color: #0085FF;
     border-radius: 10px;
+}
+
+footer{
+    color: white;
+    text-align: center;
 }

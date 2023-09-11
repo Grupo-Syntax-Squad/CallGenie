@@ -6,8 +6,21 @@
     font-family: 'DM Sans', Arial, Helvetica, sans-serif;
 }
 
+header {
+    text-align: left;
+    padding: 20px;
+}
+
+#logo-index{
+    width:300px;
+}
+
+.nav-buttons a{
+    font-size: 20pt;
+}
+
 body {
-    background: linear-gradient(to bottom right, black, blue);
+    background: linear-gradient(to bottom right, black, #6C9BEC);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -28,11 +41,6 @@ body h2{
     width:523px;
     text-align: justify;
     padding-top: 5%;
-}
-
-header {
-    text-align: left;
-    padding: 20px;
 }
 
 .fundo {

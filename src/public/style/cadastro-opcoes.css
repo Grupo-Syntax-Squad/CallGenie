@@ -12,6 +12,7 @@ main h2{
     color: #FFFFFF;
     text-align: center;
 }
+
 .cadastro-opcao{
     background-color: #ffffff6a;
     margin:30px;
@@ -29,7 +30,9 @@ main h2{
 .cadastro-opcoes img{
     width:300px;
 }
+
 .cadastro-opcoes{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
