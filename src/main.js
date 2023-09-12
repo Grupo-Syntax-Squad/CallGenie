@@ -2,7 +2,6 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const mysql = require("mysql");
 const path = require("path");
-
 const app = express();
 
 app.set("views", path.join(__dirname, "/views"));
@@ -27,10 +26,6 @@ app.get("/opcaoCadastro", (req, res) => {
     res.render("opcaoCadastro");
 });
 
-app.get("/sobre", (req, res) => {
-    res.render("sobre");
-});
-
 app.get("/abrirChamado", (req, res) => {
     res.render("abrirChamado");
 });
@@ -49,6 +44,10 @@ app.get("/alterarDados", (req, res) => {
 
 app.get("/FAQ", (req, res) => {
     res.render("FAQ");
+});
+
+app.use((req, res, next) => {
+    res.status(404).render('404');
 });
 
 app.listen(80);
