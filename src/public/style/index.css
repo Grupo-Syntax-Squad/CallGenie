@@ -15,6 +15,10 @@ header {
     width:300px;
 }
 
+.logonome{
+    top: 0;
+}
+
 .nav-buttons a{
     font-size: 20pt;
 }
