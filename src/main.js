@@ -38,6 +38,11 @@ app.get("/abrirChamado", (req, res) => {
 app.get("/chamados", (req, res) => {
     res.render("chamados");
 });
+
+app.get("/chamadoAberto", (req, res) => {
+    res.render("chamadoAberto");
+});
+
 app.get("/alterarDados", (req, res) => {
     res.render("alterarDados");
 });
