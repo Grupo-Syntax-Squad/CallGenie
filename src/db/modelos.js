@@ -86,4 +86,41 @@ const Adm = database.define("Adm", {
     }
 });
 
-module.exports = {Cliente, Chamado, Adm};
+const Suporte = database.define("Suporte", {
+    sup_id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+    },
+
+    adm_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: "Adm",
+            key: "adm_id"
+        }
+    },
+
+    sup_nome: {
+        type: Sequelize.STRING(40),
+        allowNull: false
+    },
+
+    sup_email: {
+        type: Sequelize.STRING(40),
+        allowNull: false
+    },
+
+    sup_tel: {
+        type: Sequelize.BIGINT(11)
+    },
+
+    sup_senha: {
+        type: Sequelize.STRING(8),
+        allowNull: false
+    }
+});
+
+module.exports = {Cliente, Chamado, Adm, Suporte};
