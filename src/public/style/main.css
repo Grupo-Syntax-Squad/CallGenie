@@ -95,20 +95,43 @@ main h2{
 
 /*  abrirChamado.ejs */
 
+header h2{
+    color: #FFF;
+}
+
 .fundo-abrir-chamado{
     margin:2%;
     background-color: #ffffff69;
     padding:2%;
     border-radius: 20px;
+
+}
+.container-abrir-chamado{
     display: flex;
     flex-direction: row;
 }
 
 .fundo-abrir-chamado h1{
+    text-align: center;
     color:#000000;
 }
 
 .coluna-esquerda{
     display:flex;
     flex-direction: column;
+}
+
+.coluna-direita{
+    margin:auto;
+}
+
+.input-fundo{
+    background-color: #ffffffc9;
+    border: none;
+    border-radius: 10px;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
 }

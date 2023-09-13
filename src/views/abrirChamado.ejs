@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/header-chamado.css">
     <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Abrir Chamado</title>
 </head>
@@ -14,29 +17,34 @@
     </header>
     <main>
         <div class="fundo-abrir-chamado">
-            <!-- icon de voltar -->
-            <h1>Novo chamado</h1>
-            <div class="coluna-esquerda">
-                <label>
-                    <input type="text" placeholder="Título do chamado">
-                </label>
-                <!-- <textarea name="input-comentario" id="input-comentario" cols="30" rows="10"></textarea> -->
+                <div class="flex-row">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <h1>Novo chamado</h1>
+                </div>
+            <div class="container-abrir-chamado">
+                <div class="coluna-esquerda">
+                    <label>
+                        <input type="text" placeholder="Título do chamado *" class="input-fundo">
+                    </label>
+                    <textarea name="input-comentario" id="input-comentario" cols="30" rows="10" class="input-fundo"></textarea>
                 
-                <label>
-                    <input type="text" placeholder="Nome do Equipamento (opcional)">
-                </label>
-                <label>
-                    <input type="text" placeholder="Número de série (opcional)">
-                </label>
-                <label>
-                    <input type="text" placeholder="Tipo de equipamento (opcional)">
-                </label>
-            </div>
+                    <div>
+                        <label>
+                            <input type="text" placeholder="Nome do Equipamento">
+                        </label>
+                        <label>
+                            <input type="number" placeholder="Número de série">
+                        </label>
+                        <label>
+                            <input type="text" placeholder="Tipo de equipamento">
+                        </label>
+                    </div>
 
-            <div class="coluna-direita">
-                <p>Descrição do Chamado</p>
-                <textarea name="input-descricao" id="input-descricao" cols="30" rows="10"></textarea>
-                <input type="button" value="Enviar" class="button-input">
+                </div>
+                <div class="coluna-direita">
+                    <textarea name="input-descricao" id="input-descricao" cols="100" rows="10" placeholder="Descrição do Chamado" class="input-fundo"></textarea>
+                    <input type="button" value="Enviar" class="button-input">
+                </div>
             </div>
         </div>
 
