@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<htm lang="pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/Vector.svg" type="image/x-icon">
     <title>Chamados</title>
 </head>
 <body>
@@ -22,9 +22,30 @@
     <a id="ajuda" href="#">Preciso de ajuda</a>
     <main>
         <div class="fundo">
-            <div id="meus-chamados">
+            <div id="meus-chamados-title">
                 <h2>Meus Chamados</h2>
             </div>
+                <div class="filtar-e-buscar-container">
+                    <div class="filtrar-chamados-container">
+                        <div class="filtrar">
+                            <p>Filtrar por</p>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+                        <div class="filtrar-menu">
+                            <i class="fa-solid fa-x"></i>
+                            <li>Em aberto</li>
+                            <li>Em andamento</li>
+                            <li>Concluído</li>
+                            <li>Com equipamento Cadastrado</li>
+                            <li>Meus chamados</li>
+                            <li>Ordem Alfabética</li>
+                        </div>
+                    </div>
+                    <div class="buscar-por-titulo">
+                        <p>Buscar por título</p>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
             <div class="main-table">
                 <section class="table-body">
                     <table>
@@ -34,6 +55,7 @@
                                 <th>Ordem </th>
                                 <th>Data de criação </th>
                                 <th>Status </th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,6 +66,7 @@
                                 <td>
                                     <p class="status aberto">aberto</p>
                                 </td>
+                                <td><i class="fa-solid fa-trash"></i></td>
                             </tr>
                             <tr>
                                 <td>Teste 2</td>
@@ -52,6 +75,7 @@
                                 <td>
                                     <p class="status andamento">em andamento</p>
                                 </td>
+                                <td><i class="fa-solid fa-trash"></i></td>
                             </tr>
                             <tr>
                                 <td>Teste 3</td>
@@ -60,6 +84,7 @@
                                 <td>
                                     <p class="status concluido">concluído</p>
                                 </td>
+                                <td><i class="fa-solid fa-trash"></i></td>
                             </tr>
                         </tbody>
                     </table>
