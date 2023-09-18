@@ -166,4 +166,37 @@ const RespostaChamado = database.define("RespostaChamado", {
     }
 });
 
-module.exports = {Cliente, Chamado, Adm, Suporte, RespostaChamado};
+const Equipamento = database.define("Equipamento", {
+    equ_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        primaryKey: true
+    },
+
+    equ_numserie: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+
+    equ_descricao: {
+        type: Sequelize.STRING
+    },
+
+    equ_cham_id: {
+        type: Sequelize.INTEGER,
+        references: {
+            model: "Chamado",
+            key: "cham_id"
+        },
+    },
+
+    equ_resp_id: {
+        type: Sequelize.INTEGER,
+        references:{
+            model: "RespostaChamado",
+            key: "resp_id"
+        }
+    }
+});
+
+module.exports = {Cliente, Chamado, Adm, Suporte, RespostaChamado, Equipamento};
