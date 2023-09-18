@@ -21,31 +21,32 @@
                     <i class="fa-solid fa-arrow-left" id="icon-back-page"></i>
                     <h1>Novo chamado</h1>
                 </div>
-            <div class="container-abrir-chamado flex-row">
-                <div class="coluna-esquerda">
-                    <label>
-                        <input type="text" placeholder="Título do chamado *" class="input-fundo">
-                    </label>
-                    <textarea name="input-comentario" id="input-comentario" cols="30" rows="10" class="input-fundo" placeholder="   Comentário"></textarea>
+            <form action="/abrirChamado" method="post">
+                <div class="container-abrir-chamado flex-row">
+                    <div class="coluna-esquerda">
+                        <label>
+                            <input type="text" placeholder="Título do chamado *" class="input-fundo" required name="titulo">
+                        </label>
+                        <textarea name="comentario" id="input-comentario" cols="30" rows="10" class="input-fundo" placeholder="   Comentário"></textarea>
                 
-                    <div>
-                        <label>
-                            <input type="text" placeholder="Nome do Equipamento">
-                        </label>
-                        <label>
-                            <input type="number" placeholder="Número de série">
-                        </label>
-                        <label>
-                            <input type="text" placeholder="Tipo de equipamento">
-                        </label>
+                        <div>
+                            <label>
+                                <input type="text" placeholder="Nome do Equipamento" name="equipamentonome">
+                            </label>
+                            <label>
+                                <input type="number" placeholder="Número de série" name="numeroserie">
+                            </label>
+                            <label>
+                                <input type="text" placeholder="Tipo de equipamento" name="equipamentotipo">
+                            </label>
+                        </div>
                     </div>
-
+                    <div class="coluna-direita">
+                        <textarea name="input-descricao" id="input-descricao" cols="100" rows="20" placeholder="Descrição do Chamado" class="input-fundo" name="desc"></textarea>
+                        <button type="submit" class="button-input auto">Enviar</button>
+                    </div>
                 </div>
-                <div class="coluna-direita">
-                    <textarea name="input-descricao" id="input-descricao" cols="100" rows="20" placeholder="Descrição do Chamado" class="input-fundo"></textarea>
-                    <input type="button" value="Enviar" class="button-input auto">
-                </div>
-            </div>
+            </form>
         </div>
 
     </main>

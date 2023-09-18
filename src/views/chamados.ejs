@@ -59,33 +59,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Teste 1</td>
-                                <td>#0001</td>
-                                <td>03/01/2023</td>
-                                <td>
-                                    <p class="status aberto">aberto</p>
-                                </td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Teste 2</td>
-                                <td>#0002</td>
-                                <td>02/01/2023</td>
-                                <td>
-                                    <p class="status andamento">em andamento</p>
-                                </td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Teste 3</td>
-                                <td>#0003</td>
-                                <td>01/01/2023</td>
-                                <td>
-                                    <p class="status concluido">concluído</p>
-                                </td>
-                                <td><i class="fa-solid fa-trash"></i></td>
-                            </tr>
+                            <% chamados.forEach(chamado => { %>
+                                <tr>
+                                    <td><%= chamado.title %></td>
+                                    <td><%= chamados.indexOf(chamado) + 1 %></td>
+                                    <td><%= chamado.dataCriacao %></td>
+                                    <td><p class="status <%= chamado.status %>"><%= chamado.status %></p></td>
+                                    <td><i class="fa-solid fa-trash"></i></td>
+                                </tr>
+                            <% }); %>
                         </tbody>
                     </table>
                 </section>
