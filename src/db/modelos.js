@@ -31,7 +31,7 @@ const Cliente = database.define('Cliente', {
 
 const Chamado = database.define('Chamado', {
     cham_id: {
-        type: Sequelize.INTEGER(6),
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         allowNull: false,
@@ -66,7 +66,7 @@ const Chamado = database.define('Chamado', {
 });
 
 
-const Adm = database.define("Adm", {
+const Adm = database.define("Administrador", {
     adm_nome: {
         type: Sequelize.STRING(30),
         allowNull: false
@@ -101,11 +101,11 @@ const Suporte = database.define("Suporte", {
         allowNull: false
     },
 
-    adm_id: {
+    sup_adm_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-            model: "Adm",
+            model: "Administrador",
             key: "adm_id"
         }
     },
@@ -130,4 +130,40 @@ const Suporte = database.define("Suporte", {
     }
 });
 
-module.exports = {Cliente, Chamado, Adm, Suporte};
+const RespostaChamado = database.define("RespostaChamado", {
+    resp_id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+    },
+
+    resp_sup_id: {
+        type: Sequelize.INTEGER,
+        references: {
+            model: "Suporte",
+            key: "sup_id"
+        },
+        allowNull: false
+    },
+
+    resp_cham_id: {
+        type: Sequelize.INTEGER,
+        references: {
+            model: "Chamado",
+            key: "cham_id"
+        },
+        allowNull: false
+    },
+
+    resp_data:{
+        type: Sequelize.DATEONLY,
+        defaultValue: new Date()
+    },
+
+    resp_soluc_comum: {
+        type: Sequelize.STRING(100)
+    }
+});
+
+module.exports = {Cliente, Chamado, Adm, Suporte, RespostaChamado};
