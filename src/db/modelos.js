@@ -17,7 +17,7 @@ const Cliente = database.define('Cliente', {
         type: Sequelize.STRING(40),
         allowNull: false
     },
-    cli_tel: {
+    cli_telefone: {
         type: Sequelize.BIGINT(11),
     },
     cli_endereco: {
@@ -36,6 +36,13 @@ const Chamado = database.define('Chamado', {
         primaryKey: true,
         allowNull: false,
         unique: true
+    },
+    cham_cli_cpf:{
+        type: Sequelize.BIGINT(11),
+        references: {
+            model: "Cliente",
+            key: "cli_cpf"
+        }
     },
     cham_titulo: {
         type: Sequelize.STRING(30),
@@ -72,7 +79,7 @@ const Adm = database.define("Adm", {
         allowNull: false
     },
 
-    adm_tel: {
+    adm_telefone: {
         type: Sequelize.CHAR(11)
     },
 
@@ -113,7 +120,7 @@ const Suporte = database.define("Suporte", {
         allowNull: false
     },
 
-    sup_tel: {
+    sup_telefone: {
         type: Sequelize.BIGINT(11)
     },
 
