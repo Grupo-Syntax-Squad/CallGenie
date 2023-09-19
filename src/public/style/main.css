@@ -56,6 +56,7 @@ label{
     font-family: 'DM Sans', Arial, Helvetica, sans-serif;
 }
 
+
 main h2{
     color: #FFFFFF;
     text-align: center;
@@ -224,13 +225,21 @@ header h2{
 }
 
 .coluna-esquerda{
+    text-align: center;
     display:flex;
     flex-direction: column;
+    width:500px;
+    height: 500px;
 }
 .coluna-direita{
     margin-left: 1rem;
     display:flex;
     flex-direction: column;
+}
+
+.coluna-direita > textarea{
+    border: none;
+    border-radius: 20px;
 }
 
 .coluna-direita ::placeholder{
@@ -282,4 +291,60 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size:20pt;
+}
+
+.fundo-chamado-aberto{
+    background-color: #ffffff3f;
+    border-radius: 20px;
+    padding:2rem;
+}
+
+.fundo-chamado-aberto h2{
+    color: #000;
+}
+
+.status.aberto{
+    color: #950000;
+}
+
+.status.andamento{
+    color: #ead200;
+}
+
+.status.concluido{
+    color: #3eb900;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.info-chamado, .info-dispositivo{
+    display: flex;
+}
+
+.fundo-descricao{
+    background-color: #FFFFFF;
+}
+
+.text-chamado-aberto{
+    color: gray;
+}
+
+.container-nome-numero{
+    justify-content: space-between;
+}
+
+.ajuda{
+    text-align: right;
+    margin-right: 20%;
+    padding: 1rem;
+}
+.ajuda a{
+    color:blue
+}
+
+.div-flex {
+    margin: auto;
 }

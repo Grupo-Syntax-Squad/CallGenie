@@ -20,37 +20,42 @@
         <button><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
     </header>
 
-    <a id="ajuda" href="#">Preciso de ajuda</a>
-    <main>
-        <div class="fundo">
-            <!-- Os parágrafos abaixo representam variáveis! -->
-            <div class="info-dispositivo">
-                <p>Teste 1</p>
-                <p>Ordem:#0001</p>
-                <p>03/01/2023</p>
-                <p>Chamado Em Aberto</p>
-            </div>
-
-            <div class="flex-row">
-                <div class="fundo-descricao coluna-esquerda">
-                    <!-- Aqui será mostrado a descrição do chamado -->
-                    <p>Meu computador queimou, comprei com vocês na terça-feira passada dia 26 de Dezembro, comprei como presente de Natal, porém ao ligar ele agora o mesmo queimou. </p>
+    <div class="ajuda">
+        <a href="#">Preciso de ajuda</a>
+    </div>
+    <div class="div-flex">
+        <main>
+            <div class="fundo-chamado-aberto div-flex">
+                <!-- Os parágrafos abaixo representam variáveis! -->
+                <div class="info-dispositivo">
+                    <p>Teste 1</p>
+                    <p>Ordem:#0001</p>
+                    <p>03/01/2023</p>
+                    <p class="status aberto">Chamado Em aberto</p>
                 </div>
-                <div class="coluna-direita">
-                    <div class="info-chamado">
-                        <h2>Equipamento Cadastrado</h2>
-                        <p>Nome: Computador User</p>
-                        <p>Número de série: 11111111</p>
-                        <p>Tipo de equipamento:: Computador Desktop</p>
+                <div class="flex-row">
+                    <div class="fundo-chamado-aberto coluna-esquerda">
+                        <!-- Aqui será mostrado a descrição do chamado -->
+                        <p>Meu computador queimou, comprei com vocês na terça-feira passada dia 26 de Dezembro, comprei como presente de Natal, porém ao ligar ele agora o mesmo queimou. </p>
                     </div>
-                    <h2>Comentários</h2>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Clique aqui para adicionar um comentário ao chamado"></textarea>
-                    <p>Prazo de resposta até:07/01/2023</p>
-                    <p>Agradecemos o contato, aguarde a resposta de um de nossos suportes</p>
+                    <div class="coluna-direita">
+                        <div class="fundo-chamado-aberto">
+                            <h2>Equipamento Cadastrado</h2>
+                            <div class="flex-row container-nome-numero">
+                                <p>Nome: Computador User</p>
+                                <p>Número de série: 11111111</p>
+                            </div>
+                            <p class="text-center">Tipo de equipamento:: Computador Desktop</p>
+                        </div>
+                        <h2>Comentários</h2>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Clique aqui para adicionar um comentário ao chamado" class="fundo-chamado-aberto"></textarea>
+                        <p class="text-chamado-aberto" id="prazo-text">Prazo de resposta até:07/01/2023</p>
+                        <p class="text-chamado-aberto">Agradecemos o contato, aguarde a resposta de um de nossos suportes</p>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-    </main>
+        </main>
+    </div>
     <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>
 </body>
 </html>

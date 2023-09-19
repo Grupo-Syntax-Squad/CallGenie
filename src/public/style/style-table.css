@@ -82,10 +82,3 @@ tbody tr:hover{
     color: #3eb900;
 }
 
-.info-chamado, .info-dispositivo{
-    display: flex;
-}
-
-.fundo-descricao{
-    background-color: #FFFFFF;
-}
