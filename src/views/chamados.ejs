@@ -61,10 +61,10 @@
                         <tbody>
                             <% chamados.forEach(chamado => { %>
                                 <tr>
-                                    <td><%= chamado.title %></td>
-                                    <td><%= chamados.indexOf(chamado) + 1 %></td>
-                                    <td><%= chamado.dataCriacao %></td>
-                                    <td><p class="status <%= chamado.status %>"><%= chamado.status %></p></td>
+                                    <td><%= chamado.dataValues.cham_titulo %></td>
+                                    <td><%= chamado.dataValues.cham_id %></td>
+                                    <td><%= chamado.dataValues.cham_data_inicio %></td>
+                                    <td><p class="status <%= chamado.dataValues.cham_status %>"><%= chamado.dataValues.cham_status %></p></td>
                                     <td><i class="fa-solid fa-trash"></i></td>
                                 </tr>
                             <% }); %>

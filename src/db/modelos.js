@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 const database = require('./bd');
 const sequelize = require('./bd');
 
+
 const Cliente = database.define('Cliente', {
     cli_nome: {
         type: Sequelize.STRING(50),
@@ -37,13 +38,6 @@ const Chamado = database.define('Chamado', {
         allowNull: false,
         unique: true
     },
-    cham_cli_cpf:{
-        type: Sequelize.BIGINT(11),
-        references: {
-            model: "Cliente",
-            key: "cli_cpf"
-        }
-    },
     cham_titulo: {
         type: Sequelize.STRING(30),
         allowNull: false
@@ -61,10 +55,13 @@ const Chamado = database.define('Chamado', {
     },
     cham_prazo: {
         type: Sequelize.VIRTUAL, // Campo virtual que não é armazenado no banco de dados
-        defaultValue: new Date(new Date().setDate(new Date().getDate() + 30))
+        defaultValue: new Date(new Date().setDate(new Date().getDate() + 7))
     }
 });
 
+Chamado.belongsTo(Cliente, {
+    foreignKey: "cham_cli_cpf"
+});
 
 const Adm = database.define("Administrador", {
     adm_nome: {
@@ -101,14 +98,14 @@ const Suporte = database.define("Suporte", {
         allowNull: false
     },
 
-    sup_adm_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-            model: "Administrador",
-            key: "adm_id"
-        }
-    },
+    // sup_adm_id: {
+    //     type: Sequelize.INTEGER,
+    //     allowNull: false,
+    //     references: {
+    //         model: "Administrador",
+    //         key: "adm_id"
+    //     }
+    // },
 
     sup_nome: {
         type: Sequelize.STRING(40),
@@ -130,6 +127,10 @@ const Suporte = database.define("Suporte", {
     }
 });
 
+Suporte.belongsTo(Adm, {
+    foreignKey: "sup_adm_id"
+});
+
 const RespostaChamado = database.define("RespostaChamado", {
     resp_id: {
         type: Sequelize.INTEGER,
@@ -138,23 +139,23 @@ const RespostaChamado = database.define("RespostaChamado", {
         allowNull: false
     },
 
-    resp_sup_id: {
-        type: Sequelize.INTEGER,
-        references: {
-            model: "Suporte",
-            key: "sup_id"
-        },
-        allowNull: false
-    },
+    // resp_sup_id: {
+    //     type: Sequelize.INTEGER,
+    //     references: {
+    //         model: "Suporte",
+    //         key: "sup_id"
+    //     },
+    //     allowNull: false
+    // },
 
-    resp_cham_id: {
-        type: Sequelize.INTEGER,
-        references: {
-            model: "Chamado",
-            key: "cham_id"
-        },
-        allowNull: false
-    },
+    // resp_cham_id: {
+    //     type: Sequelize.INTEGER,
+    //     references: {
+    //         model: "Chamado",
+    //         key: "cham_id"
+    //     },
+    //     allowNull: false
+    // },
 
     resp_data:{
         type: Sequelize.DATEONLY,
@@ -164,6 +165,14 @@ const RespostaChamado = database.define("RespostaChamado", {
     resp_soluc_comum: {
         type: Sequelize.STRING(100)
     }
+});
+
+RespostaChamado.belongsTo(Suporte, {
+    foreignKey: "resp_sup_id"
+});
+
+RespostaChamado.belongsTo(Chamado, {
+    foreignKey: "resp_cham_id"
 });
 
 const Equipamento = database.define("Equipamento", {
@@ -180,23 +189,31 @@ const Equipamento = database.define("Equipamento", {
 
     equ_descricao: {
         type: Sequelize.STRING
-    },
-
-    equ_cham_id: {
-        type: Sequelize.INTEGER,
-        references: {
-            model: "Chamado",
-            key: "cham_id"
-        },
-    },
-
-    equ_resp_id: {
-        type: Sequelize.INTEGER,
-        references:{
-            model: "RespostaChamado",
-            key: "resp_id"
-        }
     }
+
+    // equ_cham_id: {
+    //     type: Sequelize.INTEGER,
+    //     references: {
+    //         model: "Chamado",
+    //         key: "cham_id"
+    //     },
+    // },
+
+    // equ_resp_id: {
+    //     type: Sequelize.INTEGER,
+    //     references:{
+    //         model: "RespostaChamado",
+    //         key: "resp_id"
+    //     }
+    // }
+});
+
+Equipamento.belongsTo(Chamado, {
+    foreignKey: "equ_cham_id"
+});
+
+Equipamento.belongsTo(RespostaChamado, {
+    foreignKey: "equ_sup_id"
 });
 
 module.exports = {Cliente, Chamado, Adm, Suporte, RespostaChamado, Equipamento};
