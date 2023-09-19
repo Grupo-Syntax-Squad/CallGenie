@@ -11,9 +11,11 @@ header{
     display: flex;
     justify-content: space-between;
 }
+
 header nav{
     padding-top:20px;
 }
+
 header a{  
     text-decoration: none;
     color: #FFFFFF;

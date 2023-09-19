@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/base.css">
+    <link rel="stylesheet" href="./style/baseChamados.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Abrir Chamado</title>
 </head>
@@ -12,20 +12,30 @@
         <a href="/"><img src="assets/img/logo_callgenius.png" alt="Logo - CallGenius"></a>
     </header>
     <main>
-        <h2>Abrir chamado</h2>
-        <label>
-            <p>Título</p>
-            <input type="text">
-        </label>
-        <label>
-            <p>Descrição</p>
-            <input type="text">
-        </label>
-        <label>
-            <p>Status</p>
-            <input type="text">
-        </label>
-        <label>
+        <div class="fundo">
+            <!-- icon de voltar -->
+            <h1>Novo chamado</h1>
+            <label>
+                <input type="text" placeholder="Título do chamado">
+            </label>
+
+            <!-- <textarea name="input-comentario" id="input-comentario" cols="30" rows="10"></textarea> -->
+            
+            <label>
+                <input type="text" placeholder="Nome do Equipamento (opcional)">
+            </label>
+            <label>
+                <input type="text" placeholder="Número de série (opcional)">
+            </label>
+            <label>
+                <input type="text" placeholder="Tipo de equipamento (opcional)">
+            </label>
+
+            <p>Descrição do Chamado</p>
+            <textarea name="input-descricao" id="input-descricao" cols="30" rows="10"></textarea>
+
+            <input type="button" value="Enviar" class="button-input">
+        </div>
 
     </main>
     <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>

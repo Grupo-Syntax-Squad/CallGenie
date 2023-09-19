@@ -38,6 +38,9 @@ app.get("/abrirChamado", (req, res) => {
 app.get("/chamados", (req, res) => {
     res.render("chamados");
 });
+app.get("/alterarDados", (req, res) => {
+    res.render("alterarDados");
+});
 
 app.get("/FAQ", (req, res) => {
     res.render("FAQ");

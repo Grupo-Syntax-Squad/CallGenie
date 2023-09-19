@@ -1,9 +1,11 @@
 /* Estilo para páginas do admin, cliente e suporte, após logados */
-* {
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
+
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
@@ -31,10 +33,6 @@ body {
     height: 100%;
 }
 
-footer{
-    color: white;
-    text-align: center;
-}
 a{
     text-decoration: none;
 }
@@ -45,6 +43,24 @@ a{
     padding:1.5rem;
     border-radius: 20px;
 }
+h1{
+    text-align: center;
+}
+
+input {
+    display: flex;
+    width:500px;
+    border: none;
+    border-radius: 2px;
+    padding: 20px;
+    background-color: #EBE9E9; /* cor do plano de fundo */
+    margin-bottom: 2%;
+}
+
+::placeholder{
+    font-size: 15pt;
+}
+
 #meus-chamados{
     padding:.5rem;
     background-color: #FFFFFF;
@@ -52,13 +68,17 @@ a{
     margin-bottom: 1rem;
 }
 
-#button-abrir-chamado{
+.button-input{ 
+    /* Estilo de inputs do tipo 'button' */
     border: none;
-    background-color: #0085FF;
-    color:#FFFFFF;
-    padding: 10px;
+    color: #FFFFFF;
     font-size: 15pt;
+    width:200px;
+    background-color: #0085FF;
     border-radius: 10px;
-    margin-left: 5%;
-    cursor: pointer;
+}
+
+footer{
+    color: white;
+    text-align: center;
 }
