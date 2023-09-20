@@ -70,6 +70,10 @@ app.get("/FAQ", (req, res) => {
     res.render("FAQ");
 });
 
+app.get("/teste", (req, res) => {
+    res.render("teste");
+});
+
 app.use((req, res, next) => {
     res.status(404).render('404');
 });
