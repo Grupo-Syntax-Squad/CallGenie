@@ -139,17 +139,14 @@ nav {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
-}
-
-nav {
-display: flex;
 align-items: center; /* Centraliza verticalmente os itens */
+}
+nav a{
+    padding-top: 1rem;
 }
 
 .nav-buttons {
-display: flex ;
 gap: 100px; /* Ajuste o valor para alterar o espaço entre os botões */
-margin-left: 0; /* Move os botões para a direita, empurrando-os para mais perto do logo */
 }
 
 .nav-buttons a {
@@ -157,21 +154,18 @@ color: white; /* Cor do texto dos botões */
 text-decoration: none; /* Remove o sublinhado do link */
 }
 
-
-
-
-
-
 nav {
 display: flex;
 justify-content: space-between;
 align-items: center;
 }
 
-
-
 nav .nav-buttons {
 display: flex;
+}
+
+nav .nav-buttons a{
+    padding-top: 0%;
 }
 
 nav .nav-buttons a {

@@ -15,11 +15,15 @@
 <body>
     <header>
         <a href="/"><img src="assets/img/Vector.svg" class= 'logogenie' alt="Logo - CallGenius"></a>
-        <img src="assets/img/user.png" alt="Usuário" class="fotouser" id="logo-fundo-brando">
-        <h2>Olá, user</h2>
-        <a href="/entrar"><button><i class="fa-solid fa-arrow-right-from-bracket" alt="Sair"></i></button></a>
+        <div class="header-itens-right flex">
+            <img src="assets/img/user.png" alt="Usuário" class="fotouser" id="logo-fundo-brando">
+            <h2>Olá, user</h2>
+            <a href="/entrar"><i class="fa-solid fa-arrow-right-from-bracket" alt="Sair"></i></a>
+        </div>
     </header>
-    <a id="ajuda" href="#">Preciso de ajuda</a>
+    <div class="ajuda">
+        <a href="#">Preciso de ajuda</a>
+    </div>
     <main>
         <div class="fundo">
             <div id="meus-chamados-title">
@@ -65,12 +69,19 @@
                                     <td><%= chamados.indexOf(chamado) + 1 %></td>
                                     <td><%= chamado.dataCriacao %></td>
                                     <td><p class="status <%= chamado.status %>"><%= chamado.status %></p></td>
-                                    <td><i class="fa-solid fa-trash"></i></td>
+                                    <td><button class="deletar-chamado"><i class="fa-solid fa-trash"></i></button></td>
                                 </tr>
-                            <% }); %>
-                        </tbody>
-                    </table>
-                </section>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </section>
+                    <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>)
+                        Ele será ativado quando o usuário clicar no ícone da lixeira-->
+                    <dialog>
+                       <p>VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA CONFIRMAR?</p>
+                       <button class="sim">SIM</button>
+                       <button class="nao">NÃO</button>
+                    </dialog>
                 <button class="button-input">Abrir novo chamado</button>
                 <a href="FAQ"><button class="button-input">Perguntas Frequentes</button></a>
             </div>

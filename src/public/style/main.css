@@ -86,23 +86,11 @@ main h2{
     align-items: center;
 }
 
-/* Estilo da logo Vetor */
-
-.logogenie{
-    width: 80%;
-    padding-left: 90px;
-}
-.fotouser{
-    width: 5%;
-}
-
-/* Chamados */
-body {
+html {
     background-color: #adc4ed;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     height: 100%;
 }
-
 a{
     text-decoration: none;
 }
@@ -194,6 +182,9 @@ input {
 footer{
     color: white;
     text-align: center;
+    bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -238,6 +229,7 @@ header h2{
 }
 
 .coluna-direita > textarea{
+    width: 100%;
     border: none;
     border-radius: 20px;
 }
@@ -347,4 +339,44 @@ textarea {
 
 .div-flex {
     margin: auto;
+}
+
+.logo-index{
+    width:100px;
+}
+
+.texto-homepage{
+    width:300px;
+    color: #8CB7DD;
+}
+
+#input-descricao,#input-comentario{
+    overflow: auto;
+}
+
+dialog{
+    padding: 4rem;
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    width:500px;
+}
+
+dialog::backdrop{
+    background-color:rgba(0, 0, 0, 0.292);
+}
+
+dialog button.sim, button.nao{
+    border:none;
+    padding: 5px 10px
+}
+
+dialog button.sim{
+    background-color: green;
+}
+dialog button.nao{
+    background-color: red;
+
 }
