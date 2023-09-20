@@ -48,6 +48,7 @@ label{
     padding: 1rem;
     background-color: #0085FF;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 *{
