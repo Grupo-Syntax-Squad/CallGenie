@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/header-chamado.css">
+    <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/header-chamado.css">
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/style-table.css">
@@ -10,21 +13,48 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./assets/img/Vector.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/Vector.svg" type="image/x-icon">
     <title>Chamados</title>
 </head>
 <body>
     <header>
         <a href="/"><img src="assets/img/Vector.svg" class= 'logogenie' alt="Logo - CallGenius"></a>
-        <img src="assets/img/user.png" alt="Usuário" class="fotouser" id="logo-fundo-brando">
-        <h2>Olá, user</h2>
-        <a href="/entrar"><button><i class="fa-solid fa-arrow-right-from-bracket" alt="Sair"></i></button></a>
+        <div class="header-itens-right flex">
+            <img src="assets/img/user.png" alt="Usuário" class="fotouser" id="logo-fundo-brando">
+            <h2>Olá, user</h2>
+            <a href="/entrar"><i class="fa-solid fa-arrow-right-from-bracket" alt="Sair"></i></a>
+        </div>
     </header>
-    <a id="ajuda" href="#">Preciso de ajuda</a>
+    <div class="ajuda">
+        <a href="#">Preciso de ajuda</a>
+    </div>
     <main>
         <div class="fundo">
             <div id="meus-chamados-title">
+            <div id="meus-chamados-title">
                 <h2>Meus Chamados</h2>
             </div>
+                <div class="filtar-e-buscar- flex-row">
+                    <div class="filtrar-chamados-container">
+                        <div class="filtrar flex">
+                            <p>Filtrar por</p>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+                        <div class="filtrar-menu">
+                            <i class="fa-solid fa-x"></i>
+                            <li>Em aberto</li>
+                            <li>Em andamento</li>
+                            <li>Concluído</li>
+                            <li>Com equipamento Cadastrado</li>
+                            <li>Meus chamados</li>
+                            <li>Ordem Alfabética</li>
+                        </div>
+                    </div>
+                    <div class="buscar-por-titulo flex">
+                        <p>Buscar por título</p>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
                 <div class="filtar-e-buscar- flex-row">
                     <div class="filtrar-chamados-container">
                         <div class="filtrar flex">
@@ -56,22 +86,31 @@
                                 <th>Data de criação </th>
                                 <th>Status </th>
                                 <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <% chamados.forEach(chamado => { %>
                                 <tr>
-                                    <td><%= chamado.dataValues.cham_titulo %></td>
-                                    <td><%= chamado.dataValues.cham_id %></td>
-                                    <td><%= chamado.dataValues.cham_data_inicio %></td>
-                                    <td><p class="status <%= chamado.dataValues.cham_status %>"><%= chamado.dataValues.cham_status %></p></td>
-                                    <td><i class="fa-solid fa-trash"></i></td>
+                                    <td><%= chamado.title %></td>
+                                    <td><%= chamados.indexOf(chamado) + 1 %></td>
+                                    <td><%= chamado.dataCriacao %></td>
+                                    <td><p class="status <%= chamado.status %>"><%= chamado.status %></p></td>
+                                    <td><button class="deletar-chamado"><i class="fa-solid fa-trash"></i></button></td>
                                 </tr>
-                            <% }); %>
-                        </tbody>
-                    </table>
-                </section>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </section>
+                    <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>)
+                        Ele será ativado quando o usuário clicar no ícone da lixeira-->
+                    <dialog>
+                       <p>VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA CONFIRMAR?</p>
+                       <button class="sim">SIM</button>
+                       <button class="nao">NÃO</button>
+                    </dialog>
                 <button class="button-input">Abrir novo chamado</button>
+                <a href="FAQ"><button class="button-input">Perguntas Frequentes</button></a>
                 <a href="FAQ"><button class="button-input">Perguntas Frequentes</button></a>
             </div>
         </div>

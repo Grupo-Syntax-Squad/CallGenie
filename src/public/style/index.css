@@ -117,51 +117,58 @@ main div a {
 }
 
 button.cadastro-button {
-background-color: #8CB7DD; 
-border: none; 
-padding: 10px 20px; 
-cursor: pointer; 
-border-radius: 10px;
+background-color: #8CB7DD; /* Cor de fundo do botão */
+border: none; /* Remove a borda padrão do botão */
+padding: 10px 20px; /* Espaçamento interno do botão */
+cursor: pointer; /* Cursor ao passar por cima */
+border-radius: 10px; /* Borda arredondada */
 }
 
 .button-container {
-    margin-top: 20px; 
+    margin-top: 20px; /* Margem superior para afastar do texto */
 }
 
 .button-container a{
     text-decoration: none;
-    font-size: 16px; 
+    font-size: 16px; /* Tamanho do texto do botão */
     font-weight: bolder;
-    color: #000000; 
+    color: #000000; /* Cor do texto */
 }
 
 nav {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
-align-items: center;
+align-items: center; /* Centraliza verticalmente os itens */
+}
+nav a{
+    padding-top: 1rem;
 }
 
 .nav-buttons {
-display: flex ;
-gap: 100px;
-margin-left: 0; 
+gap: 100px; /* Ajuste o valor para alterar o espaço entre os botões */
 }
 
 .nav-buttons a {
-color: white;
-text-decoration: none;
+color: white; /* Cor do texto dos botões */
+text-decoration: none; /* Remove o sublinhado do link */
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 nav .nav-buttons {
 display: flex;
 }
 
+nav .nav-buttons a{
+    padding-top: 0%;
+}
+
 nav .nav-buttons a {
 color: #fff;
 text-decoration: none;
-}
-
-nav a {
-    margin-top: 0px;
 }

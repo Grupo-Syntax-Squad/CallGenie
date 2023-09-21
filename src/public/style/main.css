@@ -48,6 +48,7 @@ label{
     padding: 1rem;
     background-color: #0085FF;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 *{
@@ -55,6 +56,7 @@ label{
     padding: 0px;
     font-family: 'DM Sans', Arial, Helvetica, sans-serif;
 }
+
 
 main h2{
     color: #FFFFFF;
@@ -85,23 +87,11 @@ main h2{
     align-items: center;
 }
 
-/* Estilo da logo Vetor */
-
-.logogenie{
-    width: 80%;
-    padding-left: 90px;
-}
-.fotouser{
-    width: 5%;
-}
-
-/* Chamados */
-body {
+html {
     background-color: #adc4ed;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     height: 100%;
 }
-
 a{
     text-decoration: none;
 }
@@ -193,6 +183,9 @@ input {
 footer{
     color: white;
     text-align: center;
+    bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -224,13 +217,22 @@ header h2{
 }
 
 .coluna-esquerda{
+    text-align: center;
     display:flex;
     flex-direction: column;
+    width:500px;
+    height: 500px;
 }
 .coluna-direita{
     margin-left: 1rem;
     display:flex;
     flex-direction: column;
+}
+
+.coluna-direita > textarea{
+    width: 100%;
+    border: none;
+    border-radius: 20px;
 }
 
 .coluna-direita ::placeholder{
@@ -282,4 +284,100 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size:20pt;
+}
+
+.fundo-chamado-aberto{
+    background-color: #ffffff3f;
+    border-radius: 20px;
+    padding:2rem;
+}
+
+.fundo-chamado-aberto h2{
+    color: #000;
+}
+
+.status.aberto{
+    color: #950000;
+}
+
+.status.andamento{
+    color: #ead200;
+}
+
+.status.concluido{
+    color: #3eb900;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.info-chamado, .info-dispositivo{
+    display: flex;
+}
+
+.fundo-descricao{
+    background-color: #FFFFFF;
+}
+
+.text-chamado-aberto{
+    color: gray;
+}
+
+.container-nome-numero{
+    justify-content: space-between;
+}
+
+.ajuda{
+    text-align: right;
+    margin-right: 20%;
+    padding: 1rem;
+}
+.ajuda a{
+    color:blue
+}
+
+.div-flex {
+    margin: auto;
+}
+
+.logo-index{
+    width:100px;
+}
+
+.texto-homepage{
+    width:300px;
+    color: #8CB7DD;
+}
+
+#input-descricao,#input-comentario{
+    overflow: auto;
+}
+
+dialog{
+    padding: 4rem;
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    width:500px;
+}
+
+dialog::backdrop{
+    background-color:rgba(0, 0, 0, 0.292);
+}
+
+dialog button.sim, button.nao{
+    border:none;
+    padding: 5px 10px
+}
+
+dialog button.sim{
+    background-color: green;
+}
+dialog button.nao{
+    background-color: red;
+
 }

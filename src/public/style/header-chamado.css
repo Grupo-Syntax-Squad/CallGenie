@@ -10,13 +10,23 @@
 }
 
 header{
+    padding: 1rem;
     background-color: #333840;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
-header img{
-    width:300px;
+.header-itens-right{
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logogenie{
+    width:50px;
+}
+
+.fotouser{
+    width: 8%;
 }
 
 header nav{
@@ -28,4 +38,3 @@ header a{
     color: #FFFFFF;
     margin-inline: 2rem;
 }
-
