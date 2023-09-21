@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/header-chamado.css">
+    <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/header-chamado.css">
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/style-table.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./assets/img/Vector.svg" type="image/x-icon">
     <link rel="shortcut icon" href="./assets/img/Vector.svg" type="image/x-icon">
     <title>Chamados</title>
 </head>
@@ -27,8 +31,30 @@
     <main>
         <div class="fundo">
             <div id="meus-chamados-title">
+            <div id="meus-chamados-title">
                 <h2>Meus Chamados</h2>
             </div>
+                <div class="filtar-e-buscar- flex-row">
+                    <div class="filtrar-chamados-container">
+                        <div class="filtrar flex">
+                            <p>Filtrar por</p>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+                        <div class="filtrar-menu">
+                            <i class="fa-solid fa-x"></i>
+                            <li>Em aberto</li>
+                            <li>Em andamento</li>
+                            <li>Concluído</li>
+                            <li>Com equipamento Cadastrado</li>
+                            <li>Meus chamados</li>
+                            <li>Ordem Alfabética</li>
+                        </div>
+                    </div>
+                    <div class="buscar-por-titulo flex">
+                        <p>Buscar por título</p>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
                 <div class="filtar-e-buscar- flex-row">
                     <div class="filtrar-chamados-container">
                         <div class="filtrar flex">
@@ -60,6 +86,7 @@
                                 <th>Data de criação </th>
                                 <th>Status </th>
                                 <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -83,6 +110,7 @@
                        <button class="nao">NÃO</button>
                     </dialog>
                 <button class="button-input">Abrir novo chamado</button>
+                <a href="FAQ"><button class="button-input">Perguntas Frequentes</button></a>
                 <a href="FAQ"><button class="button-input">Perguntas Frequentes</button></a>
             </div>
         </div>

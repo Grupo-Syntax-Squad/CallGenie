@@ -3,9 +3,20 @@ const express = require("express");
 const mysql = require("mysql");
 const path = require("path");
 const app = express();
-const Chamado = require("./models/chamado");
+const database = require('./db/bd');
+const modelo = require('./db/modelos');
 
-let chamados = [];
+// (async () => {
+//     await database.sync();
+//     modelo.Cliente.create({
+//         cli_nome: "clienteTeste",
+//         cli_cpf: 11020304050,
+//         cli_email: "cliente@teste.com",
+//         cli_telefone: 12999999999,
+//         cli_endereco: "Rua dos Astronautas",
+//         cli_senha: "clienteT"
+//     });
+// })();
 
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs")
@@ -33,7 +44,8 @@ app.get("/abrirChamado", (req, res) => {
     res.render("abrirChamado");
 });
 
-app.post("/abrirChamado", (req, res) => {
+app.post("/abrirChamado", async (req, res) => {
+    // Coletando infos
     let title = req.body.titulo;
     let desc = req.body.desc;
     let comentario = req.body.comentario;
@@ -49,12 +61,18 @@ app.post("/abrirChamado", (req, res) => {
     try {
         tipoEquipamento = req.body.equipamentotipo;
     } catch (error) {};
-    let novoChamado = new Chamado(title, desc, comentario, nomeEquipamento, numeroSerie, tipoEquipamento);
-    chamados.push(novoChamado);
+
+    let novoChamado = await modelo.Chamado.create({
+        cham_cli_cpf: 11020304050,
+        cham_titulo: title,
+        cham_descricao: desc,
+        cham_status: "Aberto"
+    });
     res.send("Chamado aberto com sucesso!<br><a href='/chamados'>Ver Chamados</a>");
 });
 
-app.get("/chamados", (req, res) => {
+app.get("/chamados", async (req, res) => {
+    let chamados = await modelo.Chamado.findAll();
     res.render("chamados", {chamados: chamados});
 });
 
