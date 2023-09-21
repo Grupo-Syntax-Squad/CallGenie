@@ -216,4 +216,6 @@ Equipamento.belongsTo(RespostaChamado, {
     foreignKey: "equ_sup_id"
 });
 
+database.sync();
+
 module.exports = {Cliente, Chamado, Adm, Suporte, RespostaChamado, Equipamento};
