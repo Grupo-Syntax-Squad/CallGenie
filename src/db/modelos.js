@@ -43,7 +43,7 @@ const Chamado = database.define('Chamado', {
         allowNull: false
     },
     cham_descricao: {
-        type: Sequelize.STRING(100)
+        type: Sequelize.STRING(255)
     },
     cham_status: {
         type: Sequelize.ENUM('Aberto','Em andamento','Concluído'),

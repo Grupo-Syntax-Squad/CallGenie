@@ -48,7 +48,6 @@ app.post("/abrirChamado", async (req, res) => {
     // Coletando infos
     let title = req.body.titulo;
     let desc = req.body.desc;
-    let comentario = req.body.comentario;
     let nomeEquipamento = "";
     let numeroSerie = "";
     let tipoEquipamento = "";
@@ -76,8 +75,15 @@ app.get("/chamados", async (req, res) => {
     res.render("chamados", {chamados: chamados});
 });
 
-app.get("/chamadoAberto", (req, res) => {
-    res.render("chamadoAberto");
+app.get("/:id", async (req, res) => {
+    let param = req.params.id
+    if (param.split("-")[0] == "chamado") {
+        let chamadoInfo = await modelo.Chamado.findByPk(param.split("-")[1]);
+        let prazo = new Date(new Date().setDate(new Date(chamadoInfo.dataValues.cham_data_inicio).getDate() + 7))
+        res.render("chamadoAberto", {chamadoInfo: chamadoInfo, prazo: `${prazo.getDay().toString().length == 1 ? "0"+prazo.getDay().toString() : prazo.getMonth()}/${prazo.getMonth().toString().length == 1 ? "0"+prazo.getMonth().toString() : prazo.getMonth()}/${prazo.getFullYear()}`});
+    } else {
+        res.render("404");
+    }
 });
 
 app.get("/alterarDados", (req, res) => {
