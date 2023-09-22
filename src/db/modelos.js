@@ -59,9 +59,9 @@ const Chamado = database.define('Chamado', {
     }
 });
 
-Chamado.belongsTo(Cliente, {
-    foreignKey: "cham_cli_cpf"
-});
+// Chamado.belongsTo(Cliente, {
+//     foreignKey: "cham_cli_cpf"
+// });
 
 const Adm = database.define("Administrador", {
     adm_nome: {
