@@ -20,6 +20,9 @@
 <span id="objetivo">
   
 ## 📌Objetivo do Projeto
+> O produto tem como objetivo sanar problemas na Gestão de Chamados de Serviços, em que, existam 3 usuários para o sistema: cliente, suporte técnico e administrador, cada qual com suas próprias interfaces e funcionalidades únicas. Ademais o sistema deve fornecer informações sobre a disponibilização de funcionalidades de planejamento, acompanhamento e controle no atendimento e chamados de serviços. Adicionalmente gerar relatórios analíticos. 
+> **Status do Projeto: Em andamento🚧**
+
 
 <span id="visão">
   
