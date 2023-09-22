@@ -65,14 +65,14 @@
                         <tbody>
                             <% chamados.forEach(chamado => { %>
                                 <tr>
-                                    <td><%= chamado.title %></td>
-                                    <td><%= chamados.indexOf(chamado) + 1 %></td>
-                                    <td><%= chamado.dataCriacao %></td>
-                                    <td><p class="status <%= chamado.status %>"><%= chamado.status %></p></td>
+                                    <td><%= chamado.dataValues.cham_titulo %></td>
+                                    <td><%= chamado.dataValues.cham_id %></td>
+                                    <td><%= chamado.dataValues.cham_data_inicio %></td>
+                                    <td><p class="status <%= chamado.dataValues.cham_status %>"><%= chamado.dataValues.cham_status %></p></td>
                                     <td><button class="deletar-chamado"><i class="fa-solid fa-trash"></i></button></td>
                                 </tr>
-                                <% }); %>
-                            </tbody>
+                            <% }); %>
+                        </tbody>
                         </table>
                     </section>
                     <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>)
@@ -82,7 +82,7 @@
                        <button class="sim">SIM</button>
                        <button class="nao">NÃO</button>
                     </dialog>
-                <button class="button-input">Abrir novo chamado</button>
+                <a href="/abrirChamado" class="button-input">Abrir novo chamado</a>
                 <a href="FAQ"><button class="button-input">Perguntas Frequentes</button></a>
             </div>
         </div>

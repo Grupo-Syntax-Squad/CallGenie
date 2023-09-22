@@ -26,6 +26,7 @@
                     <i class="fa-solid fa-arrow-left" id="icon-back-page"></i>
                     <h1>Novo chamado</h1>
                 </div>
+                <form action="/abrirChamado" method="post">
                 <div class="container-abrir-chamado flex-row">
                     <div class="coluna-esquerda">
                         <label>
@@ -40,10 +41,11 @@
                         </div>
                     </div>
                     <div class="coluna-direita">
-                        <textarea name="input-descricao" id="input-descricao" cols="100" rows="20" placeholder="Descrição do Chamado" class="input-fundo" name="desc"></textarea>
+                        <textarea name="desc" id="input-descricao" cols="100" rows="20" placeholder="Descrição do Chamado" class="input-fundo" name="desc"></textarea>
                         <button type="submit" class="button-input auto">Enviar</button>
                     </div>
                 </div>
+            </form>
         </div>
 
     </main>
