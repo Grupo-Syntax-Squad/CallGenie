@@ -27,6 +27,7 @@
 <span id="visão">
   
 ## 💡Visão do Produto
+Para empresas e companhias que buscam implementar soluções para gerenciamento de Chamados de Serviços, o "CallGenie" é um sistema CRUD que permite a melhor gestão dos chamados, contando com uma àrea de interação minimalista e documentos que auxiliam o usuário à usar o sistema. Neste projeto, implantamos o sistema para uma loja fictícia de informática, entretanto, nosso sistema pode ser implatado em qualquer área, contanto que exista a dificuldade de gestão dos chamados.
 
 <span id="metodologia">
   
