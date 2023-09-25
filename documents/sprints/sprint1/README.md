@@ -1,9 +1,11 @@
 # Sprint - 1️⃣ 🎯
 Nesta Sprint foram criados e apresentados o Backlog do Projeto, o wireframe do Projeto e a funcionalidade da criação de chamados. 
 <br>
+<br>
+[Clique aqui para ver como foi a apresentação da Sprint](https://prezi.com/view/SdWGFlyJoB4iychRUiW9/)
+<br>
 </br>
-## Backlog da Sprint
-
+## Backlog da Sprint🌱
 <div align='center'>
 
 ![Alt text](image.png)
@@ -33,6 +35,7 @@ Com essa funcionalidade o usuario que têm acesso ao chamado consegue criar cham
 
 <div align='center'>
 
+![WhatsApp Video 2023-09-24 at 20 46 17](https://github.com/Grupo-Syntax-Squad/CallGenie/assets/125401155/c3ac7cc0-9bfb-4298-88dd-3b6483a07180)
 
 
 </div>
