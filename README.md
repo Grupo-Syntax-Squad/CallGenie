@@ -11,7 +11,7 @@
   <a href="#tecnologias">Tecnologias </a>  |
   <a href="#mvp">MVP</a>  |
   <a href="#sprints">Sprints</a>  |
-  <a href="#backlog-do-produto">Backlog do Produto </a>  | 
+  <a href="#backlog">Backlog</a>  | 
   <a href="#autores">Autores</a>  |
 </p>
 
@@ -60,10 +60,42 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 
 <br>
 
-### [Clique aqui para saber como rodar a aplicação!]()
-
 <br>
 
 <span id="sprints">
+
+## 📅Sprints 
+
+### Sprint - 1️⃣ 🎯 ([Clique aqui](/documents/sprints/sprint1))  Concluído✅
+
+### Sprint - 2️⃣ 🎯   Em construção🚧
+
+### Sprint - 3️⃣ 🎯   Em construção🚧
+
+### Sprint - 4️⃣ 🎯   Em construção🚧
+
+<span id="backlog">
   
-## 🌱Backlog do Produto
+## 🌲Backlog do Produto
+<p align="center">
+<img src= "/documents/img/Product Backlog.png" alt="Backlog Total">
+<br>  
+
+## 🌱Backlog da Sprint
+<p align="center">
+<img src= "/documents/img/Sprints Backlog.png" alt="Backlog Sprints">
+<br>  
+
+## 👨‍💻**Autores** 
+
+|      Nome      |    Função       |                            Github                             |                           Linkedin                           |
+| :--------------: | :-----------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  Ryan Verissimo de Araujo     | Scrum Master  | <a href="https://github.com/ryanvdaraujo"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/ryan-verissimo-de-araujo-910925239/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+|  Gabriel de Oliveira Silva Reis    | Product Owner | <a href="https://github.com/b4hia"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/gabriel-de-oliveira-silva-reis-798447266/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| Diego Dias Motta Boa Sorte | Desenvolvedor | <a href="https://github.com/diegoboasorte"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/diegoboasorte"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| Gabriel Felipe dos Santos  | Desenvolvedor | <a href="https://github.com/gabrielfsantos99"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | 
+| João Vitor dos Santos Pereira  | Desenvolvedor | <a href="https://github.com/JaovitoP"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://www.linkedin.com/in/joaopereira18/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+| Mateus Henrique Lima dos Reis | Desenvolvedor | <a href="https://github.com/mhlreis"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://br.linkedin.com/in/mhlreis"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+| Wellington Luiz de Faria   | Desenvolvedor | <a href="https://github.com/WellingtonLFaria"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a> | <a href="https://br.linkedin.com/in/wellington-luiz-de-faria-92007425b"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
+
+
