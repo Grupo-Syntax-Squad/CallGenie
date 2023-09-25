@@ -53,7 +53,7 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 <img src= "/documents/img/MVP CallGenie.png" alt="MVP CallGenie">
 <br>
   
-1. Realizar Chamados: [clique aqui.]()
+1. Realizar Chamados: [clique aqui.](/documents/sprints/sprint1)
 2. Cadastro de Usuário: [working...⌛]()
 3. Gerar Relatórios: [working...⌛]()
 4. Documentação e aba de Contato: [working...⌛]()
