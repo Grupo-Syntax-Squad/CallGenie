@@ -35,13 +35,13 @@ function Main() {
         <main>
             <h2>Em qual das opções você se encaixa?</h2>
             <div className="cadastro-opcoes">
-                <a href="/cadastrar">
+                <a href="/cadastroopcao">
                     <div className="cadastro-opcao">
                         <img src="assets/img/user.png" alt="SUPORTE" />
                         <p>SOU SUPORTE</p>
                     </div>
                 </a>
-                <a href="/cadastrar">
+                <a href="/cadastroopcao">
                     <div className="cadastro-opcao">
                         <img src="assets/img/user.png" alt="CLIENTE" />
                         <p>SOU CLIENTE</p>
