@@ -15,6 +15,7 @@ export default function App() {
                 <Route path={RoutesName.login} />
                 <Route path={RoutesName.cadastro} element={<Cadastro />} />
                 <Route path={RoutesName.cadastrar} element={<Cadastrar />} />
+                <Route path="*" element={NotFoundPage />} />
             </Routes>
         </BrowserRouter>
     );
