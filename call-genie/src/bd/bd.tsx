@@ -1,4 +1,11 @@
-import {Sequelize, DataTypes} from "sequelize"
+const { Sequelize, DataTypes } = require("sequelize");
+const mysql = require("mysql2");
+
+const con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "fatec"
+});
 
 const database = new Sequelize('callgenie', 'root', 'fatec', {
     host: 'localhost',
