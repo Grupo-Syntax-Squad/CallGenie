@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import * as RoutesName from "./constants/routes";
 import Chamados from "./components/Chamados";
 import Home from "./components/Home";
@@ -11,6 +11,7 @@ import Contato from "./components/contato";
 import Entrar from "./components/entrar";
 import AbrirChamado from "./components/abrirChamado";
 
+import NotFoundPage from "./components/404";
 
 export default function App() {
     return (
@@ -28,6 +29,8 @@ export default function App() {
                 <Route path={RoutesName.contato} element={<Contato />} />
                 <Route path={RoutesName.entrar} element={<Entrar />} />
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
+                <Route path= {RoutesName.notFound} element ={<NotFoundPage />} />
+                <Route path= "*" element={< Navigate to="/404" />} />
             </Routes>
         </BrowserRouter>
     );
