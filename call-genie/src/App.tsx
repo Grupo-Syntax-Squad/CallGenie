@@ -1,14 +1,14 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import * as RoutesName from "./constants/routes";
 import Chamados from "./components/Chamados";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import Cadastro from "./components/cadastro";
 import Cadastrar from "./components/cadastroopcao";
 import FAQ from "./components/FAQ";
 import OpcaoCadastro from "./components/opcaoCadastro";
 import AlterarDados from "./components/alterarDados";
 import Contato from "./components/contato";
-import Entrar from "./components/entrar";
+import Entrar from "./components/entrar/entrar";
 import AbrirChamado from "./components/abrirChamado";
 import ChamadoAberto from "./components/chamadoAberto";
 

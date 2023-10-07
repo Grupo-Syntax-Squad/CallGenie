@@ -1,21 +1,26 @@
 import React from "react";
-import "./style/header-principal.css";
-import "./style/main.css";
+import Principal from "/headerprincipal.module.css";
+import Index from "./index.module.css";
+import Main from "./main.module.css";
 
 export default function Entrar() {
   return (
     <>
-      <header>
+      <nav>
         <a href="/">
           <img
             src="assets/img/CallGenielogosvg.svg"
-            className="logonome"
-            alt="Logo - CallGenius"
+            alt="Logo"
+            id={Index.logoindex}
           />
         </a>
-      </header>
-      <div className="fundo-cadastro">
-        <div className="cadastro-container">
+        <div className={Index.navbuttons}>
+          <a href="/cadastro">Cadastrar</a>
+          <a href="/entrar">Entrar</a>
+          <a href="/">Sobre</a>
+          <a href="/FAQ">FAQ</a>
+        </div>
+      </nav>
           <main>
             <h1>Bem-vindo(a)!</h1>
             <form action="">
@@ -23,7 +28,7 @@ export default function Entrar() {
                 <img
                   src="assets/img/user.png"
                   alt="imagem"
-                  className="logo-index"
+                  className={Index.logoindex}
                 />
                 <input type="text" placeholder="Nome de usuário" />
               </label>
@@ -31,19 +36,17 @@ export default function Entrar() {
                 <img
                   src="assets/img/user.png"
                   alt="imagem"
-                  className="logo-index"
+                  className={Index.logoindex}
                 />
                 <input type="text" placeholder="Senha" />
               </label>
               <a href="#">Esqueci a minha senha</a>
-              <input type="button" value="Entrar" className="button-input" />
+              <input type="button" value="Entrar" className={Main.buttoninput} />
             </form>
           </main>
-        </div>
         <p>
           Novo no callgenie? <a href="/cadastrar">Cadastre-se</a>
         </p>
-      </div>
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
       </footer>
