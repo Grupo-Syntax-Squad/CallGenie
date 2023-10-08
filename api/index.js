@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { Chamado, Cliente } from "./db.js";
+import { Chamado, Cliente, Suporte } from "./db.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -104,8 +104,62 @@ app.delete("/clientes/:cpf", async (req, res) => {
         where: {
             cli_cpf: req.params.cpf
         }
-    })
-    res.status(200).json({ mensagem: "Cliente deletado" })
+    });
+    res.status(200).json({ mensagem: "Cliente deletado" });
+});
+
+app.get("/suportes", async (req, res) => {
+    let suportes = await Suporte.findAll();
+    res.json(suportes);
+});
+
+app.post("/suportes", async (req, res) => {
+    console.log(req.body.nome);
+    try {
+        let suporte = await Suporte.create({
+            sup_nome: req.body.nome,
+            sup_email: req.body.email,
+            sup_telefone: req.body.telefone,
+            sup_senha: req.body.senha,
+            sup_adm_id: req.body.adm_id
+        });
+        res.json(suporte);
+    } catch (error) {
+        res.json(error);
+    };
+});
+
+app.get("/suportes/:id", async (req, res) => {
+    let suporte = await Suporte.findOne({
+        where: {
+            sup_id: req.params.id
+        }
+    });
+    res.json(suporte);
+});
+
+app.put("/suportes/:id", async (req, res) => {
+    await Suporte.update({
+        sup_nome: req.body.nome,
+        sup_email: req.body.email,
+        sup_telefone: req.body.telefone,
+        sup_senha: req.body.senha,
+        sup_adm_id: req.body.adm_id
+    }, {
+        where: {
+            sup_id: req.params.id
+        }
+    });
+    res.json({ mensagem: "Suporte alterado" });
+});
+
+app.delete("/suportes/:id", async (req, res) => {
+    await Suporte.destroy({
+        where: {
+            sup_id: req.params.id
+        }
+    });
+    res.status(200).json({ mensagem: "Suporte deletado" });
 });
 
 app.listen(80);

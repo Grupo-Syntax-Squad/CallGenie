@@ -1,20 +1,22 @@
 import { Sequelize, DataTypes } from "sequelize";
 import mysql from "mysql";
 
+const PASSWORD = "fatec";
+
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "fatec"
+    password: PASSWORD
 });
 
-con.connect(async (err) => {
+con.connect((err) => {
     if (err) throw err;
-    await con.query("CREATE DATABASE IF NOT EXISTS callgenie", (err, result) => {
+    con.query("CREATE DATABASE IF NOT EXISTS callgenie", (err, result) => {
         if (err) throw err;
     })
 });
 
-const database = new Sequelize('callgenie', 'root', 'fatec', {
+const database = new Sequelize('callgenie', 'root', PASSWORD, {
     host: 'localhost',
     dialect: 'mysql'
 });
