@@ -1,6 +1,7 @@
 import React from "react";
-import "./style/header-principal.css";
-import "./style/main.css";
+import CadastroCSS from "./cadastro.module.css";
+
+
 import { any } from "prop-types";
 
 function Cadastro() {
@@ -24,31 +25,37 @@ function Head() {
 
 function Header() {
   return (
-    <header>
-      <a href="/">
-        <img
-          src="assets/img/CallGenielogosvg.svg"
-          className="logonome"
-          alt="Logo - CallGenius"
-        />
-      </a>
-    </header>
+    <nav>
+    <a href="/">
+      <img
+        src="assets/img/CallGenielogosvg.svg"
+        alt="Logo"
+        id={CadastroCSS.logoindex}
+      />
+    </a>
+    <div className={CadastroCSS.navbuttons}>
+      <a href="/entrar">Entrar</a>
+      <a href="/">Sobre</a>
+      <a href="/FAQ">FAQ</a>
+    </div>
+  </nav>
   );
 }
 
 function Main() {
   return (
-    <main>
+    <main className={CadastroCSS.main_div}>
       <h2>Em qual das opções você se encaixa?</h2>
-      <div className="cadastro-opcoes">
+      <div className={CadastroCSS.main_div_user}>
         <a href="/cadastroopcao">
-          <div className="cadastro-opcao">
+          <div className={CadastroCSS.cadastro_opcao}>
             <img src="assets/img/user.png" alt="SUPORTE" />
             <p>SOU SUPORTE</p>
+
           </div>
         </a>
         <a href="/cadastroopcao">
-          <div className="cadastro-opcao">
+          <div className={CadastroCSS.cadastro_opcao}>
             <img src="assets/img/user.png" alt="CLIENTE" />
             <p>SOU CLIENTE</p>
           </div>

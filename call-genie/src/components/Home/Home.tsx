@@ -1,10 +1,10 @@
 import React from "react";
-import Index from "./index.module.css";
-import Main from "./main.module.css";
+import HomePage from "./home.module.css";
+
 
 export default function Home() {
   return (
-    <div className={Index.homefundo}>
+    <div className={HomePage.homefundo}>
       <nav>
         <a href="/">
           <img
@@ -13,14 +13,13 @@ export default function Home() {
             id="logoindex"
           />
         </a>
-        <div className={Index.navbuttons}>
+        <div className={HomePage.navbuttons}>
           <a href="/cadastro">Cadastrar</a>
           <a href="/entrar">Entrar</a>
-          <a href="/">Sobre</a>
           <a href="/FAQ">FAQ</a>
         </div>
       </nav>
-      <main>
+      <main className={HomePage.main_texto}>
         <div>
           <h1>Call Gennie.</h1>
           <h2>
@@ -29,14 +28,18 @@ export default function Home() {
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </h2>
-          <div className={Index.buttoncontainer}>
+          <div className={HomePage.buttoncontainer}>
             <a href="/cadastro">
-            <button className={Index.cadastrobutton}>CADASTRE-SE</button>
+            <button className={HomePage.cadastrobutton}>CADASTRE-SE</button>
             </a>
           </div>
         </div>
         <div>
-          <img src="assets/img/imagem-homepage.svg" alt="imagem-homepage" />
+          <img
+                  src="assets/img/imagem-homepage.svg"
+                  alt="imagem-homepage"
+                  className={HomePage.main_img}
+                />
         </div>
       </main>
       <footer>

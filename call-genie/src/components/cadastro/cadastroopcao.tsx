@@ -1,23 +1,27 @@
 import React from "react";
 // import "../Cadastro Usuários/cadastro.css";
-import "./style/main.css";
-import "./style/header-chamado.css";
+import CadastroCSS from "./cadastro.module.css";
 import { any } from "prop-types";
 
 function Cadastrar() {
   return (
     <>
-    <header>
-      <a href="/">
-        <img
-          src="assets/img/CallGenielogosvg.svg"
-          className="logonome"
-          alt="Logo - CallGenius"
-        />
-      </a>
-    </header>
+    <nav>
+    <a href="/">
+      <img
+        src="assets/img/CallGenielogosvg.svg"
+        alt="Logo"
+        id={CadastroCSS.logoindex}
+      />
+    </a>
+    <div className={CadastroCSS.navbuttons}>
+      <a href="/entrar">Entrar</a>
+      <a href="/">Sobre</a>
+      <a href="/FAQ">FAQ</a>
+    </div>
+  </nav>
     <main>
-      <div className="cadastro-container">
+      <div className="cadastro_container">
         <form action="">
           <input type="text" placeholder="Nome" />
 
@@ -33,7 +37,7 @@ function Cadastrar() {
 
           <input type="text" placeholder="Endereço" />
 
-          <input type="button" value="Cadastrar-se" className="button-input" />
+          <input type="button" value="Cadastrar-se" className={CadastroCSS.button_input} />
         </form>
       </div>
     </main>

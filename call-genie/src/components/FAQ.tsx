@@ -1,25 +1,28 @@
 import React from "react";
-import "./style/main.css";
+import HomePage from "./Home/home.module.css";
 
 export default function FAQ() {
   return (
-    <>
+    <div className={HomePage.homefundo}>
       <nav>
-        <a href="/" className="logo">
+        <a href="/">
           <img
             src="assets/img/CallGenielogosvg.svg"
-            className="logonome"
-            id="logo-index"
             alt="Logo"
+            id="logoindex"
           />
         </a>
-        <div className="nav-buttons">
-          <a href="/cadastrar">Cadastrar</a>
+        <div className={HomePage.navbuttons}>
+          <a href="/cadastro">Cadastrar</a>
           <a href="/entrar">Entrar</a>
-          <a href="/sobre">Sobre</a>
+          <a href="/">Sobre</a>
+
         </div>
       </nav>
-      <main>
+    
+
+
+      <main className={HomePage.main_texto}>
         <div>
           <h1>FAQ </h1>
           <h2>
@@ -28,21 +31,22 @@ export default function FAQ() {
             sistema! Acesse o vídeo tutorial para saber como utilizar o sistema
             da CallGenius clicando no link abaixo: https;//youtube.com/EXEMPLO
           </h2>
-          <div className="button-container">
-            <h2>Não encontrou uma resposta? Confira o manual de usuário!</h2>
+
+                    <div className={HomePage.buttoncontainer}>
+            <a href="/#">
+            <button className={HomePage.cadastrobutton}>Não encontrou uma resposta? Confira o manual de usuário!</button>
+            </a>
           </div>
         </div>
         <div>
-          <img
-            src="assets/img/imagem-homepage.svg"
-            alt="imagem-homepage"
-            className="fundo"
-          />
+          <h2> adicionar o formulario de perguntas frequentes aqui</h2>
         </div>
       </main>
       <footer>
         <a>Copyright © 2023 Syntax Squad | Todos os direitos reservados</a>
       </footer>
-    </>
+
+      </div>
+
   );
 }
