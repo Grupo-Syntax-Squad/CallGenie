@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { Chamado, Cliente, Suporte } from "./db.js";
+import { Adm, Chamado, Cliente, Suporte } from "./db.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -160,6 +160,57 @@ app.delete("/suportes/:id", async (req, res) => {
         }
     });
     res.status(200).json({ mensagem: "Suporte deletado" });
+});
+
+app.get("/adms", async (req, res) => {
+    let administradores = await Adm.findAll();
+    res.json(administradores);
+});
+
+app.post("/adms", async (req, res) => {
+    try {
+        let administrador = await Adm.create({
+            adm_nome: req.body.nome,
+            adm_email: req.body.email,
+            adm_telefone: req.body.telefone,
+            adm_senha: req.body.senha
+        });
+        res.json(administrador);
+    } catch (error) {
+        res.json(error);
+    };
+});
+
+app.get("/adms/:id", async (req, res) => {
+    let administrador = await Adm.findOne({
+        where: {
+            adm_id: req.params.id
+        }
+    });
+    res.json(administrador);
+});
+
+app.put("/adms/:id", async (req, res) => {
+    await Adm.update({
+        adm_nome: req.body.nome,
+        adm_email: req.body.email,
+        adm_telefone: req.body.telefone,
+        adm_senha: req.body.senha
+    }, {
+        where: {
+            adm_id: req.params.id
+        }
+    });
+    res.json({ mensagem: "Administrador alterado" });
+});
+
+app.delete("/adms/:id", async (req, res) => {
+    await Adm.destroy({
+        where: {
+            adm_id: req.params.id
+        }
+    });
+    res.status(200).json({ mensagem: "Administrador deletado" });
 });
 
 app.listen(80);

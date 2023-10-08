@@ -81,14 +81,14 @@ export const Chamado = database.define('Chamado', {
 // });
 
 export const Adm = database.define("Administrador", {
-    adm_nome: {
-        type: DataTypes.STRING(30),
-        allowNull: false
-    },
     adm_id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
+        allowNull: false
+    },
+    adm_nome: {
+        type: DataTypes.STRING(30),
         allowNull: false
     },
     adm_telefone: {
