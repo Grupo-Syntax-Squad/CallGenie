@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { Adm, Chamado, Cliente, RespostaChamado, Suporte } from "./db.js";
+import { Adm, Chamado, Cliente, Equipamento, RespostaChamado, Suporte } from "./db.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -51,7 +51,7 @@ app.delete("/chamados/:id", async (req, res) => {
             cham_id: req.params.id
         }
     })
-    res.status(200).json({ mensagem: "Chamado deletado" })
+    res.json({ mensagem: "Chamado deletado" })
 });
 
 app.get("/clientes", async (req, res) => {
@@ -71,7 +71,7 @@ app.post("/clientes", async (req, res) => {
         });
         res.json(cliente);
     } catch (error) {
-        res.json(error["original"]["sqlMessage"]);
+        res.json(error);
     };
 });
 
@@ -105,7 +105,7 @@ app.delete("/clientes/:cpf", async (req, res) => {
             cli_cpf: req.params.cpf
         }
     });
-    res.status(200).json({ mensagem: "Cliente deletado" });
+    res.json({ mensagem: "Cliente deletado" });
 });
 
 app.get("/suportes", async (req, res) => {
@@ -114,7 +114,6 @@ app.get("/suportes", async (req, res) => {
 });
 
 app.post("/suportes", async (req, res) => {
-    console.log(req.body.nome);
     try {
         let suporte = await Suporte.create({
             sup_nome: req.body.nome,
@@ -159,7 +158,7 @@ app.delete("/suportes/:id", async (req, res) => {
             sup_id: req.params.id
         }
     });
-    res.status(200).json({ mensagem: "Suporte deletado" });
+    res.json({ mensagem: "Suporte deletado" });
 });
 
 app.get("/adms", async (req, res) => {
@@ -210,28 +209,34 @@ app.delete("/adms/:id", async (req, res) => {
             adm_id: req.params.id
         }
     });
-    res.status(200).json({ mensagem: "Administrador deletado" });
+    res.json({ mensagem: "Administrador deletado" });
 });
 
 app.get("/respostasChamados", (req, res) => {
     let respostasChamados = RespostaChamado.findAll();
-    res.status(200).json(respostasChamados);
+    res.json(respostasChamados);
 });
 
 app.post("/respostasChamados", (req, res) => {
-    RespostaChamado.create({
-        resp_data: req.body.data,
-        resp_soluc_comum: req.body.soluc_comum,
-        resp_sup_id: req.body.sup_id
-    });
+    try {
+        let respostaChamado = RespostaChamado.create({
+            resp_data: req.body.data,
+            resp_soluc_comum: req.body.soluc_comum,
+            resp_sup_id: req.body.sup_id
+        });
+        res.json(respostaChamado);
+    } catch (error) {
+        res.json(error);
+    };
 });
 
 app.get("/respostasChamados/:id", (req, res) => {
-    RespostaChamado.findOne({
+    let respostaChamado = RespostaChamado.findOne({
         where: {
             resp_id: req.params.id
         }
     });
+    res.json(respostaChamado);
 });
 
 app.put("/respostasChamados/:id", (req, res) => {
@@ -244,6 +249,7 @@ app.put("/respostasChamados/:id", (req, res) => {
             resp_id: req.params.id
         }
     });
+    res.json({ mensagem: "Resposta de chamado alterada" });
 });
 
 app.delete("/respostasChamados/:id", (req, res) => {
@@ -252,6 +258,58 @@ app.delete("/respostasChamados/:id", (req, res) => {
             resp_id: req.params.id
         }
     });
+    res.json({ mensagem: "Resposta de chamado deletada" });
+});
+
+app.get("/equipamentos", (req, res) => {
+    let equipamentos = Equipamento.findAll();
+    res.json(equipamentos);
+});
+
+app.post("/equipamentos", (req, res) => {
+    try {
+        let equipamento = Equipamento.create({
+            equ_numserie: req.body.numserie,
+            equ_descricao: req.body.descricao,
+            equ_cham_id: req.body.cham_id,
+            equ_sup_id: req.body.sup_id
+        });
+        res.json(equipamento);
+    } catch (error) {
+        res.json(error);
+    };
+});
+
+app.get("/equipamentos/:id", (req, res) => {
+    let equipamento = Equipamento.findOne({
+        where: {
+            equ_id: req.params.id
+        }
+    });
+    res.json(equipamento);
+});
+
+app.put("/equipamentos/:id", (req, res) => {
+    Equipamento.update({
+        equ_numserie: req.body.numserie,
+        equ_descricao: req.body.descricao,
+        equ_cham_id: req.body.cham_id,
+        equ_sup_id: req.body.sup_id
+    }, {
+        where: {
+            equ_id: req.params.id
+        }
+    });
+    res.json({ mensagem: "Equipamento alterado" });
+});
+
+app.delete("/equipamentos/:id", (req, res) => {
+    Equipamento.destroy({
+        where: {
+            equ_id: req.params.id
+        }
+    });
+    res.json({ mensagem: "Equipamento deletado" });
 });
 
 app.listen(80);
