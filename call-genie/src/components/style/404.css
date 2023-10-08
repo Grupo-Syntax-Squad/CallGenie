@@ -3,7 +3,7 @@ body{
     background: #5286DF;
     color:#fff;
     font-family: 'Open Sans', sans-serif;
-    max-height:700px;
+    max-height:100%;
     overflow: hidden;
 }
 .c{

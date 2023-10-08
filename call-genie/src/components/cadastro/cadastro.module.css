@@ -92,8 +92,10 @@ main img {
 
 }
 .main_div_user {
+    width: 50%;
+    border-radius: 15px;
     display: flex;
-    margin-inline: 10%;
+    margin-inline: 25%;
     background-color: #8CB7DD
 
 }
@@ -368,7 +370,8 @@ footer{
 }
 
 .main_div_user a {
-    margin: 0;
+    margin-top: 0;
+    padding: inherit;
 }
 
 .cadastro_opcao img {
@@ -381,3 +384,10 @@ footer{
     align-items: center;
     margin: auto;
 }
+
+main p a {
+    margin-top: 30px;
+    padding-top: 0;
+    color: blue;
+}
+

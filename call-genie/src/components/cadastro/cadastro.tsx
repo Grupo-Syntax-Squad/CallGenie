@@ -47,23 +47,27 @@ function Main() {
     <main className={CadastroCSS.main_div}>
       <h2>Em qual das opções você se encaixa?</h2>
       <div className={CadastroCSS.main_div_user}>
-        <a href="/cadastroopcao">
-          <div className={CadastroCSS.cadastro_opcao}>
+
+
+        <div className={CadastroCSS.cadastro_opcao}>
+          <a href="/cadastroopcao">
             <img src="assets/img/user.png" alt="SUPORTE" />
             <p>SOU SUPORTE</p>
+            </a>
+        </div>
 
-          </div>
-        </a>
-        <a href="/cadastroopcao">
+
           <div className={CadastroCSS.cadastro_opcao}>
+          <a href="/cadastroopcao">
             <img src="assets/img/user.png" alt="CLIENTE" />
             <p>SOU CLIENTE</p>
+            </a>
           </div>
-        </a>
+
       </div>
       <p>
-        <a href="#">Clique Aqui se precisar de ajuda</a>
-      </p>
+          Precisa de ajuda? <a href="/cadastrar">clique aqui</a>
+        </p>
     </main>
   );
 }
