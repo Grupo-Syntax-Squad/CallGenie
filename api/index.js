@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { Adm, Chamado, Cliente, Suporte } from "./db.js";
+import { Adm, Chamado, Cliente, RespostaChamado, Suporte } from "./db.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -211,6 +211,47 @@ app.delete("/adms/:id", async (req, res) => {
         }
     });
     res.status(200).json({ mensagem: "Administrador deletado" });
+});
+
+app.get("/respostasChamados", (req, res) => {
+    let respostasChamados = RespostaChamado.findAll();
+    res.status(200).json(respostasChamados);
+});
+
+app.post("/respostasChamados", (req, res) => {
+    RespostaChamado.create({
+        resp_data: req.body.data,
+        resp_soluc_comum: req.body.soluc_comum,
+        resp_sup_id: req.body.sup_id
+    });
+});
+
+app.get("/respostasChamados/:id", (req, res) => {
+    RespostaChamado.findOne({
+        where: {
+            resp_id: req.params.id
+        }
+    });
+});
+
+app.put("/respostasChamados/:id", (req, res) => {
+    RespostaChamado.update({
+        resp_data: req.body.data,
+        resp_soluc_comum: req.body.soluc_comum,
+        resp_sup_id: req.body.sup_id 
+    }, {
+        where: {
+            resp_id: req.params.id
+        }
+    });
+});
+
+app.delete("/respostasChamados/:id", (req, res) => {
+    RespostaChamado.destroy({
+        where: {
+            resp_id: req.params.id
+        }
+    });
 });
 
 app.listen(80);
