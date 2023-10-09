@@ -3,7 +3,8 @@ import * as RoutesName from "./constants/routes";
 import Chamados from "./components/Chamados/Chamados";
 import Home from "./components/Home/Home";
 import Cadastro from "./components/cadastro/cadastro";
-import Cadastrar from "./components/cadastro/cadastroopcao";
+import CadastrarCliente from "./components/cadastro/cadastroCliente";
+import CadastrarSuporte from "./components/cadastro/cadastroSuporte";
 import FAQ from "./components/FAQ/FAQ";
 import OpcaoCadastro from "./components/opcaoCadastro/opcaoCadastro";
 import AlterarDados from "./components/alterarDados/alterarDados";
@@ -24,7 +25,8 @@ export default function App() {
                 <Route path={RoutesName.chamadoAberto} element={<ChamadoAberto/>}/>
                 <Route path={RoutesName.login} />
                 <Route path={RoutesName.cadastro} element={<Cadastro />} />
-                <Route path={RoutesName.cadastrar} element={<Cadastrar />} />
+                <Route path={RoutesName.cadastroCliente} element={<CadastrarCliente />} />
+                <Route path={RoutesName.cadastroSuporte} element={<CadastrarSuporte />} />
                 <Route path={RoutesName.FAQ} element={<FAQ />} />
                 <Route path={RoutesName.opcaoCadastro} element={<OpcaoCadastro />} />
                 <Route path={RoutesName.alterarDados} element={<AlterarDados />} />

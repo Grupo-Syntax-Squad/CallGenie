@@ -39,6 +39,7 @@ export default function Home() {
                   src="assets/img/imagem-homepage.svg"
                   alt="imagem-homepage"
                   className={HomePage.main_img}
+                  
                 />
         </div>
       </main>
