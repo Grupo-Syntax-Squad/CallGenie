@@ -1,7 +1,7 @@
 import React from "react";
-import "./style/main.css";
-import "./style/header-chamado.css";
-import "./style/style-table.css";
+import ChamadosPage from "./Chamados.module.css";
+import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
+import StyleTable from './StyleTable.module.css'
 
 export default function Chamados() {
   return (
@@ -10,15 +10,15 @@ export default function Chamados() {
         <a href="/">
           <img
             src="assets/img/Vector.svg"
-            className="logogenie"
+            className={HeaderChamado.logogenie}
             alt="Logo - CallGenius"
           />
         </a>
-        <div className="header-itens-right flex">
+        <div className={HeaderChamado.headerItensRight}>
           <img
             src="assets/img/user.png"
             alt="Usuário"
-            className="fotouser"
+            className={HeaderChamado.fotouser}
             id="logo-fundo-brando"
           />
           <h2>Olá, user</h2>
@@ -27,21 +27,21 @@ export default function Chamados() {
           </a>
         </div>
       </header>
-      <div className="ajuda">
-        <a href="#">Preciso de ajuda</a>
+      <div className={HeaderChamado.ajuda}>
+        <a href="/Chamados">Preciso de ajuda</a>
       </div>
       <main>
-        <div className="fundo">
-          <div id="meus-chamados-title">
+        <div className={HeaderChamado.fundo}>
+          <div id={ChamadosPage.meusChamadosTitle}>
             <h2>Meus Chamados</h2>
           </div>
-          <div className="filtar-e-buscar- flex-row">
-            <div className="filtrar-chamados-container">
-              <div className="filtrar flex">
+          <div className={ChamadosPage.filtrarEBuscar}>
+            <div className={ChamadosPage.filtrarChamadosContainer}>
+              <div className={ChamadosPage.filtrar}>
                 <p>Filtrar por</p>
                 <i className="fa-solid fa-arrow-down"></i>
               </div>
-              <div className="filtrar-menu">
+              <div className={ChamadosPage.filtrarMenu}>
                 <i className="fa-solid fa-x"></i>
                 <li>Em aberto</li>
                 <li>Em andamento</li>
@@ -51,13 +51,13 @@ export default function Chamados() {
                 <li>Ordem Alfabética</li>
               </div>
             </div>
-            <div className="buscar-por-titulo flex">
+            <div className={ChamadosPage.buscarPorTitulo}>
               <p>Buscar por título</p>
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
-          <div className="main-table">
-            <section className="table-body">
+          <div className={StyleTable.mainTable}>
+            <section className={StyleTable.tableBody}>
               <table>
                 <thead>
                   <tr>
@@ -91,11 +91,11 @@ export default function Chamados() {
               <button className="sim">SIM</button>
               <button className="nao">NÃO</button>
             </dialog>
-            <a href="/abrirChamado" className="button-input">
+            <a href="/abrirChamado" className={ChamadosPage.buttonInput}>
               Abrir novo chamado
             </a>
             <a href="FAQ">
-              <button className="button-input">Perguntas Frequentes</button>
+              <button className={ChamadosPage.buttonInput}>Perguntas Frequentes</button>
             </a>
           </div>
         </div>

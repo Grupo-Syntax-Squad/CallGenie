@@ -1,5 +1,6 @@
 import React from "react";
-import "./style/main.css";
+import HeaderChamado from './HeaderChamado/headerChamado.module.css'
+import Abrirchamado from "./abrirchamado.module.css";
 
 export default function AbrirChamado() {
   return (
@@ -8,11 +9,11 @@ export default function AbrirChamado() {
         <a href="/">
           <img
             src="assets/img/Vector.svg"
-            className="logogenie"
+            className={HeaderChamado.logogenie}
             alt="Logo - CallGenius"
           />
         </a>
-        <div className="header-itens-right flex">
+        <div className={HeaderChamado.headerItensRight}>
           <img
             src="assets/img/user.png"
             alt="Usuário"
@@ -27,7 +28,7 @@ export default function AbrirChamado() {
       </header>
       <main>
         <div className="fundo-abrir-chamado">
-          <div className="flex-row">
+          <div className={Abrirchamado.flexRow}>
             <i className="fa-solid fa-arrow-left" id="icon-back-page"></i>
             <h1>Novo chamado</h1>
           </div>
@@ -79,7 +80,7 @@ export default function AbrirChamado() {
                   placeholder="Descrição do Chamado"
                   className="input-fundo"
                 ></textarea>
-                <button type="submit" className="button-input auto">
+                <button type="submit" className={Abrirchamado.buttonInput}>
                   Enviar
                 </button>
               </div>

@@ -1,22 +1,35 @@
 import React from "react";
 import "./style/main.css";
-import "./style/header-chamado.css";
+import HeaderChamado from './HeaderChamado/headerChamado.module.css'
 import "./style/style-table.css";
 
 export default function ChamadoAberto() {
   return (
     <>
       <header>
-        <a href="/"><img src="assets/img/Vector.svg" className= 'logogenie' alt="Logo - CallGenius"/></a>
-        <div className="header-itens-right flex">
-            <img src="assets/img/user.png" alt="Usuário" className="fotouser" id="logo-fundo-brando"/>
-            <h2>Olá, user</h2>
-            <a href="/entrar"><i className="fa-solid fa-arrow-right-from-bracket"></i></a>
+        <a href="/">
+          <img
+            src="assets/img/Vector.svg"
+            className={HeaderChamado.logogenie}
+            alt="Logo - CallGenius"
+          />
+        </a>
+        <div className={HeaderChamado.headerItensRight}>
+          <img
+            src="assets/img/user.png"
+            alt="Usuário"
+            className="fotouser"
+            id="logo-fundo-brando"
+          />
+          <h2>Olá, user</h2>
+          <a href="/entrar">
+            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
         </div>
-    </header>
+      </header>
 
     <div className="ajuda">
-        <a href="#">Preciso de ajuda</a>
+        <a href="/chamadoAberto">Preciso de ajuda</a>
     </div>
     {/* <div className="div-flex">
         <main>

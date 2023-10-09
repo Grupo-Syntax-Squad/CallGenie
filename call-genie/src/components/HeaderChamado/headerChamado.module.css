@@ -16,9 +16,10 @@ header{
     align-items: center;
 }
 
-.header-itens-right{
+.headerItensRight{
     justify-content: flex-end;
     align-items: center;
+    display: flex;
 }
 
 .logogenie{

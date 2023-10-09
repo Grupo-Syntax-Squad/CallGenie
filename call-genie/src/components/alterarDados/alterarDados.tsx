@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/main.css";
+import Alterardados from "./alterarDados.module.css";
 
 export default function AlterarDados() {
   return (
@@ -7,8 +7,8 @@ export default function AlterarDados() {
       <header>
         <img src="assets/img/CallGenielogosvg.svg" alt="Logo" id="logo-index" />
       </header>
-      <div className="fundo-cadastro">
-        <div className="cadastro-container">
+      <div className="fundoCadastro">
+        <div className={Alterardados.cadastroContainer}>
           <main>
             <h1>Alterar Dados de Cadastro</h1>
             <form action="">

@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </main>
       <footer>
-        <a>Copyright © 2023 Syntax Squad | Todos os direitos reservados</a>
+        <p>Copyright © 2023 Syntax Squad | Todos os direitos reservados</p>
       </footer>
     </div>
   );
