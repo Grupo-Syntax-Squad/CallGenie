@@ -1,5 +1,5 @@
 import React from "react";
-import HomePage from "./Home/home.module.css";
+import HomePage from "./FAQ.module.css";
 
 export default function FAQ() {
   return (

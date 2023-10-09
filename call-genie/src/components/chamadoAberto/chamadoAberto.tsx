@@ -1,7 +1,8 @@
 import React from "react";
-import "./style/main.css";
-import HeaderChamado from './HeaderChamado/headerChamado.module.css'
-import "./style/style-table.css";
+import ChamadoAbertoCss from "./chamadoAberto.module.css"
+// import "./style/main.css";
+// import HeaderChamado from './HeaderChamado/headerChamado.module.css'
+// import "./style/style-table.css";
 
 export default function ChamadoAberto() {
   return (

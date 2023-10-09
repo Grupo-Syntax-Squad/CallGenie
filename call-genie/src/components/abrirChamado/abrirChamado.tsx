@@ -1,11 +1,11 @@
 import React from "react";
-import HeaderChamado from './HeaderChamado/headerChamado.module.css'
-import Abrirchamado from "./abrirchamado.module.css";
+import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
+import Abrirchamado from "./abrirChamado.module.css";
 
 export default function AbrirChamado() {
   return (
     <>
-      <header>
+      {/* <header>
         <a href="/">
           <img
             src="assets/img/Vector.svg"
@@ -13,7 +13,7 @@ export default function AbrirChamado() {
             alt="Logo - CallGenius"
           />
         </a>
-        <div className={HeaderChamado.headerItensRight}>
+        <div> className={HeaderChamado.headerItensRight}
           <img
             src="assets/img/user.png"
             alt="Usuário"
@@ -25,7 +25,7 @@ export default function AbrirChamado() {
             <i className="fa-solid fa-arrow-right-from-bracket"></i>
           </a>
         </div>
-      </header>
+      </header> */}
       <main>
         <div className="fundo-abrir-chamado">
           <div className={Abrirchamado.flexRow}>

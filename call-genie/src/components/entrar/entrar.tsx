@@ -40,7 +40,7 @@ export default function Entrar() {
             </form>
           </main>
         <p>
-          Novo no callgenie? <a href="/cadastrar">Cadastre-se</a>
+          Novo no callgenie? <a href="/cadastro">Cadastre-se</a>
         </p>
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
