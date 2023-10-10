@@ -420,3 +420,10 @@ main p a {
 .imagemuser{
     margin: 0px;
 }
+
+main div {
+    text-align: center;
+    flex: 1 1;
+    margin-left: 3%;
+    height: 90px;
+}
