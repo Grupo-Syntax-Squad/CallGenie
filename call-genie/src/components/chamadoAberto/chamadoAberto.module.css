@@ -386,3 +386,33 @@ dialog button.nao{
 .logonome{
     width: 55%;
 }
+
+.fotoUser {
+ max-width: 7%;   
+}
+
+header div h2 {
+    margin: 0;
+    text-indent: 20%;
+    width: 523px;        
+    text-align: justify;
+    padding-top: 0;
+}
+
+header a {
+    /* width: 50px; */
+    padding: 0;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-inline: 2rem;
+}
+
+.logo_genie {
+    width: 40px;
+}
+
+.logOutFoto {
+    color: white
+}
+
+

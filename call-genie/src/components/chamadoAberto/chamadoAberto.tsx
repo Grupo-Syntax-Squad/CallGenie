@@ -11,7 +11,7 @@ export default function ChamadoAberto() {
         <a href="/">
           <img
             src="assets/img/Vector.svg"
-            className={HeaderChamado.logogenie}
+            className={ChamadoAbertoCss.logo_genie}
             alt="Logo - CallGenius"
           />
         </a>
@@ -19,12 +19,16 @@ export default function ChamadoAberto() {
           <img
             src="assets/img/user.png"
             alt="Usuário"
-            className="fotouser"
+            className={ChamadoAbertoCss.fotoUser}
             id="logo-fundo-brando"
           />
           <h2>Olá, user</h2>
           <a href="/entrar">
-            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+            <img
+              src="assets/img/vector_logOut.svg"
+              alt="logout"
+              className={ChamadoAbertoCss.logOutFoto}
+            />
           </a>
         </div>
       </header>

@@ -1,6 +1,6 @@
 import React from "react";
 import EntrarPage from "./Entrar.module.css";
-import axios from "axios";
+//import axios from "axios";
 
 export default function Entrar() {
   return (
@@ -27,7 +27,7 @@ export default function Entrar() {
             type="button"
             value="Entrar"
             className={EntrarPage.button_inputEntrar}
-            onClick={handleSubmit}
+           // onClick={handleSubmit}
           />
         </form>
       </main>

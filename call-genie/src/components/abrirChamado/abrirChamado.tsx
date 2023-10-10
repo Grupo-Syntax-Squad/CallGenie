@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderChamadoCSS from '../HeaderChamado/headerChamado.module.css'
 import Abrirchamado from "./abrirChamado.module.css";
-import axios from "axios";
+//import axios from "axios";
 
 let info: any = {
 	titulo: "",
@@ -19,7 +19,7 @@ function handleChange(event: any) {
 }
 
 function handleSubmit(event: any) {
-	console.log(axios.get("http://localhost:8080/chamados"));
+	//console.log(axios.get("http://localhost:8080/chamados"));
 };
 
 export default function AbrirChamado() {
