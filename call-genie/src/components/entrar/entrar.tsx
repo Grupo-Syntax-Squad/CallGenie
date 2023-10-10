@@ -1,6 +1,6 @@
 import React from "react";
 import EntrarPage from "./Entrar.module.css";
-import axios from "axios";
+//import axios from "axios";
 
 export default function Entrar() {
   return (
