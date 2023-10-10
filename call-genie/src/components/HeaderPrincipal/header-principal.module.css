@@ -31,3 +31,7 @@ html, body {
     background-color: #ffffff72;
     border-radius: 2%;
 }
+
+h1, h2, h3, p, a{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}

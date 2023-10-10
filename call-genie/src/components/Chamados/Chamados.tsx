@@ -27,18 +27,17 @@ export default function Chamados() {
           </a>
         </div>
       </header>
-      <div className={HeaderChamado.ajuda}>
+      <div className={ChamadosPageCSS.ajuda}>
         <a href="/Chamados">Preciso de ajuda</a>
       </div>
       <main className={ChamadosPageCSS.fundoChamado}>
         <div className={HeaderChamado.fundo}>
             <div className={ChamadosPageCSS.titulo}>
-              <h2>Painel de Controle</h2>
+              <h2>Meus Chamados</h2>
             </div>
             <div className={ChamadosPageCSS.filtrosContainer}>
               <div className={ChamadosPageCSS.filtros}>
-                <p>Filtrar por chamados</p>
-                <i className="fa-solid fa-arrow-down"></i>
+                <p>Meus Chamados  <i className="fa-solid fa-arrow-down"></i></p>  
               </div>
               {/* <div className={ChamadosPageCSS.filtrarMenu}>
                 <i className="fa-solid fa-x"></i>
@@ -50,29 +49,20 @@ export default function Chamados() {
                 <li>Ordem Alfabética</li>
               </div> */}
             <div className={ChamadosPageCSS.filtros}>
-              <p>Buscar por título</p>
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div className={ChamadosPageCSS.filtros}>
-              <p>Buscar por título</p>
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div className={ChamadosPageCSS.filtros}>
-              <p>Buscar por título</p>
-              <i className="fa-solid fa-magnifying-glass"></i>
+              <p>Buscar por título <i className="fa-solid fa-magnifying-glass"></i></p>
             </div>
           </div>
           <div className={StyleTableCSS.mainTable}>
             <section className={StyleTableCSS.tableBody}>
               <table>
                 <thead>
-                  {/* <tr>
-                    <th>Título </th>
-                    <th>Ordem </th>
-                    <th>Data de criação </th>
-                    <th>Status </th>
+                  <tr className={StyleTableCSS.ptable}>
+                    <th><p>Título </p></th>
+                    <th><p>Ordem </p></th>
+                    <th><p>Data de criação</p> </th>
+                    <th><p>Status </p></th>
                     <th></th>
-                  </tr> */}
+                  </tr>
                 </thead>
                 <tbody>
                   {/* <% chamados.forEach(chamado => { %>
@@ -97,13 +87,10 @@ export default function Chamados() {
               <button className="sim">SIM</button>
               <button className="nao">NÃO</button>
             </dialog>
-            {/* <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
+          </div>
+            <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
               Abrir novo chamado
             </a>
-            <a href="FAQ">
-              <button className={ChamadosPageCSS.buttonInput}>Perguntas Frequentes</button>
-            </a> */}
-          </div>
         </div>
       </main>
       <footer>

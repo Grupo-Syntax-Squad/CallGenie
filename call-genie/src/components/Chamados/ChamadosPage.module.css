@@ -1,8 +1,16 @@
 /* Estilo para o conteúdo main de todas as páginas */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&family=Poppins:ital,wght@0,300;1,200;1,300&display=swap');
 /*cadastrar.ejs  e  entrar.ejs*/
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.bodyChamados{
+    background-color: #94b2e6;
+}
 
 .fundoCadastro{
     max-width: 100%;
@@ -87,13 +95,13 @@ main h2{
 }
 
 html {
-    background-color: #adc4ed;
     /* background-repeat: no-repeat; */
     height: 100%;
 }
 
 a{
     text-decoration: none;
+    
 }
 
 .fundo{
@@ -101,22 +109,26 @@ a{
     background-color: #ffffff92;
     padding:1.5rem;
     border-radius: 20px;
+    margin:0%;
 }
 
 .filtros{
-    width:300px;
+    color:#363636;
+    display: flex;
+    margin-left:0%;
     height:50px;
     padding:.5rem;
-    background-color: #a3a3a389;
+    margin:.5%;
+    background-color: #a3a3a395;
     border: 2px solid #000;
     border-radius: 10px;
 }
 
 .titulo{
     height:50px;
-    padding-top: 1%;
+    padding-top: .5%;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 10px;
 
 }
 .titulo h2{
@@ -127,9 +139,14 @@ a{
 
 .filtrosContainer{
     display: flex;
+    justify-content: space-between;
 }
 
-.filtrar p{
+.titulo, .filtrosContainer{
+    margin:0%;
+}
+
+.filtros p{
     display: block;
     margin: auto;
 }
@@ -317,8 +334,11 @@ textarea {
 
 .ajuda{
     text-align: right;
-    margin-right: 20%;
-    padding: 1rem;
+    padding-right:20%;
+}
+
+.ajuda a{
+    text-align: right;
 }
 .ajuda a{
     color:blue
@@ -373,7 +393,7 @@ dialog button.nao{
 }
 
 .fundoChamado{
-    margin:2%;
+    margin-inline: 2%;
     background-color: #ffffff85;
     height:500px;
     border-radius: 20px;

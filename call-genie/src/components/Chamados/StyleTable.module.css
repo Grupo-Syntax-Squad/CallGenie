@@ -7,32 +7,29 @@ main{
     display: flex;
 }
 
-.main-table{
+.mainTable{
     width:82vw;
-    height:90vh;
+    height: 300px;
     background-color:#ffffffaf;
     border-radius: .8rem;
     overflow:hidden;
 }
 
-.table-body{
+.tableBody{
     width: 95%;
     max-height: calc(89% - .8rem);
-    background-color: #fffb;
-
     margin: .8rem auto;
     border-radius: .6rem;
-
     overflow: auto;
 }
 
-.table-body::-webkit-scrollbar-thumb{
+.tableBody::-webkit-scrollbar-thumb{
     border-radius: .5rem;
     background-color: #0004;
     visibility: hidden;
 }
 
-.table-body:hover::-webkit-scrollbar-thumb{
+.tableBody:hover::-webkit-scrollbar-thumb{
     visibility: visible;
 }
 
@@ -49,7 +46,10 @@ thead th{
     position: sticky;
     top:0;
     left: 0;
-    background-color: #d5d1defe;
+}
+
+tr{
+    color:#000;
 }
 
 body tr:nth-child(even){
@@ -75,4 +75,8 @@ tbody tr:hover{
 
 .status.concluido{
     color: #3eb900;
+}
+
+.ptable{
+    font-size: 15pt;
 }

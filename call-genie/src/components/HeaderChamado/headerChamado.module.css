@@ -42,3 +42,6 @@ header a{
     color: #FFFFFF;
     margin-inline: 2rem;
 }
+h1, h2, h3, p, a{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
