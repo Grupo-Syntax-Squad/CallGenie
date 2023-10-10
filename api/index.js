@@ -1,9 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { Adm, Chamado, Cliente, Equipamento, RespostaChamado, Suporte } from "./db.js";
+import cors from "cors";
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/chamados", async (req, res) => {
     let chamados = await Chamado.findAll();
@@ -50,8 +52,8 @@ app.delete("/chamados/:id", async (req, res) => {
         where: {
             cham_id: req.params.id
         }
-    })
-    res.json({ mensagem: "Chamado deletado" })
+    });
+    res.json({ mensagem: `Chamado de id ${req.params.id} deletado` });
 });
 
 app.get("/clientes", async (req, res) => {
@@ -312,4 +314,4 @@ app.delete("/equipamentos/:id", (req, res) => {
     res.json({ mensagem: "Equipamento deletado" });
 });
 
-app.listen(80);
+app.listen(8080);

@@ -1,12 +1,13 @@
 import React from "react";
 import EntrarPage from "./Entrar.module.css";
+import axios from "axios";
 
 export default function Entrar() {
   return (
     <>
       <nav></nav>
       <main>
-        <form action="" className={EntrarPage.cadastro_container}>
+        <form action="" className={EntrarPage.cadastro_container} >
           <a href="/">
             <img
               src="assets/img/CallGenielogosvg.svg"
@@ -26,10 +27,11 @@ export default function Entrar() {
             type="button"
             value="Entrar"
             className={EntrarPage.button_inputEntrar}
+            onClick={handleSubmit}
           />
         </form>
       </main>
-        <p>Novo no Callgenie? <a href="/cadastro">Cadastre-se</a></p>
+      <p>Novo no Callgenie? <a href="/cadastro">Cadastre-se</a></p>
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
       </footer>
