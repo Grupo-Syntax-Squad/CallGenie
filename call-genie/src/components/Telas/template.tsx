@@ -1,5 +1,11 @@
 import React from "react";
 import CssTemplate from './template.module.css'
+import HeaderChamadoCSS from '../HeaderChamado/headerChamado.module.css'
+import ChamadosPageCSS from "../Chamados/Chamados.module.css";
+import StyleTableCSS from '../Chamados/StyleTable.module.css'
+
+
+
 export default function Template() { //colocar nome do usuário no lugar de Template 'ex: function Cliente(){' 
   return (
     <>
@@ -7,15 +13,15 @@ export default function Template() { //colocar nome do usuário no lugar de Temp
         <a href="/">
           <img
             src="assets/img/Vector.svg"
-            className={HeaderChamado.logogenie}
+            className={HeaderChamadoCSS.logogenie}
             alt="Logo - CallGenius"
           />
         </a>
-        <div className={HeaderChamado.headerItensRight}>
+        <div className={HeaderChamadoCSS.headerItensRight}>
           <img
             src="assets/img/user.png"
             alt="Usuário"
-            className={HeaderChamado.fotouser}
+            className={HeaderChamadoCSS.fotouser}
             id="logo-fundo-brando"
           />
           <h2>Olá, user</h2>
@@ -24,21 +30,21 @@ export default function Template() { //colocar nome do usuário no lugar de Temp
           </a>
         </div>
       </header>
-      <div className={HeaderChamado.ajuda}>
+      <div className={HeaderChamadoCSS.ajuda}>
         <a href="/Chamados">Preciso de ajuda</a>
       </div>
       <main>
-        <div className={HeaderChamado.fundo}>
-          <div id={ChamadosPage.meusChamadosTitle}>
+        <div className={HeaderChamadoCSS.fundo}>
+          <div id={ChamadosPageCSS.meusChamadosTitle}>
             <h2>Meus Chamados</h2>
           </div>
-          <div className={ChamadosPage.filtrarEBuscar}>
-            <div className={ChamadosPage.filtrarChamadosContainer}>
-              <div className={ChamadosPage.filtrar}>
+          <div className={ChamadosPageCSS.filtrarEBuscar}>
+            <div className={ChamadosPageCSS.filtrarChamadosContainer}>
+              <div className={ChamadosPageCSS.filtrar}>
                 <p>Filtrar por</p>
                 <i className="fa-solid fa-arrow-down"></i>
               </div>
-              <div className={ChamadosPage.filtrarMenu}>
+              <div className={ChamadosPageCSS.filtrarMenu}>
                 <i className="fa-solid fa-x"></i>
                 <li>Em aberto</li>
                 <li>Em andamento</li>
@@ -48,13 +54,13 @@ export default function Template() { //colocar nome do usuário no lugar de Temp
                 <li>Ordem Alfabética</li>
               </div>
             </div>
-            <div className={ChamadosPage.buscarPorTitulo}>
+            <div className={ChamadosPageCSS.buscarPorTitulo}>
               <p>Buscar por título</p>
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
-          <div className={StyleTable.mainTable}>
-            <section className={StyleTable.tableBody}>
+          <div className={StyleTableCSS.mainTable}>
+            <section className={StyleTableCSS.tableBody}>
               <table>
                 <thead>
                   <tr>
@@ -88,11 +94,11 @@ export default function Template() { //colocar nome do usuário no lugar de Temp
               <button className="sim">SIM</button>
               <button className="nao">NÃO</button>
             </dialog>
-            <a href="/abrirChamado" className={ChamadosPage.buttonInput}>
+            <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
               Abrir novo chamado
             </a>
             <a href="FAQ">
-              <button className={ChamadosPage.buttonInput}>Perguntas Frequentes</button>
+              <button className={ChamadosPageCSS.buttonInput}>Perguntas Frequentes</button>
             </a>
           </div>
         </div>

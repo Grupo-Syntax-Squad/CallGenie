@@ -1,7 +1,7 @@
 import React from "react";
-import ChamadosPage from "./Chamados.module.css";
+import ChamadosPageCSS from "./Chamados.module.css";
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
-import StyleTable from './StyleTable.module.css'
+import StyleTableCSS from './StyleTable.module.css'
 
 export default function Chamados() {
   return (
@@ -32,16 +32,16 @@ export default function Chamados() {
       </div>
       <main>
         <div className={HeaderChamado.fundo}>
-          <div id={ChamadosPage.meusChamadosTitle}>
+          <div id={ChamadosPageCSS.meusChamadosTitle}>
             <h2>Meus Chamados</h2>
           </div>
-          <div className={ChamadosPage.filtrarEBuscar}>
-            <div className={ChamadosPage.filtrarChamadosContainer}>
-              <div className={ChamadosPage.filtrar}>
+          <div className={ChamadosPageCSS.filtrarEBuscar}>
+            <div className={ChamadosPageCSS.filtrarChamadosContainer}>
+              <div className={ChamadosPageCSS.filtrar}>
                 <p>Filtrar por</p>
                 <i className="fa-solid fa-arrow-down"></i>
               </div>
-              <div className={ChamadosPage.filtrarMenu}>
+              <div className={ChamadosPageCSS.filtrarMenu}>
                 <i className="fa-solid fa-x"></i>
                 <li>Em aberto</li>
                 <li>Em andamento</li>
@@ -51,13 +51,13 @@ export default function Chamados() {
                 <li>Ordem Alfabética</li>
               </div>
             </div>
-            <div className={ChamadosPage.buscarPorTitulo}>
+            <div className={ChamadosPageCSS.buscarPorTitulo}>
               <p>Buscar por título</p>
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
-          <div className={StyleTable.mainTable}>
-            <section className={StyleTable.tableBody}>
+          <div className={StyleTableCSS.mainTable}>
+            <section className={StyleTableCSS.tableBody}>
               <table>
                 <thead>
                   <tr>
@@ -91,11 +91,11 @@ export default function Chamados() {
               <button className="sim">SIM</button>
               <button className="nao">NÃO</button>
             </dialog>
-            <a href="/abrirChamado" className={ChamadosPage.buttonInput}>
+            <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
               Abrir novo chamado
             </a>
             <a href="FAQ">
-              <button className={ChamadosPage.buttonInput}>Perguntas Frequentes</button>
+              <button className={ChamadosPageCSS.buttonInput}>Perguntas Frequentes</button>
             </a>
           </div>
         </div>
