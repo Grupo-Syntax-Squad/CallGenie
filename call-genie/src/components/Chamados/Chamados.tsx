@@ -1,5 +1,5 @@
 import React from "react";
-import ChamadosPageCSS from "./Chamados.module.css";
+import ChamadosPageCSS from "./ChamadosPage.module.css";
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import StyleTableCSS from './StyleTable.module.css'
 
@@ -30,18 +30,17 @@ export default function Chamados() {
       <div className={HeaderChamado.ajuda}>
         <a href="/Chamados">Preciso de ajuda</a>
       </div>
-      <main>
+      <main className={ChamadosPageCSS.fundoChamado}>
         <div className={HeaderChamado.fundo}>
-          <div id={ChamadosPageCSS.meusChamadosTitle}>
-            <h2>Meus Chamados</h2>
-          </div>
-          <div className={ChamadosPageCSS.filtrarEBuscar}>
-            <div className={ChamadosPageCSS.filtrarChamadosContainer}>
-              <div className={ChamadosPageCSS.filtrar}>
-                <p>Filtrar por</p>
+            <div className={ChamadosPageCSS.titulo}>
+              <h2>Painel de Controle</h2>
+            </div>
+            <div className={ChamadosPageCSS.filtrosContainer}>
+              <div className={ChamadosPageCSS.filtros}>
+                <p>Filtrar por chamados</p>
                 <i className="fa-solid fa-arrow-down"></i>
               </div>
-              <div className={ChamadosPageCSS.filtrarMenu}>
+              {/* <div className={ChamadosPageCSS.filtrarMenu}>
                 <i className="fa-solid fa-x"></i>
                 <li>Em aberto</li>
                 <li>Em andamento</li>
@@ -49,9 +48,16 @@ export default function Chamados() {
                 <li>Com equipamento Cadastrado</li>
                 <li>Meus chamados</li>
                 <li>Ordem Alfabética</li>
-              </div>
+              </div> */}
+            <div className={ChamadosPageCSS.filtros}>
+              <p>Buscar por título</p>
+              <i className="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div className={ChamadosPageCSS.buscarPorTitulo}>
+            <div className={ChamadosPageCSS.filtros}>
+              <p>Buscar por título</p>
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div className={ChamadosPageCSS.filtros}>
               <p>Buscar por título</p>
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
@@ -60,13 +66,13 @@ export default function Chamados() {
             <section className={StyleTableCSS.tableBody}>
               <table>
                 <thead>
-                  <tr>
+                  {/* <tr>
                     <th>Título </th>
                     <th>Ordem </th>
                     <th>Data de criação </th>
                     <th>Status </th>
                     <th></th>
-                  </tr>
+                  </tr> */}
                 </thead>
                 <tbody>
                   {/* <% chamados.forEach(chamado => { %>
@@ -91,12 +97,12 @@ export default function Chamados() {
               <button className="sim">SIM</button>
               <button className="nao">NÃO</button>
             </dialog>
-            <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
+            {/* <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
               Abrir novo chamado
             </a>
             <a href="FAQ">
               <button className={ChamadosPageCSS.buttonInput}>Perguntas Frequentes</button>
-            </a>
+            </a> */}
           </div>
         </div>
       </main>

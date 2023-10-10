@@ -59,7 +59,6 @@ label{
 
 
 main h2{
-    color: #FFFFFF;
     text-align: center;
 }
 
@@ -104,27 +103,30 @@ a{
     border-radius: 20px;
 }
 
-.filtarEBuscarContainer{
-    margin-bottom: 20px;
-}
-.filtrarChamadosContainer{
-    flex-direction: column;
-}
-
-.filtrar{
-    text-align: center;
-    /* justify-content: space-between; */
-}
-
-.filtrar, .buscarPorTitulo{
+.filtros{
+    width:300px;
+    height:50px;
     padding:.5rem;
     background-color: #a3a3a389;
     border: 2px solid #000;
     border-radius: 10px;
 }
 
-.buscarPorTitulo{
-    width:100%;
+.titulo{
+    height:50px;
+    padding-top: 1%;
+    background-color: #ffffff;
+    border-radius: 20px;
+
+}
+.titulo h2{
+    color: #000;
+    text-align: left;
+    padding-top: 0%;
+}
+
+.filtrosContainer{
+    display: flex;
 }
 
 .filtrar p{
@@ -138,10 +140,6 @@ a{
     list-style-type: none;
     padding:1rem;
     border-radius:0px 0px 20px 20px;
-}
-
-.filtrar, .filtrarMenu{
-    width: 250px;
 }
 
 h1{
@@ -160,15 +158,6 @@ input {
 
 ::placeholder{
     font-size: 15pt;
-}
-
-#meusChamadosTitle h2{
-    padding:.5rem;
-    color: #000;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    text-align: left;
 }
 
 .buttonInput{ 
@@ -191,10 +180,6 @@ footer{
 
 
 /*  abrirChamado.ejs */
-
-header h2{
-    color: #FFF;
-}
 
 .fundoAbrirChamado{
     margin:2%;
@@ -385,4 +370,12 @@ dialog button.nao{
 
 .logonome{
     width: 55%;
+}
+
+.fundoChamado{
+    margin:2%;
+    background-color: #ffffff85;
+    height:500px;
+    border-radius: 20px;
+    padding:2%;
 }

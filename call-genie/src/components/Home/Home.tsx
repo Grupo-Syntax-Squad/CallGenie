@@ -10,7 +10,7 @@ export default function Home() {
           <img
             src="assets/img/CallGenielogosvg.svg"
             alt="Logo"
-            id="logoindex"
+            id={HomePage.logoindex}
           />
         </a>
         <div className={HomePage.navbuttons}>

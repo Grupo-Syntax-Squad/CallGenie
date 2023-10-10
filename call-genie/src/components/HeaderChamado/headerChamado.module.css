@@ -8,6 +8,9 @@
     font-family: 'DM Sans', Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
+h2{
+    padding-left: 0px;
+}
 
 header{
     padding: 1rem;
@@ -23,7 +26,7 @@ header{
 }
 
 .logogenie{
-    width:50px;
+    width:40px;
 }
 
 .fotouser{

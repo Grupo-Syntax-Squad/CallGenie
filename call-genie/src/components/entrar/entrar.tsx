@@ -27,7 +27,7 @@ export default function Entrar() {
             type="button"
             value="Entrar"
             className={EntrarPage.button_inputEntrar}
-            onClick={handleSubmit}
+            // onClick={handleSubmit}
           />
         </form>
       </main>
