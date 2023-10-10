@@ -93,11 +93,10 @@ main img {
 }
 .main_div_user {
     width: 50%;
+    height:50%;
     border-radius: 15px;
     display: flex;
     margin-inline: 25%;
-    background-color: #8CB7DD
-
 }
 
 
@@ -179,7 +178,7 @@ color: #fff;
 text-decoration: none;
 }
 
-p{
+h3{
     text-align: center;
 }
 
@@ -192,7 +191,16 @@ p{
 }
 
 .cadastro_container{
-    padding:7%;
+    display:block;
+    margin:auto;
+    background-color: rgba(239, 239, 239, 0.562);
+    width:570px;
+    padding:2%;
+    border-radius:25px;
+}
+
+.cadastro_container input{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.212);
 }
 
 h1{
@@ -221,12 +229,14 @@ label{
  
 .button_input{ 
     /* Estilo de inputs do tipo 'button' */
+    position: absolute;
+    left:40%;
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
     width:160px;
     padding: 1rem;
-    background-color: #2c47bb;
+    background-color: #0085FF;
     border-radius: 10px;
     cursor: pointer;
     margin-inline: 15%;
@@ -248,7 +258,7 @@ main h2{
     background-color: #ffffff6a;
     margin:30px;
     width: 300px;
-    height: 200px;
+    height: 250px;
     border-radius: 5%;
 }
 
@@ -259,6 +269,7 @@ main h2{
 }
 
 .cadastro_opcao img{
+    padding-top: 10%;
     width:400px;
 }
 
@@ -338,6 +349,11 @@ input {
     margin-bottom: 2%;
 }
 
+/* h2 {
+display:block;
+margin:auto;
+} */
+
 ::placeholder{
     font-size: 15pt;
 }
@@ -391,3 +407,16 @@ main p a {
     color: blue;
 }
 
+.imagem_titulo_container{
+    display:flex;
+}
+
+.container_marginAuto{
+    width:500px;
+    display:block;
+    margin:auto;
+}
+
+.imagemuser{
+    margin: 0px;
+}

@@ -22,7 +22,7 @@ header {
 }
 
 #logoindex{
-    width:300px;
+    width:500px;
 }
 
 .logonome{
@@ -33,21 +33,10 @@ header {
     font-size: 20pt;
 }
 
-.fundi {
-    background: linear-gradient(to bottom right, black, #6C9BEC);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-
-body h1, body h2{
-    color:#8CB7DD;
-}
-
 body h1{
     text-align: center;
     font-size: 40pt;
+    color: #fff;
 }
 
 body h2{
@@ -55,11 +44,6 @@ body h2{
     width:523px;
     text-align: justify;
     padding-top: 5%;
-}
-
-.fundo {
-    width: 100%;
-    height: auto;
 }
 
 a{
@@ -78,35 +62,6 @@ footer {
     padding: 5px;
     justify-content: center
 }
-
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; 
-    margin-left: 25%;
-}
-
-main img {
-    max-width: 30%; 
-    height: auto; 
-    margin-left: 15%;
-
-}
-
-main div {
-    text-align: center;
-    flex: 1; 
-    margin-left: 3%;
-}
-
-main div a {
-    text-align: left;
-    flex: 1; 
-    margin-top: 50%;
-}
-
 
 @media (max-width: 768px) {
     main {
@@ -192,4 +147,40 @@ p{
 
 body p a {
     color: blue;
+}
+
+.cadastro_container{
+    display:block;
+    margin:auto;
+    background-color: rgba(239, 239, 239, 0.216);
+    padding:5%;
+    padding-top: 100px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.button_inputEntrar{ 
+    /* Estilo de inputs do tipo 'button' */
+    border: none;
+    color: #FFFFFF;
+    font-size: 15pt;
+    width:160px;
+    padding: 1rem;
+    background-color: #0085FF;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin:auto;
+    margin-top: 50px;
+}
+#inputNome{
+    margin-bottom: 40px;
+}
+
+.h2Entrar{
+    margin-bottom: 50px;
+}
+
+.imagem{
+    width:50px;
+    height:50px;
 }

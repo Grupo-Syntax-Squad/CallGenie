@@ -44,23 +44,22 @@ function Header() {
 
 function Main() {
   return (
+    <div className={CadastroCSS.center}>
     <main className={CadastroCSS.main_div}>
       <h2>Em qual das opções você se encaixa?</h2>
       <div className={CadastroCSS.main_div_user}>
-
-
         <div className={CadastroCSS.cadastro_opcao}>
-          <a href="/cadastroopcao">
-            <img src="assets/img/user.png" alt="SUPORTE" />
-            <p>SOU SUPORTE</p>
+          <a href="/cadastroSuporte">
+            <img src="assets/img/userTecnico.png" alt="SUPORTE" />
+            <h3>SOU SUPORTE</h3>
             </a>
         </div>
 
 
           <div className={CadastroCSS.cadastro_opcao}>
-          <a href="/cadastroopcao">
-            <img src="assets/img/user.png" alt="CLIENTE" />
-            <p>SOU CLIENTE</p>
+          <a href="/cadastroCliente">
+            <img src="assets/img/user_cliente.png" alt="CLIENTE" />
+            <h3>SOU CLIENTE</h3>
             </a>
           </div>
 
@@ -69,6 +68,7 @@ function Main() {
           Precisa de ajuda? <a href="/cadastrar">clique aqui</a>
         </p>
     </main>
+    </div>
   );
 }
 
