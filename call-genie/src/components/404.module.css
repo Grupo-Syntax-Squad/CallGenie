@@ -4,7 +4,7 @@ body{
     color:#fff;
     font-family: 'Open Sans', sans-serif;
     max-height:100%;
-    overflow: hidden;
+    overflow: scroll;
 }
 .c{
     text-align: center;

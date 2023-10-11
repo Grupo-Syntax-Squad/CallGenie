@@ -33,13 +33,49 @@ export default function ChamadoAberto() {
         </div>
       </header>
 
-    <div className="ajuda">
+    <div className={ChamadoAbertoCss.ajuda}>
         <a href="/chamadoAberto">Preciso de ajuda</a>
     </div>
-    {/* <div className="div-flex">
+     <div className={ChamadoAbertoCss.divFlex}>
         <main>
-            <div className="fundo-chamado-aberto div-flex">
-                <div className="info-dispositivo">
+            <div className={ChamadoAbertoCss.fundoChamadoAberto} >
+                <div className={ChamadoAbertoCss.divFlex}>
+                  <div className={ChamadoAbertoCss.infoDispositivo}>
+                      <p>Título:</p>
+                      <p>ID:</p>
+                      <p>Data de Criação: </p>
+                      <p className={ChamadoAbertoCss.statusAndamento}>Chamado em </p>
+                  </div>
+                </div>
+                <div className={ChamadoAbertoCss.flexRow}>
+                    <div className={ChamadoAbertoCss.fundo_chamado_aberto} >
+                        <div className={ChamadoAbertoCss.colunaEsquerda} >
+                          <p> chamadoInfo.dataValues.cham_descricao </p>
+                        </div>
+                    </div>
+                    <div className={ChamadoAbertoCss.colunaDireita}>
+                        <div className={ChamadoAbertoCss.fundoChamadoAberto}>
+                            <h2>Equipamento Cadastrado</h2>
+                            <div className={ChamadoAbertoCss.flexRow} >
+                                <div className={ChamadoAbertoCss.containerNomeNumero}>
+                                  <p>Nome: </p>
+                                  <p>Número de série: </p>
+                                </div>
+                            </div>
+                            <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento:</p>
+                        </div>
+                        <h2>Comentários</h2>
+                        <textarea name="" id="" cols={30} rows={10} placeholder="Clique aqui para adicionar um comentário ao chamado" className="fundo-chamado-aberto"></textarea>
+                        <p className="text-chamado-aberto" id="prazo-text">Prazo de resposta até:</p>
+                        <p className="text-chamado-aberto">Agradecemos o contato, aguarde a resposta de um de nossos suportes</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        {/* <main>
+            <div className="fundo_chamado_aberto div_flex">
+                <div className="info_dispositivo">
                     <p>Título: <%= chamadoInfo.dataValues.cham_titulo %></p>
                     <p>ID: <%= chamadoInfo.dataValues.cham_id %></p>
                     <p>Data de Criação: <%= chamadoInfo.dataValues.cham_data_inicio.split(/-/)[2] %>/<%= chamadoInfo.dataValues.cham_data_inicio.split(/-/)[1] %>/<%= chamadoInfo.dataValues.cham_data_inicio.split(/-/)[0] %></p>
@@ -65,8 +101,8 @@ export default function ChamadoAberto() {
                     </div>
                 </div>
             </div>
-        </main>
-    </div> */}
+        </main> */}
+    </div> 
     <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>
     </>
   );

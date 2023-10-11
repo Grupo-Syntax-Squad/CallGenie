@@ -288,29 +288,32 @@ textarea {
     font-size:20pt;
 }
 
-.fundohamadoAberto{
+.fundoChamadoAberto{
     background-color: #ffffff3f;
     border-radius: 20px;
     padding:2rem;
+    height:580px;
+    margin-right: 2%;
 }
 
-.fundo-chamado-aberto h2{
+
+.fundoChamadoAberto h2{
     color: #000;
 }
 
-.status.aberto{
+.statusAberto{
     color: #950000;
 }
 
-.status.andamento{
+.statusAndamento{
     color: #ead200;
 }
 
-.status.concluido{
+.statusConcluido{
     color: #3eb900;
 }
 
-.text-center{
+.textCenter{
     text-align: center;
 }
 
@@ -415,4 +418,21 @@ header a {
     color: white
 }
 
+main div {
+    text-align: center;
+    flex: 1 1;
+    margin-left: 3%;
+    height: auto;
+}
 
+header {
+    text-align: left;
+    padding: 20px;
+    height: 80px;
+}
+
+.colunaEsquerda h3 {
+    text-align: center;
+    background: #9dbaed;
+    border-radius: 5%;
+}

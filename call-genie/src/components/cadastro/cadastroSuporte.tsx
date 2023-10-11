@@ -29,7 +29,7 @@ function CadastrarSuporte() {
           </div>
         <form action="" className={CadastroCSS.cadastro_container}>
           <input type="text" placeholder="Nome" />
-          <input type="text" placeholder="Nome de Usuário" />
+          <input type="password" placeholder="Senha" />
           <input type="email" placeholder="E-mail" />
           <input type="tel" placeholder="Telefone" />
           <input type="number" placeholder="CEP" />

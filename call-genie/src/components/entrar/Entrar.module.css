@@ -13,7 +13,7 @@ body {
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 header {
