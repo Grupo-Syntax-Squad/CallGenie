@@ -1,26 +1,38 @@
 import React from "react";
 import HeaderChamado from "../HeaderChamado/headerChamado.module.css";
 import Abrirchamado from "./abrirChamado.module.css";
-//import axios from "axios";
+import axios from "axios";
 
-let info: any = {
+let chamado: any = {
   titulo: "",
   desc: "",
   status: "Aberto",
-  data_inicio: new Date(),
-  prazo: new Date(),
+  equipamentonome: "",
+  numeroserie: "",
+  equipamentotipo: ""
 };
 
 function handleChange(event: any) {
   let valor = event.target.value;
   let name = event.target.name;
-  info[name] = valor;
-  console.log(info);
+  chamado[name] = valor;
+  console.log(chamado);
 }
 
 function handleSubmit(event: any) {
-  //console.log(axios.get("http://localhost:8080/chamados"));
-}
+  let data = new Date();
+  data.setDate(data.getDate() + 1);
+  console.log(axios.post("http://localhost:8080/chamados", {
+    titulo: chamado.titulo,
+    descricao: chamado.desc,
+    status: chamado.status,
+    data_inicio: new Date(),
+    prazo: data
+  }));
+
+  window.location.replace("/chamados");
+  event.preventDefault();
+};
 
 export default function AbrirChamado() {
   return (
@@ -40,74 +52,77 @@ export default function AbrirChamado() {
           />
           <h2>Olá, user</h2>
           <a href="/entrar">
-          <img
-            src="assets/img/iconexit.png"
-            alt="Sair"
-          />
+            <img
+              src="assets/img/iconexit.png"
+              alt="Sair"
+            />
           </a>
         </div>
       </header>
       <main>
         <div className={Abrirchamado.fundoAbrirChamado}>
           <div className={Abrirchamado.flexRow}>
-          <img
-            src="assets/img/iconback.png"
-            alt="Voltar"
-            id={Abrirchamado.iconback}
-          />
+            <img
+              src="assets/img/iconback.png"
+              alt="Voltar"
+              id={Abrirchamado.iconback}
+            />
             <h1>Novo chamado</h1>
           </div>
-          <form action="/abrirChamado" method="post">
-              <div className={Abrirchamado.container_colunas}>
-                <div className={Abrirchamado.colunaEsquerda}>
-                  <label>
-                    <input
-                      type="text"
-                      placeholder="Título do chamado *"
-                      className={Abrirchamado.inputFundo}
-                      required
-                      name="titulo"
-                    />
-                  </label>
-                  <textarea
-                    name="comentario"
-                    id={Abrirchamado.inputComentario}
-                    cols={30}
-                    rows={10}
+          <form action="/abrirChamado" method="post" onSubmit={handleSubmit}>
+            <div className={Abrirchamado.container_colunas}>
+              <div className={Abrirchamado.colunaEsquerda}>
+                <label>
+                  <input
+                    type="text"
+                    placeholder="Título do chamado *"
                     className={Abrirchamado.inputFundo}
-                    placeholder="   Comentário"
-                  ></textarea>
-                  <div className={Abrirchamado.inputEquipamento}>
-                    <input
-                      type="text"
-                      placeholder="Nome do Equipamento"
-                      name="equipamentonome"
-                    />
-                    <input
-                      type="number"
-                      placeholder="Número de série"
-                      name="numeroserie"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Tipo de equipamento"
-                      name="equipamentotipo"
-                    />
-                  </div>
-                </div>
-                <div className={Abrirchamado.colunaDireita}>
-                  <textarea
-                    name="desc"
-                    id={Abrirchamado.inputDescricao}
-                    cols={100}
-                    rows={20}
-                    placeholder="Descrição do Chamado"
-                  ></textarea>
-                  <button type="submit" className={Abrirchamado.buttonInput}>
-                    Enviar
-                  </button>
+                    required
+                    name="titulo"
+                    onChange={handleChange}
+                  />
+                </label>
+                <textarea
+                  name="comentario"
+                  id={Abrirchamado.inputComentario}
+                  cols={30}
+                  rows={10}
+                  className={Abrirchamado.inputFundo}
+                  placeholder="   Comentário"
+                ></textarea>
+                <div className={Abrirchamado.inputEquipamento}>
+                  <input
+                    type="text"
+                    placeholder="Nome do Equipamento"
+                    name="equipamentonome"
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="number"
+                    placeholder="Número de série"
+                    name="numeroserie"
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Tipo de equipamento"
+                    name="equipamentotipo"
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
+              <div className={Abrirchamado.colunaDireita}>
+                <textarea
+                  name="desc"
+                  id={Abrirchamado.inputDescricao}
+                  cols={100}
+                  rows={20}
+                  placeholder="Descrição do Chamado"
+                  onChange={handleChange}
+                ></textarea>
+                <button type="submit" className={Abrirchamado.buttonInput}> Enviar </button>
+              </div>
+            </div>
           </form>
         </div>
       </main>
