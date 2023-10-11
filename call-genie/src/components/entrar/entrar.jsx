@@ -1,6 +1,30 @@
 import React from "react";
 import EntrarPage from "./Entrar.module.css";
-//import axios from "axios";
+import axios from "axios";
+
+let infos = {};
+let cliente;
+
+function receberCliente(cliente) {
+  cliente = cliente;
+};
+
+function handleChange(event) {
+  infos[event.target.name] = event.target.value;
+};
+
+function handleSubmit(event) {
+  axios.get(`http://localhost:8080/clientes/${infos.cpf}`).then(response => {
+    if (response.data == null) window.alert("Usuário não encontrado!");
+    else {
+      if (infos.senha == response.data.cli_senha) {
+        window.location.replace("/chamados");
+      } else {
+        window.alert("Senha incorreta!");
+      };
+    }
+  });
+};
 
 export default function Entrar() {
   return (
@@ -18,16 +42,18 @@ export default function Entrar() {
           <h2 className={EntrarPage.h2Entrar}>Bem-vindo(a)!</h2>
           <input
             type="text"
-            placeholder="Nome de usuário"
+            placeholder="CPF"
             id={EntrarPage.inputNome}
+            name="cpf"
+            onChange={handleChange}
           />
-          <input type="password" placeholder="Senha" />
+          <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
           <a href="#">Esqueci a minha senha</a>
           <input
             type="button"
             value="Entrar"
             className={EntrarPage.button_inputEntrar}
-            // onClick={handleSubmit}
+            onClick={handleSubmit}
           />
         </form>
       </main>
