@@ -68,7 +68,7 @@ app.post("/clientes", async (req, res) => {
             cli_cpf: req.body.cpf,
             cli_email: req.body.email,
             cli_telefone: req.body.telefone,
-            cli_endereço: req.body.endereço,
+            cli_endereco: req.body.endereco,
             cli_senha: req.body.senha
         });
         res.json(cliente);
