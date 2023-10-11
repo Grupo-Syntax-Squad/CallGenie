@@ -3,13 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 
 /*cadastrar.ejs  e  entrar.ejs*/
-
-.fundoCadastro{
-    max-width: 100%;
-    background-color: #ffffff72;
-    border-radius: 2%;
-    margin: auto;
-    width: 600px;
+*{
+    margin: 0px;
+    padding:0px;
 }
 
 .cadastroContainer{
@@ -27,7 +23,7 @@ input {
     border: none;
     border-radius: 2px;
     padding: 15px;
-    background-color: #EBE9E9; /* cor do plano de fundo */
+    background-color: #EBE9E9;
     margin-bottom: 2%;
 }
 
@@ -198,7 +194,8 @@ header h2{
 
 .fundoAbrirChamado{
     margin:2%;
-    background-color: #ffffff69;
+    height:630px;
+    background-color: #ffffffa2;
     padding:2%;
     border-radius: 20px;
 }
@@ -214,10 +211,12 @@ header h2{
 
 .fundoAbrirChamado h1{
     color:#000000;
+    font-size: 18pt;
     padding: 0%;
 }
 
 .colunaEsquerda{
+    margin:0%;
     text-align: center;
     display:flex;
     flex-direction: column;
@@ -250,6 +249,8 @@ header h2{
 }
 
 .flexRow{
+    height:50px;
+    margin:0%;
     display: flex;
     flex-direction: row;
 }
@@ -263,8 +264,13 @@ header h2{
 }
 
 .inputEquipamento{
+    width:775px;
+    margin:0%;
     margin-top: 1rem;
     background-color: #ffffff97;
+}
+.inputEquipamento input{
+    width:775px;
 }
 
 .inputEquipamento, .inputEquipamento > input{
@@ -288,13 +294,13 @@ textarea {
     font-size:20pt;
 }
 
-.fundohamadoAberto{
+.fundoChamadoAberto{
     background-color: #ffffff3f;
     border-radius: 20px;
     padding:2rem;
 }
 
-.fundo-chamado-aberto h2{
+.fundoChamadoAberto h2{
     color: #000;
 }
 
@@ -356,6 +362,7 @@ textarea {
     overflow: auto;
 }
 
+
 dialog{
     padding: 4rem;
     font-size: 18pt;
@@ -385,4 +392,22 @@ dialog button.nao{
 
 .logonome{
     width: 55%;
+}
+
+#iconback{
+    width:40px;
+    height:40px;
+    margin: 0%;
+}
+
+.flexRow h1{
+    margin-block:0%;
+}
+.container_colunas{
+    display:flex;
+    margin: 0%;;
+}
+
+.buttonInput{
+    margin: auto;
 }

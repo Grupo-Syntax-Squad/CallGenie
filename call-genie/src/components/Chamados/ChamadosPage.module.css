@@ -8,10 +8,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.bodyChamados{
-    background-color: #94b2e6;
-}
-
 .fundoCadastro{
     max-width: 100%;
     background-color: #ffffff72;
@@ -395,7 +391,7 @@ dialog button.nao{
 .fundoChamado{
     margin-inline: 2%;
     background-color: #ffffff85;
-    height:500px;
+    height:630px;
     border-radius: 20px;
     padding:2%;
 }

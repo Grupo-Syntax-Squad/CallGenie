@@ -35,76 +35,79 @@ export default function AbrirChamado() {
         </a>
         <div className={HeaderChamado.headerItensRight}>
           <img
-            src="assets/img/user.png"
+            src="assets/img/iconeuser2.png"
             alt="Usuário"
-            className={HeaderChamado.fotouser}
-            id="logo-fundo-brando"
           />
           <h2>Olá, user</h2>
           <a href="/entrar">
-            <i className="fa-solid fa-arrow-right-from-bracket"></i>
+          <img
+            src="assets/img/iconexit.png"
+            alt="Sair"
+          />
           </a>
         </div>
       </header>
       <main>
-        <div className="fundo-abrir-chamado">
+        <div className={Abrirchamado.fundoAbrirChamado}>
           <div className={Abrirchamado.flexRow}>
-            <i className="fa-solid fa-arrow-left" id="icon-back-page"></i>
+          <img
+            src="assets/img/iconback.png"
+            alt="Voltar"
+            id={Abrirchamado.iconback}
+          />
             <h1>Novo chamado</h1>
           </div>
           <form action="/abrirChamado" method="post">
-            <div className="containerAbrirChamado flex-row">
-              <div className="coluna-esquerda">
-                <label>
-                  <input
-                    type="text"
-                    placeholder="Título do chamado *"
-                    className="input-fundo"
-                    required
-                    name="titulo"
-                  />
-                </label>
-                <textarea
-                  name="comentario"
-                  id="input-comentario"
-                  cols={30}
-                  rows={10}
-                  className="input-fundo"
-                  placeholder="   Comentário"
-                ></textarea>
-
-                <div className="input-equipamento">
-                  <input
-                    type="text"
-                    placeholder="Nome do Equipamento"
-                    name="equipamentonome"
-                  />
-                  <input
-                    type="number"
-                    placeholder="Número de série"
-                    name="numeroserie"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Tipo de equipamento"
-                    name="equipamentotipo"
-                  />
+              <div className={Abrirchamado.container_colunas}>
+                <div className={Abrirchamado.colunaEsquerda}>
+                  <label>
+                    <input
+                      type="text"
+                      placeholder="Título do chamado *"
+                      className={Abrirchamado.inputFundo}
+                      required
+                      name="titulo"
+                    />
+                  </label>
+                  <textarea
+                    name="comentario"
+                    id={Abrirchamado.inputComentario}
+                    cols={30}
+                    rows={10}
+                    className={Abrirchamado.inputFundo}
+                    placeholder="   Comentário"
+                  ></textarea>
+                  <div className={Abrirchamado.inputEquipamento}>
+                    <input
+                      type="text"
+                      placeholder="Nome do Equipamento"
+                      name="equipamentonome"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Número de série"
+                      name="numeroserie"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Tipo de equipamento"
+                      name="equipamentotipo"
+                    />
+                  </div>
+                </div>
+                <div className={Abrirchamado.colunaDireita}>
+                  <textarea
+                    name="desc"
+                    id={Abrirchamado.inputDescricao}
+                    cols={100}
+                    rows={20}
+                    placeholder="Descrição do Chamado"
+                  ></textarea>
+                  <button type="submit" className={Abrirchamado.buttonInput}>
+                    Enviar
+                  </button>
                 </div>
               </div>
-              <div className="coluna-direita">
-                <textarea
-                  name="desc"
-                  id="input-descricao"
-                  cols={100}
-                  rows={20}
-                  placeholder="Descrição do Chamado"
-                  className="input-fundo"
-                ></textarea>
-                <button type="submit" className={Abrirchamado.buttonInput}>
-                  Enviar
-                </button>
-              </div>
-            </div>
           </form>
         </div>
       </main>

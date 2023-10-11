@@ -17,6 +17,7 @@ header{
     background-color: #333840;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .headerItensRight{
