@@ -14,6 +14,7 @@ import AbrirChamado from "./components/abrirChamado/abrirChamado";
 import ChamadoAberto from "./components/chamadoAberto/chamadoAberto";
 
 import NotFoundPage from "./components/404";
+import Cliente from "./components/Cliente/Cliente";
 
 export default function App() {
     return (
@@ -35,6 +36,7 @@ export default function App() {
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
                 <Route path= {RoutesName.notFound} element ={<NotFoundPage />} />
                 <Route path= "*" element={< Navigate to="/404" />} />
+                <Route path={RoutesName.cliente} element={<Cliente />}/>
             </Routes>
         </BrowserRouter>
     );
