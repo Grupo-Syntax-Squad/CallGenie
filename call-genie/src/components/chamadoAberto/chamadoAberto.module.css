@@ -225,7 +225,7 @@ header h2{
     text-align: center;
     display:flex;
     flex-direction: column;
-    width:500px;
+    width:500x;
     height: 500px;
 }
 .colunaDireita{
@@ -270,6 +270,7 @@ header h2{
     margin-top: 1rem;
     background-color: #ffffff97;
 }
+
 
 .inputEquipamento, .inputEquipamento > input{
     border-radius: 20px;
