@@ -1,5 +1,4 @@
-# **Syntax Squad**
-<p align="center">
+
   <img src="/documents/img/callgenielogogit.png" alt="logo da CallGenie">
 <br>
   
@@ -11,7 +10,7 @@
   <a href="#tecnologias">Tecnologias </a>  |
   <a href="#mvp">MVP</a>  |
   <a href="#sprints">Sprints</a>  |
-  <a href="#backlog">Backlog</a>  | 
+  <a href="#backlogArtefatos">Backlog & Artefatos</a>  | 
   <a href="#autores">Autores</a>  |
 </p>
 
@@ -74,7 +73,7 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 
 ### Sprint - 4️⃣ 🎯   Em construção🚧
 
-<span id="backlog">
+<span id="backlogArtefatos">
   
 ## 🌲Backlog do Produto
 <p align="center">
@@ -84,8 +83,17 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 ## 🌱Backlog da Sprint
 <p align="center">
 <img src= "/documents/img/Sprints Backlog.png" alt="Backlog Sprints">
-<br>  
+<br>
 
+## 🧱Modelo de Dados
+<p align="center">
+<img src="/documents/img/CallGenie_Data_Model-2023-10-12_10-42.svg" alt="Modelo de Dados">
+<br>
+
+## 👥User Stories
+<p align="center">
+<img src="/documents/img/user stories.svg" alt="User Stories">
+  
 ## 👨‍💻**Autores** 
 
 |      Nome      |    Função       |                            Github                             |                           Linkedin                           |
