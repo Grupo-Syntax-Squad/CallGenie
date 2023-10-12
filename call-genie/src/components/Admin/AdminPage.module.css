@@ -407,6 +407,7 @@ dialog button.nao{
     height:630px;
     border-radius: 20px;
     padding:2%;
+    margin-top: 2%;
 }
 
 .postButtons{
@@ -448,4 +449,6 @@ dialog button.nao{
     border: 2px solid #000;
     border-radius: 10px;
 }
+
+
 

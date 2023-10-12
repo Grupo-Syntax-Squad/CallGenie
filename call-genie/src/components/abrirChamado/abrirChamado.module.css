@@ -239,6 +239,10 @@ header h2{
     text-align: center;
 }
 
+.colunaEsquerda ::placeholder{
+    text-align: center;
+}
+
 .inputFundo{
     width: 100%;
     max-width: 100%;

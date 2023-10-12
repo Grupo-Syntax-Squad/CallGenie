@@ -388,6 +388,19 @@ dialog{
     width:500px;
 }
 
+.filtrosLista{
+    color:#363636;
+    display: flex;
+    margin-left:0%;
+    margin-top: 2%;
+    height:50px;
+    padding:.5rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #a3a3a395;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
 dialog::backdrop{
     background-color:rgba(0, 0, 0, 0.292);
 }
@@ -415,4 +428,34 @@ dialog button.nao{
     height:630px;
     border-radius: 20px;
     padding:2%;
+}
+
+.postButtonsC{
+    color:#363636;
+    display: flex;
+    margin-left:0%;
+    margin-top: 2%;
+    width: 215px;
+    height:50px;
+    padding:.5rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #a3a3a395;
+    border: 2px solid #000;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtrosListaB{
+    color:#363636;
+    display: flex;
+    margin-left:0%;
+    margin-top: 2%;
+    height:50px;
+    width: 260px;
+    padding:.5rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #a3a3a395;
+    border: 2px solid #000;
+    border-radius: 10px;
 }

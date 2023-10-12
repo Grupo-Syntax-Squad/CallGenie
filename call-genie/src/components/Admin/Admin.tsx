@@ -32,9 +32,7 @@ export default function Admin() {
           </a>
         </div>
       </header>
-      <div className={ChamadosPageCSS.ajuda}>
-        <a href="/Admin">Precisa de ajuda?</a>
-      </div>
+
 
         <main className={ChamadosPageCSS.fundoChamado}>
           <div className={HeaderChamado.fundo}>
@@ -80,7 +78,7 @@ export default function Admin() {
                   </select>
                 </div>
                 <div>
-                <a href="/FAQ" className={ChamadosPageCSS.postButtonsC}>
+                <a href="/CadastrarFAQ" className={ChamadosPageCSS.postButtonsC}>
                      Respostas Frequentes </a>
                 </div>
               </div>

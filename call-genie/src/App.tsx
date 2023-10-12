@@ -7,6 +7,7 @@ import Cadastro from "./components/cadastro/cadastro";
 import CadastrarCliente from "./components/cadastro/cadastroCliente";
 import CadastrarSuporte from "./components/cadastro/cadastroSuporte";
 import FAQ from "./components/FAQ/FAQ";
+import CadastrarFAQ from "./components/FAQ/CadastrarFAQ";
 import OpcaoCadastro from "./components/opcaoCadastro/opcaoCadastro";
 import AlterarDados from "./components/alterarDados/alterarDados";
 import Contato from "./components/contato";
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path={RoutesName.cliente} element={<Cliente />}/>
                 <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />}/>
                 <Route path={RoutesName.admin} element={<Admin />}/>
+                <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />}/>
 
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
                 <Route path= {RoutesName.notFound} element ={<NotFoundPage />} />

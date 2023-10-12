@@ -76,7 +76,7 @@ export default function Chamados() {
                 src="assets/img/IconNotificacao.svg"
                 alt="Icone de notificação"
               />
-          <a href="/">barra de notificação</a>
+          <a href="#">barra de notificação</a>
         </div>
 
         <main className={ChamadosPageCSS.fundoChamado}>
@@ -85,10 +85,19 @@ export default function Chamados() {
               <h2>Meus Chamados</h2>
             </div>
             <div className={ChamadosPageCSS.filtrosContainer}>
-              <div className={ChamadosPageCSS.filtros}>
-                <p>Chamados Abertos  <i className="fa-solid fa-arrow-down"></i></p>
-              </div>
-              {/* <div className={ChamadosPageCSS.filtrarMenu}>
+                
+          <div>
+              <select name={"Filtar Chamados"} className={ChamadosPageCSS.filtrosLista} >
+                <optgroup label={"Filtrar Chamados em geral"} >
+                  <option value={"Filtro01"}>Ordem Alfabética</option>
+                  <option value={"Filtro02"}>ID de pedido</option>
+                  <option value={"Filtro03"}>Status do pedido</option>
+
+
+                </optgroup>
+              </select>
+            </div>
+                {/* <div className={ChamadosPageCSS.filtrarMenu}>
                   <i className="fa-solid fa-x"></i>
                   <li>Em aberto</li>
                   <li>Em andamento</li>
@@ -97,13 +106,23 @@ export default function Chamados() {
                   <li>Meus chamados</li>
                   <li>Ordem Alfabética</li>
                 </div> */}
-              <div className={ChamadosPageCSS.filtros}>
-                <p>Meus atendimentos <i className="fa-solid fa-magnifying-glass"></i></p>
+                <div className={ChamadosPageCSS.filtros}>
+                  <p>Buscar Chamado  <i className="fa-solid fa-magnifying-glass"></i></p>
+                </div>
+                <div>
+                  <select name={"Filtrar status"} className={ChamadosPageCSS.filtrosListaB}>
+                    <optgroup label={"Meus atendimentos"}>
+                      <option value={"Filtro01"}>Atendimentos em andamento</option>
+                      <option value={"Filtro02"}>Atendimentos concluidos</option>
+                      <option value={"Filtro03"}>Atendimentos em aberto</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div>
+                <a href="/CadastrarFAQ" className={ChamadosPageCSS.postButtonsC}>
+                     Respostas Frequentes </a>
+                </div>
               </div>
-              <div className={ChamadosPageCSS.filtros}>
-                <p>Respostas Frequentes <i className="fa-solid fa-magnifying-glass"></i></p>
-              </div>
-            </div>
             <div className={StyleTableCSS.mainTable}>
               <section className={StyleTableCSS.tableBody}>
                 <Table />
