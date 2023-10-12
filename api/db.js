@@ -9,13 +9,6 @@ const con = mysql.createConnection({
     password: PASSWORD
 });
 
-con.connect((err) => {
-    if (err) throw err;
-    con.query("CREATE DATABASE IF NOT EXISTS callgenie", (err, result) => {
-        if (err) throw err;
-    })
-});
-
 const database = new Sequelize('callgenie', 'root', PASSWORD, {
     host: 'localhost',
     dialect: 'mysql'
@@ -178,4 +171,19 @@ Equipamento.belongsTo(RespostaChamado, {
     foreignKey: "equ_sup_id"
 });
 
-database.sync();
+(async () => {
+    await database.sync();
+    let adm = await Adm.findOne({where: {
+        adm_nome: "primeiroAdm"
+    }});
+    if (adm == null) {
+        await Adm.create({
+            adm_nome: "primeiroAdm",
+            adm_telefone: 12997881456,
+            adm_email: "emaildoadm@callgenie.com",
+            adm_senha: "genio123"
+        });       
+    } else {
+        console.log("Adm já criado");
+    };
+})();

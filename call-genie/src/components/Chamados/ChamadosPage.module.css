@@ -333,6 +333,19 @@ textarea {
     padding-right:20%;
 }
 
+.notificacao{
+    text-align: left;
+    padding-left:20%;
+    margin: 5px 0px;
+}
+
+.notificacao a {
+    color: red;
+    margin: 0px 5px;
+    padding: 0;
+
+}
+
 .ajuda a{
     text-align: right;
 }
@@ -355,6 +368,14 @@ textarea {
 
 #inputDescricao,#inputComentario{
     overflow: auto;
+}   
+
+.Body {
+    background: #adcbff;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    max-height: 100%;
+    overflow: hidden;
 }
 
 dialog{

@@ -7,16 +7,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post("/adms", async (req, res) => {
-    let administrador = await Adm.create({
-        adm_nome: "primeiroAdm",
-        adm_telefone: 12997881456,
-        adm_email: "emaildoadm@callgenie.com",
-        adm_senha: "genio123"
-    });
-    res.json(administrador);
-});
-
 
 app.get("/chamados", async (req, res) => {
     let chamados = await Chamado.findAll();
@@ -225,14 +215,14 @@ app.delete("/adms/:id", async (req, res) => {
     res.json({ mensagem: "Administrador deletado" });
 });
 
-app.get("/respostasChamados", (req, res) => {
-    let respostasChamados = RespostaChamado.findAll();
+app.get("/respostasChamados", async (req, res) => {
+    let respostasChamados = await RespostaChamado.findAll();
     res.json(respostasChamados);
 });
 
-app.post("/respostasChamados", (req, res) => {
+app.post("/respostasChamados", async (req, res) => {
     try {
-        let respostaChamado = RespostaChamado.create({
+        let respostaChamado = await RespostaChamado.create({
             resp_data: req.body.data,
             resp_soluc_comum: req.body.soluc_comum,
             resp_sup_id: req.body.sup_id
@@ -243,8 +233,8 @@ app.post("/respostasChamados", (req, res) => {
     };
 });
 
-app.get("/respostasChamados/:id", (req, res) => {
-    let respostaChamado = RespostaChamado.findOne({
+app.get("/respostasChamados/:id", async (req, res) => {
+    let respostaChamado = await RespostaChamado.findOne({
         where: {
             resp_id: req.params.id
         }
@@ -252,11 +242,11 @@ app.get("/respostasChamados/:id", (req, res) => {
     res.json(respostaChamado);
 });
 
-app.put("/respostasChamados/:id", (req, res) => {
-    RespostaChamado.update({
+app.put("/respostasChamados/:id", async (req, res) => {
+    await RespostaChamado.update({
         resp_data: req.body.data,
         resp_soluc_comum: req.body.soluc_comum,
-        resp_sup_id: req.body.sup_id 
+        resp_sup_id: req.body.sup_id
     }, {
         where: {
             resp_id: req.params.id
@@ -265,8 +255,8 @@ app.put("/respostasChamados/:id", (req, res) => {
     res.json({ mensagem: "Resposta de chamado alterada" });
 });
 
-app.delete("/respostasChamados/:id", (req, res) => {
-    RespostaChamado.destroy({
+app.delete("/respostasChamados/:id", async (req, res) => {
+    await RespostaChamado.destroy({
         where: {
             resp_id: req.params.id
         }
@@ -274,14 +264,14 @@ app.delete("/respostasChamados/:id", (req, res) => {
     res.json({ mensagem: "Resposta de chamado deletada" });
 });
 
-app.get("/equipamentos", (req, res) => {
-    let equipamentos = Equipamento.findAll();
+app.get("/equipamentos", async (req, res) => {
+    let equipamentos = await Equipamento.findAll();
     res.json(equipamentos);
 });
 
-app.post("/equipamentos", (req, res) => {
+app.post("/equipamentos", async (req, res) => {
     try {
-        let equipamento = Equipamento.create({
+        let equipamento = await Equipamento.create({
             equ_numserie: req.body.numserie,
             equ_descricao: req.body.descricao,
             equ_cham_id: req.body.cham_id,
@@ -293,8 +283,8 @@ app.post("/equipamentos", (req, res) => {
     };
 });
 
-app.get("/equipamentos/:id", (req, res) => {
-    let equipamento = Equipamento.findOne({
+app.get("/equipamentos/:id", async (req, res) => {
+    let equipamento = await Equipamento.findOne({
         where: {
             equ_id: req.params.id
         }
@@ -302,8 +292,8 @@ app.get("/equipamentos/:id", (req, res) => {
     res.json(equipamento);
 });
 
-app.put("/equipamentos/:id", (req, res) => {
-    Equipamento.update({
+app.put("/equipamentos/:id", async (req, res) => {
+    await Equipamento.update({
         equ_numserie: req.body.numserie,
         equ_descricao: req.body.descricao,
         equ_cham_id: req.body.cham_id,
@@ -316,8 +306,8 @@ app.put("/equipamentos/:id", (req, res) => {
     res.json({ mensagem: "Equipamento alterado" });
 });
 
-app.delete("/equipamentos/:id", (req, res) => {
-    Equipamento.destroy({
+app.delete("/equipamentos/:id", async (req, res) => {
+    await Equipamento.destroy({
         where: {
             equ_id: req.params.id
         }

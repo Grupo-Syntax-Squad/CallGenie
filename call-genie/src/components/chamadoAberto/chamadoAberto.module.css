@@ -207,6 +207,10 @@ header h2{
     margin: auto;
     margin-bottom: 1rem;
 }
+.Body {
+    background: #8daee7;
+    overflow: hidden;
+}
 
 #iconBackPage{
     margin:1rem ;
