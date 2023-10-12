@@ -14,6 +14,7 @@ import Contato from "./components/contato";
 import Entrar from "./components/entrar/entrar";
 import AbrirChamado from "./components/abrirChamado/abrirChamado";
 import ChamadoAberto from "./components/chamadoAberto/chamadoAberto";
+import RespostaChamado from "./components/chamadoAberto/RespostaChamado";
 
 import NotFoundPage from "./components/404";
 import Cliente from "./components/Cliente/Cliente";
@@ -27,6 +28,7 @@ export default function App() {
                 <Route path={RoutesName.chamados} element={<Chamados />} />
                 <Route path={RoutesName.abrirChamado} element={<AbrirChamado/>}/>
                 <Route path={RoutesName.chamadoAberto} element={<ChamadoAberto/>}/>
+                <Route path={RoutesName.respostaChamado} element={<RespostaChamado/>}/>
                 <Route path={RoutesName.login} />
                 <Route path={RoutesName.cadastro} element={<Cadastro />} />
                 <Route path={RoutesName.cadastroCliente} element={<CadastrarCliente />} />
