@@ -72,7 +72,7 @@ export const Chamado = database.define('Chamado', {
     },
     cham_prazo: {
         type: DataTypes.VIRTUAL, // Campo virtual que não é armazenado no banco de dados
-        defaultValue: new Date(new Date().setDate(new Date().getDate() + 7))
+        defaultValue: new Date(new Date().setDate(new Date().getDate() + 1))
     }
 });
 
