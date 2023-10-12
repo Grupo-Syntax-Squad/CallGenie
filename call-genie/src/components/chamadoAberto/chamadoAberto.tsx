@@ -6,7 +6,7 @@ import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 
 export default function ChamadoAberto() {
   return (
-    <>
+    <body className={ChamadoAbertoCss.Body}>
       <header>
         <a href="/">
           <img
@@ -104,6 +104,6 @@ export default function ChamadoAberto() {
         </main> */}
     </div> 
     <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>
-    </>
+    </body>
   );
 }

@@ -375,7 +375,7 @@ textarea {
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     max-height: 100%;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 dialog{
