@@ -330,7 +330,8 @@ textarea {
 
 .ajuda{
     text-align: right;
-    padding-right:20%;
+    margin-right: 20%;
+    padding: 1rem;
 }
 
 .notificacao{
@@ -350,7 +351,7 @@ textarea {
     text-align: right;
 }
 .ajuda a{
-    color:blue
+    color:black
 }
 
 .divFlex {
@@ -371,7 +372,7 @@ textarea {
 }   
 
 .Body {
-    background: #adcbff;
+    background: #5286DF;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     max-height: 100%;

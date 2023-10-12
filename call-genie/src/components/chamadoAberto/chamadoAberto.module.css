@@ -208,7 +208,7 @@ header h2{
     margin-bottom: 1rem;
 }
 .Body {
-    background: #8daee7;
+    background: #5286DF;
     overflow: hidden;
 }
 
@@ -344,7 +344,7 @@ textarea {
     padding: 1rem;
 }
 .ajuda a{
-    color:blue
+    color:black
 }
 
 .divFlex {
@@ -440,4 +440,18 @@ header {
     text-align: center;
     background: #9dbaed;
     border-radius: 5%;
+}
+
+.colunaEsquerda p {
+    color: #000000;
+    background-color: #bed1f1;
+    height: 90%;
+    border-radius: 5%;
+}
+
+.colunaDireita ::placeholder {
+    color: #000000;
+    height: 90%;
+    border-radius: 5%;
+    align-items: center;
 }
