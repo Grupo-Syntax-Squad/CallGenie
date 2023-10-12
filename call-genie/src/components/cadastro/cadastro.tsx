@@ -48,20 +48,20 @@ function Main() {
     <main className={CadastroCSS.main_div}>
       <h2>Em qual das opções você se encaixa?</h2>
       <div className={CadastroCSS.main_div_user}>
-        <div className={CadastroCSS.cadastro_opcao}>
           <a href="/cadastroSuporte">
+        <div className={CadastroCSS.cadastro_opcao}>
             <img src="assets/img/userTecnico.png" alt="SUPORTE" />
             <h3>SOU SUPORTE</h3>
-            </a>
         </div>
+            </a>
 
 
-          <div className={CadastroCSS.cadastro_opcao}>
           <a href="/cadastroCliente">
+          <div className={CadastroCSS.cadastro_opcao}>
             <img src="assets/img/user_cliente.png" alt="CLIENTE" />
             <h3>SOU CLIENTE</h3>
-            </a>
           </div>
+            </a>
 
       </div>
       <p>
