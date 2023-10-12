@@ -16,6 +16,7 @@ import ChamadoAberto from "./components/chamadoAberto/chamadoAberto";
 
 import NotFoundPage from "./components/404";
 import Cliente from "./components/Cliente/Cliente";
+import Admin from "./components/Admin/Admin";
 
 export default function App() {
     return (
@@ -36,6 +37,7 @@ export default function App() {
                 <Route path={RoutesName.entrar} element={<Entrar />} />
                 <Route path={RoutesName.cliente} element={<Cliente />}/>
                 <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />}/>
+                <Route path={RoutesName.admin} element={<Admin />}/>
 
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
                 <Route path= {RoutesName.notFound} element ={<NotFoundPage />} />
