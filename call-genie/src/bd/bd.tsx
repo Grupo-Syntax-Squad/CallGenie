@@ -1,3 +1,5 @@
+import { create } from "domain";
+
 const { Sequelize, DataTypes } = require("sequelize");
 const mysql = require("mysql2");
 

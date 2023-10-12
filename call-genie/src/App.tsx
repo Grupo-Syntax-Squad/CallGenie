@@ -33,10 +33,10 @@ export default function App() {
                 <Route path={RoutesName.alterarDados} element={<AlterarDados />} />
                 <Route path={RoutesName.contato} element={<Contato />} />
                 <Route path={RoutesName.entrar} element={<Entrar />} />
+                <Route path={RoutesName.cliente} element={<Cliente />}/>
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
                 <Route path= {RoutesName.notFound} element ={<NotFoundPage />} />
                 <Route path= "*" element={< Navigate to="/404" />} />
-                <Route path={RoutesName.cliente} element={<Cliente />}/>
             </Routes>
         </BrowserRouter>
     );

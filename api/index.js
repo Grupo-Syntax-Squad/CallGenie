@@ -7,6 +7,17 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.post("/adms", async (req, res) => {
+    let administrador = await Adm.create({
+        adm_nome: "primeiroAdm",
+        adm_telefone: 12997881456,
+        adm_email: "emaildoadm@callgenie.com",
+        adm_senha: "genio123"
+    });
+    res.json(administrador);
+});
+
+
 app.get("/chamados", async (req, res) => {
     let chamados = await Chamado.findAll();
     res.json(chamados);
