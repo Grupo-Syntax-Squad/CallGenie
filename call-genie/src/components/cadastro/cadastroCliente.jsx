@@ -45,7 +45,7 @@ function CadastrarCliente() {
         </div>
       </nav>
       <main>
-        <div >
+        <div>
           <div className={CadastroCSS.container_marginAuto}>
             <div className={CadastroCSS.imagem_titulo_container}>
               <h2>Registro de Cliente</h2>
