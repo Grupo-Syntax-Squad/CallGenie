@@ -14,4 +14,5 @@ export const chamadoAberto = "/chamadoAberto"
 export const notFound = "/notFound"
 export const cliente = "/cliente"
 export const chamadosSuporte = "/chamadosSuporte"
+export const admin = "/admin"
 
