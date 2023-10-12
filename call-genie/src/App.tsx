@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import * as RoutesName from "./constants/routes";
 import Chamados from "./components/Chamados/Chamados";
+import ChamadosSuporte from "./components/Chamados/ChamadosSuporte";
 import Home from "./components/Home/Home";
 import Cadastro from "./components/cadastro/cadastro";
 import CadastrarCliente from "./components/cadastro/cadastroCliente";
@@ -34,6 +35,8 @@ export default function App() {
                 <Route path={RoutesName.contato} element={<Contato />} />
                 <Route path={RoutesName.entrar} element={<Entrar />} />
                 <Route path={RoutesName.cliente} element={<Cliente />}/>
+                <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />}/>
+
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
                 <Route path= {RoutesName.notFound} element ={<NotFoundPage />} />
                 <Route path= "*" element={< Navigate to="/404" />} />
