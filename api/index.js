@@ -13,7 +13,7 @@ app.get("/chamados", async (req, res) => {
     res.json(chamados);
 });
 
-app.get("/chamados/:cpf", async (req, res) => {
+app.get("/chamados/cpf/:cpf", async (req, res) => {
     let chamados = await Chamado.findAll({ where: { cham_cli_cpf: req.params.cpf } });
     res.json(chamados);
 });

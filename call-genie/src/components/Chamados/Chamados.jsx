@@ -11,24 +11,30 @@ function handleSubmit(event) {
   event.preventDefault();
 };
 
-function Table() {
+function chamadoPage(e) {
+  console.log(e.target.id);
+  localStorage.setItem("cham_id", e.target.id);
+  window.location.replace("/chamadoAberto");
+};
 
+function Table({ chamadoPage }) {
   const [chamados, setChamados] = useState([])
+
   let cpf = localStorage.getItem("login");
   useEffect(() => {
     if (cpf.length == 1) {
       axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
     } else {
-      axios.get(`http://localhost:8080/chamados/${cpf}`).then(response => setChamados(response.data));
+      axios.get(`http://localhost:8080/chamados/cpf/${cpf}`).then(response => setChamados(response.data));
     };
   });
   let listaChamados = chamados.map(chamado =>
     <tr>
-      <td>{chamado.cham_titulo}</td>
+      <td id={chamado.cham_id} onClick={chamadoPage}>{chamado.cham_titulo}</td>
       <td>{chamado.cham_id}</td>
       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
       <td>{chamado.cham_status}</td>
-      <td><form method="post" name={chamado.cham_id} onSubmit={handleSubmit}><button type="submit">Deletar</button></form></td>
+      {cpf.length == 1 ? <></> : <td><form method="post" name={chamado.cham_id} onSubmit={handleSubmit}><button type="submit">Deletar</button></form></td>}
     </tr>
   );
 
@@ -37,7 +43,7 @@ function Table() {
       <thead>
         <tr className={StyleTableCSS.ptable}>
           <th><p>Título</p></th>
-          <th><p>Ordem </p></th>
+          <th><p>ID </p></th>
           <th><p>Data de criação</p> </th>
           <th><p>Status </p></th>
         </tr>
@@ -48,11 +54,13 @@ function Table() {
 };
 
 export default function Chamados() {
-  if (localStorage.getItem("login") == "") {
+  let cpf = localStorage.getItem("login");
+  if (cpf == "") {
     return (
       <h1>Faça <a href="/entrar">Login</a> para acessar a página de chamados</h1>
     );
   } else {
+
     return (
       <body className={ChamadosPageCSS.Body}>
         <div className={ChamadosPageCSS.bodyChamados}>
@@ -69,7 +77,7 @@ export default function Chamados() {
                 src="assets/img/iconeuser2.png"
                 alt="Usuário"
               />
-              <h2>Olá, user</h2>
+              <h2>Olá, {cpf.length == 1 ? "Suporte" : "User"}</h2>
               <a href="/entrar">
                 <img
                   src="assets/img/iconexit.png"
@@ -106,7 +114,7 @@ export default function Chamados() {
               </div>
               <div className={StyleTableCSS.mainTable}>
                 <section className={StyleTableCSS.tableBody}>
-                  <Table />
+                  <Table chamadoPage={chamadoPage}/>
                 </section>
                 {/* <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>) */}
                 {/* Ele será ativado quando o usuário clicar no ícone da lixeira--> */}

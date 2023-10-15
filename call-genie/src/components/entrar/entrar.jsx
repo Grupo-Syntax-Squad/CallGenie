@@ -15,6 +15,7 @@ function handleSubmit(event) {
       else {
         if (infos.senha == response.data.sup_senha) {
           localStorage.setItem("login", infos.cpf)
+          window.location.replace("/chamados");
           console.log(localStorage.getItem("login"));
         } else {
           window.alert("Senha incorreta!");
@@ -27,6 +28,7 @@ function handleSubmit(event) {
       else {
         if (infos.senha == response.data.cli_senha) {
           localStorage.setItem("login", infos.cpf)
+          window.location.replace("/chamados");
           console.log(localStorage.getItem("login"));
         } else {
           window.alert("Senha incorreta!");

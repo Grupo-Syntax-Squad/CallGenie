@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from "sequelize";
 import mysql from "mysql";
 
-const PASSWORD = "password";
+const PASSWORD = "fatec";
 
 const con = mysql.createConnection({
     host: "localhost",
