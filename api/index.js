@@ -13,13 +13,19 @@ app.get("/chamados", async (req, res) => {
     res.json(chamados);
 });
 
+app.get("/chamados/:cpf", async (req, res) => {
+    let chamados = await Chamado.findAll({ where: { cham_cli_cpf: req.params.cpf } });
+    res.json(chamados);
+});
+
 app.post("/chamados", async (req, res) => {
     let chamado = await Chamado.create({
         cham_titulo: req.body.titulo,
         cham_descricao: req.body.descricao,
         cham_status: req.body.status,
         cham_data_inicio: req.body.data_inicio,
-        cham_prazo: req.body.prazo
+        cham_prazo: req.body.prazo,
+        cham_cli_cpf: req.body.cli_cpf
     });
     res.json(chamado);
 });
@@ -117,6 +123,7 @@ app.get("/suportes", async (req, res) => {
 });
 
 app.post("/suportes", async (req, res) => {
+    console.log(req.body.nome);
     try {
         let suporte = await Suporte.create({
             sup_nome: req.body.nome,

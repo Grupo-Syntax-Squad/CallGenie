@@ -3,30 +3,41 @@ import EntrarPage from "./Entrar.module.css";
 import axios from "axios";
 
 let infos = {};
-let cliente;
-
-function receberCliente(cliente) {
-  cliente = cliente;
-};
 
 function handleChange(event) {
   infos[event.target.name] = event.target.value;
 };
 
 function handleSubmit(event) {
-  axios.get(`http://localhost:8080/clientes/${infos.cpf}`).then(response => {
-    if (response.data == null) window.alert("Usuário não encontrado!");
-    else {
-      if (infos.senha == response.data.cli_senha) {
-        window.location.replace("/chamados");
-      } else {
-        window.alert("Senha incorreta!");
-      };
-    }
-  });
+  if (infos.cpf.length == 1) {
+    axios.get(`http://localhost:8080/suportes/${infos.cpf}`).then(response => {
+      if (response.data == null) window.alert("Usuário não encontrado!");
+      else {
+        if (infos.senha == response.data.sup_senha) {
+          localStorage.setItem("login", infos.cpf)
+          console.log(localStorage.getItem("login"));
+        } else {
+          window.alert("Senha incorreta!");
+        };
+      }
+    });
+  } else {
+    axios.get(`http://localhost:8080/clientes/${infos.cpf}`).then(response => {
+      if (response.data == null) window.alert("Usuário não encontrado!");
+      else {
+        if (infos.senha == response.data.cli_senha) {
+          localStorage.setItem("login", infos.cpf)
+          console.log(localStorage.getItem("login"));
+        } else {
+          window.alert("Senha incorreta!");
+        };
+      }
+    });
+  };
 };
 
 export default function Entrar() {
+  localStorage.setItem("login", "");
   return (
     <>
       <nav></nav>

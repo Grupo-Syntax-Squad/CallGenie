@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import * as RoutesName from "./constants/routes";
 import Chamados from "./components/Chamados/Chamados";
 import ChamadosSuporte from "./components/Chamados/ChamadosSuporte";
@@ -26,9 +26,9 @@ export default function App() {
             <Routes>
                 <Route path={RoutesName.home} element={<Home />} />
                 <Route path={RoutesName.chamados} element={<Chamados />} />
-                <Route path={RoutesName.abrirChamado} element={<AbrirChamado/>}/>
-                <Route path={RoutesName.chamadoAberto} element={<ChamadoAberto/>}/>
-                <Route path={RoutesName.respostaChamado} element={<RespostaChamado/>}/>
+                <Route path={RoutesName.abrirChamado} element={<AbrirChamado />} />
+                <Route path={RoutesName.chamadoAberto} element={<ChamadoAberto />} />
+                <Route path={RoutesName.respostaChamado} element={<RespostaChamado />} />
                 <Route path={RoutesName.login} />
                 <Route path={RoutesName.cadastro} element={<Cadastro />} />
                 <Route path={RoutesName.cadastroCliente} element={<CadastrarCliente />} />
@@ -38,14 +38,14 @@ export default function App() {
                 <Route path={RoutesName.alterarDados} element={<AlterarDados />} />
                 <Route path={RoutesName.contato} element={<Contato />} />
                 <Route path={RoutesName.entrar} element={<Entrar />} />
-                <Route path={RoutesName.cliente} element={<Cliente />}/>
-                <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />}/>
-                <Route path={RoutesName.admin} element={<Admin />}/>
-                <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />}/>
+                <Route path={RoutesName.cliente} element={<Cliente />} />
+                <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />} />
+                <Route path={RoutesName.admin} element={<Admin />} />
+                <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />} />
 
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
-                <Route path= {RoutesName.notFound} element ={<NotFoundPage />} />
-                <Route path= "*" element={< Navigate to="/404" />} />
+                <Route path={RoutesName.notFound} element={<NotFoundPage />} />
+                <Route path="*" element={< Navigate to="/404" />} />
             </Routes>
         </BrowserRouter>
     );

@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from "sequelize";
 import mysql from "mysql";
 
-const PASSWORD = "fatec";
+const PASSWORD = "password";
 
 const con = mysql.createConnection({
     host: "localhost",
@@ -69,9 +69,9 @@ export const Chamado = database.define('Chamado', {
     }
 });
 
-// Chamado.belongsTo(Cliente, {
-//     foreignKey: "cham_cli_cpf"
-// });
+Chamado.belongsTo(Cliente, {
+    foreignKey: "cham_cli_cpf"
+});
 
 export const Adm = database.define("Administrador", {
     adm_id: {
