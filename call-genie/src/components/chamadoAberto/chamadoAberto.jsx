@@ -7,7 +7,8 @@ import axios from "axios";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
-  const id = localStorage.getItem("cham_id")
+  const id = localStorage.getItem("cham_id");
+  const cpf = localStorage.getItem("login");
   useEffect(() => {
     axios.get(`http://localhost:8080/chamados/${id}`).then(response => { setChamado(response.data) });
   });
@@ -28,7 +29,7 @@ export default function ChamadoAberto() {
             className={ChamadoAbertoCss.fotoUser}
             id="logo-fundo-brando"
           />
-          <h2>Olá, user</h2>
+          <h2>Olá, {cpf.length == 1 ? "Suporte" : "User"}</h2>
           <a href="/entrar">
             <img
               src="assets/img/vector_logOut.svg"

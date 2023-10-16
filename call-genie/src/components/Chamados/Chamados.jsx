@@ -114,7 +114,7 @@ export default function Chamados() {
               </div>
               <div className={StyleTableCSS.mainTable}>
                 <section className={StyleTableCSS.tableBody}>
-                  <Table chamadoPage={chamadoPage}/>
+                  <Table chamadoPage={chamadoPage} />
                 </section>
                 {/* <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>) */}
                 {/* Ele será ativado quando o usuário clicar no ícone da lixeira--> */}
@@ -127,9 +127,9 @@ export default function Chamados() {
                   <button className={ChamadosPageCSS.nao}>NÃO</button>
                 </dialog>
               </div>
-              <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
+              {cpf.length == 1 ? <></> : <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
                 Abrir novo chamado
-              </a>
+              </a>}
             </div>
           </main>
         </div>
