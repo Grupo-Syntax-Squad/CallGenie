@@ -174,14 +174,14 @@ Equipamento.belongsTo(RespostaChamado, {
 (async () => {
     await database.sync();
     let adm = await Adm.findOne({where: {
-        adm_nome: "primeiroAdm"
+        adm_nome: "admin"
     }});
     if (adm == null) {
         await Adm.create({
-            adm_nome: "primeiroAdm",
+            adm_nome: "admin",
             adm_telefone: 12997881456,
             adm_email: "emaildoadm@callgenie.com",
-            adm_senha: "genio123"
+            adm_senha: "admin"
         });       
     } else {
         console.log("Adm já criado");

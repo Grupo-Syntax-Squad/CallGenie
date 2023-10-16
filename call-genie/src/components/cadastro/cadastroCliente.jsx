@@ -16,15 +16,22 @@ function handleChange(event) {
 };
 
 function handleSubmit(event) {
-  axios.post("http://localhost:8080/clientes", {
-    nome: infos.nome,
-    cpf: infos.cpf,
-    email: infos.email,
-    telefone: infos.tel,
-    endereco: `${infos.endereco} - ${infos.cep}`,
-    senha: infos.senha
+  axios.get(`http://localhost:8080/clientes/${infos.cpf}`).then(response => {
+    if (response.data == null) {
+      axios.post("http://localhost:8080/clientes", {
+        nome: infos.nome,
+        cpf: infos.cpf,
+        email: infos.email,
+        telefone: infos.tel,
+        endereco: `${infos.endereco} - ${infos.cep}`,
+        senha: infos.senha
+      });
+      window.location.replace("/entrar");
+    } else {
+      alert("CPF já foi cadastrado!")
+    };
   });
-  window.location.replace("/entrar");
+  event.preventDefault();
 };
 
 function CadastrarCliente() {
@@ -52,16 +59,15 @@ function CadastrarCliente() {
               <img src="assets/img/usercliente2.png" alt="CLIENTE" className={CadastroCSS.imagemuser} />
             </div>
           </div>
-          <form className={CadastroCSS.cadastro_container}>
-            <input type="text" placeholder="Nome" name="nome" onChange={handleChange} />
-            <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
+          <form className={CadastroCSS.cadastro_container} onSubmit={handleSubmit}>
+            <input type="text" placeholder="Nome" name="nome" required onChange={handleChange} />
+            <input type="password" placeholder="Senha" name="senha" required onChange={handleChange} />
             <input type="email" placeholder="E-mail" name="email" onChange={handleChange} />
-            <input type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
-            <input type="number" placeholder="CEP" name="cep" onChange={handleChange} />
-            <input type="number" placeholder="CPF" name="cpf" onChange={handleChange} />
-            <input type="text" placeholder="Endereço" name="endereco" />
-
-            <input type="button" value="Cadastrar-se" className={CadastroCSS.button_input} onClick={handleSubmit} />
+            <input type="tel" placeholder="Telefone" name="tel" required onChange={handleChange} />
+            <input type="number" placeholder="CEP" name="cep" required onChange={handleChange} />
+            <input type="number" placeholder="CPF" name="cpf" required onChange={handleChange} />
+            <input type="text" placeholder="Endereço" name="endereco" required onChange={handleChange}/>
+            <button type="submit" value="Cadastrar-se" className={CadastroCSS.button_input}>Cadastrar-se</button>
           </form>
         </div>
       </main>

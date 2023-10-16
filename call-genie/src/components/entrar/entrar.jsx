@@ -61,7 +61,7 @@ export default function Entrar() {
             onChange={handleChange}
           />
           <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
-          <a href="#">Esqueci a minha senha</a>
+          {/* <a href="#">Esqueci a minha senha</a> */}
           <input
             type="button"
             value="Entrar"
