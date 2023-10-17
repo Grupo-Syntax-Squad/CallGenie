@@ -82,7 +82,7 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 
 ## 🌱Backlog da Sprint
 <p align="center">
-<img src= "/documents/img/Sprints Backlog.png" alt="Backlog Sprints">
+<img src= "/documents/img/backloggit.png" alt="Backlog Sprints">
 <br>
 
 ## 🧱Modelo de Dados
