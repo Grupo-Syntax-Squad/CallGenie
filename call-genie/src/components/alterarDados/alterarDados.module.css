@@ -4,12 +4,14 @@
 
 /*cadastrar.ejs  e  entrar.ejs*/
 
-.fundoCadastro{
-    max-width: 100%;
-    background-color: #ffffff72;
-    border-radius: 2%;
-    margin: auto;
-    width: 600px;
+
+
+header{
+    background:none;
+}
+
+form{
+    padding:5%;
 }
 
 .cadastroContainer{
@@ -39,22 +41,29 @@ label{
     display: flex;
 }
  
-.buttonInput{ 
-    /* Estilo de inputs do tipo 'button' */
+.buttonInput{
+    margin: auto;
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
-    width:200px;
+    width:160px;
     padding: 1rem;
     background-color: #0085FF;
     border-radius: 10px;
     cursor: pointer;
+    left:60%;
 }
-
 *{
     margin:0px;
     padding: 0px;
     font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+}
+
+main div {
+    text-align: center;
+    flex: 1 1;
+    margin-left: 3%;
+    height: 90px;
 }
 
 
@@ -150,7 +159,6 @@ h1{
 
 input {
     display: flex;
-    width:500px;
     border: none;
     border-radius: 2px;
     padding: 20px;
@@ -249,11 +257,6 @@ header h2{
     border-radius: 10px;
 }
 
-.flexRow{
-    display: flex;
-    flex-direction: row;
-}
-
 .flex{
     display:flex
 }
@@ -346,6 +349,10 @@ textarea {
 .logoIndex{
     width:100px;
 }
+#logoIndexAlterarDados{
+    margin-top: 2rem;
+    width:400px;
+}
 
 .textoHomepage{
     width:300px;
@@ -385,4 +392,35 @@ dialog button.nao{
 
 .logonome{
     width: 55%;
+}
+
+#iconback{
+    width:40px;
+    height:40px;
+    margin: 0%;
+}
+
+.flexRowAlterarDados{
+    display: flex;
+    flex-direction: row;
+}
+#h2_AlterarDados{
+    margin: auto;
+    padding-top: .5%;
+    color: #fff;
+    text-align: center;
+}
+
+.alterarDados_container{
+    display:block;
+    margin:auto;
+    margin-top: 2rem;
+    background-color: rgba(239, 239, 239, 0.418);
+    padding:3%;
+    /* padding-top: 100px; */
+    border-radius:20px;
+}
+
+label input{
+    width:700px;
 }

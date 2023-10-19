@@ -4,50 +4,71 @@ import Alterardados from "./alterarDados.module.css";
 export default function AlterarDados() {
   return (
     <>
-      <header>
-        <img src="assets/img/CallGenielogosvg.svg" alt="Logo" id="logo-index" />
+      <header className={Alterardados.header}>
+      <a href="/">
+      <img
+        src="assets/img/CallGenielogosvg.svg"
+        alt="Logo"
+        id={Alterardados.logoIndexAlterarDados}
+      />
+    </a>
       </header>
-      <div className="fundoCadastro">
-        <div className={Alterardados.cadastroContainer}>
-          <main>
-            <h1>Alterar Dados de Cadastro</h1>
-            <form action="">
-              <label>
-                <input
-                  type="text"
-                  id="input-novo-email"
-                  placeholder="Novo E-mail"
+          <div className={Alterardados.main_div}>
+          <div className={Alterardados.flexRowAlterarDados}>
+            <img
+                  src="assets/img/iconback.png"
+                  alt="Voltar"
+                  id={Alterardados.iconback}
                 />
-              </label>
-              <label>
+              <h2 id={Alterardados.h2_AlterarDados}>Alterar Dados de Cadastro</h2>
+          </div>
+            <div className={Alterardados.fundoCadastro}>
+      <main>
+              <form action="" className={Alterardados.alterarDados_container} >
+                <label>
+                  <input
+                    type="text"
+                    id="input-novo-email"
+                    placeholder="Novo E-mail (deixe este campo em branco caso não queira alterá-lo)"
+                  />
+                </label>
+                <label>
+                  <input
+                    type="text"
+                    id="input-novo-telefone"
+                    placeholder="Novo telefone (deixe este campo em branco caso não queira alterá-lo)"
+                  />
+                </label>
+                <label>
+                  <input
+                    type="text"
+                    id="input-novo-cep"
+                    placeholder="Novo CEP (deixe este campo em branco caso não queira alterá-lo)"
+                  />
+                </label>
+                <label>
+                  <input
+                    type="text"
+                    id="input-senha-atual"
+                    placeholder="Senha atual (deixe este campo em branco caso não queira alterá-lo)"
+                  />
+                </label>
+                <label>
+                  <input
+                    type="text"
+                    id="input-nova-senha"
+                    placeholder="Nova senha (deixe este campo em branco caso não queira alterá-lo)"
+                  />
+                </label>
                 <input
-                  type="text"
-                  id="input-novo-telefone"
-                  placeholder="Novo telefone"
+                  type="button"
+                  value="Salvar Alterações"
+                  className={Alterardados.buttonInput}
                 />
-              </label>
-              <label>
-                <input type="text" id="input-novo-cep" placeholder="Novo CEP" />
-              </label>
-              <label>
-                <input
-                  type="text"
-                  id="input-senha-atual"
-                  placeholder="Senha Atual"
-                />
-              </label>
-              <label>
-                <input
-                  type="text"
-                  id="input-nova-senha"
-                  placeholder="Nova Senha"
-                />
-              </label>
-              <input type="button" value="Entrar" className="button-input" />
-            </form>
-          </main>
-        </div>
-      </div>
+              </form>
+      </main>
+            </div>
+          </div>
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
       </footer>
