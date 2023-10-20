@@ -92,8 +92,15 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 
 ## 👥User Stories
 <p align="center">
-<img src="/documents/img/user stories.svg" alt="User Stories">
-  
+<img src="/documents/img/1.png" alt="User Stories">
+<img src="/documents/img/2.png" alt="User Stories">
+<img src="/documents/img/3.png" alt="User Stories">
+<img src="/documents/img/4.png" alt="User Stories">
+<img src="/documents/img/5.png" alt="User Stories">
+<img src="/documents/img/6.png" alt="User Stories">
+
+ 
+
 ## 👨‍💻**Autores** 
 
 |      Nome      |    Função       |                            Github                             |                           Linkedin                           |
