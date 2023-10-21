@@ -19,10 +19,12 @@ export default function Cliente() {
           />
         </a>
         <div className={HeaderChamado.headerItensRight}>
-          <img
-            src="assets/img/iconeuser2.png"
-            alt="Usuário"
-          />
+          <a href="/alterarDados">
+            <img
+              src="assets/img/iconeuser2.png"
+              alt="Usuário"
+            />
+          </a>
           <h2>Olá, Cliente</h2>
           <a href="/entrar">
           <img
