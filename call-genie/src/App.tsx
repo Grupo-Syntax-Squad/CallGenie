@@ -15,6 +15,8 @@ import Entrar from "./components/entrar/entrar";
 import AbrirChamado from "./components/abrirChamado/abrirChamado";
 import ChamadoAberto from "./components/chamadoAberto/chamadoAberto";
 import RespostaChamado from "./components/chamadoAberto/RespostaChamado";
+import Relatorios from "./components/relatorios/relatorios";
+
 
 import NotFoundPage from "./components/404";
 import Cliente from "./components/Cliente/Cliente";
@@ -42,6 +44,8 @@ export default function App() {
                 <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />} />
                 <Route path={RoutesName.admin} element={<Admin />} />
                 <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />} />
+                <Route path={RoutesName.relatorios} element={<Relatorios />} />
+
 
                 {/* <Route path="*" element={<NotFoundPage />} /> */}
                 <Route path={RoutesName.notFound} element={<NotFoundPage />} />
