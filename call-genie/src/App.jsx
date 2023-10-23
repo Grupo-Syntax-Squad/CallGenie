@@ -24,26 +24,27 @@ import Admin from "./components/Admin/Admin";
 import DoLogin from "./components/DoLogin";
 
 export default function App() {
+    console.log(localStorage.getItem("login"));
     return (
         <BrowserRouter>
             <Routes>
                 <Route path={RoutesName.home} element={<Home />} />
-                <Route path={RoutesName.chamados} element={localStorage.getItem("login") == null ? <DoLogin /> : <Chamados />} />
-                <Route path={RoutesName.abrirChamado} element={localStorage.getItem("login") == null ? <DoLogin /> : <AbrirChamado />} />
-                <Route path={RoutesName.chamadoAberto} element={localStorage.getItem("login") == null ? <DoLogin /> : <ChamadoAberto />} />
-                <Route path={RoutesName.respostaChamado} element={localStorage.getItem("login") == null ? <DoLogin /> : <RespostaChamado />} />
+                <Route path={RoutesName.chamados} element={localStorage.getItem("login") == "" ? <DoLogin /> : <Chamados />} />
+                <Route path={RoutesName.abrirChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <AbrirChamado />} />
+                <Route path={RoutesName.chamadoAberto} element={localStorage.getItem("login") == "" ? <DoLogin /> : <ChamadoAberto />} />
+                <Route path={RoutesName.respostaChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <RespostaChamado />} />
                 <Route path={RoutesName.login} />
                 <Route path={RoutesName.cadastro} element={<Cadastro />} />
                 <Route path={RoutesName.cadastroCliente} element={<CadastrarCliente />} />
                 <Route path={RoutesName.cadastroSuporte} element={<CadastrarSuporte />} />
                 <Route path={RoutesName.FAQ} element={<FAQ />} />
                 <Route path={RoutesName.opcaoCadastro} element={<OpcaoCadastro />} />
-                <Route path={RoutesName.alterarDados} element={localStorage.getItem("login") == null ? <DoLogin /> : <AlterarDados />} />
+                <Route path={RoutesName.alterarDados} element={localStorage.getItem("login") == "" ? <DoLogin /> : <AlterarDados />} />
                 <Route path={RoutesName.contato} element={<Contato />} />
                 <Route path={RoutesName.entrar} element={<Entrar />} />
                 <Route path={RoutesName.cliente} element={<Cliente />} />
                 <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />} />
-                <Route path={RoutesName.admin} element={localStorage.getItem("login") == null ? <DoLogin /> : <Admin />} />
+                <Route path={RoutesName.admin} element={localStorage.getItem("login") == "" ? <DoLogin /> : <Admin />} />
                 <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />} />
                 <Route path={RoutesName.relatorios} element={<Relatorios />} />
 
