@@ -6,10 +6,21 @@ import axios from "axios";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
+  const [resposta, setResposta] = useState("");
+
   let id = localStorage.getItem("cham_id");
   useEffect(() => {
     axios.get(`http://localhost:8080/chamados/${id}`).then(response => { setChamado(response.data) });
   });
+  
+  const handleChange = (event) => {
+    setResposta(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <body className={ChamadoAbertoCss.Body}>
       <header>
@@ -71,13 +82,13 @@ export default function ChamadoAberto() {
                         <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento:</p>
                       </div>
                       <h2>Resposta</h2>
-                      <textarea name="" id="" cols={30} rows={10} placeholder="Clique aqui para adicionar uma resposta" className="fundo-chamado-aberto"></textarea>
+                      <textarea name="resposta" cols={30} rows={10} placeholder="Clique aqui para adicionar uma resposta" className="fundo-chamado-aberto" onChange={handleChange}></textarea>
                       <p className="text-chamado-aberto" id="prazo-text">Prazo de resposta até: {new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 2)).toLocaleDateString()}</p>
                         </div>
                     </div>
                 </div>
         </main>
-        <button type="submit" className={AbrirChamado.buttonInput}> Enviar </button>
+        <button type="submit" className={AbrirChamado.buttonInput} onClick={handleSubmit}> Enviar </button>
     </div> 
     <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>
     </body>
