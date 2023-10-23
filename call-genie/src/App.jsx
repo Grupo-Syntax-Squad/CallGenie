@@ -15,6 +15,7 @@ import Entrar from "./components/entrar/entrar";
 import AbrirChamado from "./components/abrirChamado/abrirChamado";
 import ChamadoAberto from "./components/chamadoAberto/chamadoAberto";
 import RespostaChamado from "./components/chamadoAberto/RespostaChamado";
+import ResponderChamado from "./components/RespostaChamado/ResponderChamados";
 import Relatorios from "./components/relatorios/relatorios";
 
 
@@ -27,10 +28,11 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path={RoutesName.home} element={<Home />} />
-                <Route path={RoutesName.chamados} element={<Chamados />} />
-                <Route path={RoutesName.abrirChamado} element={<AbrirChamado />} />
-                <Route path={RoutesName.chamadoAberto} element={<ChamadoAberto />} />
-                <Route path={RoutesName.respostaChamado} element={<RespostaChamado />} />
+                <Route path={RoutesName.chamados} element={localStorage.getItem("login") == "" ? <DoLogin /> : <Chamados />} />
+                <Route path={RoutesName.abrirChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <AbrirChamado />} />
+                <Route path={RoutesName.chamadoAberto} element={localStorage.getItem("login") == "" ? <DoLogin /> : <ChamadoAberto />} />
+                <Route path={RoutesName.respostaChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <RespostaChamado />} />
+                <Route path={RoutesName.responderChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <ResponderChamado />} />
                 <Route path={RoutesName.login} />
                 <Route path={RoutesName.cadastro} element={<Cadastro />} />
                 <Route path={RoutesName.cadastroCliente} element={<CadastrarCliente />} />

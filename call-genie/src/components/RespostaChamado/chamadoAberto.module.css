@@ -1,0 +1,470 @@
+/* Estilo para o conteúdo main de todas as páginas */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
+
+/*cadastrar.ejs  e  entrar.ejs*/
+
+.fundoCadastro{
+    max-width: 100%;
+    background-color: #ffffff72;
+    border-radius: 2%;
+    margin: auto;
+    width: 600px;
+}
+
+.cadastroContainer{
+    padding:7%;
+}
+
+h1{
+    text-align: center;
+    color: #FFFFFF;
+    padding:20px;
+}
+
+input {
+    width:500px;
+    border: none;
+    border-radius: 2px;
+    padding: 15px;
+    background-color: #EBE9E9; /* cor do plano de fundo */
+    margin-bottom: 2%;
+}
+
+::placeholder{
+    font-size: 18pt;
+}
+
+label{
+    display: flex;
+}
+ 
+.buttonInput{ 
+    /* Estilo de inputs do tipo 'button' */
+    border: none;
+    color: #FFFFFF;
+    font-size: 15pt;
+    width:200px;
+    padding: 1rem;
+    background-color: #0085FF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+}
+
+
+main h2{
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.cadastroOpcao{
+    background-color: #ffffff6a;
+    margin:30px;
+    width: 300px;
+    height: 300px;
+    border-radius: 5%;
+}
+
+.cadastroOpcoes a {
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.cadastroOpcoes img{
+    width:300px;
+}
+
+.cadastroOpcoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    background-color: #adc4ed;
+    /* background-repeat: no-repeat; */
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.fundo{
+    margin: auto;
+    background-color: #ffffff92;
+    padding:1.5rem;
+    border-radius: 20px;
+}
+
+.filtarEBuscarContainer{
+    margin-bottom: 20px;
+}
+.filtrarChamadosContainer{
+    flex-direction: column;
+}
+
+.filtrar{
+    text-align: center;
+    /* justify-content: space-between; */
+}
+
+.filtrar, .buscarPorTitulo{
+    padding:.5rem;
+    background-color: #a3a3a389;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.buscarPorTitulo{
+    width:100%;
+}
+
+.filtrar p{
+    display: block;
+    margin: auto;
+}
+
+.filtrarMenu{
+    display: none;
+    background-color: #fff;
+    list-style-type: none;
+    padding:1rem;
+    border-radius:0px 0px 20px 20px;
+}
+
+.filtrar, .filtrarMenu{
+    width: 250px;
+}
+
+h1{
+    text-align: center;
+}
+
+input {
+    display: flex;
+    width:500px;
+    border: none;
+    border-radius: 2px;
+    padding: 20px;
+    background-color: #EBE9E9; /* cor do plano de fundo */
+    margin-bottom: 2%;
+}
+
+::placeholder{
+    font-size: 15pt;
+}
+
+#meusChamadosTitle h2{
+    padding:.5rem;
+    color: #000;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.buttonInput{ 
+    /* Estilo de inputs do tipo 'button' */
+    border: none;
+    color: #FFFFFF;
+    font-size: 15pt;
+    width:200px;
+    background-color: #0085FF;
+    border-radius: 10px;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*  abrirChamado.ejs */
+
+header h2{
+    color: #FFF;
+}
+
+.fundoAbrirChamado{
+    margin:2%;
+    background-color: #ffffff69;
+    padding:2%;
+    border-radius: 20px;
+}
+.fundoAbrirChamado h1{
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+.Body {
+    background: #5286DF;
+    overflow: hidden;
+}
+
+#iconBackPage{
+    margin:1rem ;
+}
+
+.fundoAbrirChamado h1{
+    color:#000000;
+    padding: 0%;
+}
+
+.colunaEsquerda{
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    width:500x;
+    height: 500px;
+}
+.colunaDireita{
+    margin-left: 1rem;
+    display:flex;
+    flex-direction: column;
+}
+
+.colunaDireita > textarea{
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+}
+
+.colunaDireita ::placeholder{
+    text-align: center;
+}
+
+.inputFundo{
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; 
+    background-color: #ffffffc9;
+    border: none;
+    border-radius: 10px;
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex{
+    display:flex
+}
+
+.auto{
+    margin: auto;
+}
+
+.inputEquipamento{
+    margin-top: 1rem;
+    background-color: #ffffff97;
+}
+
+
+.inputEquipamento, .inputEquipamento > input{
+    border-radius: 20px;
+}
+
+.inputEquipamento > input{
+    background-color: #fff;
+}
+
+textarea {
+    resize: none;
+  }
+
+/* ChamadoAberto.ejs */
+
+.infoDispositivo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size:20pt;
+}
+
+.fundoChamadoAberto{
+    background-color: #ffffff3f;
+    border-radius: 20px;
+    padding:2rem;
+    height:580px;
+    margin-right: 2%;
+}
+
+
+.fundoChamadoAberto h2{
+    color: #000;
+    width: 100%;
+}
+
+.statusAberto{
+    color: #950000;
+}
+
+.statusAndamento{
+    color: #ead200;
+}
+
+.statusConcluido{
+    color: #3eb900;
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.infoChamado, .infoDispositivo{
+    display: flex;
+}
+
+.fundoDescricao{
+    background-color: #FFFFFF;
+}
+
+.textChamadoAberto{
+    color: gray;
+}
+
+.containerNomeNumero{
+    justify-content: space-between;
+}
+
+.ajuda{
+    text-align: right;
+    margin-right: 20%;
+    padding: 1rem;
+}
+.ajuda a{
+    color:black
+}
+
+.divFlex {
+    margin: auto;
+}
+
+.logoIndex{
+    width:100px;
+}
+
+.textoHomepage{
+    width:300px;
+    color: #8CB7DD;
+}
+
+#inputDescricao,#inputComentario{
+    overflow: auto;
+}
+
+dialog{
+    padding: 4rem;
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    width:500px;
+}
+
+dialog::backdrop{
+    background-color:rgba(0, 0, 0, 0.292);
+}
+
+dialog button.sim, button.nao{
+    border:none;
+    padding: 5px 10px
+}
+
+dialog button.sim{
+    background-color: green;
+}
+dialog button.nao{
+    background-color: red;
+
+}
+
+.logonome{
+    width: 55%;
+}
+
+.fotoUser {
+ max-width: 20%;   
+}
+
+header div h2 {
+    margin: 0;
+    text-indent: 20%;
+    width: 100%;        
+    text-align: justify;
+    padding-top: 0;
+}
+
+header a {
+    /* width: 50px; */
+    padding: 0;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-inline: 2rem;
+}
+
+.logo_genie {
+    width: 40px;
+}
+
+.logOutFoto {
+    color: white
+}
+
+main div {
+    text-align: center;
+    flex: 1 1;
+    margin-left: 3%;
+    height: auto;
+}
+
+header {
+    text-align: left;
+    padding: 20px;
+    height: 80px;
+}
+
+.colunaEsquerda h3 {
+    text-align: center;
+    background: #9dbaed;
+    border-radius: 5%;
+}
+
+.colunaEsquerda p {
+    color: #000000;
+    background-color: #bed1f1;
+    height: 90%;
+    border-radius: 5%;
+}
+
+.colunaDireita ::placeholder {
+    color: #000000;
+    height: 90%;
+    border-radius: 5%;
+    align-items: center;
+}
+
+.respostachamado {
+    display: flex;
+    flex-direction: row;
+    height: 85%;
+}
+
+.respostachamado p {
+    margin-top: 5%;
+    align-items: center;
+}
+
