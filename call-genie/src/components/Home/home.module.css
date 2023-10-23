@@ -117,11 +117,13 @@ main div a {
 }
 
 button.cadastrobutton {
-background-color: #8CB7DD; /* Cor de fundo do botão */
-border: none; /* Remove a borda padrão do botão */
-padding: 10px 20px; /* Espaçamento interno do botão */
-cursor: pointer; /* Cursor ao passar por cima */
-border-radius: 10px; /* Borda arredondada */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 40%;
+    height: 80px;
+    background-color: #0085FF;
 }
 
 .buttoncontainer {

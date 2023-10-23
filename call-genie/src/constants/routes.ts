@@ -17,6 +17,8 @@ export const cliente = "/cliente"
 export const chamadosSuporte = "/chamadosSuporte"
 export const admin = "/admin"
 export const cadastrarFAQ = "/CadastrarFAQ"
+export const relatorios = "/relatorios"
+
 
 
 
