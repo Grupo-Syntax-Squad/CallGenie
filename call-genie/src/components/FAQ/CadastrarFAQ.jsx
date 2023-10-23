@@ -4,34 +4,9 @@ import Abrirchamado from "../abrirChamado/abrirChamado.module.css"
 import HomePage from "./FAQ.module.css";
 //import axios from "axios";
 
-let chamado: any = {
-  titulo: "",
-  desc: "",
-  status: "Aberto",
-  equipamentonome: "",
-  numeroserie: "",
-  equipamentotipo: ""
-};
+function handleChange(event) { };
 
-function handleChange(event: any) {
-  let valor = event.target.value;
-  let name = event.target.name;
-  chamado[name] = valor;
-  console.log(chamado);
-}
-
-function handleSubmit(event: any) {
-  let data = new Date();
-  data.setDate(data.getDate() + 1);
-  // console.log(axios.post("http://localhost:8080/chamados", {
-  //   titulo: chamado.titulo,
-  //   descricao: chamado.desc,
-  //   status: chamado.status,
-  //   data_inicio: new Date(),
-  //   prazo: data
-  // }));
-
-  window.location.replace("/FAQ");
+function handleSubmit(event) {
   event.preventDefault();
 };
 
@@ -83,7 +58,7 @@ export default function CadastrarespostaFAQ() {
                     onChange={handleChange}
                   />
                 </label>
-                
+
                 <label>
                   <input
                     type="text"

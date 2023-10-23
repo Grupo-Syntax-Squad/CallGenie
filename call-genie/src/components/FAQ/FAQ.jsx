@@ -19,8 +19,6 @@ export default function FAQ() {
 
         </div>
       </nav>
-    
-
 
       <main className={HomePage.main_texto}>
         <div>
@@ -32,9 +30,9 @@ export default function FAQ() {
             da CallGenius clicando no link abaixo: https;//youtube.com/EXEMPLO
           </h2>
 
-                    <div className={HomePage.buttoncontainer}>
+          <div className={HomePage.buttoncontainer}>
             <a href="/#">
-            <button className={HomePage.cadastrobutton}>Não encontrou uma resposta? Confira o manual de usuário!</button>
+              <button className={HomePage.cadastrobutton}>Não encontrou uma resposta? Confira o manual de usuário!</button>
             </a>
           </div>
         </div>
@@ -46,7 +44,7 @@ export default function FAQ() {
         <a>Copyright © 2023 Syntax Squad | Todos os direitos reservados</a>
       </footer>
 
-      </div>
+    </div>
 
   );
 }

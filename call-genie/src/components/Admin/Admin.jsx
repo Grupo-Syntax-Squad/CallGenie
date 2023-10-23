@@ -1,60 +1,57 @@
 import React from "react";
-import ChamadosPageCSS from "./ClientePage.module.css";
+import ChamadosPageCSS from "./AdminPage.module.css";
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import StyleTableCSS from './StyleTable.module.css'
-import ClientePage from "./ClientePage.module.css"
+import AdminPage from "./AdminPage.module.css"
 
-//import {chamados} from "../../constants/routes";
-
-export default function Cliente() {
+export default function Admin() {
   return (
     <>
-    <div className={ChamadosPageCSS.bodyChamados}>
-      <header>
-        <a href="/">
-          <img
-            src="assets/img/Vector.svg"
-            className={HeaderChamado.logogenie}
-            alt="Logo - CallGenius"
-          />
-        </a>
-        <div className={HeaderChamado.headerItensRight}>
-          <img
-            src="assets/img/iconeuser2.png"
-            alt="Usuário"
-          />
-          <h2>Olá, Cliente</h2>
-          <a href="/entrar">
-          <img
-            src="assets/img/iconexit.png"
-            alt="Sair"
-          />
+      <div className={ChamadosPageCSS.bodyChamados}>
+        <header>
+          <a href="/">
+            <img
+              src="assets/img/Vector.svg"
+              className={HeaderChamado.logogenie}
+              alt="Logo - CallGenius"
+            />
           </a>
-        </div>
-      </header>
-      <div className={ChamadosPageCSS.ajuda}>
-        <a href="/Cliente">Preciso de ajuda</a>
-      </div>
+          <div className={HeaderChamado.headerItensRight}>
+            <img
+              src="assets/img/logo_fundobranco.png"
+              alt="Admin"
+            />
+            <h2>Olá, Administrador</h2>
+            <a href="/entrar">
+              <img
+                src="assets/img/iconexit.png"
+                alt="Sair"
+              />
+            </a>
+          </div>
+        </header>
+
 
         <main className={ChamadosPageCSS.fundoChamado}>
           <div className={HeaderChamado.fundo}>
-              <div className={ChamadosPageCSS.titulo}>
-                <h2>Meus Chamados</h2>
+            <div className={ChamadosPageCSS.titulo}>
+              <h2>Painel de Controle</h2>
+            </div>
+            <div className={ChamadosPageCSS.filtrosContainer}>
+
+              <div>
+                <select name={"Filtar Chamados"} className={ChamadosPageCSS.filtrosLista}>
+                  <optgroup label={"Filtrar Chamados"}>
+                    <option value={"Filtro01"}>Em Aberto</option>
+                    <option value={"Filtro02"}>Em Andamento</option>
+                    <option value={"Filtro03"}>Concluído</option>
+                    <option value={"Filtro04"}>Equipamento Cadastrado</option>
+                    <option value={"Filtro05"}>ID do Chamado</option>
+                    <option value={"Filtro06"}>Ordem Alfabética</option>
+                  </optgroup>
+                </select>
               </div>
-              <div className={ChamadosPageCSS.filtrosContainer}>
-                <div>
-                  <select name={"Filtar Por"} className={ChamadosPageCSS.filtrosLista}>
-                    <optgroup label={"Filtrar Por"}>
-                      <option value={"Filtro01"}>Em Aberto</option>
-                      <option value={"Filtro02"}>Em Andamento</option>
-                      <option value={"Filtro03"}>Concluído</option>
-                      <option value={"Filtro04"}>Equipamento Cadastrado</option>
-                      <option value={"Filtro05"}>Meus Chamados</option>
-                      <option value={"Filtro06"}>Ordem Alfabética</option>
-                    </optgroup>
-                  </select>
-                </div>
-                {/* <div className={ChamadosPageCSS.filtrarMenu}>
+              {/* <div className={ChamadosPageCSS.filtrarMenu}>
                   <i className="fa-solid fa-x"></i>
                   <li>Em aberto</li>
                   <li>Em andamento</li>
@@ -63,15 +60,32 @@ export default function Cliente() {
                   <li>Meus chamados</li>
                   <li>Ordem Alfabética</li>
                 </div> */}
-                <div className={ChamadosPageCSS.filtros}>
-                  <p>Buscar por título <i className="fa-solid fa-magnifying-glass"></i></p>
-                </div>
+              <div className={ChamadosPageCSS.filtros}>
+                <p>Buscar Chamado  <i className="fa-solid fa-magnifying-glass"></i></p>
               </div>
+              <div>
+                <select name={"Filtrar Suporte"} className={ChamadosPageCSS.filtrosListaB}>
+                  <optgroup label={"Filtrar Suporte"}>
+                    <option value={"Filtro01"}>ID</option>
+                    <option value={"Filtro02"}>Nome</option>
+                    <option value={"Filtro03"}>CPF</option>
+                    <option value={"Filtro04"}>Telefone</option>
+                    <option value={"Filtro05"}>Email</option>
+                    <option value={"Filtro06"}>Ordem Alfabética</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div>
+                <a href="/CadastrarFAQ" className={ChamadosPageCSS.postButtonsC}>
+                  Respostas Frequentes </a>
+              </div>
+            </div>
             <div className={StyleTableCSS.mainTable}>
               <section className={StyleTableCSS.tableBody}>
                 <table>
                   <thead>
                     <tr className={StyleTableCSS.ptable}>
+                      <th><p>ID</p></th>
                       <th><p>Título </p></th>
                       <th><p>Ordem </p></th>
                       <th><p>Data de criação</p> </th>
@@ -103,7 +117,7 @@ export default function Cliente() {
                 <button className={ChamadosPageCSS.nao}>NÃO</button>
               </dialog>
             </div>
-            <div className={ChamadosPageCSS.postButtons}>
+            {/* <div className={ChamadosPageCSS.postButtons}>
               <div className={ChamadosPageCSS.postButtonA}>
                 <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
                   Abrir novo chamado
@@ -114,7 +128,7 @@ export default function Cliente() {
                   Perguntas Frequentes
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </main>
       </div>

@@ -1,7 +1,5 @@
 import React from "react";
 import Erro404 from "./404.module.css";
-import { any } from "prop-types";
-
 
 export default function NotFoundPage() {
   return (

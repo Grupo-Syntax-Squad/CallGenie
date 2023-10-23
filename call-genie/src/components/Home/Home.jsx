@@ -30,17 +30,17 @@ export default function Home() {
           </h2>
           <div className={HomePage.buttoncontainer}>
             <a href="/cadastro">
-            <button className={HomePage.cadastrobutton}>CADASTRE-SE</button>
+              <button className={HomePage.cadastrobutton}>CADASTRE-SE</button>
             </a>
           </div>
         </div>
         <div>
           <img
-                  src="assets/img/imagem-homepage.svg"
-                  alt="imagem-homepage"
-                  className={HomePage.main_img}
-                  
-                />
+            src="assets/img/imagem-homepage.svg"
+            alt="imagem-homepage"
+            className={HomePage.main_img}
+
+          />
         </div>
       </main>
       <footer>
