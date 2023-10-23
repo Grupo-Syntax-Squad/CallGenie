@@ -6,6 +6,8 @@ import App from './App';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+localStorage.setItem("login", "");
 root.render(
   <React.StrictMode>
     <App/>

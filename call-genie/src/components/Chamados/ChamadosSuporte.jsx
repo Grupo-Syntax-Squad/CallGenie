@@ -58,12 +58,10 @@ export default function Chamados() {
             />
           </a>
           <div className={HeaderChamado.headerItensRight}>
-            <a href="/alterarDados">
-              <img
-                src="assets/img/iconeuser2.png"
-                alt="Usuário"
-              />
-            </a>
+            <img
+              src="assets/img/iconeuser2.png"
+              alt="Usuário"
+            />
             <h2>Olá, Suporte</h2>
             <a href="/entrar">
               <img
