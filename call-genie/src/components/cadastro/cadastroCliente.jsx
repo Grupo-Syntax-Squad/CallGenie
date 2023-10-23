@@ -2,14 +2,7 @@ import React from "react";
 import CadastroCSS from "./cadastro.module.css";
 import axios from "axios";
 
-let infos = {
-  nome: "",
-  cpf: "",
-  email: "",
-  telefone: "",
-  endereco: "",
-  senha: ""
-};
+let infos = {};
 
 function handleChange(event) {
   infos[event.target.name] = event.target.value;
@@ -66,7 +59,7 @@ function CadastrarCliente() {
             <input type="tel" placeholder="Telefone" name="tel" required onChange={handleChange} />
             <input type="number" placeholder="CEP" name="cep" required onChange={handleChange} />
             <input type="number" placeholder="CPF" name="cpf" required onChange={handleChange} />
-            <input type="text" placeholder="Endereço" name="endereco" required onChange={handleChange}/>
+            <input type="text" placeholder="Endereço" name="endereco" required onChange={handleChange} />
             <button type="submit" value="Cadastrar-se" className={CadastroCSS.button_input}>Cadastrar-se</button>
           </form>
         </div>
