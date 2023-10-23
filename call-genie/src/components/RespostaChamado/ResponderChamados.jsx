@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ChamadoAbertoCss from "./chamadoAberto.module.css"
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import AbrirChamado from "../abrirChamado/abrirChamado";
+import axios from "axios";
 
 export default function ChamadoAberto() {
+  const [chamado, setChamado] = useState({});
+  let id = localStorage.getItem("cham_id");
+  useEffect(() => {
+    axios.get(`http://localhost:8080/chamados/${id}`).then(response => { setChamado(response.data) });
+  });
   return (
     <body className={ChamadoAbertoCss.Body}>
       <header>
