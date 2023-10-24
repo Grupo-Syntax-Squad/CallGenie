@@ -69,7 +69,7 @@ export default function Chamados() {
             />
           </a>
           <div className={HeaderChamado.headerItensRight}>
-            <img
+            <img onClick={( ) => {window.location.replace("/alterarDados")}}
               src="assets/img/iconeuser2.png"
               alt="Usuário"
             />

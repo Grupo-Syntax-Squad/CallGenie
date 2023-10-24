@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Alterardados from "./alterarDados.module.css";
+import axios from "axios"
 
 export default function AlterarDados() {
+  const [inf, setInf] = useState({})
+  useEffect (() => {axios.get(`http://localhost:8080/clientes/${localStorage.getItem('login')}`).then(response => {setInf(response.data)})})
   return (
     <>
       <header className={Alterardados.header}>
@@ -29,28 +32,21 @@ export default function AlterarDados() {
                   <input
                     type="text"
                     id="input-novo-email"
-                    placeholder="Novo E-mail (deixe este campo em branco caso não queira alterá-lo)"
+                    placeholder={inf.cli_email}
                   />
                 </label>
                 <label>
                   <input
                     type="text"
                     id="input-novo-telefone"
-                    placeholder="Novo telefone (deixe este campo em branco caso não queira alterá-lo)"
+                    placeholder={inf.cli_telefone}
                   />
                 </label>
                 <label>
                   <input
                     type="text"
                     id="input-novo-cep"
-                    placeholder="Novo CEP (deixe este campo em branco caso não queira alterá-lo)"
-                  />
-                </label>
-                <label>
-                  <input
-                    type="text"
-                    id="input-senha-atual"
-                    placeholder="Senha atual (deixe este campo em branco caso não queira alterá-lo)"
+                    placeholder={inf.cli_endereco}
                   />
                 </label>
                 <label>
@@ -58,6 +54,13 @@ export default function AlterarDados() {
                     type="text"
                     id="input-nova-senha"
                     placeholder="Nova senha (deixe este campo em branco caso não queira alterá-lo)"
+                  />
+                </label>
+                <label>
+                  <input
+                    type="text"
+                    id="input-senha-atual"
+                    placeholder="Senha atual (deixe este campo em branco caso não queira alterá-lo)"
                   />
                 </label>
                 <input

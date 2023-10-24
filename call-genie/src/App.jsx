@@ -9,7 +9,7 @@ import CadastrarSuporte from "./components/cadastro/cadastroSuporte";
 import FAQ from "./components/FAQ/FAQ";
 import CadastrarFAQ from "./components/FAQ/CadastrarFAQ";
 import OpcaoCadastro from "./components/opcaoCadastro/opcaoCadastro";
-import AlterarDados from "./components/alterarDados/alterarDados";
+import AlterarDados from "./components/alterarDados/alterarDados.jsx";
 import Contato from "./components/contato";
 import Entrar from "./components/entrar/entrar";
 import AbrirChamado from "./components/abrirChamado/abrirChamado";

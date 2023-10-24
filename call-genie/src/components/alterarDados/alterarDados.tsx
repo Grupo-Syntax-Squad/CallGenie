@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Alterardados from "./alterarDados.module.css";
+import axios from "axios";
 
 export default function AlterarDados() {
   return (
@@ -29,7 +30,7 @@ export default function AlterarDados() {
                   <input
                     type="text"
                     id="input-novo-email"
-                    placeholder="Novo E-mail (deixe este campo em branco caso não queira alterá-lo)"
+                    
                   />
                 </label>
                 <label>
