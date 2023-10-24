@@ -6,18 +6,33 @@ import axios from "axios";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
+  const [equipamento, setEquipamento] = useState({});
   const [resposta, setResposta] = useState("");
 
-  let id = localStorage.getItem("cham_id");
+  const sup_id = localStorage.getItem("login");
+  const cham_id = localStorage.getItem("cham_id");
+
   useEffect(() => {
-    axios.get(`http://localhost:8080/chamados/${id}`).then(response => { setChamado(response.data) });
+    axios.get(`http://localhost:8080/chamados/${cham_id}`).then(response => { 
+      setEquipamento(response.data.equipamento);
+      setChamado(response.data.chamado);
+    });
   });
   
   const handleChange = (event) => {
     setResposta(event.target.value);
+    console.log(resposta);
   };
 
   const handleSubmit = (event) => {
+    let dataResposta = new Date();
+    axios.post("http://localhost:8080/respostasChamados", {
+      data: dataResposta,
+      soluc_comum: resposta,
+      sup_id: sup_id,
+      cham_id: cham_id
+    });
+    window.location.replace("/chamadoAberto");
     event.preventDefault();
   };
 
@@ -58,8 +73,8 @@ export default function ChamadoAberto() {
                 <div className={ChamadoAbertoCss.divFlex}>
                   <div className={ChamadoAbertoCss.infoDispositivo}>
                       <p>Título:{chamado.cham_titulo}</p>
-                      <p>ID:{id}</p>
-                      <p>CPF do Cliente: {chamado.cli_cpf}</p> 
+                      <p>ID:{cham_id}</p>
+                      <p>CPF do Cliente: {chamado.cham_cli_cpf}</p> 
                       <p>Data de Criação: {new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()} </p>
                       <p className={ChamadoAbertoCss.statusAndamento}>Chamado em {chamado.cham_status} </p>
                   </div>
@@ -75,11 +90,11 @@ export default function ChamadoAberto() {
                           <h2>Equipamento Cadastrado</h2>
                           <div className={ChamadoAbertoCss.flexRow} >
                             <div className={ChamadoAbertoCss.containerNomeNumero}>
-                              <p>Nome: </p>
-                              <p>Número de série: </p>
+                              <p>Nome: {equipamento.equ_nome}</p>
+                              <p>Número de série: {equipamento.equ_numserie}</p>
                           </div>
                         </div>
-                        <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento:</p>
+                        <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento: {equipamento.equ_tipo}</p>
                       </div>
                       <h2>Resposta</h2>
                       <textarea name="resposta" cols={30} rows={10} placeholder="Clique aqui para adicionar uma resposta" className="fundo-chamado-aberto" onChange={handleChange}></textarea>

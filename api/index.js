@@ -33,7 +33,7 @@ app.post("/chamados", async (req, res) => {
         equ_tipo: req.body.equipamento.tipo ? req.body.equipamento.tipo : "Não informado",
         equ_cham_id: chamado.cham_id
     });
-    res.json({chamado, equipamento});
+    res.json({ chamado, equipamento });
 });
 
 app.get("/chamados/:id", async (req, res) => {
@@ -47,7 +47,7 @@ app.get("/chamados/:id", async (req, res) => {
             equ_cham_id: req.params.id
         }
     });
-    res.json({chamado, equipamento});
+    res.json({ chamado, equipamento });
 });
 
 app.put("/chamados/:id", async (req, res) => {
@@ -239,15 +239,36 @@ app.get("/respostasChamados", async (req, res) => {
 });
 
 app.post("/respostasChamados", async (req, res) => {
-    try {
-        let respostaChamado = await RespostaChamado.create({
-            resp_data: req.body.data,
-            resp_soluc_comum: req.body.soluc_comum,
-            resp_sup_id: req.body.sup_id
-        });
-        res.json(respostaChamado);
-    } catch (error) {
-        res.json(error);
+    if (await RespostaChamado.findOne({
+        where: {
+            resp_cham_id: req.body.cham_id
+        }
+    })) {
+        try {
+            RespostaChamado.update({
+                resp_soluc_comum: req.body.soluc_comum,
+                resp_data: req.body.data
+            }, {
+                where: {
+                    resp_cham_id: req.body.cham_id
+                }
+            });
+            res.json({ msg: "Resposta do chamado alterada com sucesso!" })
+        } catch (error) {
+            res.json(error);
+        };
+    } else {
+        try {
+            let respostaChamado = await RespostaChamado.create({
+                resp_data: req.body.data,
+                resp_soluc_comum: req.body.soluc_comum,
+                resp_sup_id: req.body.sup_id,
+                resp_cham_id: req.body.cham_id
+            });
+            res.json(respostaChamado);
+        } catch (error) {
+            res.json(error);
+        };
     };
 });
 
