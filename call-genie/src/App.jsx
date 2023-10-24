@@ -24,7 +24,6 @@ import Admin from "./components/Admin/Admin";
 import DoLogin from "./components/DoLogin";
 
 export default function App() {
-    console.log(localStorage.getItem("login"));
     return (
         <BrowserRouter>
             <Routes>
