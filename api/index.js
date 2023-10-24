@@ -27,7 +27,13 @@ app.post("/chamados", async (req, res) => {
         cham_prazo: req.body.prazo,
         cham_cli_cpf: req.body.cli_cpf
     });
-    res.json(chamado);
+    let equipamento = await Equipamento.create({
+        equ_nome: req.body.equipamento.nome ? req.body.equipamento.nome : "Não informado",
+        equ_numserie: req.body.equipamento.numserie ? req.body.equipamento.numserie : "Não informado",
+        equ_tipo: req.body.equipamento.tipo ? req.body.equipamento.tipo : "Não informado",
+        equ_cham_id: chamado.cham_id
+    });
+    res.json({chamado, equipamento});
 });
 
 app.get("/chamados/:id", async (req, res) => {
@@ -36,7 +42,12 @@ app.get("/chamados/:id", async (req, res) => {
             cham_id: req.params.id
         }
     });
-    res.json(chamado);
+    let equipamento = await Equipamento.findOne({
+        where: {
+            equ_cham_id: req.params.id
+        }
+    });
+    res.json({chamado, equipamento});
 });
 
 app.put("/chamados/:id", async (req, res) => {

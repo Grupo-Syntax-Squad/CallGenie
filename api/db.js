@@ -152,14 +152,20 @@ export const Equipamento = database.define("Equipamento", {
     equ_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
+    },
+    equ_nome: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     equ_numserie: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
-    equ_descricao: {
-        type: DataTypes.STRING
+    equ_tipo: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 });
 

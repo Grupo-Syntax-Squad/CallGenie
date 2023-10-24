@@ -4,12 +4,29 @@ import Abrirchamado from "./abrirChamado.module.css";
 import axios from "axios";
 
 let chamado = {};
+let equipamento = {
+  nome: "",
+  numserie: "",
+  tipo: ""
+};
 
 function handleChange(event) {
   let valor = event.target.value;
   let name = event.target.name;
-  chamado[name] = valor;
-  console.log(chamado);
+  switch (name) {
+    case "equipamentonome":
+      equipamento["nome"] = valor;
+      break;
+    case "numeroserie":
+      equipamento["numserie"] = valor;
+      break;
+    case "equipamentotipo":
+      equipamento["tipo"] = valor;
+      break;
+    default:
+      chamado[name] = valor;
+  };
+  console.log(chamado, equipamento);
 };
 
 function handleSubmit(event) {
@@ -21,7 +38,8 @@ function handleSubmit(event) {
     status: chamado.status,
     data_inicio: new Date(),
     prazo: data,
-    cli_cpf: localStorage.getItem("login")
+    cli_cpf: localStorage.getItem("login"),
+    equipamento: equipamento
   }));
 
   window.location.replace("/chamados");
@@ -60,6 +78,8 @@ export default function AbrirChamado() {
               src="assets/img/iconback.png"
               alt="Voltar"
               id={Abrirchamado.iconback}
+              style={{cursor: "pointer"}}
+              onClick={() => {window.location.replace("/chamados")}}
             />
             <h1>Novo chamado</h1>
           </div>

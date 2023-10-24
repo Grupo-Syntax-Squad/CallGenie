@@ -6,11 +6,16 @@ import DoLogin from "../DoLogin";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
+  const [equipamento, setEquipamento] = useState({});
   const id = localStorage.getItem("cham_id");
   const cpf = localStorage.getItem("login");
   useEffect(() => {
-    axios.get(`http://localhost:8080/chamados/${id}`).then(response => { setChamado(response.data) });
+    axios.get(`http://localhost:8080/chamados/${id}`).then(response => { 
+      setEquipamento(response.data.equipamento);
+      setChamado(response.data.chamado);
+    });
   });
+  console.log(chamado, equipamento);
   return (
     <body className={ChamadoAbertoCss.Body}>
       <header>
@@ -64,11 +69,11 @@ export default function ChamadoAberto() {
                   <h2>Equipamento Cadastrado</h2>
                   <div className={ChamadoAbertoCss.flexRow} >
                     <div className={ChamadoAbertoCss.containerNomeNumero}>
-                      <p>Nome: </p>
-                      <p>Número de série: </p>
+                      <p>Nome: {equipamento.equ_nome}</p>
+                      <p>Número de série: {equipamento.equ_numserie}</p>
                     </div>
                   </div>
-                  <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento:</p>
+                  <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento: {equipamento.equ_tipo}</p>
                 </div>
                 <h2>Comentários</h2>
                 <textarea name="" id="" cols={30} rows={10} placeholder="Clique aqui para adicionar um comentário ao chamado" className="fundo-chamado-aberto"></textarea>

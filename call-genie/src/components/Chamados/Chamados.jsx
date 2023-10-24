@@ -31,7 +31,7 @@ function Table({ chamadoPage }) {
   
   let listaChamados = chamados.map(chamado =>
     <tr>
-      <td id={chamado.cham_id} onClick={chamadoPage}>{chamado.cham_titulo}</td>
+      <td id={chamado.cham_id} onClick={chamadoPage} style={{cursor: "pointer", color: "blue", textDecoration: "underline"}}>{chamado.cham_titulo}</td>
       <td>{chamado.cham_id}</td>
       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
       <td>{chamado.cham_status}</td>
