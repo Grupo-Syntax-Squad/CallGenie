@@ -29,7 +29,7 @@ export default function opcaoCadastro() {
           </a>
         </div>
         <p>
-          <a href="#">Clique Aqui se precisar de ajuda</a>
+          <a href="/FAQ">Clique Aqui se precisar de ajuda</a>
         </p>
       </main>
       <footer>

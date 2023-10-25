@@ -28,7 +28,7 @@ export default function ChamadoAberto() {
         </a>
         <div className={HeaderChamado.headerItensRight}>
           <img
-            src="assets/img/user.png"
+            src="assets/img/iconeuser2.png"
             alt="Usuário"
             className={ChamadoAbertoCss.fotoUser}
             id="logo-fundo-brando"
@@ -45,7 +45,7 @@ export default function ChamadoAberto() {
       </header>
 
       <div className={ChamadoAbertoCss.ajuda}>
-        <a href="/chamadoAberto">Preciso de ajuda</a>
+        <a href="/FAQ">Preciso de ajuda</a>
       </div>
       <div className={ChamadoAbertoCss.divFlex}>
         <main>

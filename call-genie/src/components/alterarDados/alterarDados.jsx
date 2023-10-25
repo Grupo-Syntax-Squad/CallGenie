@@ -44,11 +44,13 @@ export default function AlterarDados() {
       </header>
       <div className={Alterardados.main_div}>
         <div className={Alterardados.flexRowAlterarDados}>
-          <img
-            src="assets/img/iconback.png"
-            alt="Voltar"
-            id={Alterardados.iconback}
-          />
+          <a href="/chamados">
+            <img
+              src="assets/img/iconback.png"
+              alt="Voltar"
+              id={Alterardados.iconback}
+            />
+          </a>
           <h2 id={Alterardados.h2_AlterarDados}>Alterar Dados de Cadastro</h2>
         </div>
         <div className={Alterardados.fundoCadastro}>
@@ -91,8 +93,8 @@ export default function AlterarDados() {
                   type="text"
                   name="inputSenhaAtual"
                   placeholder="Senha atual*"
-                required
-                onChange={handleChange}
+                  required
+                  onChange={handleChange}
                 />
               </label>
               <input
@@ -103,7 +105,7 @@ export default function AlterarDados() {
             </form>
           </main>
         </div>
-      </div>
+      </div >
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
       </footer>
