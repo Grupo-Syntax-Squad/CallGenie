@@ -33,7 +33,7 @@ export default function Cliente() {
           </div>
         </header>
         <div className={ChamadosPageCSS.ajuda}>
-          <a href="/Cliente">Preciso de ajuda</a>
+          <a href="/FAQ">Preciso de ajuda</a>
         </div>
 
         <main className={ChamadosPageCSS.fundoChamado}>

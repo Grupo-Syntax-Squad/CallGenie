@@ -41,11 +41,13 @@ export default function AlterarDados() {
       </header>
           <div className={Alterardados.main_div}>
           <div className={Alterardados.flexRowAlterarDados}>
-            <img
-                  src="assets/img/iconback.png"
-                  alt="Voltar"
-                  id={Alterardados.iconback}
-                />
+            <a href="/chamados">
+              <img
+                    src="assets/img/iconback.png"
+                    alt="Voltar"
+                    id={Alterardados.iconback}
+                  />
+            </a>
               <h2 id={Alterardados.h2_AlterarDados}>Alterar Dados de Cadastro</h2>
           </div>
             <div className={Alterardados.fundoCadastro}>

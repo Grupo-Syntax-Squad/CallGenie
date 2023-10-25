@@ -83,7 +83,7 @@ export default function Chamados() {
           </div>
         </header>
         <div className={ChamadosPageCSS.ajuda}>
-          <a href="/Chamados">Preciso de ajuda</a>
+          <a href="/FAQ">Preciso de ajuda</a>
         </div>
 
         <main className={ChamadosPageCSS.fundoChamado}>
