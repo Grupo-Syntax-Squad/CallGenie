@@ -2,9 +2,32 @@ import React, {useEffect, useState} from "react";
 import Alterardados from "./alterarDados.module.css";
 import axios from "axios"
 
+let infos = {};
+
+function handleChange(event) {
+  infos[event.target.name] = event.target.value;
+};
+
+function handleSubmit(event) {
+    axios.get(`http://localhost:8080/clientes/${localStorage.getItem("login")}`).then(response => {
+      console.log(response);
+      console.log(localStorage.getItem('login'))
+      axios.put(`http://localhost:8080/clientes/${localStorage.getItem("login")}`, {
+        nome: response.data.cli_nome,
+        email: infos.inputNovoEmail,
+        telefone: infos.inputNovoTelefone,
+        endereco: infos.inputNovoCep,
+        senha: infos.inputNovaSenha
+      });
+    })
+  event.preventDefault();
+};
+
 export default function AlterarDados() {
+
   const [inf, setInf] = useState({})
-  useEffect (() => {axios.get(`http://localhost:8080/clientes/${localStorage.getItem('login')}`).then(response => {setInf(response.data)})})
+  useEffect (() => {axios.get(`http://localhost:8080/clientes/${localStorage.getItem('login')}`).then(response => {setInf(response.data)})});
+
   return (
     <>
       <header className={Alterardados.header}>
@@ -27,44 +50,50 @@ export default function AlterarDados() {
           </div>
             <div className={Alterardados.fundoCadastro}>
       <main>
-              <form action="" className={Alterardados.alterarDados_container} >
+              <form action="" className={Alterardados.alterarDados_container} onSubmit={handleSubmit} >
                 <label>
                   <input
                     type="text"
-                    id="input-novo-email"
+                    id="inputNovoEmail"
                     placeholder={inf.cli_email}
+                    onChange={handleChange}
                   />
                 </label>
                 <label>
                   <input
                     type="text"
-                    id="input-novo-telefone"
+                    id="inputNovoTelefone"
                     placeholder={inf.cli_telefone}
+                    onChange={handleChange}
                   />
                 </label>
                 <label>
                   <input
                     type="text"
-                    id="input-novo-cep"
+                    id="inputNovoCep"
                     placeholder={inf.cli_endereco}
+                    onChange={handleChange}
                   />
                 </label>
                 <label>
                   <input
                     type="text"
-                    id="input-nova-senha"
+                    id="inputNovaSenha"
                     placeholder="Nova senha (deixe este campo em branco caso não queira alterá-lo)"
+                    onChange={handleChange}
                   />
                 </label>
                 <label>
                   <input
                     type="text"
-                    id="input-senha-atual"
-                    placeholder="Senha atual (deixe este campo em branco caso não queira alterá-lo)"
+                    id="inputSenhaAtual"
+                    placeholder="Senha atual*"
+                    // required
+                    // onChange={handleChange}
                   />
                 </label>
                 <input
-                  type="button"
+                  type="submit"
                   value="Salvar Alterações"
                   className={Alterardados.buttonInput}
                 />
