@@ -35,7 +35,7 @@ function Table({ chamadoPage }) {
       <td>{chamado.cham_id}</td>
       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
       <td>{chamado.cham_status}</td>
-      {cpf.length == 1 ? <></> : <td><form method="post" name={chamado.cham_id} onSubmit={handleSubmit}><button type="submit">Deletar</button></form></td>}
+      {cpf.length == 1 ? <></> : <td><form method="post" name={chamado.cham_id} onClick={(dialog) => { var disp = document.getElementsByTagName(dialog).style.display; if(disp == "none") document.getElementsByTagName(dialog).style.display = 'block'; else document.getElementsByTagName(dialog).style.display = 'none';}}><button type="submit">Deletar</button></form></td>}
     </tr>
   );
 
@@ -119,7 +119,7 @@ export default function Chamados() {
                   VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA
                   CONFIRMAR?
                 </p>
-                <button className={ChamadosPageCSS.sim}>SIM</button>
+                <form method="post" onSubmit={handleSubmit}><button className={ChamadosPageCSS.sim}>SIM</button></form>
                 <button className={ChamadosPageCSS.nao}>NÃO</button>
               </dialog>
             </div>

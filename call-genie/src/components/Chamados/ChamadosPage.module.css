@@ -380,6 +380,7 @@ textarea {
 }
 
 dialog{
+    display: none;
     padding: 4rem;
     font-size: 18pt;
     font-weight: bold;
