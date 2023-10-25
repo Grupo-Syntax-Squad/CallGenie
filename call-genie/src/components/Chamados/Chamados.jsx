@@ -123,9 +123,14 @@ export default function Chamados() {
                 <button className={ChamadosPageCSS.nao}>NÃO</button>
               </dialog>
             </div>
-            {cpf.length == 1 ? <></> : <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
-              Abrir novo chamado
+            <div className={ChamadosPageCSS.buttoncontainer}>
+            {cpf.length == 1 ? <></> : <a href="/abrirChamado">
+              <button className={ChamadosPageCSS.cadastrobutton}>abrir chamado</button>
             </a>}
+            <a href="/relatorios">
+              <button className={ChamadosPageCSS.cadastrobutton}>Relatórios</button>
+            </a>
+          </div>
           </div>
         </main>
       </div>

@@ -139,6 +139,12 @@ export default function Chamados() {
               </dialog>
             </div>
 
+            <div className={ChamadosPageCSS.buttoncontainer}>
+            <a href="/Relatorios">
+              <button className={ChamadosPageCSS.cadastrobutton}>Relatórios</button>
+            </a>
+          </div>
+
           </div>
         </main>
       </div>

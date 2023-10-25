@@ -460,3 +460,23 @@ dialog button.nao{
     border: 2px solid #000;
     border-radius: 10px;
 }
+
+.buttoncontainer {
+    margin-top: 20px; /* Margem superior para afastar do texto */
+}
+
+.buttoncontainer a{
+    text-decoration: none;
+    font-size: 16px; /* Tamanho do texto do botão */
+    font-weight: bolder;
+    color: #000000; /* Cor do texto */
+}
+
+button.cadastrobutton {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 20%;
+    height: 80px;
+    background-color: #0085FF;
+}

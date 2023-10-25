@@ -15,7 +15,7 @@ function handleSubmit(event) {
       else {
         if (infos.senha == response.data.sup_senha) {
           localStorage.setItem("login", infos.cpf)
-          window.location.replace("/chamados");
+          window.location.replace("/chamadosSuporte");
           console.log(localStorage.getItem("login"));
         } else {
           window.alert("Senha incorreta!");
