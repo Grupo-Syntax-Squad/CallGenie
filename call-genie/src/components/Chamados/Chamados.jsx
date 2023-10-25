@@ -114,7 +114,7 @@ export default function Chamados() {
               </section>
               {/* <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>) */}
               {/* Ele será ativado quando o usuário clicar no ícone da lixeira--> */}
-              <dialog>
+              <dialog open>
                 <p>
                   VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA
                   CONFIRMAR?
