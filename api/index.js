@@ -134,7 +134,6 @@ app.get("/suportes", async (req, res) => {
 });
 
 app.post("/suportes", async (req, res) => {
-    console.log(req.body.nome);
     try {
         let suporte = await Suporte.create({
             sup_nome: req.body.nome,

@@ -121,7 +121,8 @@ export const Suporte = database.define("Suporte", {
 });
 
 Suporte.belongsTo(Adm, {
-    foreignKey: "sup_adm_id"
+    foreignKey: "sup_adm_id",
+    allowNull: false
 });
 
 export const RespostaChamado = database.define("RespostaChamado", {
