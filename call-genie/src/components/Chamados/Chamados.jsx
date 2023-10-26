@@ -69,10 +69,12 @@ export default function Chamados() {
             />
           </a>
           <div className={HeaderChamado.headerItensRight}>
-            <img onClick={( ) => {window.location.replace("/alterarDados")}}
-              src="assets/img/iconeuser2.png"
-              alt="Usuário"
-            />
+            <a href="/alterarDados">
+              <img
+                src="assets/img/iconeuser2.png"
+                alt="Usuário"
+              />
+            </a>
             <h2>Olá, {cpf.length == 1 ? "Suporte" : "User"}</h2>
             <a href="/entrar">
               <img
@@ -83,7 +85,7 @@ export default function Chamados() {
           </div>
         </header>
         <div className={ChamadosPageCSS.ajuda}>
-          <a href="/FAQ">Preciso de ajuda</a>
+          <a href="/FAQ">Preciso de ajuda?</a>
         </div>
 
         <main className={ChamadosPageCSS.fundoChamado}>
@@ -125,7 +127,7 @@ export default function Chamados() {
             </div>
             <div className={ChamadosPageCSS.buttoncontainer}>
             {cpf.length == 1 ? <></> : <a href="/abrirChamado">
-              <button className={ChamadosPageCSS.cadastrobutton}>abrir chamado</button>
+              <button className={ChamadosPageCSS.cadastrobutton}>Abrir Chamado</button>
             </a>}
             <a href="/relatorios">
               <button className={ChamadosPageCSS.cadastrobutton}>Relatórios</button>
