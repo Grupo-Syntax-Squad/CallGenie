@@ -271,10 +271,10 @@ app.post("/respostasChamados", async (req, res) => {
     };
 });
 
-app.get("/respostasChamados/:id", async (req, res) => {
+app.get("/respostasChamados/:cham_id", async (req, res) => {
     let respostaChamado = await RespostaChamado.findOne({
         where: {
-            resp_id: req.params.id
+            resp_cham_id: req.params.cham_id
         }
     });
     res.json(respostaChamado);
