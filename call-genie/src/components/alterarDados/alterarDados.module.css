@@ -400,10 +400,10 @@ dialog button.nao{
     margin: 0%;
 }
 
-.flexRowAlterarDados{
+/* .flexRowAlterarDados{
     display: flex;
     flex-direction: row;
-}
+} */
 #h2_AlterarDados{
     margin: auto;
     padding-top: .5%;
@@ -412,15 +412,23 @@ dialog button.nao{
 }
 
 .alterarDados_container{
-    display:block;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin:auto;
     margin-top: 2rem;
     background-color: rgba(239, 239, 239, 0.418);
     padding:3%;
     /* padding-top: 100px; */
     border-radius:20px;
+    width: 60%;
 }
 
 label input{
-    width:700px;
+    width:800px;
+}
+
+.alterarDados_container label{
+    display: inline;
+
 }
