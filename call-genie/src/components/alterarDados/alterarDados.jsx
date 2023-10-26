@@ -91,6 +91,14 @@ export default function AlterarDados() {
               <label>
                 <input
                   type="text"
+                  name="inputNovoEndereco"
+                  placeholder="Novo endereço (deixe este campo em branco caso não queira alterá-lo)"
+                  onChange={handleChange}
+                />
+              </label>
+              <label>
+                <input
+                  type="text"
                   name="inputSenhaAtual"
                   placeholder="Senha atual*"
                   required

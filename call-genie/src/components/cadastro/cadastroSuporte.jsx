@@ -46,6 +46,7 @@ function CadastrarSuporte() {
           </div>
           <form action="" className={CadastroCSS.cadastro_suporte_container}>
             <input type="text" placeholder="Nome" name="nome" onChange={handleChange} />
+            <input type="number" placeholder="CPF" name="cpf" onChange={handleChange} />
             <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
             <input type="email" placeholder="E-mail" name="email" onChange={handleChange} />
             <input type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
@@ -53,7 +54,7 @@ function CadastrarSuporte() {
           </form>
         </div>
         <div>
-          <img src="assets/img/user_adm.png" id={CadastroCSS.useradm} />
+          <img src="assets/img/user_adm.png" alt='' id={CadastroCSS.useradm} />
           <div className={CadastroCSS.idsupervisor_container}>
             <input type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
           </div>
