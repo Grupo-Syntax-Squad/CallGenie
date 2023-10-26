@@ -17,12 +17,14 @@ function chamadoPage(e) {
   window.location.replace("/chamadoAberto");
 };
 
+
 function Table({ chamadoPage }) {
   const [chamados, setChamados] = useState([])
+  // const [modal, setModal] = useState(false)
 
   let cpf = localStorage.getItem("login");
   useEffect(() => {
-    if (cpf.length == 1) {
+    if (cpf.length === 1) {
       axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
     } else {
       axios.get(`http://localhost:8080/chamados/cpf/${cpf}`).then(response => setChamados(response.data));
@@ -35,7 +37,7 @@ function Table({ chamadoPage }) {
       <td>{chamado.cham_id}</td>
       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
       <td>{chamado.cham_status}</td>
-      {cpf.length == 1 ? <></> : <td><form method="post" name={chamado.cham_id} onClick={(dialog) => { var disp = document.getElementsByTagName(dialog).style.display; if(disp == "none") document.getElementsByTagName(dialog).style.display = 'block'; else document.getElementsByTagName(dialog).style.display = 'none';}}><button type="submit">Deletar</button></form></td>}
+      {cpf.length == 1 ? <></> : <td><button id="botaoDeletarChamado" type="submit">Deletar</button></td>}
     </tr>
   );
 
@@ -97,15 +99,6 @@ export default function Chamados() {
               <div className={ChamadosPageCSS.filtros}>
                 <p>Meus Chamados  <i className="fa-solid fa-arrow-down"></i></p>
               </div>
-              {/* <div className={ChamadosPageCSS.filtrarMenu}>
-                    <i className="fa-solid fa-x"></i>
-                    <li>Em aberto</li>
-                    <li>Em andamento</li>
-                    <li>Concluído</li>
-                    <li>Com equipamento Cadastrado</li>
-                    <li>Meus chamados</li>
-                    <li>Ordem Alfabética</li>
-                  </div> */}
               <div className={ChamadosPageCSS.filtros}>
                 <p>Buscar por título <i className="fa-solid fa-magnifying-glass"></i></p>
               </div>
@@ -114,8 +107,6 @@ export default function Chamados() {
               <section className={StyleTableCSS.tableBody}>
                 <Table chamadoPage={chamadoPage} />
               </section>
-              {/* <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>) */}
-              {/* Ele será ativado quando o usuário clicar no ícone da lixeira--> */}
               <dialog open>
                 <p>
                   VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA
