@@ -194,7 +194,7 @@ header h2{
 
 .fundoAbrirChamado{
     margin:2%;
-    height:630px;
+    /* height:630px; */
     background-color: #ffffffa2;
     padding:2%;
     border-radius: 20px;

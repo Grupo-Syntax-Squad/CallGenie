@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import CadastroCSS from "./cadastro.module.css";
 import axios from "axios";
 
-let infos = {};
-
-function handleChange(event) {
-  infos[event.target.name] = event.target.value;
-};
-
-function handleSubmit(event) {
-  axios.post("http://localhost:8080/suportes", {
-    nome: infos.nome,
-    email: infos.email,
-    telefone: infos.tel,
-    senha: infos.senha,
-    adm_id: infos.idsupervisor
-  });
-  window.location.replace("/entrar");
-};
-
 function CadastrarSuporte() {
+  let infos = {};
+  
+  function handleChange(event) {
+    infos[event.target.name] = event.target.value;
+  };
+
+  function handleSubmit(event) {
+
+    axios.post("http://localhost:8080/suportes", {
+      nome: infos.nome,
+      email: infos.email,
+      telefone: infos.tel,
+      senha: infos.senha,
+      adm_id: infos.idsupervisor
+    }).then(response => {
+      if (response.data.sup_id == undefined) {
+        alert("Erro ao cadastrar suporte tente novamente!")
+      } else {
+        alert(`Cadastro realizado com sucesso, ID de acesso: ${response.data.sup_id}`)
+      };
+    });
+    // window.location.replace("/entrar");
+  };
+  
   return (
     <>
       <nav>
