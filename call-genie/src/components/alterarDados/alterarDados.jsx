@@ -56,7 +56,7 @@ export default function AlterarDados() {
         <div className={Alterardados.fundoCadastro}>
           <main>
             <form action="" className={Alterardados.alterarDados_container} onSubmit={handleSubmit} >
-              <label>
+              <label>E-mail
                 <input
                   type="text"
                   name="inputNovoEmail"
@@ -64,7 +64,7 @@ export default function AlterarDados() {
                   onChange={handleChange}
                 />
               </label>
-              <label>
+              <label>Telefone
                 <input
                   type="text"
                   name="inputNovoTelefone"
@@ -72,7 +72,7 @@ export default function AlterarDados() {
                   onChange={handleChange}
                 />
               </label>
-              <label>
+              <label>CEP
                 <input
                   type="text"
                   name="inputNovoCep"
@@ -80,15 +80,7 @@ export default function AlterarDados() {
                   onChange={handleChange}
                 />
               </label>
-              <label>
-                <input
-                  type="text"
-                  name="inputNovaSenha"
-                  placeholder="Nova senha (deixe este campo em branco caso não queira alterá-lo)"
-                  onChange={handleChange}
-                />
-              </label>
-              <label>
+              <label>Endereço
                 <input
                   type="text"
                   name="inputNovoEndereco"
@@ -96,7 +88,15 @@ export default function AlterarDados() {
                   onChange={handleChange}
                 />
               </label>
-              <label>
+              <label>Senha
+                <input
+                  type="text"
+                  name="inputNovaSenha"
+                  placeholder="Nova senha (deixe este campo em branco caso não queira alterá-lo)"
+                  onChange={handleChange}
+                />
+              </label>
+              <label>Senha Atual
                 <input
                   type="text"
                   name="inputSenhaAtual"
