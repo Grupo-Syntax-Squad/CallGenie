@@ -264,6 +264,7 @@ app.post("/respostasChamados", async (req, res) => {
                 resp_sup_id: req.body.sup_id,
                 resp_cham_id: req.body.cham_id
             });
+            console.log(respostaChamado);
             res.json(respostaChamado);
         } catch (error) {
             res.json(error);

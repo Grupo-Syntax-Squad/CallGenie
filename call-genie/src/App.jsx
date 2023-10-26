@@ -44,7 +44,7 @@ export default function App() {
                 <Route path={RoutesName.contato} element={<Contato />} />
                 <Route path={RoutesName.entrar} element={<Entrar />} />
                 <Route path={RoutesName.cliente} element={<Cliente />} />
-                <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />} />
+                <Route path={RoutesName.chamadosSuporte} element={<Chamados />} />
                 <Route path={RoutesName.admin} element={localStorage.getItem("login") == "" ? <DoLogin /> : <Admin />} />
                 <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />} />
                 <Route path={RoutesName.relatorios} element={<Relatorios />} />

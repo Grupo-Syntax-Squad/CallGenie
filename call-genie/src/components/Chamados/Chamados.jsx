@@ -23,6 +23,7 @@ function Table({ chamadoPage }) {
   // const [modal, setModal] = useState(false)
 
   let cpf = localStorage.getItem("login");
+  console.log(cpf)
   useEffect(() => {
     if (cpf.length === 1) {
       axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));

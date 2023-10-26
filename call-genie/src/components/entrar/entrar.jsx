@@ -14,7 +14,7 @@ function handleSubmit(event) {
       if (response.data == null) window.alert("Usuário não encontrado!");
       else {
         if (infos.senha == response.data.sup_senha) {
-          localStorage.setItem("login", infos.cpf)
+          localStorage.setItem("login", infos.cpf.replace(/\#/, ""))
           window.location.replace("/chamadosSuporte");
           console.log(localStorage.getItem("login"));
         } else {
