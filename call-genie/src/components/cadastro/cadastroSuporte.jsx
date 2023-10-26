@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import CadastroCSS from "./cadastro.module.css";
 import axios from "axios";
 
-let infos = {};
-
-function handleChange(event) {
-  infos[event.target.name] = event.target.value;
-};
-
-function handleSubmit(event) {
-  axios.post("http://localhost:8080/suportes", {
-    nome: infos.nome,
-    email: infos.email,
-    telefone: infos.tel,
-    senha: infos.senha,
-    adm_id: infos.idsupervisor
-  });
-  window.location.replace("/entrar");
-};
-
 function CadastrarSuporte() {
+  let infos = {};
+  
+  function handleChange(event) {
+    infos[event.target.name] = event.target.value;
+  };
+
+  function handleSubmit(event) {
+
+    axios.post("http://localhost:8080/suportes", {
+      nome: infos.nome,
+      email: infos.email,
+      telefone: infos.tel,
+      senha: infos.senha,
+      adm_id: infos.idsupervisor
+    }).then(response => {
+      if (response.data.sup_id == undefined) {
+        alert("Erro ao cadastrar suporte tente novamente!")
+      } else {
+        alert(`Cadastro realizado com sucesso, ID de acesso: ${response.data.sup_id}`)
+      };
+    });
+    // window.location.replace("/entrar");
+  };
+  
   return (
     <>
       <nav>
@@ -46,6 +53,7 @@ function CadastrarSuporte() {
           </div>
           <form action="" className={CadastroCSS.cadastro_suporte_container}>
             <input type="text" placeholder="Nome" name="nome" onChange={handleChange} />
+            <input type="number" placeholder="CPF" name="cpf" onChange={handleChange} />
             <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
             <input type="email" placeholder="E-mail" name="email" onChange={handleChange} />
             <input type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
@@ -53,7 +61,7 @@ function CadastrarSuporte() {
           </form>
         </div>
         <div>
-          <img src="assets/img/user_adm.png" id={CadastroCSS.useradm} />
+          <img src="assets/img/user_adm.png" alt='' id={CadastroCSS.useradm} />
           <div className={CadastroCSS.idsupervisor_container}>
             <input type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
           </div>

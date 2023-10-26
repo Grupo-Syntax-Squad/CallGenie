@@ -426,7 +426,7 @@ dialog button.nao{
 .fundoChamado{
     margin-inline: 2%;
     background-color: #ffffff85;
-    height:630px;
+    /* height:630px; */
     border-radius: 20px;
     padding:2%;
 }
