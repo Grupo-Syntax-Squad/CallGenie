@@ -247,7 +247,8 @@ label{
     border-radius: 10px;
     cursor: pointer;
     position: absolute;
-    left:60%;
+    left:105%;
+    top:87%;
 }
 
 *{
