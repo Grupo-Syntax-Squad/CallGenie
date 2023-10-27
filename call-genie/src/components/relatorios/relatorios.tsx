@@ -122,3 +122,34 @@ const ArquivosSelecionados: React.FC = () => {
 };
 
 export default ArquivosSelecionados;
+
+// import React from "react";
+
+// const Relatorios = ({ selectedChamados }) => {
+//   const handleFormSubmit = (event) => {
+//     event.preventDefault();
+
+//     if (selectedChamados.length > 0) {
+//       // Gere uma URL de download para os chamados selecionados e inicie o download.
+//       // Substitua 'downloadUrl' pela URL real para baixar os chamados selecionados.
+//       const downloadUrl = `http://exemplo.com/download?chamados=${encodeURIComponent(
+//         JSON.stringify(selectedChamados)
+//       )}`;
+//       window.location.href = downloadUrl;
+//     } else {
+//       alert("Nenhum chamado selecionado!");
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>Selecione os Chamados que deseja incluir no relatório</h1>
+//       <form onSubmit={handleFormSubmit}>
+//         {/* Você pode listar os chamados selecionados aqui se necessário */}
+//         <button type="submit">Baixar Relatório</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Relatorios;

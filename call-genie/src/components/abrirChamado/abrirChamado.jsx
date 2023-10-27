@@ -63,7 +63,7 @@ export default function AbrirChamado() {
               src="assets/img/iconeuser2.png"
               alt="Usuário"
             />
-          </a>>
+          </a>
           <h2>Olá, user</h2>
           <a href="/entrar">
             <img

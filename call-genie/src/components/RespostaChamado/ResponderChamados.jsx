@@ -114,6 +114,9 @@ export default function ChamadoAberto() {
           </div>
         </main>
         <button type="submit" className={AbrirChamado.buttonInput} onClick={handleSubmit}> Enviar </button>
+        <button type="submit" className={AbrirChamado.buttonInput} onClick={handleSubmit}> finalizar chamado </button>
+        {/* fazer a função de mudar estado e colocar ela no lugar de "MudarEstado"  */}
+
       </div>
       <footer>Copyright © 2023 Syntax Squad | Todos os direitos reservados</footer>
     </body>
