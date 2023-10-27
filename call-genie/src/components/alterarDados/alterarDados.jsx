@@ -76,7 +76,7 @@ export default function AlterarDados() {
                 <input
                   type="text"
                   name="inputNovoCep"
-                  placeholder={inf.cli_endereco}
+                  placeholder={inf.cli_cep}
                   onChange={handleChange}
                 />
               </label>
@@ -84,7 +84,7 @@ export default function AlterarDados() {
                 <input
                   type="text"
                   name="inputNovoEndereco"
-                  placeholder="Novo endereço (deixe este campo em branco caso não queira alterá-lo)"
+                  placeholder={inf.cli_endereco}
                   onChange={handleChange}
                 />
               </label>
