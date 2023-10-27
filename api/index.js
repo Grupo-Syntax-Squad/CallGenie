@@ -87,6 +87,7 @@ app.post("/clientes", async (req, res) => {
             cli_email: req.body.email,
             cli_telefone: req.body.telefone,
             cli_endereco: req.body.endereco,
+            cli_cep: req.body.cep,
             cli_senha: req.body.senha
         });
         res.json(cliente);
@@ -110,6 +111,7 @@ app.put("/clientes/:cpf", async (req, res) => {
         cli_email: req.body.email,
         cli_telefone: req.body.telefone,
         cli_endereco: req.body.endereco,
+        cli_cep: req.body.cep,
         cli_senha: req.body.senha
     }, {
         where: {

@@ -17,7 +17,8 @@ function handleSubmit(event) {
           cpf: infos.cpf,
           email: infos.email,
           telefone: infos.tel,
-          endereco: `${infos.endereco} - ${infos.cep}`,
+          endereco: infos.endereco,
+          cep: infos.cep,
           senha: infos.senha
         }).then(response => {
           console.log(response);

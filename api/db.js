@@ -35,6 +35,9 @@ export const Cliente = database.define('Cliente', {
     cli_endereco: {
         type: DataTypes.STRING(50),
     },
+    cli_cep: {
+        type: DataTypes.STRING(8),
+    },
     cli_senha: {
         type: DataTypes.STRING(8),
     }
