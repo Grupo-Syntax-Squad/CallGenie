@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </nav>
       <main className={HomePage.main_texto}>
-        <div>
+        <div className={HomePage.texto}>
           <h1>Call Gennie.</h1>
           <h2>
             Lorem Ipsum is simply dummy text of the printing and typesetting

@@ -25,14 +25,6 @@ header {
     width:500px;
 }
 
-.logonome{
-    top: 0;
-}
-
-.navbuttons a{
-    font-size: 20pt;
-}
-
 body h1{
     text-align: center;
     font-size: 40pt;
@@ -83,26 +75,6 @@ footer {
 
 }
 
-.button_cadastrobutton {
-background-color: #8CB7DD; /* Cor de fundo do botão */
-border: none; /* Remove a borda padrão do botão */
-padding: 10px 225px; /* Espaçamento interno do botão */
-cursor: pointer; /* Cursor ao passar por cima */
-border-radius: 15px; /* Borda arredondada */
-text-align: center;
-}
-
-.buttoncontainer {
-    margin-top: 20px; /* Margem superior para afastar do texto */
-}
-
-.buttoncontainer a{
-    text-decoration: none;
-    font-size: 16px; /* Tamanho do texto do botão */
-    font-weight: bolder;
-    color: #000000; /* Cor do texto */
-}
-
 nav {
 display: flex;
 justify-content: space-between;
@@ -113,32 +85,10 @@ nav a{
     padding-top: 1rem;
 }
 
-.navbuttons {
-gap: 100px; /* Ajuste o valor para alterar o espaço entre os botões */
-}
-
-.navbuttons a {
-color: white; /* Cor do texto dos botões */
-text-decoration: none; /* Remove o sublinhado do link */
-}
-
 nav {
 display: flex;
 justify-content: space-between;
 align-items: center;
-}
-
-nav .navbuttons {
-display: flex;
-}
-
-nav .navbuttons a{
-    padding-top: 0%;
-}
-
-nav .navbuttons a {
-color: #fff;
-text-decoration: none;
 }
 
 p{
@@ -179,9 +129,4 @@ body p a {
 
 .h2Entrar{
     margin-bottom: 50px;
-}
-
-.imagem{
-    width:50px;
-    height:50px;
 }

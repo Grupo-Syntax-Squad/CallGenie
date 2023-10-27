@@ -17,10 +17,6 @@ header {
     width:300px;
 }
 
-.logonome{
-    top: 0;
-}
-
 .navbuttons a{
     font-size: 20pt;
 }
@@ -47,11 +43,6 @@ body h2{
     width:523px;
     text-align: justify;
     padding-top: 5%;
-}
-
-.fundo {
-    width: 100%;
-    height: auto;
 }
 
 a{
@@ -101,7 +92,7 @@ main div a {
 
 @media (max-width: 768px) {
     main {
-        flex-direction: column; 
+        flex-direction: column;
     }
     nav .nav-buttons {
         flex-direction: column;
@@ -112,8 +103,6 @@ main div a {
     main img {
         margin-right: 0; 
     }
-
-
 }
 
 button.cadastrobutton {

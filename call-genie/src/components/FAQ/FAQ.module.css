@@ -49,11 +49,6 @@ body h2{
     padding-top: 5%;
 }
 
-.fundo {
-    width: 100%;
-    height: auto;
-}
-
 a{
     text-align: center;
     color: aliceblue;
@@ -77,13 +72,6 @@ footer {
     justify-content: center;
     flex-wrap: wrap; 
     margin-left: 5%;
-}
-
-.main_img {
-    max-width: 80%; 
-    height: auto; 
-    flex: 1; 
-
 }
 
 main div {
@@ -172,35 +160,4 @@ nav .navbuttons a{
 nav .navbuttons a {
 color: #fff;
 text-decoration: none;
-}
-
-.inputfundo {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    background-color: #ffffffc9;
-    border: none;
-    border-radius: 10px;
-    height: 300px;
-}
-
-.colunaEsquerda{
-    margin:0% ;
-    margin-top: 20px;
-    text-align: center;
-    display:flex;
-    flex-direction: column;
-    width:100%;
-    height: 500px;
-}
-
-.colunaEsquerda
-
-.container_colunas{
-    display:flex;
-    margin: 0%;;
-}
-
-.colunaEsquerda ::placeholder{
-    text-align: center;
 }

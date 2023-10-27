@@ -9,7 +9,7 @@ export default function FAQ() {
           <img
             src="assets/img/CallGenielogosvg.svg"
             alt="Logo"
-            id="logoindex"
+            id={HomePage.logoindex}
           />
         </a>
         <div className={HomePage.navbuttons}>
