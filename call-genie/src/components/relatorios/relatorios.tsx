@@ -19,6 +19,11 @@ const ArquivosSelecionados: React.FC = () => {
     }
   };
 
+  function handleDownloadPage() {
+    // Abre a caixa de diálogo de impressão, que geralmente inclui a opção de salvar a página como PDF
+    window.print();
+  }
+
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -114,7 +119,7 @@ const ArquivosSelecionados: React.FC = () => {
           </label>
           <br />
 
-          <button type="submit">Baixar Selecionados</button>
+          <button onClick={handleDownloadPage} >baixar arquivos </button>        
         </form>
       </div>
     </div>

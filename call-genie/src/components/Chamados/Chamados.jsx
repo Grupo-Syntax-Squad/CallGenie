@@ -133,6 +133,7 @@
 //     </body>
 //   );
 // };
+
 import React, { useEffect, useState } from "react";
 import ChamadosPageCSS from "./ChamadosPage.module.css";
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
@@ -145,13 +146,9 @@ function handleDeleteChamados(selectedChamados) {
     return;
   }
 
-  // Implemente a lógica para excluir os chamados selecionados aqui
-  // Você pode usar o array `selectedChamados` para obter os IDs dos chamados selecionados
   selectedChamados.forEach((chamadoId) => {
     axios.delete(`http://localhost:8080/chamados/${chamadoId}`);
   });
-
-  // Após a exclusão, você pode atualizar a lista de chamados, se necessário.
   window.location.replace("/chamados");
 };
 
