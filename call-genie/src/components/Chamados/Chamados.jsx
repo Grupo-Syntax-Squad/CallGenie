@@ -133,18 +133,26 @@
 //     </body>
 //   );
 // };
-
 import React, { useEffect, useState } from "react";
 import ChamadosPageCSS from "./ChamadosPage.module.css";
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import StyleTableCSS from './StyleTable.module.css'
 import axios from "axios";
 
-function handleSubmit(event) {
-  let id = event.target.name;
-  axios.delete(`http://localhost:8080/chamados/${id}`);
+function handleDeleteChamados(selectedChamados) {
+  if (selectedChamados.length === 0) {
+    alert('Nenhum chamado selecionado!');
+    return;
+  }
+
+  // Implemente a lógica para excluir os chamados selecionados aqui
+  // Você pode usar o array `selectedChamados` para obter os IDs dos chamados selecionados
+  selectedChamados.forEach((chamadoId) => {
+    axios.delete(`http://localhost:8080/chamados/${chamadoId}`);
+  });
+
+  // Após a exclusão, você pode atualizar a lista de chamados, se necessário.
   window.location.replace("/chamados");
-  event.preventDefault();
 };
 
 function chamadoPage(e) {
@@ -153,13 +161,10 @@ function chamadoPage(e) {
   window.location.replace("/chamadoAberto");
 };
 
-
 function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
-  const [chamados, setChamados] = useState([])
-  // const [modal, setModal] = useState(false)
-
+  const [chamados, setChamados] = useState([]);
   let cpf = localStorage.getItem("login");
-  console.log(cpf)
+
   useEffect(() => {
     if (cpf.length === 1) {
       axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
@@ -167,7 +172,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
       axios.get(`http://localhost:8080/chamados/cpf/${cpf}`).then(response => setChamados(response.data));
     };
   });
-  
+
   const listaChamados = chamados.map((chamado) => (
     <tr key={chamado.cham_id}>
       <td
@@ -195,9 +200,9 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
       <thead>
         <tr className={StyleTableCSS.ptable}>
           <th><p>Título</p></th>
-          <th><p>ID </p></th>
-          <th><p>Data de criação</p> </th>
-          <th><p>Status </p></th>
+          <th><p>ID</p></th>
+          <th><p>Data de criação</p></th>
+          <th><p>Status</p></th>
         </tr>
       </thead>
       <tbody>{listaChamados}</tbody>
@@ -208,6 +213,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
 export default function Chamados() {
   let cpf = localStorage.getItem("login");
   const [selectedChamados, setSelectedChamados] = useState([]);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
   const handleCheckboxChange = (chamadoId) => {
     if (selectedChamados.includes(chamadoId)) {
@@ -217,9 +223,7 @@ export default function Chamados() {
     }
   };
 
-
   return (
-    
     <body className={ChamadosPageCSS.Body}>
       <div className={ChamadosPageCSS.bodyChamados}>
         <header>
@@ -265,32 +269,25 @@ export default function Chamados() {
             </div>
             <div className={StyleTableCSS.mainTable}>
               <section className={StyleTableCSS.tableBody}>
-              <Table selectedChamados={selectedChamados} handleCheckboxChange={handleCheckboxChange} chamadoPage={chamadoPage} />
-
-                
+                <Table selectedChamados={selectedChamados} handleCheckboxChange={handleCheckboxChange} chamadoPage={chamadoPage} />
               </section>
-              {/* <dialog open>
-                <p>
-                  VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA
-                  CONFIRMAR?
-                </p>
-                <form method="post" onSubmit={handleSubmit}><button className={ChamadosPageCSS.sim}>SIM</button></form>
-                <button className={ChamadosPageCSS.nao}>NÃO</button>
-              </dialog> */}
+              {showDeleteDialog && (
+                <dialog open>
+                  <p>VOCÊ ESTÁ PRESTES A DELETAR UM OU MAIS CHAMADOS, DESEJA CONFIRMAR?</p>
+                  <button onClick={() => handleDeleteChamados(selectedChamados)} className={ChamadosPageCSS.sim}>SIM</button>
+                  <button onClick={() => setShowDeleteDialog(false)} className={ChamadosPageCSS.nao}>NÃO</button>
+                </dialog>
+              )}
             </div>
             <div className={ChamadosPageCSS.buttoncontainer}>
-            {cpf.length == 1 ? <></> : <a href="/abrirChamado">
-              <button className={ChamadosPageCSS.cadastrobutton}>Abrir Chamado</button>
-            </a>}
-            <a href="/relatorios">
-              <button className={ChamadosPageCSS.cadastrobutton}>Relatório</button>
-            </a>
-
-            <a >
-              <button className={ChamadosPageCSS.cadastrobutton}>deletar chamado</button>
-            </a>
-
-          </div>
+              {cpf.length == 1 ? <></> : <a href="/abrirChamado">
+                <button className={ChamadosPageCSS.cadastrobutton}>Abrir Chamado</button>
+              </a>}
+              <a href="/relatorios">
+                <button className={ChamadosPageCSS.cadastrobutton}>Relatório</button>
+              </a>
+              <button onClick={() => setShowDeleteDialog(true)} className={ChamadosPageCSS.cadastrobutton}>Deletar Chamado</button>
+            </div>
           </div>
         </main>
       </div>
