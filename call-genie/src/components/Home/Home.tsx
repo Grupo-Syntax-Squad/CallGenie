@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import HomePage from "./home.module.css";
-
+import { mudouTamanho, clickMenu } from './menu.js';
 
 export default function Home() {
+  const itensRef = useRef(null);
+
+  // Função para lidar com o redimensionamento da tela
+  const handleResize = () => {
+    mudouTamanho(itensRef.current);
+  };
+
+  useEffect(() => {
+    // Chama a função mudouTamanho quando o componente é montado
+    mudouTamanho(itensRef.current);
+
+    // Adiciona um ouvinte de evento de redimensionamento para monitorar as mudanças na largura da tela
+    window.addEventListener('resize', handleResize);
+
+    // Remove o ouvinte de evento quando o componente é desmontado
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className={HomePage.homefundo}>
       <nav>
@@ -13,13 +33,14 @@ export default function Home() {
             id={HomePage.logoindex}
           />
         </a>
-        <div className={HomePage.navbuttons}>
+        <span id={HomePage.burguer} onClick={() => clickMenu(itensRef.current)}>menu</span>
+        <div className={HomePage.navbuttons} ref={itensRef}>
           <a href="/cadastro">Cadastrar</a>
           <a href="/entrar">Entrar</a>
           <a href="/FAQ">FAQ</a>
         </div>
       </nav>
-      <main className={HomePage.main_texto}>
+      <main className={HomePage.main}>
       <div className={HomePage.texto}>
           <h1>Call Gennie.</h1>
           <h2>
@@ -34,7 +55,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div>
+        <div className={HomePage.imgHome}>
           <img
                   src="assets/img/imagem-homepage.svg"
                   alt="imagem-homepage"
@@ -46,6 +67,7 @@ export default function Home() {
       <footer>
         <p>Copyright © 2023 Syntax Squad | Todos os direitos reservados</p>
       </footer>
+      <script src="menu.js"></script>
     </div>
   );
 }

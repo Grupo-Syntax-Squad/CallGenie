@@ -1,10 +1,15 @@
-import React from "react";
+import React , { useEffect, useRef } from "react";
 import HomePage from "./home.module.css";
-
+import { mudouTamanho, clickMenu } from './menu.js';
 
 export default function Home() {
+  const itensRef = useRef(null);
+
+    useEffect(() => {
+        mudouTamanho(itensRef.current);
+    }, []);
   return (
-    <div className={HomePage.homefundo}>
+    <div className={HomePage.homefundo} onResize={() => mudouTamanho(itensRef.current)}>
       <nav>
         <a href="/">
           <img
@@ -13,7 +18,8 @@ export default function Home() {
             id={HomePage.logoindex}
           />
         </a>
-        <div className={HomePage.navbuttons}>
+        <span id={HomePage.burguer} onClick={() => clickMenu(itensRef.current)}>menu</span>
+        <div className={HomePage.navbuttons} ref={itensRef}>
           <a href="/cadastro">Cadastrar</a>
           <a href="/entrar">Entrar</a>
           <a href="/FAQ">FAQ</a>
@@ -46,6 +52,7 @@ export default function Home() {
       <footer>
         <p>Copyright © 2023 Syntax Squad | Todos os direitos reservados</p>
       </footer>
+      <script src="menu.js"></script>
     </div>
   );
 }
