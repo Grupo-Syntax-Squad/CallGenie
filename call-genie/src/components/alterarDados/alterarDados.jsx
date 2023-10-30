@@ -1,35 +1,52 @@
 import React, { useEffect, useState } from "react";
 import Alterardados from "./alterarDados.module.css";
-import axios from "axios"
+import axios from "axios";
 
-let infos = {};
+function AlterarDados() {
+  const [showModifyDataDialog, setShowModifyDataDialog] = useState(false);
+  const [inf, setInf] = useState({});
 
-function handleChange(event) {
-  infos[event.target.name] = event.target.value;
-};
-
-function handleSubmit(event) {
-  axios.get(`http://localhost:8080/clientes/${localStorage.getItem("login")}`).then(response => {
-    if (infos.inputSenhaAtual != response.data.cli_senha) {
-      alert("Senha atual incorreta!");
-    } else {
-      axios.put(`http://localhost:8080/clientes/${localStorage.getItem("login")}`, {
-        nome: response.data.cli_nome,
-        email: infos.inputNovoEmail == "" ? response.data.cli_email : infos.inputNovoEmail,
-        telefone: infos.inputNovoTelefone == "" ? response.data.cli_telefone : infos.inputNovoTelefone,
-        endereco: infos.inputNovoCep == "" ? response.data.cli_endereco : infos.inputNovoCep,
-        senha: infos.inputNovaSenha == "" ? response.data.cli_senha : infos.inputNovaSenha
-      });
-      alert("Informaçõs alteradas com sucesso!");
-    };
+  const [infos, setInfos] = useState({
+    inputNovoEmail: "",
+    inputNovoTelefone: "",
+    inputNovoCep: "",
+    inputNovaSenha: "",
+    inputSenhaAtual: "",
   });
-  event.preventDefault();
-};
 
-export default function AlterarDados() {
+  useEffect(() => {
+    axios.get(`http://localhost:8080/clientes/${localStorage.getItem('login')}`)
+      .then(response => {
+        setInf(response.data);
+      });
+  }, []);
 
-  const [inf, setInf] = useState({})
-  useEffect(() => { axios.get(`http://localhost:8080/clientes/${localStorage.getItem('login')}`).then(response => { setInf(response.data) }) });
+  function handleChange(event) {
+    setInfos({ ...infos, [event.target.name]: event.target.value });
+  }
+
+  function handleModifyData() {
+    axios.put(`http://localhost:8080/clientes/${localStorage.getItem("login")}`, {
+       nome: inf.cli_nome,
+       email: infos.inputNovoEmail || inf.cli_email,
+       telefone: infos.inputNovoTelefone || inf.cli_telefone,
+       endereco: infos.inputNovoCep || inf.cli_endereco,
+       senha: infos.inputNovaSenha || inf.cli_senha,
+    });
+    window.location.replace("/chamados");
+    setShowModifyDataDialog(false);
+  }
+
+  function handleSubmit(event) {
+    axios.get(`http://localhost:8080/clientes/${localStorage.getItem("login")}`).then(response => {
+      if (infos.inputSenhaAtual !== response.data.cli_senha) {
+        alert("Senha atual incorreta!");
+      } else {
+        setShowModifyDataDialog(true);
+      }
+    });
+    event.preventDefault();
+  }
 
   return (
     <>
@@ -55,7 +72,7 @@ export default function AlterarDados() {
         </div>
         <div className={Alterardados.fundoCadastro}>
           <main>
-            <form action="" className={Alterardados.alterarDados_container} onSubmit={handleSubmit} >
+            <form action="" className={Alterardados.alterarDados_container} onSubmit={handleSubmit}>
               <label>E-mail
                 <input
                   type="text"
@@ -105,6 +122,13 @@ export default function AlterarDados() {
                   onChange={handleChange}
                 />
               </label>
+              {showModifyDataDialog && (
+                <dialog open>
+                  <p>VOCÊ ESTÁ PRESTES A ALTERAR SEUS DADOS, DESEJA CONFIRMAR?</p>
+                  <button onClick={handleModifyData} className={Alterardados.sim}>SIM</button>
+                  <button onClick={() => setShowModifyDataDialog(false)} className={Alterardados.nao}>NÃO</button>
+                </dialog>
+              )}
               <input
                 type="submit"
                 value="Salvar Alterações"
@@ -113,10 +137,13 @@ export default function AlterarDados() {
             </form>
           </main>
         </div>
-      </div >
+      </div>
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
       </footer>
     </>
   );
 }
+
+export default AlterarDados;
+
