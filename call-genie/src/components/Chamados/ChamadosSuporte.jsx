@@ -24,7 +24,6 @@ function Table() {
       <td>{chamado.cham_titulo}</td>
       <td>{chamado.cham_id}</td>
       <td>{chamado.cham_atividade}</td>
-      <td><form method="post" name={chamado.cham_id} onSubmit={handleSubmit}><button type="submit">Deletar</button></form></td>
     </tr>
   );
 
@@ -127,18 +126,7 @@ export default function Chamados() {
               <section className={StyleTableCSS.tableBody}>
                 <Table />
               </section>
-              {/* <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>) */}
-              {/* Ele será ativado quando o usuário clicar no ícone da lixeira--> */}
-              <dialog>
-                <p>
-                  VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA
-                  CONFIRMAR?
-                </p>
-                <button className={ChamadosPageCSS.sim}>SIM</button>
-                <button className={ChamadosPageCSS.nao}>NÃO</button>
-              </dialog>
             </div>
-
             <div className={ChamadosPageCSS.buttoncontainer}>
             <a href="/Relatorios">
               <button className={ChamadosPageCSS.cadastrobutton}>Relatórios</button>
