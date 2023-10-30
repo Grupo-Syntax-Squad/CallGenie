@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ChamadoAbertoCss from "./chamadoAberto.module.css"
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import AbrirChamado from "../abrirChamado/abrirChamado";
+import Abrirchamado from "./abrirChamado.module.css"
 import axios from "axios";
 
 export default function ChamadoAberto() {
@@ -107,7 +108,7 @@ export default function ChamadoAberto() {
                   <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento: {equipamento.equ_tipo}</p>
                 </div>
                 <h2>Resposta</h2>
-                <textarea name="resposta" cols={30} rows={10} placeholder="Clique aqui para adicionar uma resposta" className="fundo-chamado-aberto" onChange={handleChange}></textarea>
+                <textarea name="resposta" cols={30} rows={10} placeholder="Clique aqui para adicionar uma resposta" className={Abrirchamado.colunaDireita} onChange={handleChange}></textarea>
                 <p className="text-chamado-aberto" id="prazo-text">Prazo de resposta até: {new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 2)).toLocaleDateString()}</p>
               </div>
             </div>

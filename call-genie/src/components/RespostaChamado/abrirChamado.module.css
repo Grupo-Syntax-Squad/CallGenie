@@ -227,6 +227,8 @@ header h2{
     margin-left: 1rem;
     display:flex;
     flex-direction: column;
+    padding-inline: 5%;
+    padding-top: 2%;
 }
 
 .colunaDireita > textarea{

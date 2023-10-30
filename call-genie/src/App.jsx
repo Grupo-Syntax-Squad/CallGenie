@@ -47,7 +47,7 @@ export default function App() {
                 <Route path={RoutesName.chamadosSuporte} element={<Chamados />} />
                 <Route path={RoutesName.admin} element={localStorage.getItem("login") == "" ? <DoLogin /> : <Admin />} />
                 <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />} />
-                <Route path={RoutesName.relatorios} element={<Relatorios />} />
+                <Route path={RoutesName.relatorios}element={localStorage.getItem("login") == "" ? <DoLogin /> : <Relatorios />} />
                 <Route path={RoutesName.notFound} element={<NotFoundPage />} />
                 <Route path="*" element={< Navigate to="/404" />} />
             </Routes>
