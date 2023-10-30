@@ -59,12 +59,12 @@ export default function ChamadoAberto() {
         </a>
         <div className={HeaderChamado.headerItensRight}>
           <img
-            src="assets/img/user.png"
+            src="assets/img/iconeuser2.png"
             alt="Usuário"
             className={ChamadoAbertoCss.fotoUser}
             id="logo-fundo-brando"
           />
-          <h2>Olá, user</h2>
+          <h2>Olá, Suporte</h2>
           <a href="/entrar">
             <img
               src="assets/img/vector_logOut.svg"

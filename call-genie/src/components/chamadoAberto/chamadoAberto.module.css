@@ -255,7 +255,6 @@ header h2{
 
 .flexRow{
     display: flex;
-    flex-direction: row;
 }
 
 .flex{
@@ -468,3 +467,17 @@ header {
     align-items: center;
 }
 
+.responderbutton{
+    width:400px;
+}
+
+.responder_a{
+    margin:auto;
+    margin-bottom:0%;
+}
+
+@media (max-width: 768px) {
+    .flexRow{
+        flex-direction: column;
+    }
+}

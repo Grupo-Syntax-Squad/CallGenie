@@ -64,6 +64,7 @@ export default function ChamadoAberto() {
               <div className={ChamadoAbertoCss.fundo_chamado_aberto} >
                 <div className={ChamadoAbertoCss.colunaEsquerda} >
                   <p> {chamado.cham_descricao} </p>
+                  <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}> <button className={ChamadoAbertoCss.responderbutton}>Responder Chamado</button></a>
                 </div>
               </div>
               <div className={ChamadoAbertoCss.colunaDireita}>
