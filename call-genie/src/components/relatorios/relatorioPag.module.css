@@ -1,0 +1,21 @@
+*{
+    margin: 0%;
+    padding:0%;
+    color:#000;
+}
+
+#logoindex{
+    width:300px;
+}
+
+.flex{
+    display:flex
+}
+.center{
+    margin: auto;
+}
+
+.divisor{
+    border-top: 1px dotted #0000007e;
+}
+

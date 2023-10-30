@@ -17,6 +17,7 @@ import ChamadoAberto from "./components/chamadoAberto/chamadoAberto";
 import RespostaChamado from "./components/chamadoAberto/RespostaChamado";
 import ResponderChamado from "./components/RespostaChamado/ResponderChamados";
 import Relatorios from "./components/relatorios/relatorios";
+import Relatorio from "./components/relatorios/relatorio";
 
 
 import NotFoundPage from "./components/404";
@@ -48,6 +49,7 @@ export default function App() {
                 <Route path={RoutesName.admin} element={localStorage.getItem("login") == "" ? <DoLogin /> : <Admin />} />
                 <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />} />
                 <Route path={RoutesName.relatorios}element={localStorage.getItem("login") == "" ? <DoLogin /> : <Relatorios />} />
+                <Route path={RoutesName.relatorio}element={localStorage.getItem("login") == "" ? <DoLogin /> : <Relatorio />} />
                 <Route path={RoutesName.notFound} element={<NotFoundPage />} />
                 <Route path="*" element={< Navigate to="/404" />} />
             </Routes>
