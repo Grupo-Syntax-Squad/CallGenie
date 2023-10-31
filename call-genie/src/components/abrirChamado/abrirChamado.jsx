@@ -98,14 +98,16 @@ export default function AbrirChamado() {
                     onChange={handleChange}
                   />
                 </label>
-                <textarea
-                  name="comentario"
-                  id={Abrirchamado.inputComentario}
-                  cols={30}
-                  rows={10}
-                  className={Abrirchamado.inputFundo}
-                  placeholder="   Comentário"
-                ></textarea>
+
+                <select name={"filtro prioridade"} className={Abrirchamado.filtrosLista}>
+                  <option value="" disabled selected>Selecione a prioridade do chamado</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Média</option>
+                    <option value="baixa">Baixa</option>
+                </select>
+
+
                 <div className={Abrirchamado.inputEquipamento}>
                   <input
                     type="text"
@@ -126,6 +128,8 @@ export default function AbrirChamado() {
                     onChange={handleChange}
                   />
                 </div>
+                <div>
+          </div>
               </div>
               <div className={Abrirchamado.colunaDireita}>
                 <textarea
