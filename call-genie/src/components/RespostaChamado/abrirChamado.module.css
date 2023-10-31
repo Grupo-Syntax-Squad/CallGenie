@@ -223,6 +223,8 @@ header h2{
     width:500px;
     height: 500px;
 }
+
+
 .colunaDireita{
     margin-left: 1rem;
     display:flex;
@@ -261,6 +263,9 @@ header h2{
     flex-direction: row;
 }
 
+.chamadoAberto .flexRow{
+    max-height: 460px;
+}
 .flex{
     display:flex
 }
@@ -293,6 +298,19 @@ textarea {
   }
 
 /* ChamadoAberto.ejs */
+
+.chamadoAberto {
+    display: flex;
+    flex-direction: row;
+    max-height: 460px;
+}
+
+.chamadoAberto .colunaDireita{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+}
 
 .infoDispositivo{
     display: flex;
