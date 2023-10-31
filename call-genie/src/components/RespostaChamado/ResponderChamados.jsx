@@ -41,11 +41,25 @@ export default function ChamadoAberto() {
         prazo: response.data.chamado.cham_prazo,
         status: "andamento"
       });
+      window.location.replace("/chamadosSuporte");
     });
 
     // window.location.replace("/chamadoAberto");
     event.preventDefault();
   };
+
+  const handleClose = (event) => {
+    axios.get(`http://localhost:8080/chamados/${cham_id}`).then(response => {
+      axios.put(`http://localhost:8080/chamados/${cham_id}`, {
+        titulo: response.data.chamado.cham_titulo,
+        descricao: response.data.chamado.cham_descricao,
+        data_inicio: response.data.chamado.cham_data_inicio,
+        prazo: response.data.chamado.cham_prazo,
+        status: "Concluído"
+      });
+      window.location.replace("/chamadosSuporte");
+    });
+  }
 
   return (
     <body className={ChamadoAbertoCss.Body}>
@@ -115,7 +129,7 @@ export default function ChamadoAberto() {
           </div>
         </main>
         <button type="submit" className={AbrirChamado.buttonInput} onClick={handleSubmit}> Enviar </button>
-        <button type="submit" className={AbrirChamado.buttonInput} onClick={handleSubmit}> finalizar chamado </button>
+        <button type="submit" className={AbrirChamado.buttonInput} onClick={handleClose}> Finalizar chamado </button>
         {/* fazer a função de mudar estado e colocar ela no lugar de "MudarEstado"  */}
 
       </div>
