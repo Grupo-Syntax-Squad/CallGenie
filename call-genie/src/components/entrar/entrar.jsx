@@ -9,6 +9,11 @@ function handleChange(event) {
 };
 
 function handleSubmit(event) {
+
+  if (infos.cpf=="admin") {
+    if (infos.senha == "fatec") window.location.replace("/admin"); localStorage.setItem('login',"admin")
+  }
+  
   if (infos.cpf.match(/^(\#[0-9]{1,8})$/)) {
     axios.get(`http://localhost:8080/suportes/${infos.cpf.replace(/\#/, "")}`).then(response => {
       if (response.data == null) window.alert("Usuário não encontrado!");
