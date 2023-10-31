@@ -138,9 +138,6 @@ export const RespostaChamado = database.define("RespostaChamado", {
     resp_data: {
         type: DataTypes.DATEONLY,
         defaultValue: new Date()
-    },
-    resp_soluc_comum: {
-        type: DataTypes.STRING(100)
     }
 });
 
@@ -179,6 +176,29 @@ Equipamento.belongsTo(Chamado, {
 
 Equipamento.belongsTo(RespostaChamado, {
     foreignKey: "equ_sup_id"
+});
+
+
+export const Faq = database.define("Faq", {
+    faq_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+    },
+    faq_pergunta: {
+        type: DataTypes.STRING(100),
+        allowNull: false
+    },
+    faq_resposta: {
+        type: DataTypes.STRING(150),
+        allowNull: false
+    }
+});
+
+Faq.belongsTo(Suporte, {
+    foreignKey: "faq_sup_id",
+    allowNull: false
 });
 
 (async () => {
