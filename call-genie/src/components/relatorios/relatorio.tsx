@@ -6,7 +6,7 @@ export default function Relatorio() {
     <div>
       <div className={RelatorioPag.flex}>
         <img
-          src="assets/img/CallGenielogosvg.svg"
+          src="assets/img/CallGenie_Black.png"
           alt="Logo"
           id={RelatorioPag.logoindex}
         />
@@ -21,9 +21,11 @@ export default function Relatorio() {
         </div>
       </div>
       <div className={RelatorioPag.divisor}></div>
-      <h2>TÍtulo do chamado</h2>
-      <h3>prioridade do chamado</h3>
-      <p>criado em: xx/xx/xxxx</p>
+      <div className={RelatorioPag.flex}>
+          <h2>TÍtulo do chamado</h2>
+          <h3>prioridade do chamado</h3>
+          <p>criado em: xx/xx/xxxx</p>
+      </div>
       <p className={RelatorioPag.flex}>
         <span>Descrição:</span>Lorem, ipsum dolor sit amet consectetur
         adipisicing elit. Reprehenderit consequatur nulla rem placeat incidunt
