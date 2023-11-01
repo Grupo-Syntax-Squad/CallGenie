@@ -5,6 +5,8 @@ import axios from "axios";
 function AlterarDados() {
   const [showModifyDataDialog, setShowModifyDataDialog] = useState(false);
   const [inf, setInf] = useState({});
+  const patternTelefone = /^[0-9]{11}$/g
+  const patternCEP = /^[0-9]{8}$/g
 
   const [infos, setInfos] = useState({
     inputNovoEmail: "",
