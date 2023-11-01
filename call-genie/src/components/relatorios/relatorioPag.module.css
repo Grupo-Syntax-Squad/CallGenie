@@ -1,7 +1,33 @@
+@media print{
+
 *{
     margin: 0%;
     padding:0%;
+}
+
+.text_black h2, .text_black p, .text_black h3, .text_black h4{
     color:#000;
+}
+
+.text_justify{
+    text-align: justify;
+}
+
+.marginBottom{
+    margin-bottom: 1rem;
+}
+
+.text_right{
+    text-align: right;
+}
+
+.text_left{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.small_text{
+    font-size: 10pt;
 }
 
 #logoindex{
@@ -9,8 +35,15 @@
 }
 
 .flex{
-    display:flex
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
+.flexCabecalho{
+    display:flex;
+    margin-bottom: 1rem;
+}
+
 .center{
     margin: auto;
 }
@@ -19,3 +52,17 @@
     border-top: 1px dotted #0000007e;
 }
 
+.footerRelatorio{
+    position: fixed;
+    bottom: 0;
+}
+
+body {
+    overflow: hidden; /* Esconde a barra de rolagem para o corpo da página */
+  }
+
+.marginLeft{
+    margin-left: 30px;
+}
+
+}
