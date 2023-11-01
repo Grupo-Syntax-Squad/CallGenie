@@ -7,15 +7,21 @@ import DoLogin from "../DoLogin";
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
   const [equipamento, setEquipamento] = useState({});
+  const [suporte, setSuporte] = useState({});
+
   const id = localStorage.getItem("cham_id");
   const cpf = localStorage.getItem("login");
+  const sup_id = localStorage.getItem("sup_id");
+
   useEffect(() => {
     axios.get(`http://localhost:8080/chamados/${id}`).then(response => { 
       setEquipamento(response.data.equipamento);
       setChamado(response.data.chamado);
+      setSuporte(response.data.suporte);
     });
   });
-  console.log(chamado, equipamento);
+
+  console.log(chamado, equipamento,suporte);
   return (
     <body className={ChamadoAbertoCss.Body}>
       <header>
@@ -64,7 +70,12 @@ export default function ChamadoAberto() {
               <div className={ChamadoAbertoCss.fundo_chamado_aberto} >
                 <div className={ChamadoAbertoCss.colunaEsquerda} >
                   <p> {chamado.cham_descricao} </p>
-                  <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}> <button className={ChamadoAbertoCss.responderbutton}>Responder Chamado</button></a>
+                  {parseInt(sup_id) > 0 ? (
+                    <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}>
+                      <button className={ChamadoAbertoCss.responderbutton}>Responder Chamado</button>
+                    </a>
+                  ) : null}
+
                 </div>
               </div>
               <div className={ChamadoAbertoCss.colunaDireita}>
