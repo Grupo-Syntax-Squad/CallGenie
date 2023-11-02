@@ -106,6 +106,11 @@ export const Suporte = database.define("Suporte", {
         autoIncrement: true,
         allowNull: false
     },
+    sup_cpf: {
+        type: DataTypes.STRING(11),
+        unique: true,
+        allowNull: false
+    },
     sup_nome: {
         type: DataTypes.STRING(40),
         allowNull: false
