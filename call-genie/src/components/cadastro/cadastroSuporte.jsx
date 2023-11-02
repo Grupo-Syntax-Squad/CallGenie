@@ -14,6 +14,7 @@ function CadastrarSuporte() {
     axios.post("http://localhost:8080/suportes", {
       nome: infos.nome,
       email: infos.email,
+      cpf: infos.cpf,
       telefone: infos.tel,
       senha: infos.senha,
       adm_id: infos.idsupervisor
