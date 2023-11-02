@@ -140,6 +140,7 @@ app.post("/suportes", async (req, res) => {
         let suporte = await Suporte.create({
             sup_nome: req.body.nome,
             sup_email: req.body.email,
+            sup_cpf: req.body.cpf,
             sup_telefone: req.body.telefone,
             sup_senha: req.body.senha,
             sup_adm_id: req.body.adm_id
@@ -162,6 +163,7 @@ app.get("/suportes/:id", async (req, res) => {
 app.put("/suportes/:id", async (req, res) => {
     await Suporte.update({
         sup_nome: req.body.nome,
+        sup_cpf: req.body.cpf,
         sup_email: req.body.email,
         sup_telefone: req.body.telefone,
         sup_senha: req.body.senha,
