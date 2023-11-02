@@ -13,6 +13,22 @@ header {
     padding: 20px;
 }
 
+.colunaEsquerda label input{
+    width: 100%;
+    border-radius: 20px;
+    height: 30px;
+    text-align: center;
+}
+
+.colunaEsquerda div label input{
+    height: 300px;
+}
+
+.colunaEsquerda div{
+    margin-left: 0;
+
+}
+
 #logoindex{
     width:300px;
 }

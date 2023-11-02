@@ -84,6 +84,7 @@ export default function CadastrarespostaFAQ() {
                   />
                 </label>
                 
+                <div>             
                 <label>
                   <input
                     type="text"
@@ -93,8 +94,8 @@ export default function CadastrarespostaFAQ() {
                     name="respostaFAQ"
                     onChange={handleChange}
                   />
-                </label>
-                <button type="submit" className={Abrirchamado.buttonInput}> Enviar </button>
+                </label></div>
+                   <button type="submit" className={Abrirchamado.buttonInput}> Enviar </button>
               </div>
             </div>
           </form>
