@@ -161,7 +161,7 @@ export default function ChamadosSuporte() {
               </section>
             </div>
             <div className={ChamadosPageCSS.buttoncontainer}>
-              <a href="/Relatorios">
+              <a href="/Relatorio">
                 <button className={ChamadosPageCSS.cadastrobutton}>Relatórios</button>
               </a>
             </div>

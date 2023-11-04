@@ -481,3 +481,17 @@ header {
         flex-direction: column;
     }
 }
+
+button {
+    margin-inline: 3%;
+    border: none;
+    margin-top: 5%;
+    color: #FFFFFF;
+    font-size: 20pt;
+    width: 350px;
+    padding: 1rem;
+    background-color: #0085FF;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 70px;
+}

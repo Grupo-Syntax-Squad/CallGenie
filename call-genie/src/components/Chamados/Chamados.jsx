@@ -280,7 +280,7 @@ export default function Chamados() {
               {cpf.length == 1 ? <></> : <a href="/abrirChamado">
                 <button className={ChamadosPageCSS.cadastrobutton}>Abrir Chamado</button>
               </a>}
-              <a href="/relatorios">
+              <a href="/relatorio">
                 <button className={ChamadosPageCSS.cadastrobutton}>Relatório</button>
               </a>
               <button onClick={() => setShowDeleteDialog(true)} className={ChamadosPageCSS.cadastrobutton}>Deletar Chamado</button>

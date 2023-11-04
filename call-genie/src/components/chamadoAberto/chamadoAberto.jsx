@@ -21,7 +21,7 @@ export default function ChamadoAberto() {
     });
   });
 
-  console.log(chamado, equipamento,suporte);
+  console.log(chamado, equipamento, suporte);
   return (
     <body className={ChamadoAbertoCss.Body}>
       <header>
@@ -70,11 +70,10 @@ export default function ChamadoAberto() {
               <div className={ChamadoAbertoCss.fundo_chamado_aberto} >
                 <div className={ChamadoAbertoCss.colunaEsquerda} >
                   <p> {chamado.cham_descricao} </p>
-                  {parseInt(sup_id) > 0 ? (
+
                     <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}>
                       <button className={ChamadoAbertoCss.responderbutton}>Responder Chamado</button>
                     </a>
-                  ) : null}
 
                 </div>
               </div>
