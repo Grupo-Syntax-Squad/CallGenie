@@ -45,7 +45,7 @@ export default function Relatorio() {
       <div className={RelatorioPag.flex}>
         <h3>{chamado.cham_titulo}</h3>
         <h3>{chamado.cham_urgencia}</h3>
-        <h3>criado em: {new Date(chamado.cham_data_inicio).toLocaleDateString()}</h3>
+        <h3>criado em: {new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate()+1)).toLocaleDateString()}</h3>
       </div>
       <p className={RelatorioPag.text_justify}>
         <div className={RelatorioPag.marginBottom}>
@@ -54,19 +54,16 @@ export default function Relatorio() {
       </p>
       <p className={RelatorioPag.text_justify}>
         <div className={RelatorioPag.marginBottom}>
-          <strong>Equipamento:</strong> {equipamento.equ_nome}  ||  {equipamento.equ_numserie}  ||  {equipamento.equ_descricao}
+          <strong>Equipamento:</strong> {equipamento.equ_nome}  ||  {equipamento.equ_numserie}  ||  {equipamento.equ_tipo}
         </div>
 
       </p>
       <p className={RelatorioPag.text_justify}>
         <strong>Resposta:</strong> {resposta.resp_soluc_comum}
       </p>
-      <p className={RelatorioPag.text_right}><strong className={RelatorioPag.small_text}>Respondido em: {new Date(resposta.resp_data).toLocaleDateString()}</strong></p>
+      <p className={RelatorioPag.text_right}><strong className={RelatorioPag.small_text}>Respondido em: {new Date(new Date().setDate(new Date(resposta.resp_data).getDate()+1)).toLocaleDateString()}</strong></p>
       <p className={RelatorioPag.text_justify}>
-        <strong>Comentário:</strong>Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Cumque commodi nulla dolore! Ut quae veritatis
-        perspiciatis quo labore assumenda nostrum vel blanditiis earum laborum!
-        Perspiciatis beatae dolorum quibusdam eveniet suscipit!
+        <strong>Comentário:</strong>Comentário do cliente
       </p>
       <p className={RelatorioPag.text_right}><div className={RelatorioPag.marginBottom}><strong className={RelatorioPag.small_text}>Comentário adicionado em: xx/xx/xxxx</strong></div></p>
       <p className={RelatorioPag.flex}><strong>Encerrado em: {new Date().toLocaleDateString()}</strong></p>
