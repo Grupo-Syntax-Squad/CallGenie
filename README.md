@@ -54,7 +54,7 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
   
 1. Realizar Chamados: [clique aqui.](/documents/sprints/sprint1)
 2. Cadastro de Usuário: [clique aqui.](/documents/sprints/sprint2)
-3. Gerar Relatórios: [working...⌛]()
+3. Gerar Relatórios: [clique aqui.](/documents/sprints/sprint3)
 4. Documentação e aba de Contato: [working...⌛]()
 
 <br>
@@ -69,7 +69,7 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 
 ### Sprint - 2️⃣ 🎯 ([Clique aqui](/documents/sprints/sprint2))  Concluído✅
 
-### Sprint - 3️⃣ 🎯   Em construção🚧
+### Sprint - 3️⃣ 🎯 ([Clique aqui](/documents/sprints/sprint3))  Concluído✅
 
 ### Sprint - 4️⃣ 🎯   Em construção🚧
 
