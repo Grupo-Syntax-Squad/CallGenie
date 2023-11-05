@@ -66,6 +66,11 @@ export const Chamado = database.define('Chamado', {
         type: DataTypes.DATEONLY,
         defaultValue: new Date()
     },
+    cham_urgencia: {
+        type: DataTypes.ENUM("baixa", "media", "alta", "urgente"),
+        defaultValue: "media",
+        allowNull: false
+    },
     cham_prazo: {
         type: DataTypes.VIRTUAL, // Campo virtual que não é armazenado no banco de dados
         defaultValue: new Date(new Date().setDate(new Date().getDate() + 1))
@@ -138,6 +143,10 @@ export const RespostaChamado = database.define("RespostaChamado", {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
+        allowNull: false
+    },
+    resp_soluc_comum: {
+        type: DataTypes.STRING(255),
         allowNull: false
     },
     resp_data: {

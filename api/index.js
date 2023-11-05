@@ -25,7 +25,8 @@ app.post("/chamados", async (req, res) => {
         cham_status: req.body.status,
         cham_data_inicio: req.body.data_inicio,
         cham_prazo: req.body.prazo,
-        cham_cli_cpf: req.body.cli_cpf
+        cham_cli_cpf: req.body.cli_cpf,
+        cham_urgencia: req.body.urgencia
     });
     let equipamento = await Equipamento.create({
         equ_nome: req.body.equipamento.nome ? req.body.equipamento.nome : "Não informado",
@@ -277,12 +278,19 @@ app.post("/respostasChamados", async (req, res) => {
 });
 
 app.get("/respostasChamados/:cham_id", async (req, res) => {
-    let respostaChamado = await RespostaChamado.findOne({
+    let resposta = await RespostaChamado.findOne({
         where: {
             resp_cham_id: req.params.cham_id
         }
     });
-    res.json(respostaChamado);
+    if (resposta == null) {
+        resposta = null;
+        let suporte = null;
+        res.json({resposta, suporte})
+    } else {
+        let suporte = await Suporte.findOne({ where: { sup_id: resposta.resp_sup_id } });
+        res.json({ resposta, suporte });
+    };
 });
 
 app.put("/respostasChamados/:id", async (req, res) => {

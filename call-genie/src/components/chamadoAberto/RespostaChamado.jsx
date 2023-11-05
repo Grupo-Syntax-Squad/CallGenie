@@ -10,14 +10,16 @@ export default function ChamadoAberto() {
   const [resposta, setResposta] = useState({});
 
   const cham_id = localStorage.getItem("cham_id");
-  
+
   useEffect(() => {
-    axios.get(`http://localhost:8080/chamados/${cham_id}`).then(response => {
-      setChamado(response.data.chamado);
-    });
-    axios.get(`http://localhost:8080/respostasChamados/${cham_id}`).then(response => {
-      setResposta(response.data);
-    });
+    setInterval(() => {
+      axios.get(`http://localhost:8080/chamados/${cham_id}`).then(response => {
+        setChamado(response.data.chamado);
+      });
+      axios.get(`http://localhost:8080/respostasChamados/${cham_id}`).then(response => {
+        setResposta(response.data.resposta);
+      });
+    }, 1000);
   });
 
   return (

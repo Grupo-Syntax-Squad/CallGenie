@@ -70,10 +70,11 @@ export default function ChamadoAberto() {
               <div className={ChamadoAbertoCss.fundo_chamado_aberto} >
                 <div className={ChamadoAbertoCss.colunaEsquerda} >
                   <p> {chamado.cham_descricao} </p>
-
-                    <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}>
+                    {cpf.length < 11 ? <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}>
                       <button className={ChamadoAbertoCss.responderbutton}>Responder Chamado</button>
-                    </a>
+                    </a> : <a href="/respostaChamado" className={ChamadoAbertoCss.responder_a}>
+                      <button className={ChamadoAbertoCss.responderbutton}>Ver resposta do chamado</button>
+                    </a>}
 
                 </div>
               </div>

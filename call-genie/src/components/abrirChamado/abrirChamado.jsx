@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HeaderChamado from "../HeaderChamado/headerChamado.module.css";
 import Abrirchamado from "./abrirChamado.module.css";
 import axios from "axios";
@@ -29,24 +29,26 @@ function handleChange(event) {
   console.log(chamado, equipamento);
 };
 
-function handleSubmit(event) {
-  let data = new Date();
-  data.setDate(data.getDate() + 1);
-  console.log(axios.post("http://localhost:8080/chamados", {
-    titulo: chamado.titulo,
-    descricao: chamado.desc,
-    status: chamado.status,
-    data_inicio: new Date(),
-    prazo: data,
-    cli_cpf: localStorage.getItem("login"),
-    equipamento: equipamento
-  }));
-
-  window.location.replace("/chamados");
-  event.preventDefault();
-};
-
 export default function AbrirChamado() {
+  const [urgencia, setUrgencia] = useState("media")
+  function handleSubmit(event) {
+    let data = new Date();
+    data.setDate(data.getDate() + 1);
+    console.log(axios.post("http://localhost:8080/chamados", {
+      titulo: chamado.titulo,
+      descricao: chamado.desc,
+      status: chamado.status,
+      data_inicio: new Date(),
+      prazo: data,
+      cli_cpf: localStorage.getItem("login"),
+      urgencia: urgencia,
+      equipamento: equipamento
+    }));
+  
+    window.location.replace("/chamados");
+    event.preventDefault();
+  };
+
   return (
     <>
       <header>
@@ -99,7 +101,7 @@ export default function AbrirChamado() {
                   />
                 </label>
 
-                <select name={"filtro prioridade"} className={Abrirchamado.filtrosLista}>
+                <select name={"filtro prioridade"} className={Abrirchamado.filtrosLista} onChange={(event) => {setUrgencia(event.target.value)}}>
                   <option value="" disabled selected>Selecione a prioridade do chamado</option>
                     <option value="urgente">Urgente</option>
                     <option value="alta">Alta</option>
