@@ -286,7 +286,7 @@ app.get("/respostasChamados/:cham_id", async (req, res) => {
     if (resposta == null) {
         resposta = null;
         let suporte = null;
-        res.json({resposta, suporte})
+        res.json({ resposta, suporte })
     } else {
         let suporte = await Suporte.findOne({ where: { sup_id: resposta.resp_sup_id } });
         res.json({ resposta, suporte });
@@ -364,6 +364,40 @@ app.delete("/equipamentos/:id", async (req, res) => {
         }
     });
     res.json({ mensagem: "Equipamento deletado" });
+});
+
+app.get("/gerarRelatorio/:cham_id", async (req, res) => {
+    const chamado = await Chamado.findOne({
+        where: {
+            cham_id: req.params.cham_id
+        }
+    });
+
+    const resposta = await RespostaChamado.findOne({
+        where: {
+            resp_cham_id: req.params.cham_id
+        }
+    });
+
+    const suporte = await Suporte.findOne({
+        where: {
+            sup_id: resposta.resp_sup_id 
+        }
+    });
+
+    const cliente = await Cliente.findOne({
+        where: {
+            cli_cpf: chamado.cham_cli_cpf
+        }
+    });
+    
+    const equipamento = await Equipamento.findOne({
+        where: {
+            equ_cham_id: req.params.cham_id
+        }
+    });
+
+    res.json({chamado, equipamento, resposta, suporte, cliente});
 });
 
 app.listen(8080);

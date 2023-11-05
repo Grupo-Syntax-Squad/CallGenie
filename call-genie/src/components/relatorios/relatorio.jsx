@@ -14,18 +14,12 @@ export default function Relatorio() {
   const sup_id = localStorage.getItem("sup_id");
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/chamados/${id}`).then(response => {
+    axios.get(`http://localhost:8080/gerarRelatorio/${id}`).then(response => {
       setEquipamento(response.data.equipamento);
       setChamado(response.data.chamado);
-    });
-
-    axios.get(`http://localhost:8080/respostasChamados/${id}`).then(response => {
+      setCliente(response.data.cliente);
       setResposta(response.data.resposta);
       setSuporte(response.data.suporte);
-    });
-
-    axios.get(`http://localhost:8080/clientes/${cpf}`).then(response => {
-      setCliente(response.data);
     });
   });
 
@@ -43,14 +37,14 @@ export default function Relatorio() {
       <div className={RelatorioPag.center}>
         <div className={RelatorioPag.flex}>
           <p>{cliente.cli_nome}</p>
-          <p>{cpf}</p>
+          <p>{chamado.cham_cli_cpf}</p>
           <p>{cliente.cli_telefone}</p>
         </div>
       </div>
       <div className={RelatorioPag.divisor}></div>
       <div className={RelatorioPag.flex}>
         <h3>{chamado.cham_titulo}</h3>
-        <h3>prioridade do chamado</h3>
+        <h3>{chamado.cham_urgencia}</h3>
         <h3>criado em: {new Date(chamado.cham_data_inicio).toLocaleDateString()}</h3>
       </div>
       <p className={RelatorioPag.text_justify}>
