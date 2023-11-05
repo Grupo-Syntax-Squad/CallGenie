@@ -12,14 +12,10 @@ export default function ChamadoAberto() {
   const cham_id = localStorage.getItem("cham_id");
 
   useEffect(() => {
-    setInterval(() => {
-      axios.get(`http://localhost:8080/chamados/${cham_id}`).then(response => {
-        setChamado(response.data.chamado);
-      });
-      axios.get(`http://localhost:8080/respostasChamados/${cham_id}`).then(response => {
-        setResposta(response.data.resposta);
-      });
-    }, 1000);
+    axios.get(`http://localhost:8080/verResposta/${cham_id}`).then(response => {
+      setChamado(response.data.chamado);
+      setResposta(response.data.resposta);
+    });
   });
 
   return (
@@ -68,7 +64,7 @@ export default function ChamadoAberto() {
               <div className={ChamadoAbertoCss.colunaDireita}>
                 <div className={ChamadoAbertoCss.fundoChamadoAberto}>
                   <h2>Resposta</h2>
-                  <p className={ChamadoAbertoCss.textChamadoAberto} id="#">texto resposta do chamado</p>
+                  <p className={ChamadoAbertoCss.textChamadoAberto} id="#">{resposta.resp_soluc_comum}</p>
                 </div>
               </div>
             </div>

@@ -400,4 +400,20 @@ app.get("/gerarRelatorio/:cham_id", async (req, res) => {
     res.json({chamado, equipamento, resposta, suporte, cliente});
 });
 
+app.get("/verResposta/:cham_id", async (req, res) => {
+    const chamado = await Chamado.findOne({
+        where: {
+            cham_id: req.params.cham_id
+        }
+    });
+
+    const resposta = await RespostaChamado.findOne({
+        where: {
+            resp_cham_id: req.params.cham_id
+        }
+    });
+
+    res.json({chamado, resposta});
+});
+
 app.listen(8080);
