@@ -6,11 +6,22 @@ import DoLogin from "../DoLogin";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
+  const [equipamento, setEquipamento] = useState({});
+  const [suporte, setSuporte] = useState({});
+
   const id = localStorage.getItem("cham_id");
   const cpf = localStorage.getItem("login");
+  const sup_id = localStorage.getItem("sup_id");
+
   useEffect(() => {
-    axios.get(`http://localhost:8080/chamados/${id}`).then(response => { setChamado(response.data) });
+    axios.get(`http://localhost:8080/chamados/${id}`).then(response => { 
+      setEquipamento(response.data.equipamento);
+      setChamado(response.data.chamado);
+      setSuporte(response.data.suporte);
+    });
   });
+
+  console.log(chamado, equipamento, suporte);
   return (
     <body className={ChamadoAbertoCss.Body}>
       <header>
@@ -23,10 +34,12 @@ export default function ChamadoAberto() {
         </a>
         <div className={HeaderChamado.headerItensRight}>
           <img
-            src="assets/img/user.png"
+            src="assets/img/iconeuser2.png"
             alt="Usuário"
             className={ChamadoAbertoCss.fotoUser}
             id="logo-fundo-brando"
+            onClick={() => {window.location.replace("/chamados")}}
+            style={{cursor: "pointer"}}
           />
           <h2>Olá, {cpf.length == 1 ? "Suporte" : "User"}</h2>
           <a href="/entrar">
@@ -40,7 +53,7 @@ export default function ChamadoAberto() {
       </header>
 
       <div className={ChamadoAbertoCss.ajuda}>
-        <a href="/chamadoAberto">Preciso de ajuda</a>
+        <a href="/FAQ">Preciso de ajuda</a>
       </div>
       <div className={ChamadoAbertoCss.divFlex}>
         <main>
@@ -57,6 +70,12 @@ export default function ChamadoAberto() {
               <div className={ChamadoAbertoCss.fundo_chamado_aberto} >
                 <div className={ChamadoAbertoCss.colunaEsquerda} >
                   <p> {chamado.cham_descricao} </p>
+                    {cpf.length < 11 ? <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}>
+                      <button className={ChamadoAbertoCss.responderbutton}>Responder Chamado</button>
+                    </a> : <a href="/respostaChamado" className={ChamadoAbertoCss.responder_a}>
+                      <button className={ChamadoAbertoCss.responderbutton}>Ver resposta do chamado</button>
+                    </a>}
+
                 </div>
               </div>
               <div className={ChamadoAbertoCss.colunaDireita}>
@@ -64,14 +83,14 @@ export default function ChamadoAberto() {
                   <h2>Equipamento Cadastrado</h2>
                   <div className={ChamadoAbertoCss.flexRow} >
                     <div className={ChamadoAbertoCss.containerNomeNumero}>
-                      <p>Nome: </p>
-                      <p>Número de série: </p>
+                      <p>Nome: {equipamento.equ_nome}</p>
+                      <p>Número de série: {equipamento.equ_numserie}</p>
                     </div>
                   </div>
-                  <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento:</p>
+                  <p className={ChamadoAbertoCss.textCenter}>Tipo de equipamento: {equipamento.equ_tipo}</p>
                 </div>
-                <h2>Comentários</h2>
-                <textarea name="" id="" cols={30} rows={10} placeholder="Clique aqui para adicionar um comentário ao chamado" className="fundo-chamado-aberto"></textarea>
+                {/* <h2>Comentários</h2>
+                <textarea name="" id="" cols={30} rows={10} placeholder="Clique aqui para adicionar um comentário ao chamado" className="fundo-chamado-aberto"></textarea> */}
                 <p className="text-chamado-aberto" id="prazo-text">Prazo de resposta até: {new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 2)).toLocaleDateString()}</p>
                 <p className="text-chamado-aberto">Agradecemos o contato, aguarde a resposta de um de nossos suportes</p>
               </div>

@@ -9,33 +9,34 @@ import ClientePage from "./ClientePage.module.css"
 export default function Cliente() {
   return (
     <>
-      <div className={ChamadosPageCSS.bodyChamados}>
-        <header>
-          <a href="/">
-            <img
-              src="assets/img/Vector.svg"
-              className={HeaderChamado.logogenie}
-              alt="Logo - CallGenius"
-            />
-          </a>
-          <div className={HeaderChamado.headerItensRight}>
+    <div className={ChamadosPageCSS.bodyChamados}>
+      <header>
+        <a href="/">
+          <img
+            src="assets/img/Vector.svg"
+            className={HeaderChamado.logogenie}
+            alt="Logo - CallGenius"
+          />
+        </a>
+        <div className={HeaderChamado.headerItensRight}>
+          <a href="/alterarDados">
             <img
               src="assets/img/iconeuser2.png"
               alt="Usuário"
             />
-            <h2>Olá, Cliente</h2>
-            <a href="/entrar">
-              <img
-                src="assets/img/iconexit.png"
-                alt="Sair"
-              />
+          </a>
+          <h2>Olá, Cliente</h2>
+          <a href="/entrar">
+          <img
+            src="assets/img/iconexit.png"
+            alt="Sair"
+          />
             </a>
           </div>
         </header>
         <div className={ChamadosPageCSS.ajuda}>
-          <a href="/Cliente">Preciso de ajuda</a>
+          <a href="/FAQ">Preciso de ajuda</a>
         </div>
-
         <main className={ChamadosPageCSS.fundoChamado}>
           <div className={HeaderChamado.fundo}>
             <div className={ChamadosPageCSS.titulo}>

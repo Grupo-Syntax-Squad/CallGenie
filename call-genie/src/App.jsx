@@ -9,13 +9,15 @@ import CadastrarSuporte from "./components/cadastro/cadastroSuporte";
 import FAQ from "./components/FAQ/FAQ";
 import CadastrarFAQ from "./components/FAQ/CadastrarFAQ";
 import OpcaoCadastro from "./components/opcaoCadastro/opcaoCadastro";
-import AlterarDados from "./components/alterarDados/alterarDados";
+import AlterarDados from "./components/alterarDados/alterarDados.jsx";
 import Contato from "./components/contato";
 import Entrar from "./components/entrar/entrar";
 import AbrirChamado from "./components/abrirChamado/abrirChamado";
 import ChamadoAberto from "./components/chamadoAberto/chamadoAberto";
 import RespostaChamado from "./components/chamadoAberto/RespostaChamado";
+import ResponderChamado from "./components/RespostaChamado/ResponderChamados";
 import Relatorios from "./components/relatorios/relatorios";
+import Relatorio from "./components/relatorios/relatorio";
 
 
 import NotFoundPage from "./components/404";
@@ -32,6 +34,7 @@ export default function App() {
                 <Route path={RoutesName.abrirChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <AbrirChamado />} />
                 <Route path={RoutesName.chamadoAberto} element={localStorage.getItem("login") == "" ? <DoLogin /> : <ChamadoAberto />} />
                 <Route path={RoutesName.respostaChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <RespostaChamado />} />
+                <Route path={RoutesName.responderChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <ResponderChamado />} />
                 <Route path={RoutesName.login} />
                 <Route path={RoutesName.cadastro} element={<Cadastro />} />
                 <Route path={RoutesName.cadastroCliente} element={<CadastrarCliente />} />
@@ -45,10 +48,8 @@ export default function App() {
                 <Route path={RoutesName.chamadosSuporte} element={<ChamadosSuporte />} />
                 <Route path={RoutesName.admin} element={localStorage.getItem("login") == "" ? <DoLogin /> : <Admin />} />
                 <Route path={RoutesName.cadastrarFAQ} element={<CadastrarFAQ />} />
-                <Route path={RoutesName.relatorios} element={<Relatorios />} />
-
-
-                {/* <Route path="*" element={<NotFoundPage />} /> */}
+                <Route path={RoutesName.relatorios}element={localStorage.getItem("login") == "" ? <DoLogin /> : <Relatorios />} />
+                <Route path={RoutesName.relatorio}element={localStorage.getItem("login") == "" ? <DoLogin /> : <Relatorio />} />
                 <Route path={RoutesName.notFound} element={<NotFoundPage />} />
                 <Route path="*" element={< Navigate to="/404" />} />
             </Routes>

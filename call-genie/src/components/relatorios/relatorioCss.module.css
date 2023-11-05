@@ -44,22 +44,24 @@ form{
     
 }
 
+
 label{
     display: flex;
     flex-direction: row-reverse;
 }
 
 button {
-    margin-inline: 45%;
+    margin-inline: 3%;
     border: none;
     margin-top: 5%;
     color: #FFFFFF;
     font-size: 20pt;
-    width: 200px;
+    width: 250px;
     padding: 1rem;
     background-color: #0085FF;
     border-radius: 10px;
     cursor: pointer;
+    height: 70px;
 }
 
 .filtrosLista{

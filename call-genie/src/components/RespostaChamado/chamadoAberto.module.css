@@ -255,6 +255,7 @@ header h2{
 
 .flexRow{
     display: flex;
+    flex-direction: row;
 }
 
 .flex{
@@ -296,7 +297,7 @@ textarea {
     background-color: #ffffff3f;
     border-radius: 20px;
     padding:2rem;
-    height:580px;
+    height:620px;
     margin-right: 2%;
 }
 
@@ -304,6 +305,7 @@ textarea {
 .fundoChamadoAberto h2{
     color: #000;
     width: 100%;
+    padding: 0;
 }
 
 .statusAberto{
@@ -467,31 +469,3 @@ header {
     align-items: center;
 }
 
-.responderbutton{
-    width:400px;
-}
-
-.responder_a{
-    margin:auto;
-    margin-bottom:0%;
-}
-
-@media (max-width: 768px) {
-    .flexRow{
-        flex-direction: column;
-    }
-}
-
-button {
-    margin-inline: 3%;
-    border: none;
-    margin-top: 5%;
-    color: #FFFFFF;
-    font-size: 20pt;
-    width: 350px;
-    padding: 1rem;
-    background-color: #0085FF;
-    border-radius: 10px;
-    cursor: pointer;
-    height: 70px;
-}

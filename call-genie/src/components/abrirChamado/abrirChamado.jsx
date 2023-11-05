@@ -1,34 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import HeaderChamado from "../HeaderChamado/headerChamado.module.css";
 import Abrirchamado from "./abrirChamado.module.css";
 import axios from "axios";
 
 let chamado = {};
+let equipamento = {
+  nome: "",
+  numserie: "",
+  tipo: ""
+};
 
 function handleChange(event) {
   let valor = event.target.value;
   let name = event.target.name;
-  chamado[name] = valor;
-  console.log(chamado);
-};
-
-function handleSubmit(event) {
-  let data = new Date();
-  data.setDate(data.getDate() + 1);
-  console.log(axios.post("http://localhost:8080/chamados", {
-    titulo: chamado.titulo,
-    descricao: chamado.desc,
-    status: chamado.status,
-    data_inicio: new Date(),
-    prazo: data,
-    cli_cpf: localStorage.getItem("login")
-  }));
-
-  window.location.replace("/chamados");
-  event.preventDefault();
+  switch (name) {
+    case "equipamentonome":
+      equipamento["nome"] = valor;
+      break;
+    case "numeroserie":
+      equipamento["numserie"] = valor;
+      break;
+    case "equipamentotipo":
+      equipamento["tipo"] = valor;
+      break;
+    default:
+      chamado[name] = valor;
+  };
+  console.log(chamado, equipamento);
 };
 
 export default function AbrirChamado() {
+  const [urgencia, setUrgencia] = useState("media")
+  function handleSubmit(event) {
+    let data = new Date();
+    data.setDate(data.getDate() + 1);
+    console.log(axios.post("http://localhost:8080/chamados", {
+      titulo: chamado.titulo,
+      descricao: chamado.desc,
+      status: chamado.status,
+      data_inicio: new Date(),
+      prazo: data,
+      cli_cpf: localStorage.getItem("login"),
+      urgencia: urgencia,
+      equipamento: equipamento
+    }));
+  
+    window.location.replace("/chamados");
+    event.preventDefault();
+  };
+
   return (
     <>
       <header>
@@ -40,10 +60,13 @@ export default function AbrirChamado() {
           />
         </a>
         <div className={HeaderChamado.headerItensRight}>
-          <img
-            src="assets/img/iconeuser2.png"
-            alt="Usuário"
-          />
+          <a href="/Chamados">
+            <img
+              src="assets/img/iconback.png"
+              alt="Voltar"
+              id={Abrirchamado.iconback}
+            />
+          </a>
           <h2>Olá, user</h2>
           <a href="/entrar">
             <img
@@ -60,6 +83,8 @@ export default function AbrirChamado() {
               src="assets/img/iconback.png"
               alt="Voltar"
               id={Abrirchamado.iconback}
+              style={{cursor: "pointer"}}
+              onClick={() => {window.location.replace("/chamados")}}
             />
             <h1>Novo chamado</h1>
           </div>
@@ -76,14 +101,16 @@ export default function AbrirChamado() {
                     onChange={handleChange}
                   />
                 </label>
-                <textarea
-                  name="comentario"
-                  id={Abrirchamado.inputComentario}
-                  cols={30}
-                  rows={10}
-                  className={Abrirchamado.inputFundo}
-                  placeholder="   Comentário"
-                ></textarea>
+
+                <select name={"filtro prioridade"} className={Abrirchamado.filtrosLista} onChange={(event) => {setUrgencia(event.target.value)}}>
+                  <option value="" disabled selected>Selecione a prioridade do chamado</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Média</option>
+                    <option value="baixa">Baixa</option>
+                </select>
+
+
                 <div className={Abrirchamado.inputEquipamento}>
                   <input
                     type="text"
@@ -104,6 +131,8 @@ export default function AbrirChamado() {
                     onChange={handleChange}
                   />
                 </div>
+                <div>
+          </div>
               </div>
               <div className={Abrirchamado.colunaDireita}>
                 <textarea

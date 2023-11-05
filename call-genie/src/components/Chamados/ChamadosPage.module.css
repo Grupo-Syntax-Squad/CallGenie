@@ -4,20 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&family=Poppins:ital,wght@0,300;1,200;1,300&display=swap');
 /*cadastrar.ejs  e  entrar.ejs*/
 
+
 *{
     font-family: 'Poppins', sans-serif;
-}
-
-.fundoCadastro{
-    max-width: 100%;
-    background-color: #ffffff72;
-    border-radius: 2%;
-    margin: auto;
-    width: 600px;
-}
-
-.cadastroContainer{
-    padding:7%;
 }
 
 h1{
@@ -64,30 +53,6 @@ label{
 
 main h2{
     text-align: center;
-}
-
-.cadastroOpcao{
-    background-color: #ffffff6a;
-    margin:30px;
-    width: 300px;
-    height: 300px;
-    border-radius: 5%;
-}
-
-.cadastroOpcoes a {
-    text-decoration: none;
-    color: #FFFFFF;
-    text-align: center;
-}
-
-.cadastroOpcoes img{
-    width:300px;
-}
-
-.cadastroOpcoes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 html {
@@ -191,91 +156,6 @@ footer{
     margin-left: auto;
 }
 
-
-/*  abrirChamado.ejs */
-
-.fundoAbrirChamado{
-    margin:2%;
-    background-color: #ffffff69;
-    padding:2%;
-    border-radius: 20px;
-}
-.fundoAbrirChamado h1{
-    display: block;
-    margin: auto;
-    margin-bottom: 1rem;
-}
-
-#iconBackPage{
-    margin:1rem ;
-}
-
-.fundoAbrirChamado h1{
-    color:#000000;
-    padding: 0%;
-}
-
-.colunaEsquerda{
-    text-align: center;
-    display:flex;
-    flex-direction: column;
-    width:500px;
-    height: 500px;
-}
-.colunaDireita{
-    margin-left: 1rem;
-    display:flex;
-    flex-direction: column;
-}
-
-.colunaDireita > textarea{
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-}
-
-.colunaDireita ::placeholder{
-    text-align: center;
-}
-
-.inputFundo{
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box; 
-    background-color: #ffffffc9;
-    border: none;
-    border-radius: 10px;
-}
-
-.flexRow{
-    display: flex;
-    flex-direction: row;
-}
-
-.flex{
-    display:flex
-}
-
-.auto{
-    margin: auto;
-}
-
-.inputEquipamento{
-    margin-top: 1rem;
-    background-color: #ffffff97;
-}
-
-.inputEquipamento, .inputEquipamento > input{
-    border-radius: 20px;
-}
-
-.inputEquipamento > input{
-    background-color: #fff;
-}
-
-textarea {
-    resize: none;
-  }
 
 /* ChamadoAberto.ejs */
 
@@ -426,7 +306,7 @@ dialog button.nao{
 .fundoChamado{
     margin-inline: 2%;
     background-color: #ffffff85;
-    height:630px;
+    /* height:630px; */
     border-radius: 20px;
     padding:2%;
 }
@@ -459,4 +339,24 @@ dialog button.nao{
     background-color: #a3a3a395;
     border: 2px solid #000;
     border-radius: 10px;
+}
+
+.buttoncontainer {
+    margin-top: 20px; /* Margem superior para afastar do texto */
+}
+
+.buttoncontainer a{
+    text-decoration: none;
+    font-size: 16px; /* Tamanho do texto do botão */
+    font-weight: bolder;
+    color: #000000; /* Cor do texto */
+}
+
+button.cadastrobutton {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 20%;
+    height: 80px;
+    background-color: #0085FF;
 }

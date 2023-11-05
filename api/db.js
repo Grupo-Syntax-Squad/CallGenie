@@ -35,6 +35,9 @@ export const Cliente = database.define('Cliente', {
     cli_endereco: {
         type: DataTypes.STRING(50),
     },
+    cli_cep: {
+        type: DataTypes.STRING(8),
+    },
     cli_senha: {
         type: DataTypes.STRING(8),
     }
@@ -56,12 +59,17 @@ export const Chamado = database.define('Chamado', {
         type: DataTypes.STRING(100)
     },
     cham_status: {
-        type: DataTypes.ENUM('Aberto', 'Em andamento', 'Concluído'),
+        type: DataTypes.ENUM('Aberto', 'Andamento', 'Concluído'),
         defaultValue: 'Aberto'
     },
     cham_data_inicio: {
         type: DataTypes.DATEONLY,
         defaultValue: new Date()
+    },
+    cham_urgencia: {
+        type: DataTypes.ENUM("baixa", "media", "alta", "urgente"),
+        defaultValue: "media",
+        allowNull: false
     },
     cham_prazo: {
         type: DataTypes.VIRTUAL, // Campo virtual que não é armazenado no banco de dados
@@ -103,6 +111,11 @@ export const Suporte = database.define("Suporte", {
         autoIncrement: true,
         allowNull: false
     },
+    sup_cpf: {
+        type: DataTypes.STRING(11),
+        unique: true,
+        allowNull: false
+    },
     sup_nome: {
         type: DataTypes.STRING(40),
         allowNull: false
@@ -121,7 +134,8 @@ export const Suporte = database.define("Suporte", {
 });
 
 Suporte.belongsTo(Adm, {
-    foreignKey: "sup_adm_id"
+    foreignKey: "sup_adm_id",
+    allowNull: false
 });
 
 export const RespostaChamado = database.define("RespostaChamado", {
@@ -131,12 +145,13 @@ export const RespostaChamado = database.define("RespostaChamado", {
         autoIncrement: true,
         allowNull: false
     },
+    resp_soluc_comum: {
+        type: DataTypes.STRING(255),
+        allowNull: false
+    },
     resp_data: {
         type: DataTypes.DATEONLY,
         defaultValue: new Date()
-    },
-    resp_soluc_comum: {
-        type: DataTypes.STRING(100)
     }
 });
 
@@ -152,14 +167,20 @@ export const Equipamento = database.define("Equipamento", {
     equ_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
+    },
+    equ_nome: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     equ_numserie: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
-    equ_descricao: {
-        type: DataTypes.STRING
+    equ_tipo: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 });
 
@@ -169,6 +190,29 @@ Equipamento.belongsTo(Chamado, {
 
 Equipamento.belongsTo(RespostaChamado, {
     foreignKey: "equ_sup_id"
+});
+
+
+export const Faq = database.define("Faq", {
+    faq_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+    },
+    faq_pergunta: {
+        type: DataTypes.STRING(100),
+        allowNull: false
+    },
+    faq_resposta: {
+        type: DataTypes.STRING(150),
+        allowNull: false
+    }
+});
+
+Faq.belongsTo(Suporte, {
+    foreignKey: "faq_sup_id",
+    allowNull: false
 });
 
 (async () => {

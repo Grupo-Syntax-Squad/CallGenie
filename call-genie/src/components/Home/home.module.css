@@ -17,10 +17,6 @@ header {
     width:300px;
 }
 
-.logonome{
-    top: 0;
-}
-
 .navbuttons a{
     font-size: 20pt;
 }
@@ -49,11 +45,6 @@ body h2{
     padding-top: 5%;
 }
 
-.fundo {
-    width: 100%;
-    height: auto;
-}
-
 a{
     text-align: center;
     color: aliceblue;
@@ -71,7 +62,7 @@ footer {
     justify-content: center 
 }
 
-.main_texto {
+.main {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -98,24 +89,6 @@ main div a {
     margin-top: 50%;
 }
 
-
-@media (max-width: 768px) {
-    main {
-        flex-direction: column; 
-    }
-    nav .nav-buttons {
-        flex-direction: column;
-        gap: 10px;
-        margin-right: 5%;
-    }
-
-    main img {
-        margin-right: 0; 
-    }
-
-
-}
-
 button.cadastrobutton {
     border: none;
     padding: 10px 20px;
@@ -125,6 +98,8 @@ button.cadastrobutton {
     height: 80px;
     background-color: #0085FF;
 }
+
+
 
 .buttoncontainer {
     margin-top: 20px; /* Margem superior para afastar do texto */
@@ -137,12 +112,13 @@ button.cadastrobutton {
     color: #000000; /* Cor do texto */
 }
 
-nav {
+.navbuttons {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
 align-items: center; /* Centraliza verticalmente os itens */
 }
+
 nav a{
     padding-top: 1rem;
 }
@@ -157,20 +133,68 @@ text-decoration: none; /* Remove o sublinhado do link */
 }
 
 nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-nav .navbuttons {
-display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav .navbuttons a{
+    display: flex;
     padding-top: 0%;
 }
 
 nav .navbuttons a {
 color: #fff;
 text-decoration: none;
+}
+
+span{
+    display: none;
+}
+
+.imgHome{
+    width:400px;
+}
+
+.imgHome img{
+    margin-left:0%;
+    margin: auto;
+}
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    span{
+        display:flex;
+    }
+
+    main img {
+        margin-right: 0; 
+    }
+    
+    nav a{
+        display:block;
+        margin: 0%;
+        padding:0%;
+    }
+    nav{
+        padding:0%;
+    }
+    
+    .texto h2{
+        text-align: justify;
+    }
+    .main{
+        margin-left:0%;
+    }
+    .main h2{
+        max-width:300px;
+    }
+    .main_img{
+        margin: auto;
+    }
+    
+    button.cadastrobutton {
+        width:200px;
+    }
 }

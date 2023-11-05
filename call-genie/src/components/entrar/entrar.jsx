@@ -9,13 +9,18 @@ function handleChange(event) {
 };
 
 function handleSubmit(event) {
-  if (infos.cpf.length == 1) {
-    axios.get(`http://localhost:8080/suportes/${infos.cpf}`).then(response => {
+
+  if (infos.cpf=="admin") {
+    if (infos.senha == "fatec") window.location.replace("/admin"); localStorage.setItem('login',"admin")
+  }
+  
+  if (infos.cpf.match(/^(\#[0-9]{1,8})$/)) {
+    axios.get(`http://localhost:8080/suportes/${infos.cpf.replace(/\#/, "")}`).then(response => {
       if (response.data == null) window.alert("Usuário não encontrado!");
       else {
         if (infos.senha == response.data.sup_senha) {
-          localStorage.setItem("login", infos.cpf)
-          window.location.replace("/chamados");
+          localStorage.setItem("login", infos.cpf.replace(/\#/, ""))
+          window.location.replace("/chamadosSuporte");
           console.log(localStorage.getItem("login"));
         } else {
           window.alert("Senha incorreta!");
@@ -55,7 +60,7 @@ export default function Entrar() {
           <h2 className={EntrarPage.h2Entrar}>Bem-vindo(a)!</h2>
           <input
             type="text"
-            placeholder="CPF"
+            placeholder="CPF ou #ID"
             id={EntrarPage.inputNome}
             name="cpf"
             onChange={handleChange}

@@ -1,10 +1,4 @@
-/* Estilo para o conteúdo main de todas as páginas */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
-
-/*cadastrar.ejs  e  entrar.ejs*/
-
-
 
 header{
     background:none;
@@ -12,10 +6,6 @@ header{
 
 form{
     padding:5%;
-}
-
-.cadastroContainer{
-    padding:7%;
 }
 
 h1{
@@ -72,29 +62,6 @@ main h2{
     text-align: center;
 }
 
-.cadastroOpcao{
-    background-color: #ffffff6a;
-    margin:30px;
-    width: 300px;
-    height: 300px;
-    border-radius: 5%;
-}
-
-.cadastroOpcoes a {
-    text-decoration: none;
-    color: #FFFFFF;
-    text-align: center;
-}
-
-.cadastroOpcoes img{
-    width:300px;
-}
-
-.cadastroOpcoes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 html {
     background-color: #adc4ed;
@@ -106,52 +73,6 @@ a{
     text-decoration: none;
 }
 
-.fundo{
-    margin: auto;
-    background-color: #ffffff92;
-    padding:1.5rem;
-    border-radius: 20px;
-}
-
-.filtarEBuscarContainer{
-    margin-bottom: 20px;
-}
-.filtrarChamadosContainer{
-    flex-direction: column;
-}
-
-.filtrar{
-    text-align: center;
-    /* justify-content: space-between; */
-}
-
-.filtrar, .buscarPorTitulo{
-    padding:.5rem;
-    background-color: #a3a3a389;
-    border: 2px solid #000;
-    border-radius: 10px;
-}
-
-.buscarPorTitulo{
-    width:100%;
-}
-
-.filtrar p{
-    display: block;
-    margin: auto;
-}
-
-.filtrarMenu{
-    display: none;
-    background-color: #fff;
-    list-style-type: none;
-    padding:1rem;
-    border-radius:0px 0px 20px 20px;
-}
-
-.filtrar, .filtrarMenu{
-    width: 250px;
-}
 
 h1{
     text-align: center;
@@ -197,202 +118,19 @@ footer{
     margin-left: auto;
 }
 
-
-/*  abrirChamado.ejs */
-
 header h2{
     color: #FFF;
-}
-
-.fundoAbrirChamado{
-    margin:2%;
-    background-color: #ffffff69;
-    padding:2%;
-    border-radius: 20px;
-}
-.fundoAbrirChamado h1{
-    display: block;
-    margin: auto;
-    margin-bottom: 1rem;
 }
 
 #iconBackPage{
     margin:1rem ;
 }
 
-.fundoAbrirChamado h1{
-    color:#000000;
-    padding: 0%;
-}
-
-.colunaEsquerda{
-    text-align: center;
-    display:flex;
-    flex-direction: column;
-    width:500px;
-    height: 500px;
-}
-.colunaDireita{
-    margin-left: 1rem;
-    display:flex;
-    flex-direction: column;
-}
-
-.colunaDireita > textarea{
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-}
-
-.colunaDireita ::placeholder{
-    text-align: center;
-}
-
-.inputFundo{
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box; 
-    background-color: #ffffffc9;
-    border: none;
-    border-radius: 10px;
-}
-
-.flex{
-    display:flex
-}
-
-.auto{
-    margin: auto;
-}
-
-.inputEquipamento{
-    margin-top: 1rem;
-    background-color: #ffffff97;
-}
-
-.inputEquipamento, .inputEquipamento > input{
-    border-radius: 20px;
-}
-
-.inputEquipamento > input{
-    background-color: #fff;
-}
-
-textarea {
-    resize: none;
-  }
-
-/* ChamadoAberto.ejs */
-
-.infoDispositivo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size:20pt;
-}
-
-.fundohamadoAberto{
-    background-color: #ffffff3f;
-    border-radius: 20px;
-    padding:2rem;
-}
-
-.fundo-chamado-aberto h2{
-    color: #000;
-}
-
-.status.aberto{
-    color: #950000;
-}
-
-.status.andamento{
-    color: #ead200;
-}
-
-.status.concluido{
-    color: #3eb900;
-}
-
-.text-center{
-    text-align: center;
-}
-
-.infoChamado, .infoDispositivo{
-    display: flex;
-}
-
-.fundoDescricao{
-    background-color: #FFFFFF;
-}
-
-.textChamadoAberto{
-    color: gray;
-}
-
-.containerNomeNumero{
-    justify-content: space-between;
-}
-
-.ajuda{
-    text-align: right;
-    margin-right: 20%;
-    padding: 1rem;
-}
-.ajuda a{
-    color:blue
-}
-
-.divFlex {
-    margin: auto;
-}
-
-.logoIndex{
-    width:100px;
-}
 #logoIndexAlterarDados{
     margin-top: 2rem;
     width:400px;
 }
 
-.textoHomepage{
-    width:300px;
-    color: #8CB7DD;
-}
-
-#inputDescricao,#inputComentario{
-    overflow: auto;
-}
-
-dialog{
-    padding: 4rem;
-    font-size: 18pt;
-    font-weight: bold;
-    text-align: center;
-    border: none;
-    border-radius: 10px;
-    width:500px;
-}
-
-dialog::backdrop{
-    background-color:rgba(0, 0, 0, 0.292);
-}
-
-dialog button.sim, button.nao{
-    border:none;
-    padding: 5px 10px
-}
-
-dialog button.sim{
-    background-color: green;
-}
-dialog button.nao{
-    background-color: red;
-
-}
-
-.logonome{
-    width: 55%;
-}
 
 #iconback{
     width:40px;
@@ -400,10 +138,6 @@ dialog button.nao{
     margin: 0%;
 }
 
-.flexRowAlterarDados{
-    display: flex;
-    flex-direction: row;
-}
 #h2_AlterarDados{
     margin: auto;
     padding-top: .5%;
@@ -412,15 +146,23 @@ dialog button.nao{
 }
 
 .alterarDados_container{
-    display:block;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin:auto;
     margin-top: 2rem;
     background-color: rgba(239, 239, 239, 0.418);
     padding:3%;
     /* padding-top: 100px; */
     border-radius:20px;
+    width: 60%;
 }
 
 label input{
-    width:700px;
+    width:800px;
+}
+
+.alterarDados_container label{
+    display: inline;
+
 }

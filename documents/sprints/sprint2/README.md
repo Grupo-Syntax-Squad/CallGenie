@@ -21,9 +21,8 @@ Nesta Sprint foram desenvolvidas as funcionalidades de login e cadastro, assim c
 | US05  | 2      | "Como um suporte, gostaria de fazer o login no sistema para realizar as tarefas e funções de um funcionário no sistema. "                                                        |  #01                  |
 | US06  | 2      | "Como um cliente, gostaria de deletar um chamado, criado por mim,  no sistema. "                                                        |  #10                  |
 
-
-[Clique aqui para vizualizar todas as User Stories](https://fatecspgov-my.sharepoint.com/:x:/g/personal/gabriel_reis16_fatec_sp_gov_br/EV_EGSXfZa1Cv4vij1z3CggB3YGNKrofm8HdMknnpyMexg)
-
+## Login e Cadastro 🔐
+Através dessa funcionalidade o sistema começa a gurdar informações sobre seus usuários, armazenando-os em um banco de dados. O sistema não está disponível na web, logo é preciso rodar localmente... Nessa visão, já que implantamos o "CallGenie" para uma loja fictícia de informática e, assim como qualquer outro sistema de cadastro, o cliente precisa informar para poder realizar seu cadastro: nome, cpf, enderço, cep, cpf, telefone, e-mail e senha. para os suportes se repete o mesmo processo, porém pedimos também o id de um administrador que será "linkado" à aquele suporte. Uma vez cadastrado e logado, o cliente terá uma tela somente sua, com a possibilidade de criar seus próprios chamados e até deleta-los!
 
 
 <div align='center'>

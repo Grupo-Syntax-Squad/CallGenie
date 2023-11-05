@@ -58,7 +58,12 @@ export default function CadastrarespostaFAQ() {
                     onChange={handleChange}
                   />
                 </label>
+<<<<<<<< HEAD:call-genie/src/components/FAQ/CadastrarFAQ.jsx
 
+========
+                
+                <div>             
+>>>>>>>> Sprint3:call-genie/src/components/FAQ/CadastrarFAQ.tsx
                 <label>
                   <input
                     type="text"
@@ -68,8 +73,8 @@ export default function CadastrarespostaFAQ() {
                     name="respostaFAQ"
                     onChange={handleChange}
                   />
-                </label>
-                <button type="submit" className={Abrirchamado.buttonInput}> Enviar </button>
+                </label></div>
+                   <button type="submit" className={Abrirchamado.buttonInput}> Enviar </button>
               </div>
             </div>
           </form>

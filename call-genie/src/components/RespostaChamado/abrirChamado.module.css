@@ -3,16 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 
 /*cadastrar.ejs  e  entrar.ejs*/
-
-.fundo-cadastro{
-    max-width: 100%;
-    background-color: #ffffff72;
-    border-radius: 2%;
-    margin: auto;
-    width: 600px;
+*{
+    margin: 0px;
+    padding:0px;
 }
 
-.cadastro-container{
+.cadastroContainer{
     padding:7%;
 }
 
@@ -27,7 +23,7 @@ input {
     border: none;
     border-radius: 2px;
     padding: 15px;
-    background-color: #EBE9E9; /* cor do plano de fundo */
+    background-color: #EBE9E9;
     margin-bottom: 2%;
 }
 
@@ -39,7 +35,7 @@ label{
     display: flex;
 }
  
-.button-input{ 
+.buttonInput{ 
     /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
@@ -63,7 +59,7 @@ main h2{
     text-align: center;
 }
 
-.cadastro-opcao{
+.cadastroOpcao{
     background-color: #ffffff6a;
     margin:30px;
     width: 300px;
@@ -71,17 +67,17 @@ main h2{
     border-radius: 5%;
 }
 
-.cadastro-opcoes a {
+.cadastroOpcoes a {
     text-decoration: none;
     color: #FFFFFF;
     text-align: center;
 }
 
-.cadastro-opcoes img{
+.cadastroOpcoes img{
     width:300px;
 }
 
-.cadastro-opcoes{
+.cadastroOpcoes{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,6 +88,7 @@ html {
     /* background-repeat: no-repeat; */
     height: 100%;
 }
+
 a{
     text-decoration: none;
 }
@@ -103,10 +100,10 @@ a{
     border-radius: 20px;
 }
 
-.filtar-e-buscar-container{
+.filtarEBuscarContainer{
     margin-bottom: 20px;
 }
-.filtrar-chamados-container{
+.filtrarChamadosContainer{
     flex-direction: column;
 }
 
@@ -115,14 +112,14 @@ a{
     /* justify-content: space-between; */
 }
 
-.filtrar, .buscar-por-titulo{
+.filtrar, .buscarPorTitulo{
     padding:.5rem;
     background-color: #a3a3a389;
     border: 2px solid #000;
     border-radius: 10px;
 }
 
-.buscar-por-titulo{
+.buscarPorTitulo{
     width:100%;
 }
 
@@ -131,7 +128,7 @@ a{
     margin: auto;
 }
 
-.filtrar-menu{
+.filtrarMenu{
     display: none;
     background-color: #fff;
     list-style-type: none;
@@ -139,7 +136,7 @@ a{
     border-radius:0px 0px 20px 20px;
 }
 
-.filtrar, .filtrar-menu{
+.filtrar, .filtrarMenu{
     width: 250px;
 }
 
@@ -161,7 +158,7 @@ input {
     font-size: 15pt;
 }
 
-#meus-chamados-title h2{
+#meusChamadosTitle h2{
     padding:.5rem;
     color: #000;
     background-color: #FFFFFF;
@@ -170,7 +167,7 @@ input {
     text-align: left;
 }
 
-.button-input{ 
+.buttonInput{ 
     /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
@@ -195,51 +192,62 @@ header h2{
     color: #FFF;
 }
 
-.fundo-abrir-chamado{
+.fundoAbrirChamado{
     margin:2%;
-    background-color: #ffffff69;
+    height:630px;
+    background-color: #ffffffa2;
     padding:2%;
     border-radius: 20px;
 }
-.fundo-abrir-chamado h1{
+.fundoAbrirChamado h1{
     display: block;
     margin: auto;
     margin-bottom: 1rem;
 }
 
-#icon-back-page{
+#iconBackPage{
     margin:1rem ;
 }
 
-.fundo-abrir-chamado h1{
+.fundoAbrirChamado h1{
     color:#000000;
+    font-size: 18pt;
     padding: 0%;
 }
 
-.coluna-esquerda{
+.colunaEsquerda{
+    margin:0%;
     text-align: center;
     display:flex;
     flex-direction: column;
     width:500px;
     height: 500px;
 }
-.coluna-direita{
+
+
+.colunaDireita{
     margin-left: 1rem;
     display:flex;
     flex-direction: column;
+    padding-inline: 5%;
+    padding-top: 2%;
 }
 
-.coluna-direita > textarea{
+.colunaDireita > textarea{
     width: 100%;
     border: none;
     border-radius: 20px;
 }
 
-.coluna-direita ::placeholder{
+.colunaDireita ::placeholder{
     text-align: center;
 }
 
-.input-fundo{
+.colunaEsquerda ::placeholder{
+    text-align: center;
+}
+
+.inputFundo{
     width: 100%;
     max-width: 100%;
     box-sizing: border-box; 
@@ -248,11 +256,16 @@ header h2{
     border-radius: 10px;
 }
 
-.flex-row{
+.flexRow{
+    height:50px;
+    margin:0%;
     display: flex;
     flex-direction: row;
 }
 
+.chamadoAberto .flexRow{
+    max-height: 460px;
+}
 .flex{
     display:flex
 }
@@ -261,16 +274,22 @@ header h2{
     margin: auto;
 }
 
-.input-equipamento{
+.inputEquipamento{
+    width:100%;
+    margin:0%;
     margin-top: 1rem;
     background-color: #ffffff97;
 }
+.inputEquipamento input{
+    width:90%;
+    margin: 2% 4%;
+}
 
-.input-equipamento, .input-equipamento > input{
+.inputEquipamento, .inputEquipamento > input{
     border-radius: 20px;
 }
 
-.input-equipamento > input{
+.inputEquipamento > input{
     background-color: #fff;
 }
 
@@ -280,20 +299,33 @@ textarea {
 
 /* ChamadoAberto.ejs */
 
-.info-dispositivo{
+.chamadoAberto {
+    display: flex;
+    flex-direction: row;
+    max-height: 460px;
+}
+
+.chamadoAberto .colunaDireita{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+}
+
+.infoDispositivo{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size:20pt;
 }
 
-.fundo-chamado-aberto{
+.fundoChamadoAberto{
     background-color: #ffffff3f;
     border-radius: 20px;
     padding:2rem;
 }
 
-.fundo-chamado-aberto h2{
+.fundoChamadoAberto h2{
     color: #000;
 }
 
@@ -313,19 +345,19 @@ textarea {
     text-align: center;
 }
 
-.info-chamado, .info-dispositivo{
+.infoChamado, .infoDispositivo{
     display: flex;
 }
 
-.fundo-descricao{
+.fundoDescricao{
     background-color: #FFFFFF;
 }
 
-.text-chamado-aberto{
+.textChamadoAberto{
     color: gray;
 }
 
-.container-nome-numero{
+.containerNomeNumero{
     justify-content: space-between;
 }
 
@@ -338,22 +370,23 @@ textarea {
     color:blue
 }
 
-.div-flex {
+.divFlex {
     margin: auto;
 }
 
-.logo-index{
+.logoIndex{
     width:100px;
 }
 
-.texto-homepage{
+.textoHomepage{
     width:300px;
     color: #8CB7DD;
 }
 
-#input-descricao,#input-comentario{
+#inputDescricao,#inputComentario{
     overflow: auto;
 }
+
 
 dialog{
     padding: 4rem;
@@ -384,4 +417,22 @@ dialog button.nao{
 
 .logonome{
     width: 55%;
+}
+
+#iconback{
+    width:40px;
+    height:40px;
+    margin: 0%;
+}
+
+.flexRow h1{
+    margin-block:0%;
+}
+.container_colunas{
+    display:flex;
+    margin: 0%;;
+}
+
+.buttonInput{
+    margin: auto;
 }

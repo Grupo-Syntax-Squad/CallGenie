@@ -25,9 +25,16 @@ app.post("/chamados", async (req, res) => {
         cham_status: req.body.status,
         cham_data_inicio: req.body.data_inicio,
         cham_prazo: req.body.prazo,
-        cham_cli_cpf: req.body.cli_cpf
+        cham_cli_cpf: req.body.cli_cpf,
+        cham_urgencia: req.body.urgencia
     });
-    res.json(chamado);
+    let equipamento = await Equipamento.create({
+        equ_nome: req.body.equipamento.nome ? req.body.equipamento.nome : "Não informado",
+        equ_numserie: req.body.equipamento.numserie ? req.body.equipamento.numserie : "Não informado",
+        equ_tipo: req.body.equipamento.tipo ? req.body.equipamento.tipo : "Não informado",
+        equ_cham_id: chamado.cham_id
+    });
+    res.json({ chamado, equipamento });
 });
 
 app.get("/chamados/:id", async (req, res) => {
@@ -36,7 +43,12 @@ app.get("/chamados/:id", async (req, res) => {
             cham_id: req.params.id
         }
     });
-    res.json(chamado);
+    let equipamento = await Equipamento.findOne({
+        where: {
+            equ_cham_id: req.params.id
+        }
+    });
+    res.json({ chamado, equipamento });
 });
 
 app.put("/chamados/:id", async (req, res) => {
@@ -76,6 +88,7 @@ app.post("/clientes", async (req, res) => {
             cli_email: req.body.email,
             cli_telefone: req.body.telefone,
             cli_endereco: req.body.endereco,
+            cli_cep: req.body.cep,
             cli_senha: req.body.senha
         });
         res.json(cliente);
@@ -99,6 +112,7 @@ app.put("/clientes/:cpf", async (req, res) => {
         cli_email: req.body.email,
         cli_telefone: req.body.telefone,
         cli_endereco: req.body.endereco,
+        cli_cep: req.body.cep,
         cli_senha: req.body.senha
     }, {
         where: {
@@ -123,11 +137,11 @@ app.get("/suportes", async (req, res) => {
 });
 
 app.post("/suportes", async (req, res) => {
-    console.log(req.body.nome);
     try {
         let suporte = await Suporte.create({
             sup_nome: req.body.nome,
             sup_email: req.body.email,
+            sup_cpf: req.body.cpf,
             sup_telefone: req.body.telefone,
             sup_senha: req.body.senha,
             sup_adm_id: req.body.adm_id
@@ -150,6 +164,7 @@ app.get("/suportes/:id", async (req, res) => {
 app.put("/suportes/:id", async (req, res) => {
     await Suporte.update({
         sup_nome: req.body.nome,
+        sup_cpf: req.body.cpf,
         sup_email: req.body.email,
         sup_telefone: req.body.telefone,
         sup_senha: req.body.senha,
@@ -228,25 +243,54 @@ app.get("/respostasChamados", async (req, res) => {
 });
 
 app.post("/respostasChamados", async (req, res) => {
-    try {
-        let respostaChamado = await RespostaChamado.create({
-            resp_data: req.body.data,
-            resp_soluc_comum: req.body.soluc_comum,
-            resp_sup_id: req.body.sup_id
-        });
-        res.json(respostaChamado);
-    } catch (error) {
-        res.json(error);
+    if (await RespostaChamado.findOne({
+        where: {
+            resp_cham_id: req.body.cham_id
+        }
+    })) {
+        try {
+            RespostaChamado.update({
+                resp_soluc_comum: req.body.soluc_comum,
+                resp_data: req.body.data
+            }, {
+                where: {
+                    resp_cham_id: req.body.cham_id
+                }
+            });
+            res.json({ msg: "Resposta do chamado alterada com sucesso!" })
+        } catch (error) {
+            res.json(error);
+        };
+    } else {
+        try {
+            let respostaChamado = await RespostaChamado.create({
+                resp_data: req.body.data,
+                resp_soluc_comum: req.body.soluc_comum,
+                resp_sup_id: req.body.sup_id,
+                resp_cham_id: req.body.cham_id
+            });
+            console.log(respostaChamado);
+            res.json(respostaChamado);
+        } catch (error) {
+            res.json(error);
+        };
     };
 });
 
-app.get("/respostasChamados/:id", async (req, res) => {
-    let respostaChamado = await RespostaChamado.findOne({
+app.get("/respostasChamados/:cham_id", async (req, res) => {
+    let resposta = await RespostaChamado.findOne({
         where: {
-            resp_id: req.params.id
+            resp_cham_id: req.params.cham_id
         }
     });
-    res.json(respostaChamado);
+    if (resposta == null) {
+        resposta = null;
+        let suporte = null;
+        res.json({ resposta, suporte })
+    } else {
+        let suporte = await Suporte.findOne({ where: { sup_id: resposta.resp_sup_id } });
+        res.json({ resposta, suporte });
+    };
 });
 
 app.put("/respostasChamados/:id", async (req, res) => {
@@ -320,6 +364,56 @@ app.delete("/equipamentos/:id", async (req, res) => {
         }
     });
     res.json({ mensagem: "Equipamento deletado" });
+});
+
+app.get("/gerarRelatorio/:cham_id", async (req, res) => {
+    const chamado = await Chamado.findOne({
+        where: {
+            cham_id: req.params.cham_id
+        }
+    });
+
+    const resposta = await RespostaChamado.findOne({
+        where: {
+            resp_cham_id: req.params.cham_id
+        }
+    });
+
+    const suporte = await Suporte.findOne({
+        where: {
+            sup_id: resposta.resp_sup_id 
+        }
+    });
+
+    const cliente = await Cliente.findOne({
+        where: {
+            cli_cpf: chamado.cham_cli_cpf
+        }
+    });
+    
+    const equipamento = await Equipamento.findOne({
+        where: {
+            equ_cham_id: req.params.cham_id
+        }
+    });
+
+    res.json({chamado, equipamento, resposta, suporte, cliente});
+});
+
+app.get("/verResposta/:cham_id", async (req, res) => {
+    const chamado = await Chamado.findOne({
+        where: {
+            cham_id: req.params.cham_id
+        }
+    });
+
+    const resposta = await RespostaChamado.findOne({
+        where: {
+            resp_cham_id: req.params.cham_id
+        }
+    });
+
+    res.json({chamado, resposta});
 });
 
 app.listen(8080);

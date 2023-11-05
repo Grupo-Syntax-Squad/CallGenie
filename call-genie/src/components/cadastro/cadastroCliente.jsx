@@ -11,15 +11,20 @@ function handleChange(event) {
 function handleSubmit(event) {
   axios.get(`http://localhost:8080/clientes/${infos.cpf}`).then(response => {
     if (response.data == null) {
-      axios.post("http://localhost:8080/clientes", {
-        nome: infos.nome,
-        cpf: infos.cpf,
-        email: infos.email,
-        telefone: infos.tel,
-        endereco: `${infos.endereco} - ${infos.cep}`,
-        senha: infos.senha
-      });
-      window.location.replace("/entrar");
+      if (infos.cpf.match(/^([0-9]{11})$/) && infos.tel.match(/^([0-9]{11})$/)) {
+        axios.post("http://localhost:8080/clientes", {
+          nome: infos.nome,
+          cpf: infos.cpf,
+          email: infos.email,
+          telefone: infos.tel,
+          endereco: infos.endereco,
+          cep: infos.cep,
+          senha: infos.senha
+        }).then(response => {
+          console.log(response);
+        });
+        window.location.replace("/entrar");
+      } else alert("CPF ou Telefone inválido!");
     } else {
       alert("CPF já foi cadastrado!")
     };
@@ -58,7 +63,7 @@ function CadastrarCliente() {
             <input type="email" placeholder="E-mail" name="email" onChange={handleChange} />
             <input type="tel" placeholder="Telefone" name="tel" required onChange={handleChange} />
             <input type="number" placeholder="CEP" name="cep" required onChange={handleChange} />
-            <input type="number" placeholder="CPF" name="cpf" required onChange={handleChange} />
+            <input type="text" placeholder="CPF" name="cpf" required onChange={handleChange} />
             <input type="text" placeholder="Endereço" name="endereco" required onChange={handleChange} />
             <button type="submit" value="Cadastrar-se" className={CadastroCSS.button_input}>Cadastrar-se</button>
           </form>

@@ -25,7 +25,6 @@ Nesta Sprint foram criados e apresentados o Backlog do Projeto, o wireframe do P
 | US05  | 1      | "Eu, como desenvolvedor, quero elaborar artefatos como: Sprint Backlog, Backlog total, MVP, Modelo de dados e User Stories, para auxiliar no desenvolvimento do projeto e ilustarar o que será entregue em cada sprint. "                                                        |  #08                  |
 | US06  | 1      | "Eu, como desenvolvedor, quero criar um banco de dados relacional usando MySQL, seguindo o modelo de dados que foi elaborado, para assim salvar e exibir os chamados e seus atributos, criados pelo usuário que utilizar o sistema. "                                            |  #09                  |
 
-[Clique aqui para vizualizar todas as User Stories](https://fatecspgov-my.sharepoint.com/:x:/g/personal/gabriel_reis16_fatec_sp_gov_br/EV_EGSXfZa1Cv4vij1z3CggB3YGNKrofm8HdMknnpyMexg)
 
 ## Protótipo Navegável 🚢
 [Clique aqui para visualizar o protótipo](https://www.figma.com/proto/ksqvS3flyANq2J6oVo7kN1/API-2SEM-2023?type=design&node-id=17-24&t=LxQM2fE4YtED8gu2-0&scaling=contain&page-id=0%3A1&starting-point-node-id=17%3A24)
