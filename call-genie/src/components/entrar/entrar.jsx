@@ -9,38 +9,18 @@ function handleChange(event) {
 };
 
 function handleSubmit(event) {
-
+  console.log(infos);
   if (infos.cpf=="admin") {
-    if (infos.senha == "fatec") window.location.replace("/admin"); localStorage.setItem('login',"admin")
-  }
-  
-  if (infos.cpf.match(/^(\#[0-9]{1,8})$/)) {
-    axios.get(`http://localhost:8080/suportes/${infos.cpf.replace(/\#/, "")}`).then(response => {
-      if (response.data == null) window.alert("Usuário não encontrado!");
-      else {
-        if (infos.senha == response.data.sup_senha) {
-          localStorage.setItem("login", infos.cpf.replace(/\#/, ""))
-          window.location.replace("/chamadosSuporte");
-          console.log(localStorage.getItem("login"));
-        } else {
-          window.alert("Senha incorreta!");
-        };
-      }
-    });
-  } else {
-    axios.get(`http://localhost:8080/clientes/${infos.cpf}`).then(response => {
-      if (response.data == null) window.alert("Usuário não encontrado!");
-      else {
-        if (infos.senha == response.data.cli_senha) {
-          localStorage.setItem("login", infos.cpf)
-          window.location.replace("/chamados");
-          console.log(localStorage.getItem("login"));
-        } else {
-          window.alert("Senha incorreta!");
-        };
-      }
-    });
-  };
+    if (infos.senha == "fatec") window.location.replace("/admin"); localStorage.setItem('login',"admin");
+  } else axios.post("http://localhost:8080/login", {
+    credencial: infos.cpf,
+    senha: infos.senha
+  }).then(response => {
+    if (response.data.login == false) alert(response.data.msg);
+    else localStorage.setItem(response.data.token);
+    window.location.replace("/chamados");
+    console.log(response.data.login, response.data.msg);
+  });
 };
 
 export default function Entrar() {

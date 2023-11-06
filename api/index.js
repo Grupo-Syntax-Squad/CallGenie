@@ -186,25 +186,6 @@ app.delete("/suportes/:id", async (req, res) => {
     res.json({ mensagem: "Suporte deletado" });
 });
 
-app.get("/adms", async (req, res) => {
-    let administradores = await Adm.findAll();
-    res.json(administradores);
-});
-
-app.post("/adms", async (req, res) => {
-    try {
-        let administrador = await Adm.create({
-            adm_nome: req.body.nome,
-            adm_email: req.body.email,
-            adm_telefone: req.body.telefone,
-            adm_senha: req.body.senha
-        });
-        res.json(administrador);
-    } catch (error) {
-        res.json(error);
-    };
-});
-
 app.get("/adms/:id", async (req, res) => {
     let administrador = await Adm.findOne({
         where: {
@@ -228,54 +209,12 @@ app.put("/adms/:id", async (req, res) => {
     res.json({ mensagem: "Administrador alterado" });
 });
 
-app.delete("/adms/:id", async (req, res) => {
-    await Adm.destroy({
-        where: {
-            adm_id: req.params.id
-        }
-    });
-    res.json({ mensagem: "Administrador deletado" });
-});
 
 app.get("/respostasChamados", async (req, res) => {
     let respostasChamados = await RespostaChamado.findAll();
     res.json(respostasChamados);
 });
 
-app.post("/respostasChamados", async (req, res) => {
-    if (await RespostaChamado.findOne({
-        where: {
-            resp_cham_id: req.body.cham_id
-        }
-    })) {
-        try {
-            RespostaChamado.update({
-                resp_soluc_comum: req.body.soluc_comum,
-                resp_data: req.body.data
-            }, {
-                where: {
-                    resp_cham_id: req.body.cham_id
-                }
-            });
-            res.json({ msg: "Resposta do chamado alterada com sucesso!" })
-        } catch (error) {
-            res.json(error);
-        };
-    } else {
-        try {
-            let respostaChamado = await RespostaChamado.create({
-                resp_data: req.body.data,
-                resp_soluc_comum: req.body.soluc_comum,
-                resp_sup_id: req.body.sup_id,
-                resp_cham_id: req.body.cham_id
-            });
-            console.log(respostaChamado);
-            res.json(respostaChamado);
-        } catch (error) {
-            res.json(error);
-        };
-    };
-});
 
 app.get("/respostasChamados/:cham_id", async (req, res) => {
     let resposta = await RespostaChamado.findOne({
@@ -291,28 +230,6 @@ app.get("/respostasChamados/:cham_id", async (req, res) => {
         let suporte = await Suporte.findOne({ where: { sup_id: resposta.resp_sup_id } });
         res.json({ resposta, suporte });
     };
-});
-
-app.put("/respostasChamados/:id", async (req, res) => {
-    await RespostaChamado.update({
-        resp_data: req.body.data,
-        resp_soluc_comum: req.body.soluc_comum,
-        resp_sup_id: req.body.sup_id
-    }, {
-        where: {
-            resp_id: req.params.id
-        }
-    });
-    res.json({ mensagem: "Resposta de chamado alterada" });
-});
-
-app.delete("/respostasChamados/:id", async (req, res) => {
-    await RespostaChamado.destroy({
-        where: {
-            resp_id: req.params.id
-        }
-    });
-    res.json({ mensagem: "Resposta de chamado deletada" });
 });
 
 app.get("/equipamentos", async (req, res) => {
@@ -459,4 +376,23 @@ app.get("/verResposta/:cham_id", async (req, res) => {
     res.json({ chamado, resposta });
 });
 
+app.post("/login", async (req, res) => {
+    console.log(req.body.credencial);
+    if (req.body.credencial.match(/^(\#[0-9]{1,8})$/)) {
+        if (await Suporte.findOne({ where: { sup_id: req.body.credencial.replace(/\#/, "") } }) == null) res.json({ login: false, msg: "Suporte não cadastrado!" });
+        else {
+            let suporte = await Suporte.findOne({ where: { sup_id: req.body.credencial.replace(/\#/, "") } });
+            if (req.body.senha == suporte.sup_senha) res.json({ login: true, msg: "Login realizado com sucesso!" });
+            else res.json({ login: false, msg: "Senha incorreta!" });
+        };
+    } else {
+        if (await Cliente.findOne({ where: { cli_cpf: req.body.credencial } }) == null) res.json({ login: false, msg: "Cliente não cadastrado!" });
+        else {
+            let cliente = await Cliente.findOne({where: {cli_cpf: req.body.credencial}});
+            if (req.body.senha == cliente.cli_senha) res.json({ login: true, msg: "Login realizado com sucesso!" });
+            else res.json({ login: false, msg: "Senha incorreta!", token: cliente });
+        };
+    };
+});
 app.listen(8080);
+95.41666
