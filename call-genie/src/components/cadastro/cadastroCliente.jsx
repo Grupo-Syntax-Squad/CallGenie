@@ -12,7 +12,7 @@ function handleSubmit(event) {
   axios.get(`http://localhost:8080/clientes/${infos.cpf}`).then(response => {
     if (response.data == null) {
       if (infos.cpf.match(/^([0-9]{11})$/) && infos.tel.match(/^([0-9]{11})$/)) {
-        axios.post("http://localhost:8080/clientes", {
+        axios.post("http://localhost:8080/cadastrar/cliente", {
           nome: infos.nome,
           cpf: infos.cpf,
           email: infos.email,

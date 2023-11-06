@@ -376,6 +376,8 @@ app.get("/verResposta/:cham_id", async (req, res) => {
     res.json({ chamado, resposta });
 });
 
+let token = {};
+
 app.post("/login", async (req, res) => {
     console.log(req.body.credencial);
     if (req.body.credencial.match(/^(\#[0-9]{1,8})$/)) {
@@ -388,11 +390,44 @@ app.post("/login", async (req, res) => {
     } else {
         if (await Cliente.findOne({ where: { cli_cpf: req.body.credencial } }) == null) res.json({ login: false, msg: "Cliente não cadastrado!" });
         else {
-            let cliente = await Cliente.findOne({where: {cli_cpf: req.body.credencial}});
+            let cliente = await Cliente.findOne({ where: { cli_cpf: req.body.credencial } });
             if (req.body.senha == cliente.cli_senha) res.json({ login: true, msg: "Login realizado com sucesso!" });
-            else res.json({ login: false, msg: "Senha incorreta!", token: cliente });
+            else { res.json({ login: false, msg: "Senha incorreta!", token: cliente }); token = cliente };
         };
     };
 });
+
+app.post("/cadastrar/cliente", async (req, res) => {
+    try {
+        await Cliente.create({
+            cli_nome: req.body.nome,
+            cli_email: req.body.email,
+            cli_cep: req.body.cep,
+            cli_endereco: req.body.endereco,
+            cli_telefone: req.body.telefone,
+            cli_cpf: req.body.cpf,
+            cli_senha: senha
+        });
+        res.json({ cadastro: true });
+    } catch (error) {
+        res.json({ cadastro: false });
+    }
+});
+
+app.post("/cadastrar/suporte", async (req, res) => {
+    try {
+        await Suporte.create({
+            sup_nome: req.body.nome,
+            sup_email: req.body.email,
+            sup_telefone: req.body.telefone,
+            sup_cpf: req.body.cpf,
+            sup_senha: senha
+        });
+        res.json({ cadastro: true });
+    } catch (error) {
+        res.json({ cadastro: false });
+    }
+});
+
 app.listen(8080);
 95.41666
