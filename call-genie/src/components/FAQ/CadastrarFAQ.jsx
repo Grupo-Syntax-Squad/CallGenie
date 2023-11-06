@@ -2,7 +2,7 @@ import React from "react";
 import HeaderChamado from "../HeaderChamado/headerChamado.module.css";
 import Abrirchamado from "../abrirChamado/abrirChamado.module.css"
 import HomePage from "./FAQ.module.css";
-//import axios from "axios";
+import axios from "axios";
 
 function handleChange(event) { };
 
@@ -58,12 +58,8 @@ export default function CadastrarespostaFAQ() {
                     onChange={handleChange}
                   />
                 </label>
-<<<<<<<< HEAD:call-genie/src/components/FAQ/CadastrarFAQ.jsx
-
-========
                 
                 <div>             
->>>>>>>> Sprint3:call-genie/src/components/FAQ/CadastrarFAQ.tsx
                 <label>
                   <input
                     type="text"
