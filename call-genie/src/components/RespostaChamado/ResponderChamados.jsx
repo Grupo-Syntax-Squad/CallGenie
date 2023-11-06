@@ -25,23 +25,9 @@ export default function ChamadoAberto() {
   };
 
   const handleSubmit = (event) => {
-    let dataResposta = new Date();
-    axios.post("http://localhost:8080/respostasChamados", {
-      data: dataResposta,
+    axios.post(`http://localhost:8080/responderChamado/${cham_id}`, {
       soluc_comum: resposta,
       sup_id: sup_id,
-      cham_id: cham_id
-    });
-
-    axios.get(`http://localhost:8080/chamados/${cham_id}`).then(response => {
-      axios.put(`http://localhost:8080/chamados/${cham_id}`, {
-        titulo: response.data.chamado.cham_titulo,
-        descricao: response.data.chamado.cham_descricao,
-        data_inicio: response.data.chamado.cham_data_inicio,
-        prazo: response.data.chamado.cham_prazo,
-        status: "andamento"
-      });
-      window.location.replace("/chamadosSuporte");
     });
 
     // window.location.replace("/chamadoAberto");
