@@ -33,5 +33,9 @@ Por meio desta funcionalidade o sistema passa a ter a opção de gerar relatóri
 <div align='center'>
 
 
+https://github.com/Grupo-Syntax-Squad/CallGenie/assets/125401155/bab8145b-a88d-41c0-8b38-98d2f8e2a40e
+
+
+
 
 </div>
