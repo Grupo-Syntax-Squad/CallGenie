@@ -9,26 +9,21 @@ function handleChange(event) {
 };
 
 function handleSubmit(event) {
-  axios.get(`http://localhost:8080/clientes/${infos.cpf}`).then(response => {
-    if (response.data == null) {
-      if (infos.cpf.match(/^([0-9]{11})$/) && infos.tel.match(/^([0-9]{11})$/)) {
-        axios.post("http://localhost:8080/cadastrar/cliente", {
-          nome: infos.nome,
-          cpf: infos.cpf,
-          email: infos.email,
-          telefone: infos.tel,
-          endereco: infos.endereco,
-          cep: infos.cep,
-          senha: infos.senha
-        }).then(response => {
-          console.log(response);
-        });
-        window.location.replace("/entrar");
-      } else alert("CPF ou Telefone inválido!");
-    } else {
-      alert("CPF já foi cadastrado!")
-    };
-  });
+  if (infos.cpf.match(/^([0-9]{11})$/) && infos.tel.match(/^([0-9]{11})$/)) {
+    axios.post("http://localhost:8080/cadastrar/cliente", {
+      nome: infos.nome,
+      cpf: infos.cpf,
+      email: infos.email,
+      telefone: infos.tel,
+      endereco: infos.endereco,
+      cep: infos.cep,
+      senha: infos.senha
+    }).then(response => {
+      console.log(response);
+    if (response.data.cadastro == true) window.location.replace("/entrar");
+    else alert(response.data.msg)
+    });
+  } else alert("CPF ou Telefone inválido!");
   event.preventDefault();
 };
 

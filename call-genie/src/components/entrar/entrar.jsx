@@ -17,7 +17,7 @@ function handleSubmit(event) {
     senha: infos.senha
   }).then(response => {
     if (response.data.login == false) alert(response.data.msg);
-    else {localStorage.setItem(response.data.token); window.location.replace("/chamados")};
+    else {localStorage.setItem("login", response.data.token); window.location.replace("/chamados")};
     console.log(response.data.login, response.data.msg);
   });
 };
