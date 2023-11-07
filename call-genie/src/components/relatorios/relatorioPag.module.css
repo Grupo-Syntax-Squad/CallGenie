@@ -65,4 +65,8 @@ body {
     margin-left: 30px;
 }
 
+.imprimir {
+    display: none;
+}
+
 }

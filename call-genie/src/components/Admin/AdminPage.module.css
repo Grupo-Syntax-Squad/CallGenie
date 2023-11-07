@@ -371,6 +371,8 @@ textarea {
 }
 
 dialog{
+    margin-left: 35%;
+    margin-top: -15%;
     padding: 4rem;
     font-size: 18pt;
     font-weight: bold;

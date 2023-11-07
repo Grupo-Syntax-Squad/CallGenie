@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import RelatorioPag from "./relatorioPag.module.css";
 
+function Imprimir(event) {
+  window.print();
+}
+
 export default function Relatorio() {
   const [chamado, setChamado] = useState({});
   const [equipamento, setEquipamento] = useState({});
@@ -67,6 +71,7 @@ export default function Relatorio() {
       </p>
       <p className={RelatorioPag.text_right}><div className={RelatorioPag.marginBottom}><strong className={RelatorioPag.small_text}>Comentário adicionado em: xx/xx/xxxx</strong></div></p>
       <p className={RelatorioPag.flex}><strong>Encerrado em: {new Date().toLocaleDateString()}</strong></p>
+      <button onClick={Imprimir} className={RelatorioPag.imprimir}>Imprimir</button>
       <div className={RelatorioPag.footerRelatorio}>
         <footer className={RelatorioPag.flex}>
           <p className={RelatorioPag.small_text}>Copyright © 2023 Syntax Squad | Todos os direitos reservados</p>
