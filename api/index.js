@@ -63,7 +63,7 @@ app.put("/chamados/:id", async (req, res) => {
             cham_id: req.params.id
         }
     });
-    res.json({ mensagem: "Chamado alterado" });
+    res.json({ mensagem: "Chamado editado com sucesso." });
 });
 
 app.delete("/chamados/:id", async (req, res) => {
@@ -72,7 +72,7 @@ app.delete("/chamados/:id", async (req, res) => {
             cham_id: req.params.id
         }
     });
-    res.json({ mensagem: `Chamado de id ${req.params.id} deletado` });
+    res.json({ mensagem: `Chamado de id: ${req.params.id} excluído com sucesso.` });
 });
 
 app.get("/clientes", async (req, res) => {
@@ -119,7 +119,7 @@ app.put("/clientes/:cpf", async (req, res) => {
             cli_cpf: req.params.cpf
         }
     });
-    res.json({ mensagem: "Cliente alterado" });
+    res.json({ mensagem: "Informações do cliente editadas com sucesso." });
 });
 
 app.delete("/clientes/:cpf", async (req, res) => {
@@ -128,7 +128,7 @@ app.delete("/clientes/:cpf", async (req, res) => {
             cli_cpf: req.params.cpf
         }
     });
-    res.json({ mensagem: "Cliente deletado" });
+    res.json({ mensagem: "Cliente excluído com sucesso." });
 });
 
 app.get("/suportes", async (req, res) => {
@@ -174,7 +174,7 @@ app.put("/suportes/:id", async (req, res) => {
             sup_id: req.params.id
         }
     });
-    res.json({ mensagem: "Suporte alterado" });
+    res.json({ mensagem: "Informações do suporte editadas com sucesso." });
 });
 
 app.delete("/suportes/:id", async (req, res) => {
@@ -183,7 +183,7 @@ app.delete("/suportes/:id", async (req, res) => {
             sup_id: req.params.id
         }
     });
-    res.json({ mensagem: "Suporte deletado" });
+    res.json({ mensagem: "Suporte excluído com sucesso." });
 });
 
 app.get("/adms/:id", async (req, res) => {
@@ -206,7 +206,7 @@ app.put("/adms/:id", async (req, res) => {
             adm_id: req.params.id
         }
     });
-    res.json({ mensagem: "Administrador alterado" });
+    res.json({ mensagem: "Informações do administrador editadas com sucesso." });
 });
 
 
@@ -271,7 +271,7 @@ app.put("/equipamentos/:id", async (req, res) => {
             equ_id: req.params.id
         }
     });
-    res.json({ mensagem: "Equipamento alterado" });
+    res.json({ mensagem: "Informações do equipamento editadas com sucesso." });
 });
 
 app.delete("/equipamentos/:id", async (req, res) => {
@@ -280,7 +280,7 @@ app.delete("/equipamentos/:id", async (req, res) => {
             equ_id: req.params.id
         }
     });
-    res.json({ mensagem: "Equipamento deletado" });
+    res.json({ mensagem: "Equipamento excluído com sucesso." });
 });
 
 app.get("/gerarRelatorio/:cham_id", async (req, res) => {
@@ -332,7 +332,7 @@ app.post("/responderChamado/:cham_id", async (req, res) => {
                     resp_cham_id: req.params.cham_id
                 }
             });
-            res.json({ msg: "Resposta do chamado alterada com sucesso!" })
+            res.json({ msg: "Resposta do chamado alterada com sucesso." })
         } catch (error) {
             res.json(error);
         };
