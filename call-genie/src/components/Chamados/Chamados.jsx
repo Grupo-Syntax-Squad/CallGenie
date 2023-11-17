@@ -30,7 +30,7 @@
 //       axios.get(`http://localhost:8080/chamados/cpf/${cpf}`).then(response => setChamados(response.data));
 //     };
 //   });
-  
+
 //   let listaChamados = chamados.map(chamado =>
 //     <tr>
 //       <td id={chamado.cham_id} onClick={chamadoPage} style={{cursor: "pointer", color: "blue", textDecoration: "underline"}}>{chamado.cham_titulo}</td>
@@ -211,6 +211,27 @@ export default function Chamados() {
   let cpf = localStorage.getItem("login");
   const [selectedChamados, setSelectedChamados] = useState([]);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [userName, setUserName] = useState("");
+
+  const userCpf = localStorage.getItem("login");
+
+  useEffect(() => {
+
+    const isSupport = userCpf.length === 1;
+    const fetchUsername = async () => {
+      try {
+        const response = await axios.get(
+            `http://localhost:8080/${isSupport ? "suportes" : "clientes"}/${userCpf}`
+        );
+        const name = isSupport ? response.data.sup_nome : response.data.cli_nome;
+        setUserName(name);
+      } catch (error) {
+        console.error("Erro ao obter o nome do usuário:", error);
+      }
+    };
+
+    fetchUsername();
+  }, [userCpf]);
 
   const handleCheckboxChange = (chamadoId) => {
     if (selectedChamados.includes(chamadoId)) {
@@ -238,7 +259,7 @@ export default function Chamados() {
                 alt="Usuário"
               />
             </a>
-            <h2>Olá, {cpf.length == 1 ? "Suporte" : "User"}</h2>
+            <h2>Olá, {userName}</h2>
             <a href="/entrar">
               <img
                 src="assets/img/iconexit.png"
