@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HomePage from "./FAQ.module.css";
+import axios from "axios";
 
 export default function FAQ() {
+  const [faqs, setFaqs] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/faq`);
+        setFaqs(response.data);
+      } catch (error) {
+        console.error("Error fetching FAQs:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const tabela = faqs.map((faq, index) => (
+    <div key={index} className={HomePage.sanfona}>
+      <section>
+        <details>
+          <summary>{faq.faq_pergunta}</summary>
+          <p>{faq.faq_resposta}</p>
+        </details>
+      </section>
+    </div>
+  ));
+
   return (
     <div className={HomePage.homefundo}>
       <nav>
@@ -30,15 +57,14 @@ export default function FAQ() {
             da CallGenius clicando no link abaixo: https;//youtube.com/EXEMPLO
           </h2>
 
+          
           <div className={HomePage.buttoncontainer}>
             <a href="/#">
               <button className={HomePage.cadastrobutton}>Não encontrou uma resposta? Confira o manual de usuário!</button>
             </a>
           </div>
         </div>
-        <div>
-          <h2> adicionar o formulario de perguntas frequentes aqui</h2>
-        </div>
+
       </main>
       <footer>
         <a>Copyright © 2023 Syntax Squad | Todos os direitos reservados</a>
