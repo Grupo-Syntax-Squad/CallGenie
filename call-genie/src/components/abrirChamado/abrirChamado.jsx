@@ -81,12 +81,11 @@ export default function AbrirChamado() {
           />
         </a>
         <div className={HeaderChamado.headerItensRight}>
-          <a href="/Chamados">
-            <img
-              src="assets/img/iconback.png"
-              alt="Voltar"
-              id={Abrirchamado.iconback}
-            />
+          <a href="/alterarDados">
+              <img
+                src="assets/img/iconeuser2.png"
+                alt="Usuário"
+              />
           </a>
           <h2>Olá, {userName}</h2>
           <a href="/entrar">
