@@ -15,6 +15,22 @@ app.get("/chamados", async (req, res) => {
 
 app.get("/chamados/cpf/:cpf", async (req, res) => {
     let chamados = await Chamado.findAll({ where: { cham_cli_cpf: req.params.cpf } });
+    for (let cham in chamados) {
+        let chamado = chamados[cham];
+        if (chamado.cham_prazo) {
+            let prazo = new Date(chamado.cham_prazo);
+            let data = new Date();
+            if (prazo < data) {
+                await Chamado.update({
+                    cham_status: "atrasado"
+                }, {
+                    where: {
+                        cham_id: chamado.cham_id
+                    }
+                });
+            };
+        };
+    };
     res.json(chamados);
 });
 
