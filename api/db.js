@@ -225,7 +225,7 @@ Faq.belongsTo(Suporte, {
             adm_nome: "admin",
             adm_telefone: 12997881456,
             adm_email: "emaildoadm@callgenie.com",
-            adm_senha: "admin"
+            adm_senha: "fatec"
         });       
     } else {
         console.log("Adm já criado");

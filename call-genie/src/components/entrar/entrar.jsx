@@ -10,15 +10,20 @@ function handleChange(event) {
 
 function handleSubmit(event) {
   console.log(infos);
-  if (infos.cpf=="admin") {
-    if (infos.senha == "fatec") window.location.replace("/admin"); localStorage.setItem('login',"admin");
-  } else axios.post("http://localhost:8080/login", {
+  axios.post("http://localhost:8080/login", {
     credencial: infos.cpf,
     senha: infos.senha
   }).then(response => {
     if (response.data.login == false) alert(response.data.msg);
-    else {localStorage.setItem("login", response.data.token); window.location.replace("/chamados")};
-    console.log(response.data.login, response.data.msg);
+    else {
+      if (response.data.token == "admin") {
+        localStorage.setItem("admin", true);
+        localStorage.setItem("login", response.data.token);
+        window.location.replace("/admin");
+      };
+      localStorage.setItem("login", response.data.token);
+      window.location.replace("/chamados")
+    };
   });
 };
 
