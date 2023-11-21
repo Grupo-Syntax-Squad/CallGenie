@@ -1,6 +1,6 @@
 import express from "express";
 
-import { Adm, Chamado, Cliente, Equipamento, RespostaChamado, Suporte, Faq } from "./db.js";
+import { Adm, Chamado, Cliente, Equipamento, RespostaChamado, Suporte, Faq } from "../db.js";
 
 const respostaRouter = express.Router();
 

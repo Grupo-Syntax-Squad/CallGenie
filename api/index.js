@@ -4,14 +4,14 @@ import cors from "cors";
 
 import { Adm, Chamado, Cliente, Equipamento, RespostaChamado, Suporte, Faq } from "./db.js";
 
-import clienteRouter from "./cliente.js";
-import chamadoRouter from "./chamado.js";
-import suporteRouter from "./suporte.js";
-import admRouter from "./adm.js";
-import respostaRouter from "./resposta.js";
-import equipamentoRouter from "./equipamento.js";
-import logincadastroRouter from "./logincadastro.js";
-import relatorioRouter from "./relatorio.js";
+import clienteRouter from "./rotas/cliente.js";
+import chamadoRouter from "./rotas/chamado.js";
+import suporteRouter from "./rotas/suporte.js";
+import admRouter from "./rotas/adm.js";
+import respostaRouter from "./rotas/resposta.js";
+import equipamentoRouter from "./rotas/equipamento.js";
+import logincadastroRouter from "./rotas/logincadastro.js";
+import relatorioRouter from "./rotas/relatorio.js";
 
 const app = express();
 app.use(bodyParser.json());
