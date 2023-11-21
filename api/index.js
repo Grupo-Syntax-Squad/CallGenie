@@ -184,7 +184,7 @@ app.put("/suportes/:id", async (req, res) => {
         sup_email: req.body.email,
         sup_telefone: req.body.telefone,
         sup_senha: req.body.senha,
-        sup_adm_id: req.body.adm_id
+        sup_set_id: req.body.adm_id
     }, {
         where: {
             sup_id: req.params.id
@@ -368,7 +368,7 @@ app.post("/responderChamado/:cham_id", async (req, res) => {
     };
 
     await Chamado.update({
-        cham_status: "andamento"
+        cham_status: "Em andamento"
     }, {
         where: {
             cham_id: req.params.cham_id

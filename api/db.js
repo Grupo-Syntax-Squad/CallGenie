@@ -59,7 +59,7 @@ export const Chamado = database.define('Chamado', {
         type: DataTypes.STRING(100)
     },
     cham_status: {
-        type: DataTypes.ENUM('Aberto', 'Andamento', 'Concluído', 'Atrasado'),
+        type: DataTypes.ENUM('Aberto', 'Em andamento', 'Concluído', 'Atrasado'),
         defaultValue: 'Aberto'
     },
     cham_data_inicio: {
@@ -67,8 +67,8 @@ export const Chamado = database.define('Chamado', {
         defaultValue: new Date()
     },
     cham_urgencia: {
-        type: DataTypes.ENUM("baixa", "media", "alta", "urgente"),
-        defaultValue: "media",
+        type: DataTypes.ENUM("Baixa", "Média", "Alta", "Urgente"),
+        defaultValue: "Média",
         allowNull: false
     },
     cham_prazo: {
@@ -133,8 +133,8 @@ export const Suporte = database.define("Suporte", {
     }
 });
 
-Suporte.belongsTo(Adm, {
-    foreignKey: "sup_adm_id",
+Suporte.belongsTo(Setor, {
+    foreignKey: "sup_set_id",
     allowNull: false
 });
 
@@ -210,9 +210,17 @@ export const Faq = database.define("Faq", {
     }
 });
 
-Faq.belongsTo(Suporte, {
-    foreignKey: "faq_sup_id",
-    allowNull: false
+export const Setor = database.define("Setor", {
+    set_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    set_nome: {
+        type: DataTypes.STRING,
+        allowNull: true
+    }
 });
 
 (async () => {
