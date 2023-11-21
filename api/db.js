@@ -210,11 +210,6 @@ export const Faq = database.define("Faq", {
     }
 });
 
-Faq.belongsTo(Suporte, {
-    foreignKey: "faq_sup_id",
-    allowNull: false
-});
-
 (async () => {
     await database.sync();
     let adm = await Adm.findOne({where: {
@@ -229,5 +224,18 @@ Faq.belongsTo(Suporte, {
         });       
     } else {
         console.log("Adm já criado");
+    };
+
+    await database.sync();
+    let faq = await Faq.findOne({where: {
+        faq_pergunta: "Pergunta 1"
+    }});
+    if (faq == null) {
+        await Faq.create({
+            faq_pergunta: "Pergunta 1",
+            faq_resposta: "Resposta 1",
+        });
+    } else {
+        console.log("Faq já criado");
     };
 })();

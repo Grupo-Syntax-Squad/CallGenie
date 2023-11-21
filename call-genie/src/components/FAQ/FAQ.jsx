@@ -7,14 +7,12 @@ export default function FAQ() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8080/faq`);
+      await axios.get(`http://localhost:8080/faq`).then((response) => {
         setFaqs(response.data);
-      } catch (error) {
+      }).catch((error) => {
         console.error("Error fetching FAQs:", error);
-      }
+      });
     };
-
     fetchData();
   }, []);
 
@@ -56,8 +54,8 @@ export default function FAQ() {
             sistema! Acesse o vídeo tutorial para saber como utilizar o sistema
             da CallGenius clicando no link abaixo: https;//youtube.com/EXEMPLO
           </h2>
+          {tabela}
 
-          
           <div className={HomePage.buttoncontainer}>
             <a href="/#">
               <button className={HomePage.cadastrobutton}>Não encontrou uma resposta? Confira o manual de usuário!</button>
