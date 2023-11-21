@@ -190,10 +190,10 @@ h3{
 .cadastro_suporte_container{
     display:block;
     margin:auto;
-    margin-right:0%;
+    /* margin-right:0%; */
     padding:5%;
     background-color: rgba(239, 239, 239, 0.562);
-    width:570px;
+    width:660px;
     border-radius:25px;
     position: relative;
 }
