@@ -60,15 +60,16 @@ function CadastrarSuporte() {
             <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
             <input type="email" placeholder="E-mail" name="email" onChange={handleChange} />
             <input type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
+            <input type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
             <input type="button" value="Cadastrar-se" className={CadastroCSS.button_input} onClick={handleSubmit} />
           </form>
         </div>
-        <div>
+        {/* <div>
           <img src="assets/img/user_adm.png" alt='' id={CadastroCSS.useradm} />
           <div className={CadastroCSS.idsupervisor_container}>
             <input type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
           </div>
-        </div>
+        </div> */}
       </main>
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
