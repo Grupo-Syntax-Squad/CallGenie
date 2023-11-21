@@ -132,10 +132,7 @@ export const Suporte = database.define("Suporte", {
     }
 });
 
-Suporte.belongsTo(Setor, {
-    foreignKey: "sup_set_id",
-    allowNull: false
-});
+
 
 export const RespostaChamado = database.define("RespostaChamado", {
     resp_id: {
@@ -220,6 +217,11 @@ export const Setor = database.define("Setor", {
         type: DataTypes.STRING,
         allowNull: true
     }
+});
+
+Suporte.belongsTo(Setor, {
+    foreignKey: "sup_set_id",
+    allowNull: false
 });
 
 (async () => {
