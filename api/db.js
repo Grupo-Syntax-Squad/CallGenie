@@ -84,7 +84,6 @@ Chamado.belongsTo(Cliente, {
 export const Adm = database.define("Administrador", {
     adm_id: {
         type: DataTypes.INTEGER,
-        autoIncrement: true,
         primaryKey: true,
         allowNull: false
     },
@@ -233,7 +232,8 @@ export const Setor = database.define("Setor", {
             adm_nome: "admin",
             adm_telefone: 12997881456,
             adm_email: "emaildoadm@callgenie.com",
-            adm_senha: "fatec"
+            adm_senha: "fatec",
+            adm_id:12345
         });       
     } else {
         console.log("Adm já criado");
