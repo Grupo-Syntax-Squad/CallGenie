@@ -59,7 +59,7 @@ function Main() {
           </a>
 
         </div>
-        <p>
+        <p className={CadastroCSS.cadastro}>
           Precisa de ajuda? <a href="/cadastrar">clique aqui</a>
         </p>
       </main>

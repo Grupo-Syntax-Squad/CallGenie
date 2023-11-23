@@ -55,13 +55,13 @@ function CadastrarSuporte() {
             </div>
           </div>
           <form action="" className={CadastroCSS.cadastro_suporte_container}>
-            <input type="text" placeholder="Nome" name="nome" onChange={handleChange} />
-            <input type="number" placeholder="CPF" name="cpf" onChange={handleChange} />
-            <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
-            <input type="email" placeholder="E-mail" name="email" onChange={handleChange} />
-            <input type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
-            <input type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
-            <input type="button" value="Cadastrar-se" className={CadastroCSS.button_input} onClick={handleSubmit} />
+            <input className={CadastroCSS.input} type="text" placeholder="Nome" name="nome" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="number" placeholder="CPF" name="cpf" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="password" placeholder="Senha" name="senha" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="email" placeholder="E-mail" name="email" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="button" value="Cadastrar-se" className={CadastroCSS.button_input} onClick={handleSubmit} />
           </form>
         </div>
         {/* <div>

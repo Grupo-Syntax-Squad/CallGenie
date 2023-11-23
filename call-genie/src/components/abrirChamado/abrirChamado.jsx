@@ -108,7 +108,7 @@ export default function AbrirChamado() {
             />
             <h1>Novo chamado</h1>
           </div>
-          <form action="/abrirChamado" method="post" onSubmit={handleSubmit}>
+          <form action="/abrirChamado" method="post" onSubmit={handleSubmit} className={Abrirchamado.containerAbrirChamado}>
             <div className={Abrirchamado.container_colunas}>
               <div className={Abrirchamado.colunaEsquerda}>
                 <label>

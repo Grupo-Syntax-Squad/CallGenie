@@ -90,6 +90,7 @@ main img {
 
 }
 .main_div_user {
+    margin-top: 2%;
     width: 50%;
     height:50%;
     border-radius: 15px;
@@ -191,13 +192,16 @@ h3{
     width: 600px;
 }
 
+.input{
+    width: 650px;
+    margin-bottom: 40px;
+}
+
 .cadastro_suporte_container{
     display:block;
     margin:auto;
-    /* margin-right:0%; */
-    padding:5%;
     background-color: rgba(239, 239, 239, 0.562);
-    width:660px;
+    width:850px;
     border-radius:25px;
     position: relative;
 }
@@ -250,7 +254,7 @@ label{
     border-radius: 10px;
     cursor: pointer;
     position: absolute;
-    left:105%;
+    left:50%;
     top:87%;
 }
 
@@ -418,4 +422,8 @@ input[type="number"] {
     -webkit-appearance: textfield; /* Safari */
     -moz-appearance: textfield; /* Firefox */
     appearance: textfield; /* Outros navegadores */
+}
+
+p.cadastro{
+    margin-top: 1rem;
 }

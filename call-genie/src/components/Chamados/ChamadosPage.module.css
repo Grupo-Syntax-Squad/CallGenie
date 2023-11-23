@@ -328,9 +328,6 @@ dialog button.nao{
     border-radius: 10px;
 }
 
-.buttoncontainer {
-    margin-top: 20px; /* Margem superior para afastar do texto */
-}
 
 .buttoncontainer a{
     text-decoration: none;

@@ -112,6 +112,10 @@ header h2{
     padding:2%;
     border-radius: 20px;
 }
+
+.containerAbrirChamado{
+    padding:0%;
+}
 .fundoAbrirChamado h1{
     display: block;
     margin: auto;
@@ -279,7 +283,7 @@ dialog button.nao{
 }
 .container_colunas{
     display:flex;
-    margin: 0%;;
+    margin-left: 10%;
 }
 
 .buttonInput{
@@ -297,4 +301,11 @@ dialog button.nao{
     border: none;
     border-radius: 10px;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .container_colunas{
+        flex-direction: column;
+    }
+
 }
