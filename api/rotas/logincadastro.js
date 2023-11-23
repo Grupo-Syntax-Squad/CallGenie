@@ -1,8 +1,12 @@
 import express from "express";
 
 import { Adm, Chamado, Cliente, Equipamento, RespostaChamado, Suporte, Faq } from "../db.js";
+import clienteRouter from "./cliente.js";
+import suporteRouter from "./suporte.js";
 
 const logincadastroRouter = express.Router();
+logincadastroRouter.use(clienteRouter);
+logincadastroRouter.use(suporteRouter);
 
 logincadastroRouter.post("/login", async (req, res) => {
     if (req.body.credencial == "admin" && req.body.senha == "fatec") res.json({ login: true, msg: "Login realizado com sucesso!", token: "admin" });
@@ -24,37 +28,70 @@ logincadastroRouter.post("/login", async (req, res) => {
 });
 
 logincadastroRouter.post("/cadastrar/cliente", async (req, res) => {
-    try {
-        await Cliente.create({
-            cli_nome: req.body.nome,
-            cli_email: req.body.email,
-            cli_cep: req.body.cep,
-            cli_endereco: req.body.endereco,
-            cli_telefone: req.body.telefone,
-            cli_cpf: req.body.cpf,
-            cli_senha: req.body.senha
+    let suporteJaCadastrado
+        let clienteJaCadastrado = await Cliente.findOne({
+            where: {
+                cli_cpf: req.body.cpf
+            }
         });
-        res.json({ cadastro: true });
-    } catch (error) {
-        let msg = "Cadastro falhou!";
-        if (error.errors[0].message == "PRIMARY must be unique") msg = "CPF já cadastrado!"
-        res.json({ cadastro: false, msg: msg });
-    }
+        logincadastroRouter.get("/suporte", async (req, res) => {
+            suporteJaCadastrado = await Suporte.findOne({
+                where: {
+                    sup_cpf: req.body.cpf
+                }
+            })
+        });
+        
+        console.log(clienteJaCadastrado, suporteJaCadastrado)
+        if (clienteJaCadastrado == "cli_cpf must be unique" || suporteJaCadastrado != null) res.json({ cadastro: false, msg: "CPF ja cadastrado!" });
+        else {
+            try {
+                await Cliente.create({
+                    cli_nome: req.body.nome,
+                    cli_email: req.body.email,
+                    cli_cep: req.body.cep,
+                    cli_endereco: req.body.endereco,
+                    cli_telefone: req.body.telefone,
+                    cli_cpf: req.body.cpf,
+                    cli_senha: req.body.senha
+                });
+                res.json({ cadastro: true });
+            } catch (error) {
+                let msg = "Cadastro falhou!";
+                if (error.errors[0].message == "PRIMARY must be unique") msg = "CPF já cadastrado!"
+                res.json({ cadastro: false, msg: msg });
+            }
+        }
 });
 
 logincadastroRouter.post("/cadastrar/suporte", async (req, res) => {
-    try {
-        let suporte = await Suporte.create({
-            sup_nome: req.body.nome,
-            sup_email: req.body.email,
-            sup_telefone: req.body.telefone,
-            sup_cpf: req.body.cpf,
-            sup_senha: req.body.senha
-        });
-        res.json({ cadastro: true, id: suporte.sup_id });
-    } catch (error) {
-        let msg = "Cadastro falhou!";
-        res.json({ cadastro: false, msg: msg });
+    let clienteJaCadastrado = await Cliente.findOne({
+        where: {
+            cli_cpf: req.body.cpf
+        }
+    })
+    let suporteJaCadastrado = await Suporte.findOne({
+        where: {
+            sup_cpf: req.body.cpf
+        }
+    })
+    console.log(clienteJaCadastrado, suporteJaCadastrado)
+    if (clienteJaCadastrado == "cli_cpf must be unique" || suporteJaCadastrado == "sup_cpf must be unique") res.json({ cadastro: false, msg: "CPF ja cadastrado!" });
+    else {
+        try {
+            let suporte = await Suporte.create({
+                sup_nome: req.body.nome,
+                sup_email: req.body.email,
+                sup_telefone: req.body.telefone,
+                sup_cpf: req.body.cpf,
+                sup_senha: req.body.senha
+            });
+            res.json({ cadastro: true, id: suporte.sup_id });
+        } catch (error) {
+            let msg = "Cadastro falhou!";
+            if (error.errors[0].message == "PRIMARY must be unique") msg = "CPF já cadastrado!"
+            res.json({ cadastro: false, msg: msg });
+        }
     }
 });
 
