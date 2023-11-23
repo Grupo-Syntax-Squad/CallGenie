@@ -17,11 +17,13 @@ export default function FAQ() {
   }, []);
 
   const tabela = faqs.map((faq, index) => (
-    <div key={index} className={HomePage.sanfona}>
+    <div key={index} className={HomePage.faq}>
       <section>
         <details>
-          <summary>{faq.faq_pergunta}</summary>
-          <p>{faq.faq_resposta}</p>
+          <summary><></>{faq.faq_pergunta}</summary>
+          <div className={HomePage.respostaFaq}>
+            <p>{faq.faq_resposta}</p>
+          </div>
         </details>
       </section>
     </div>
@@ -47,14 +49,16 @@ export default function FAQ() {
 
       <main className={HomePage.main_texto}>
         <div>
-          <h1>FAQ </h1>
-          <h2>
-            Bem-vindo(a) ao FAQ! Essa página é totalmente dedicada a tirar
-            dúvidas e ajudar o usuário a ter uma melhor experiência em nosso
-            sistema! Acesse o vídeo tutorial para saber como utilizar o sistema
-            da CallGenius clicando no link abaixo: https;//youtube.com/EXEMPLO
-          </h2>
-          {tabela}
+            <h1>FAQ </h1>
+          <div className={HomePage.flex}>
+            <h2>
+              Bem-vindo(a) ao FAQ! Essa página é totalmente dedicada a tirar
+              dúvidas e ajudar o usuário a ter uma melhor experiência em nosso
+              sistema! Acesse o vídeo tutorial para saber como utilizar o sistema
+              da CallGenius clicando no link abaixo: https;//youtube.com/EXEMPLO
+            </h2>
+            <div className={HomePage.faqcontainer}>{tabela}</div>
+          </div>
 
           <div className={HomePage.buttoncontainer}>
             <a href="/#">
