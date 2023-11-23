@@ -4,6 +4,83 @@ import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import StyleTableCSS from './StyleTable.module.css'
 import AdminPage from "./AdminPage.module.css"
 
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+function handleDeleteChamados(selectedChamados) {
+  if (selectedChamados.length === 0) {
+    alert('Nenhum chamado selecionado!');
+    return;
+  }
+
+  selectedChamados.forEach((chamadoId) => {
+    axios.delete(`http://localhost:8080/chamados/${chamadoId}`);
+  });
+  window.location.replace("/chamados");
+};
+
+function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
+  const [chamados, setChamados] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
+    console.log(chamados);
+  });
+
+  let cham = [];
+
+  // if (filtro === "") {
+  //   cham = chamados;
+  // } else {
+  //   chamados.forEach(chamado => {
+  //     if (chamado.cham_id == filtro || chamado.cham_titulo == filtro) {
+  //       cham.push(chamado);
+  //     }
+  //   });
+  // }
+
+  cham.sort((a, b) => new Date(b.cham_data_inicio) - new Date(a.cham_data_inicio));
+
+  const listaChamados = cham.map((chamado) => (
+
+    <tr key={chamado.cham_id}>
+      <td
+        id={chamado.cham_id}
+        onClick={chamadoPage}
+        style={{ cursor: "pointer", color: "blue", textDecoration: "underline" }}
+      >
+        {chamado.cham_titulo}
+      </td>
+      <td>{chamado.cham_id}</td>
+      <td>{chamado.cham_urgencia}</td>
+      <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
+      <td>{chamado.cham_status}</td>
+      <td>
+        <input
+          type="checkbox"
+          onChange={() => handleCheckboxChange(chamado.cham_id)}
+          checked={selectedChamados.includes(chamado.cham_id)}
+        />
+      </td>
+    </tr>
+  ));
+
+  return (
+    <table>
+      <thead>
+        <tr className={StyleTableCSS.ptable}>
+          <th><p>Título</p></th>
+          <th><p>ID</p></th>
+          <th><p>Prioridade</p></th>
+          <th><p>Data de criação</p></th>
+          <th><p>Status</p></th>
+        </tr>
+      </thead>
+      <tbody>{listaChamados}</tbody>
+    </table>
+  );
+};
+
 export default function Admin() {
   return (
     <>
@@ -82,29 +159,7 @@ export default function Admin() {
             </div>
             <div className={StyleTableCSS.mainTable}>
               <section className={StyleTableCSS.tableBody}>
-                <table>
-                  <thead>
-                    <tr className={StyleTableCSS.ptable}>
-                      <th><p>ID</p></th>
-                      <th><p>Título </p></th>
-                      <th><p>Ordem </p></th>
-                      <th><p>Data de criação</p> </th>
-                      <th><p>Status </p></th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {/* <% chamados.forEach(chamado => { %>
-                                      <tr>
-                                          <td><a href="/chamado-<%= chamado.dataValues.cham_id %>"><%= chamado.dataValues.cham_titulo %></a></td>
-                                          <td><%= chamado.dataValues.cham_id %></td>
-                                          <td><%= chamado.dataValues.cham_data_inicio.split(/-/)[2] %>/<%= chamado.dataValues.cham_data_inicio.split(/-/)[1] %>/<%= chamado.dataValues.cham_data_inicio.split(/-/)[0] %></td>
-                                          <td><p className="status <%= chamado.dataValues.cham_status %>"><%= chamado.dataValues.cham_status %></p></td>
-                                          <!-- <td><button className="deletar-chamado"><i className="fa-solid fa-trash"></i></button></td> -->
-                                      </tr>
-                              <% }); %> */}
-                  </tbody>
-                </table>
+                <Table />
               </section>
               {/* <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>) */}
               {/* Ele será ativado quando o usuário clicar no ícone da lixeira--> */}
