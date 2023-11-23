@@ -57,10 +57,10 @@ body h1{
 }
 
 body h2, summary, p{
-    text-indent: 8%;
-    width:523px;
+    /* text-indent: 8%; */
+    /* width:523px; */
     text-align: justify;
-    padding-top: 5%;
+    /* padding-top: 5%; */
 }
 
 a{
