@@ -36,17 +36,21 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
   });
 
   let cham = [];
-  console.log(typeof filtro)
 
   if (filtro === "") {
     cham = chamados;
   } else {
     chamados.forEach(chamado => {
-      if (chamado.cham_id == filtro) cham.push(chamado)
+      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro) {
+        cham.push(chamado);
+      }
     });
-  };
+  }
+
+  cham.sort((a, b) => new Date(b.cham_data_inicio) - new Date(a.cham_data_inicio));
 
   const listaChamados = cham.map((chamado) => (
+    
     <tr key={chamado.cham_id}>
       <td
         id={chamado.cham_id}
@@ -56,6 +60,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
         {chamado.cham_titulo}
       </td>
       <td>{chamado.cham_id}</td>
+      <td>{chamado.cham_urgencia}</td>
       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
       <td>{chamado.cham_status}</td>
       <td>
@@ -74,6 +79,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
         <tr className={StyleTableCSS.ptable}>
           <th><p>Título</p></th>
           <th><p>ID</p></th>
+          <th><p>Prioridade</p></th>
           <th><p>Data de criação</p></th>
           <th><p>Status</p></th>
         </tr>
@@ -173,7 +179,7 @@ export default function Chamados() {
               </div>
               <div className={ChamadosPageCSS.filtro}>
                 <input
-                  type="number"
+                  type="string"
                   placeholder="escreva o ID que você quer procurar aqui."
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
