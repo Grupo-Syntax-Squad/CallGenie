@@ -100,6 +100,8 @@ body p a {
 }
 
 .cadastro_container{
+    align-items: center;
+    justify-content: center;
     display:block;
     margin:auto;
     background-color: rgba(239, 239, 239, 0.216);
@@ -123,10 +125,19 @@ body p a {
     margin:auto;
     margin-top: 50px;
 }
-#inputNome{
+.input{
+    width: 650px;
     margin-bottom: 40px;
 }
 
 .h2Entrar{
+    width:650px;
     margin-bottom: 50px;
+}
+
+main.entrar{
+    position: relative;
+    top: 50%;
+    /* left:50%; */
+    transform: translateY(-50%, -50%); 
 }

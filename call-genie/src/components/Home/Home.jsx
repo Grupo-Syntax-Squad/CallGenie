@@ -28,7 +28,7 @@ export default function Home() {
       <main className={HomePage.main_texto}>
         <div className={HomePage.texto}>
           <h1>Call Gennie.</h1>
-          <h2>
+          <h2 className={HomePage.home}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type

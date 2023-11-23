@@ -97,6 +97,10 @@ main img {
     margin-inline: 25%;
 }
 
+.opcaousuario{
+
+}
+
 
 @media (max-width: 768px) {
     main {
@@ -264,10 +268,10 @@ main h2{
 
 .cadastro_opcao{
     background-color: #ffffff6a;
-    margin:30px;
     width: 300px;
     height: 250px;
     border-radius: 5%;
+    margin: 0 auto;
 }
 
 .cadastro_opcoes a {

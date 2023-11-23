@@ -67,7 +67,7 @@ export default function ChamadoAberto() {
               </div>
             </div>
             <div className={ChamadoAbertoCss.flexRow}>
-              <div className={ChamadoAbertoCss.fundo_chamado_aberto} >
+              <div className={ChamadoAbertoCss.fundoChamadoAberto} >
                 <div className={ChamadoAbertoCss.colunaEsquerda} >
                   <p> {chamado.cham_descricao} </p>
                     {cpf.length < 11 ? <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}>
@@ -75,7 +75,6 @@ export default function ChamadoAberto() {
                     </a> : <a href="/respostaChamado" className={ChamadoAbertoCss.responder_a}>
                       <button className={ChamadoAbertoCss.responderbutton}>Ver resposta do chamado</button>
                     </a>}
-
                 </div>
               </div>
               <div className={ChamadoAbertoCss.colunaDireita}>

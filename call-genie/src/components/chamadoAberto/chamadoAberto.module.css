@@ -296,7 +296,6 @@ textarea {
     background-color: #ffffff3f;
     border-radius: 20px;
     padding:2rem;
-    width:580px;
     margin-right: 2%;
     height: 70%;
 }
@@ -446,7 +445,6 @@ header {
 
 .colunaEsquerda p {
     color: #000000;
-    background-color: #bed1f1;
     height: 90%;
     border-radius: 5%;
 }

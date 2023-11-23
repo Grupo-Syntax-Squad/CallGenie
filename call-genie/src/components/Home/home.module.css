@@ -44,6 +44,9 @@ body h2{
     text-align: justify;
     padding-top: 5%;
 }
+body h2.home{
+    margin-left: 20%;
+}
 
 a{
     text-align: center;

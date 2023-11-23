@@ -32,7 +32,7 @@ export default function Entrar() {
   return (
     <>
       <nav></nav>
-      <main>
+      <main className={EntrarPage.entrar} >
         <form action="" className={EntrarPage.cadastro_container} >
           <a href="/">
             <img
@@ -45,11 +45,11 @@ export default function Entrar() {
           <input
             type="text"
             placeholder="CPF ou #ID"
-            id={EntrarPage.inputNome}
+            className={EntrarPage.input}
             name="cpf"
             onChange={handleChange}
           />
-          <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
+          <input className={EntrarPage.input} type="password" placeholder="Senha" name="senha" onChange={handleChange} />
           {/* <a href="#">Esqueci a minha senha</a> */}
           <input
             type="button"
