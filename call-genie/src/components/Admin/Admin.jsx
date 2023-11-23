@@ -172,6 +172,13 @@ export default function Admin() {
                 <button className={ChamadosPageCSS.nao}>NÃO</button>
               </dialog>
             </div>
+            <div className={ChamadosPageCSS.postButtons}>
+              <div className={ChamadosPageCSS.postButtonsA}>
+                <a href="/cadastroSuporte" className={ChamadosPageCSS.buttonInput}>
+                  Cadastrar suporte
+                </a>
+              </div>
+            </div>
             {/* <div className={ChamadosPageCSS.postButtons}>
               <div className={ChamadosPageCSS.postButtonA}>
                 <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
