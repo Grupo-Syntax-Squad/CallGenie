@@ -91,12 +91,6 @@ main div {
     margin-left: 3%;
 }
 
-main div a {
-    text-align: left;
-    flex: 1; 
-    margin-top: 50%;
-}
-
 
 @media (max-width: 768px) {
     main {
@@ -213,4 +207,10 @@ summary{
         opacity: 1;
         transform: translateY(0px);
     }
+}
+
+.flexRow a {
+    text-align: left;
+    flex: 1; 
+    margin: 0;
 }

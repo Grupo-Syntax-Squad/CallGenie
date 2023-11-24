@@ -47,9 +47,9 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
     });
   }
 
-  cham.sort((a, b) => new Date(b.cham_data_inicio) - new Date(a.cham_data_inicio));
-
-  const listaChamados = cham.map((chamado) => (
+  cham.sort((a, b) => new Date(a.cham_data_inicio) - new Date(b.cham_data_inicio));
+  
+      const listaChamados = cham.map((chamado) => (
     
     <tr key={chamado.cham_id}>
       <td
@@ -216,3 +216,4 @@ export default function Chamados() {
     </body>
   );
 };
+
