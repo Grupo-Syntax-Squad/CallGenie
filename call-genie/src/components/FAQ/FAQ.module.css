@@ -57,10 +57,7 @@ body h1{
 }
 
 body h2, summary, p{
-    /* text-indent: 8%; */
-    /* width:523px; */
     text-align: justify;
-    /* padding-top: 5%; */
 }
 
 a{
@@ -197,6 +194,23 @@ details > p{
     text-align: justify;
 }
 
+summary{
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.4rem;
+}
+
 .respostaFaq{
-    transition: max-height 0.3s ease-out; 
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade{
+    from {
+        opacity:0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

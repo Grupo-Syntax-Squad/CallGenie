@@ -20,7 +20,7 @@ export default function FAQ() {
     <div key={index} className={HomePage.faq}>
       <section>
         <details>
-          <summary><></>{faq.faq_pergunta}</summary>
+          <summary>{faq.faq_pergunta}</summary>
           <div className={HomePage.respostaFaq}>
             <p>{faq.faq_resposta}</p>
           </div>

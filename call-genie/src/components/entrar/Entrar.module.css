@@ -56,22 +56,14 @@ footer {
 }
 
 @media (max-width: 768px) {
-    main {
-        flex-direction: column; 
+    .input{
+        width:100%;
+    }
+
+    main >.cadastro_container{
+        max-width: 60%;
         margin-left: 0;
-        align-items: center;
-        margin-left: 5%;
     }
-    nav .nav-buttons {
-        flex-direction: column;
-        gap: 10px;
-        margin-right: 5%;
-    }
-
-    main img {
-        margin-right: 0; 
-    }
-
 
 }
 
@@ -91,7 +83,7 @@ justify-content: space-between;
 align-items: center;
 }
 
-p{
+p.entrar{
     text-align: center;
 }
 
@@ -108,7 +100,8 @@ body p a {
     padding:5%;
     padding-top: 100px;
     border-radius: 0px 0px 15px 15px;
-    width: 45%;
+    max-width: 45%;
+
 }
 
 .button_inputEntrar{ 
@@ -126,12 +119,12 @@ body p a {
     margin-top: 50px;
 }
 .input{
-    width: 650px;
+    width: 100%;
     margin-bottom: 40px;
 }
 
 .h2Entrar{
-    width:650px;
+    width:100%;
     margin-bottom: 50px;
 }
 
