@@ -12,7 +12,7 @@ export default function Relatorio() {
   const [suporte, setSuporte] = useState({});
   const [resposta, setResposta] = useState({});
   const [cliente, setCliente] = useState({});
-
+ 
   const id = localStorage.getItem("cham_id");
   const cpf = localStorage.getItem("login");
   const sup_id = localStorage.getItem("sup_id");

@@ -28,23 +28,21 @@ logincadastroRouter.post("/login", async (req, res) => {
 });
 
 logincadastroRouter.post("/cadastrar/cliente", async (req, res) => {
-    let suporteJaCadastrado
     let clienteJaCadastrado = await Cliente.findOne({
         where: {
             cli_cpf: req.body.cpf
         }
     });
-    logincadastroRouter.get("/suporte", async (req, res) => {
-        suporteJaCadastrado = await Suporte.findOne({
-            where: {
-                sup_cpf: req.body.cpf
-            }
-        })
+
+    let suporteJaCadastrado = await Suporte.findOne({
+        where: {
+            sup_cpf: req.body.cpf
+        }
     });
 
-    console.log(clienteJaCadastrado, suporteJaCadastrado)
-    if (clienteJaCadastrado == "cli_cpf must be unique" || suporteJaCadastrado != null) res.json({ cadastro: false, msg: "CPF ja cadastrado!" });
-    else {
+    if (clienteJaCadastrado || suporteJaCadastrado) {
+        res.json({ cadastro: false, msg: "CPF já cadastrado!" });
+    } else {
         try {
             await Cliente.create({
                 cli_nome: req.body.nome,
@@ -58,7 +56,7 @@ logincadastroRouter.post("/cadastrar/cliente", async (req, res) => {
             res.json({ cadastro: true });
         } catch (error) {
             let msg = "Cadastro falhou!";
-            if (error.errors[0].message == "PRIMARY must be unique") msg = "CPF já cadastrado!"
+            if (error.errors[0].message == "PRIMARY must be unique") msg = "CPF já cadastrado!";
             res.json({ cadastro: false, msg: msg });
         }
     }
@@ -69,21 +67,21 @@ logincadastroRouter.post("/cadastrar/suporte", async (req, res) => {
         where: {
             cli_cpf: req.body.cpf
         }
-    })
+    });
     let suporteJaCadastrado = await Suporte.findOne({
         where: {
             sup_cpf: req.body.cpf
         }
-    })
-    console.log(clienteJaCadastrado, suporteJaCadastrado)
-    if (clienteJaCadastrado == "cli_cpf must be unique" || suporteJaCadastrado == "sup_cpf must be unique") res.json({ cadastro: false, msg: "CPF ja cadastrado!" });
-    else {
+    });
+    if (clienteJaCadastrado || suporteJaCadastrado) {
+        res.json({ cadastro: false, msg: "CPF já cadastrado!" });
+    } else {
         try {
-            let suporte = await Suporte.create({
+            await Suporte.create({
+                sup_cpf: req.body.cpf,
                 sup_nome: req.body.nome,
                 sup_email: req.body.email,
                 sup_telefone: req.body.telefone,
-                sup_cpf: req.body.cpf,
                 sup_senha: req.body.senha
             });
             res.json({ cadastro: true, id: suporte.sup_id });

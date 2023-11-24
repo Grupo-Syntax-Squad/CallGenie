@@ -19,7 +19,7 @@ relatorioRouter.get("/gerarRelatorio/:cham_id", async (req, res) => {
 
     const suporte = await Suporte.findOne({
         where: {
-            sup_id: resposta.resp_sup_id
+            sup_id: req.params.sup_id
         }
     });
 
