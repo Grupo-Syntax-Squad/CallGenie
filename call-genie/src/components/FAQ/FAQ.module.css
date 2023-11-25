@@ -43,7 +43,7 @@ header {
     background: linear-gradient(to bottom right, black, #6C9BEC);
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
 }
 
 
@@ -77,6 +77,10 @@ footer {
     justify-content: center 
 }
 
+main.main_texto{
+    min-width: 50vh;
+}
+
 .main_texto {
     flex: 1;
     display: flex;
@@ -104,6 +108,18 @@ main div {
 
     main img {
         margin-right: 0; 
+    }
+
+    .flex{
+        flex-direction: column;
+    }
+
+    .flex > h2{
+        width:100%;
+    }
+
+    button.cadastrobutton {
+        height:120px;
     }
 
 

@@ -1,15 +1,9 @@
 import React , { useEffect, useRef } from "react";
 import HomePage from "./home.module.css";
-import { mudouTamanho, clickMenu } from './menu.js';
 
 export default function Home() {
-  const itensRef = useRef(null);
-
-    useEffect(() => {
-        mudouTamanho(itensRef.current);
-    }, []);
   return (
-    <div className={HomePage.homefundo} onResize={() => mudouTamanho(itensRef.current)}>
+    <div className={HomePage.homefundo}>
       <nav>
         <a href="/">
           <img
@@ -18,8 +12,7 @@ export default function Home() {
             id={HomePage.logoindex}
           />
         </a>
-        <span id={HomePage.burguer} onClick={() => clickMenu(itensRef.current)}>menu</span>
-        <div className={HomePage.navbuttons} ref={itensRef}>
+        <div className={HomePage.navbuttons}>
           <a href="/cadastro">Cadastrar</a>
           <a href="/entrar">Entrar</a>
           <a href="/FAQ">FAQ</a>

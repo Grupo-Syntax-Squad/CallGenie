@@ -43,7 +43,7 @@ function Main() {
   return (
     <div className={CadastroCSS.center}>
       <main className={CadastroCSS.main_div}>
-        <h2>Em qual das opções você se encaixa?</h2>
+        <h2 className={CadastroCSS.cadastro}>Em qual das opções você se encaixa?</h2>
         <div className={CadastroCSS.main_div_user}>
           <a href="/cadastroSuporte" className={CadastroCSS.opcaousuario}>
             <div className={CadastroCSS.cadastro_opcao}>
@@ -57,8 +57,8 @@ function Main() {
               <h3>SOU CLIENTE</h3>
             </div>
           </a>
-
         </div>
+
         <p className={CadastroCSS.cadastro}>
           Precisa de ajuda? <a href="/cadastrar">clique aqui</a>
         </p>

@@ -98,10 +98,6 @@ main img {
     margin-inline: 25%;
 }
 
-.opcaousuario{
-
-}
-
 
 @media (max-width: 768px) {
     main {
@@ -110,7 +106,8 @@ main img {
         align-items: center;
         margin-left: 5%;
     }
-    nav .nav-buttons {
+
+    nav .navbuttons {
         flex-direction: column;
         gap: 10px;
         margin-right: 5%;
@@ -118,6 +115,11 @@ main img {
 
     main img {
         margin-right: 0; 
+    }
+
+    .main_div_user{
+        flex-direction: column;
+        padding-top:10px;
     }
 
 }
@@ -347,6 +349,13 @@ footer{
     margin-top: 2rem;
     margin-right: auto;
     margin-left: auto;
+}
+
+h2.cadastro{
+    font-size:15pt;
+}
+p.cadastro{
+    text-align: center;
 }
 
 .main_div_user a {
