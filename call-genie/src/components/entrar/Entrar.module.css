@@ -56,6 +56,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+    
     .input{
         width:100%;
     }
@@ -65,13 +66,17 @@ footer {
         margin-left: 0;
     }
 
+    footer.entrar{
+        margin-top: 100px;;
+    }
+
 }
 
 nav {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
-align-items: center; /* Centraliza verticalmente os itens */
+align-items: center;
 }
 nav a{
     padding-top: 1rem;
@@ -101,11 +106,9 @@ body p a {
     padding-top: 100px;
     border-radius: 0px 0px 15px 15px;
     max-width: 45%;
-
 }
 
 .button_inputEntrar{ 
-    /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
     font-size: 15pt;

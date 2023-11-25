@@ -1,8 +1,5 @@
-/* Estilo para o conteúdo main de todas as páginas */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&family=Poppins:ital,wght@0,300;1,200;1,300&display=swap');
-/*cadastrar.ejs  e  entrar.ejs*/
 
 *{
     font-family: 'Poppins', sans-serif;

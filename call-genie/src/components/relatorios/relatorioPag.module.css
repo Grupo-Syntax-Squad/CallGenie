@@ -58,7 +58,7 @@
 }
 
 body {
-    overflow: hidden; /* Esconde a barra de rolagem para o corpo da página */
+    overflow: hidden;
   }
 
 .marginLeft{

@@ -56,7 +56,6 @@ export default function Entrar() {
             onChange={handleChange}
           />
           <input className={EntrarPage.input} type="password" placeholder="Senha" name="senha" onChange={handleChange} />
-          {/* <a href="#">Esqueci a minha senha</a> */}
           <input
             type="button"
             value="Entrar"
@@ -66,7 +65,7 @@ export default function Entrar() {
         </form>
       </main>
       <p className={EntrarPage.entrar}>Novo no Callgenie? <a href="/cadastro">Cadastre-se</a></p>
-      <footer>
+      <footer className={EntrarPage.entrar}>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
       </footer>
     </>

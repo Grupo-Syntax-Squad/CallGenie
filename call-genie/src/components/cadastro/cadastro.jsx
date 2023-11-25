@@ -60,7 +60,7 @@ function Main() {
         </div>
 
         <p className={CadastroCSS.cadastro}>
-          Precisa de ajuda? <a href="/cadastrar">clique aqui</a>
+          Precisa de ajuda? <a href="/FAQ">clique aqui</a>
         </p>
       </main>
     </div>
@@ -69,7 +69,7 @@ function Main() {
 
 function Footer() {
   return (
-    <footer>
+    <footer className={CadastroCSS.cadastro}>
       Copyright © 2023 Syntax Squad | Todos os direitos reservados
     </footer>
   );

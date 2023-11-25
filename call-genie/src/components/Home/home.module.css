@@ -1,5 +1,3 @@
-/* Estilos para Index e FAQ */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 
 *{
@@ -25,7 +23,7 @@ header {
     background: linear-gradient(to bottom right, black, #6C9BEC);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
 }
 
 
@@ -108,21 +106,21 @@ button.cadastrobutton {
 
 
 .buttoncontainer {
-    margin-top: 20px; /* Margem superior para afastar do texto */
+    margin-top: 20px;
 }
 
 .buttoncontainer a{
     text-decoration: none;
-    font-size: 16px; /* Tamanho do texto do botão */
+    font-size: 16px;
     font-weight: bolder;
-    color: #000000; /* Cor do texto */
+    color: #000000;
 }
 
 .navbuttons {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
-align-items: center; /* Centraliza verticalmente os itens */
+align-items: center;
 }
 
 nav a{
@@ -130,12 +128,12 @@ nav a{
 }
 
 .navbuttons {
-gap: 100px; /* Ajuste o valor para alterar o espaço entre os botões */
+gap: 100px;
 }
 
 .navbuttons a {
-color: white; /* Cor do texto dos botões */
-text-decoration: none; /* Remove o sublinhado do link */
+color: white;
+text-decoration: none;
 }
 
 nav {
@@ -167,6 +165,10 @@ span{
     margin: auto;
 }
 @media (max-width: 768px) {
+    .homefundo {
+        height: 100%;
+    }
+    
     main {
         flex-direction: column;
     }

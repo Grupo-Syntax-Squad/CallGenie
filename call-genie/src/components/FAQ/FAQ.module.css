@@ -97,10 +97,13 @@ main div {
 
 
 @media (max-width: 768px) {
+    .navbuttons{
+        flex-direction: column;
+    }
     main {
         flex-direction: column; 
     }
-    nav .nav-buttons {
+    nav .navbuttons {
         flex-direction: column;
         gap: 10px;
         margin-right: 5%;
@@ -121,6 +124,9 @@ main div {
     button.cadastrobutton {
         height:120px;
     }
+    .faqcontainer{
+        max-width: 90%;
+    }
 
 
 }
@@ -135,33 +141,33 @@ button.cadastrobutton {
 }
 
 .buttoncontainer {
-    margin-top: 20px; /* Margem superior para afastar do texto */
+    margin-top: 20px;
 }
 
 .buttoncontainer a{
     text-decoration: none;
-    font-size: 16px; /* Tamanho do texto do botão */
+    font-size: 16px;
     font-weight: bolder;
-    color: #000000; /* Cor do texto */
+    color: #000000;
 }
 
 nav {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
-align-items: center; /* Centraliza verticalmente os itens */
+align-items: center;
 }
 nav a{
     padding-top: 1rem;
 }
 
 .navbuttons {
-gap: 100px; /* Ajuste o valor para alterar o espaço entre os botões */
+gap: 100px;
 }
 
 .navbuttons a {
-color: white; /* Cor do texto dos botões */
-text-decoration: none; /* Remove o sublinhado do link */
+color: white;
+text-decoration: none;
 }
 
 nav {

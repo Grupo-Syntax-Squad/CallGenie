@@ -6,7 +6,7 @@ import StyleTableCSS from '../Chamados/StyleTable.module.css'
 
 
 
-export default function Template() { //colocar nome do usuário no lugar de Template 'ex: function Cliente(){' 
+export default function Template() { 
   return (
     <>
       <header>
@@ -72,20 +72,9 @@ export default function Template() { //colocar nome do usuário no lugar de Temp
                   </tr>
                 </thead>
                 <tbody>
-                  {/* <% chamados.forEach(chamado => { %>
-                                    <tr>
-                                        <td><a href="/chamado-<%= chamado.dataValues.cham_id %>"><%= chamado.dataValues.cham_titulo %></a></td>
-                                        <td><%= chamado.dataValues.cham_id %></td>
-                                        <td><%= chamado.dataValues.cham_data_inicio.split(/-/)[2] %>/<%= chamado.dataValues.cham_data_inicio.split(/-/)[1] %>/<%= chamado.dataValues.cham_data_inicio.split(/-/)[0] %></td>
-                                        <td><p className="status <%= chamado.dataValues.cham_status %>"><%= chamado.dataValues.cham_status %></p></td>
-                                        <!-- <td><button className="deletar-chamado"><i className="fa-solid fa-trash"></i></button></td> -->
-                                    </tr>
-                            <% }); %> */}
                 </tbody>
               </table>
             </section>
-            {/* <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>) */}
-            {/* Ele será ativado quando o usuário clicar no ícone da lixeira--> */}
             <dialog>
               <p>
                 VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA

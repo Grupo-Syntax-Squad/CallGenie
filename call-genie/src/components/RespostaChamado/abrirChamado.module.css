@@ -1,8 +1,5 @@
-/* Estilo para o conteúdo main de todas as páginas */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 
-/*cadastrar.ejs  e  entrar.ejs*/
 *{
     margin: 0px;
     padding:0px;
@@ -36,7 +33,6 @@ label{
 }
  
 .buttonInput{ 
-    /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
@@ -85,7 +81,6 @@ main h2{
 
 html {
     background-color: #adc4ed;
-    /* background-repeat: no-repeat; */
     height: 100%;
 }
 
@@ -109,7 +104,6 @@ a{
 
 .filtrar{
     text-align: center;
-    /* justify-content: space-between; */
 }
 
 .filtrar, .buscarPorTitulo{
@@ -150,7 +144,7 @@ input {
     border: none;
     border-radius: 2px;
     padding: 20px;
-    background-color: #EBE9E9; /* cor do plano de fundo */
+    background-color: #EBE9E9;
     margin-bottom: 2%;
 }
 
@@ -168,7 +162,6 @@ input {
 }
 
 .buttonInput{ 
-    /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
@@ -184,9 +177,6 @@ footer{
     margin-right: auto;
     margin-left: auto;
 }
-
-
-/*  abrirChamado.ejs */
 
 header h2{
     color: #FFF;
@@ -295,9 +285,7 @@ header h2{
 
 textarea {
     resize: none;
-  }
-
-/* ChamadoAberto.ejs */
+}
 
 .chamadoAberto {
     display: flex;

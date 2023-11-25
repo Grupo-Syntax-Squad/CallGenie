@@ -27,7 +27,6 @@ function CadastrarSuporte() {
         alert(`Cadastro realizado com sucesso, ID de acesso: ${response.data.sup_id}`)
       };
     });
-    // window.location.replace("/entrar");
   };
   
   return (
@@ -61,15 +60,9 @@ function CadastrarSuporte() {
             <input className={CadastroCSS.input} type="email" placeholder="E-mail" name="email" onChange={handleChange} />
             <input className={CadastroCSS.input} type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
             <input className={CadastroCSS.input} type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
-            <input className={CadastroCSS.input} type="button" value="Cadastrar-se" className={CadastroCSS.button_input} onClick={handleSubmit} />
+            <input className={CadastroCSS.button_input} type="button" value="Cadastrar-se"  onClick={handleSubmit} />
           </form>
         </div>
-        {/* <div>
-          <img src="assets/img/user_adm.png" alt='' id={CadastroCSS.useradm} />
-          <div className={CadastroCSS.idsupervisor_container}>
-            <input type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
-          </div>
-        </div> */}
       </main>
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados

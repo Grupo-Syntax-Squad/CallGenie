@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ChamadoAbertoCss from "./chamadoAberto.module.css"
-// import "./style/main.css";
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
-// import "./style/style-table.css";
 import axios from "axios";
 
 export default function ChamadoAberto() {

@@ -29,16 +29,6 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
 
   let cham = [];
 
-  // if (filtro === "") {
-  //   cham = chamados;
-  // } else {
-  //   chamados.forEach(chamado => {
-  //     if (chamado.cham_id == filtro || chamado.cham_titulo == filtro) {
-  //       cham.push(chamado);
-  //     }
-  //   });
-  // }
-
   cham.sort((a, b) => new Date(b.cham_data_inicio) - new Date(a.cham_data_inicio));
 
   const listaChamados = cham.map((chamado) => (
@@ -128,15 +118,6 @@ export default function Admin() {
                   </optgroup>
                 </select>
               </div>
-              {/* <div className={ChamadosPageCSS.filtrarMenu}>
-                  <i className="fa-solid fa-x"></i>
-                  <li>Em aberto</li>
-                  <li>Em andamento</li>
-                  <li>Concluído</li>
-                  <li>Com equipamento Cadastrado</li>
-                  <li>Meus chamados</li>
-                  <li>Ordem Alfabética</li>
-                </div> */}
               <div className={ChamadosPageCSS.filtros}>
                 <p>Buscar Chamado  <i className="fa-solid fa-magnifying-glass"></i></p>
               </div>
@@ -161,8 +142,6 @@ export default function Admin() {
               <section className={StyleTableCSS.tableBody}>
                 <Table />
               </section>
-              {/* <!-- A tag <dialog> abaixo só aparece se se estiver aberta (<dialog open>) */}
-              {/* Ele será ativado quando o usuário clicar no ícone da lixeira--> */}
               <dialog>
                 <p>
                   VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA
@@ -179,18 +158,6 @@ export default function Admin() {
                 </a>
               </div>
             </div>
-            {/* <div className={ChamadosPageCSS.postButtons}>
-              <div className={ChamadosPageCSS.postButtonA}>
-                <a href="/abrirChamado" className={ChamadosPageCSS.buttonInput}>
-                  Abrir novo chamado
-                </a>
-              </div>
-              <div className={ChamadosPageCSS.postButtonB}>
-                <a href="/FAQ" className={ChamadosPageCSS.buttonInput}>
-                  Perguntas Frequentes
-                </a>
-              </div>
-            </div> */}
           </div>
         </main>
       </div>
