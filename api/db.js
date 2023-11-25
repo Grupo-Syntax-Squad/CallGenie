@@ -197,11 +197,11 @@ export const Faq = database.define("Faq", {
         allowNull: false
     },
     faq_pergunta: {
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING(500),
         allowNull: false
     },
     faq_resposta: {
-        type: DataTypes.STRING(150),
+        type: DataTypes.STRING(500),
         allowNull: false
     }
 });
@@ -243,12 +243,24 @@ Suporte.belongsTo(Setor, {
 
     await database.sync();
     let faq = await Faq.findOne({where: {
-        faq_pergunta: "Pergunta 1"
+        faq_pergunta: "Como funciona o prazo de resposta?"
     }});
     if (faq == null) {
         await Faq.create({
-            faq_pergunta: "Pergunta 1",
-            faq_resposta: "Resposta 1",
+            faq_pergunta: "Como funciona o prazo de resposta?",
+            faq_resposta: "O prazo de resposta é o o tempo limite que os nossos suportes terão para responder o chamado. O prazo varia conforme a prioridade do chamado. É possível verificar o prazo de resposta após abrir um chamado.",
+        });
+        await Faq.create({
+            faq_pergunta: "Como imprimir um relatório de chamado?",
+            faq_resposta: "Na página Meus chamados, selecione o chamado que você deseja imprimir um relatório, é possível selecionar mais de um. Após selecionado(s) clique no botão Relatório e em seguida, Imprimir.",
+        });
+        await Faq.create({
+            faq_pergunta: "É possível abrir um chamado sem possuir conta no Callgenie?",
+            faq_resposta: "É preciso que o cliente se cadastre ou faça Login para ter acesso às funcionalidades do sistema.",
+        });
+        await Faq.create({
+            faq_pergunta: "Como saber se o suporte respondeu o meu chamado?",
+            faq_resposta: "Na página Meus chamados, selecione o chamado que você deseja verificar se há uma resposta. Se houver resposta, clique no botão Ver reposta do chamado. O botão só aparecerá se houver respostas.",
         });
     } else {
         console.log("Faq já criado");

@@ -8,6 +8,7 @@ import axios from "axios";
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
   const [resposta, setResposta] = useState({});
+  const [userName, setUserName] = useState(""); // Adicione o estado para armazenar o nome do usuário
 
   const cham_id = localStorage.getItem("cham_id");
 
@@ -16,7 +17,23 @@ export default function ChamadoAberto() {
       setChamado(response.data.chamado);
       setResposta(response.data.resposta);
     });
-  });
+
+    const userCpf = localStorage.getItem("login");
+
+    const fetchUserName = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/clientes/${userCpf}`
+        );
+        const name = response.data.cli_nome;
+        setUserName(name);
+      } catch (error) {
+        console.error("Erro ao obter o nome do usuário:", error);
+      }
+    };
+
+    fetchUserName();
+  }, [cham_id]);
 
   return (
     <body className={ChamadoAbertoCss.Body}>
@@ -37,7 +54,7 @@ export default function ChamadoAberto() {
             id="logo-fundo-brando"
           />
           </a>
-          <h2>Olá, user</h2>
+          <h2>Olá, {userName}</h2>
           <a href="/entrar">
             <img
               src="assets/img/vector_logOut.svg"

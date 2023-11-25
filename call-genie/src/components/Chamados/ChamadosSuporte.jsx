@@ -86,6 +86,7 @@ export default function ChamadosSuporte() {
   const [selectedChamados, setSelectedChamados] = useState([]);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [userName, setUserName] = useState("");
 
   const handleCheckboxChange = (chamadoId) => {
     if (selectedChamados.includes(chamadoId)) {
@@ -94,6 +95,22 @@ export default function ChamadosSuporte() {
       setSelectedChamados([...selectedChamados, chamadoId]);
     }
   };
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/${cpf.length === 1 ? "suportes" : "clientes"}/${cpf}`
+        );
+        const name = cpf.length === 1 ? response.data.sup_nome : response.data.cli_nome;
+        setUserName(name);
+      } catch (error) {
+        console.error("Erro ao obter o nome do usuário:", error);
+      }
+    };
+
+    fetchUserName();
+  }, [cpf]);
 
   return (
     <body className={ChamadosPageCSS.Body}>
@@ -111,7 +128,7 @@ export default function ChamadosSuporte() {
               src="assets/img/iconeuser2.png"
               alt="Usuário"
             />
-            <h2>Olá, Suporte</h2>
+            <h2>Olá, {userName}</h2>
             <a href="/entrar">
               <img
                 src="assets/img/iconexit.png"
