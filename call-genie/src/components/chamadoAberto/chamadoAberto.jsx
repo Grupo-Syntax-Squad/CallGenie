@@ -34,9 +34,10 @@ export default function ChamadoAberto() {
     };
 
     fetchUserName();
-  }, [id, cpf])};
+  }, [id, cpf]);
 
   console.log(chamado, equipamento, suporte);
+  
   return (
     <body className={ChamadoAbertoCss.Body}>
       <header>
