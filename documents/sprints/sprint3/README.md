@@ -12,8 +12,8 @@ Nesta Sprint foi desenvolvida a funcionalidade de geração de relatório, assim
 
 ## User Story's 📝
 
-| ID US | Sprint | US                                                                                                                                                                                                                               | Prioridade          |
-|:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|
+| ID US | Sprint | US                                                                                                                                                                                                                               | Prioridade          | US Points  |
+|:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|:--------:|
 | US004  | 3     | "Como um cliente, gostaria de emitir relatórios dos meus chamados concluídos, para a visualização e acompanhamento geral dos mesmos."                                                                                                                                      |  Alta              |
 | US005  | 3      | "Como um cliente, gostaria atualizar os meus dados cadastrais, para manter o sistema atualizado." "                                                                    |  Baixa                  |
 | US008  | 3      | "Como um cleinte, gostaria de enviar comentário nos chamados que criei, para concluir ou auxiliar na solu~ção do problema."                                                                           |  Média                  |
