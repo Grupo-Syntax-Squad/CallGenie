@@ -40,7 +40,7 @@ export default function FAQ() {
           />
         </a>
         <div className={HomePage.navbuttons}>
-          <a href="/cadastro">Cadastrar</a>
+          <a href="/cadastroCliente">Cadastrar</a>
           <a href="/entrar">Entrar</a>
           <a href="/">Sobre</a>
 

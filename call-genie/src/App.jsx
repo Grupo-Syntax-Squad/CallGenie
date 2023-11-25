@@ -36,7 +36,6 @@ export default function App() {
                 <Route path={RoutesName.respostaChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <RespostaChamado />} />
                 <Route path={RoutesName.responderChamado} element={localStorage.getItem("login") == "" ? <DoLogin /> : <ResponderChamado />} />
                 <Route path={RoutesName.login} />
-                <Route path={RoutesName.cadastro} element={<Cadastro />} />
                 <Route path={RoutesName.cadastroCliente} element={<CadastrarCliente />} />
                 <Route path={RoutesName.cadastroSuporte} element={<CadastrarSuporte />} />
                 <Route path={RoutesName.FAQ} element={<FAQ />} />

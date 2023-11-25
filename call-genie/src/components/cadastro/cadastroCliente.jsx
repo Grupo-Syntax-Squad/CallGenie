@@ -60,7 +60,7 @@ function CadastrarCliente() {
             <input type="number" placeholder="CEP" name="cep" required onChange={handleChange} />
             <input type="text" placeholder="CPF" name="cpf" required onChange={handleChange} />
             <input type="text" placeholder="Endereço" name="endereco" required onChange={handleChange} />
-            <button type="submit" value="Cadastrar-se" className={CadastroCSS.button_input}>Cadastrar-se</button>
+            <a href="/login"><button type="submit" value="Cadastrar-se" className={CadastroCSS.button_input}>Cadastrar-se</button></a>
           </form>
         </div>
       </main>

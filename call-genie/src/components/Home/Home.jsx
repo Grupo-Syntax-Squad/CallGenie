@@ -13,7 +13,7 @@ export default function Home() {
           />
         </a>
         <div className={HomePage.navbuttons}>
-          <a href="/cadastro">Cadastrar</a>
+          <a href="/cadastroCliente">Cadastrar</a>
           <a href="/entrar">Entrar</a>
           <a href="/FAQ">FAQ</a>
         </div>
@@ -25,7 +25,7 @@ export default function Home() {
             Bem-Vindo(a) ao CallGennie, o seu gerenciador de ordens de serviços.
           </h2>
           <div className={HomePage.buttoncontainer}>
-            <a href="/cadastro">
+            <a href="/cadastroCliente">
               <button className={HomePage.cadastrobutton}>CADASTRE-SE</button>
             </a>
           </div>

@@ -65,7 +65,7 @@ export default function Entrar() {
           />
         </form>
       </main>
-      <p className={EntrarPage.entrar}>Novo no Callgenie? <a href="/cadastro">Cadastre-se</a></p>
+      <p className={EntrarPage.entrar}>Novo no Callgenie? <a href="/cadastroCliente">Cadastre-se</a></p>
       <footer>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
       </footer>
