@@ -55,13 +55,13 @@ export default function FAQ() {
               Bem-vindo(a) ao FAQ! Essa página é totalmente dedicada a tirar
               dúvidas e ajudar o usuário a ter uma melhor experiência em nosso
               sistema! Acesse o vídeo tutorial para saber como utilizar o sistema
-              da CallGenius clicando no link abaixo: https;//youtube.com/EXEMPLO
+              da CallGenie clicando no link abaixo: https;//youtube.com/EXEMPLO
             </h2>
             <div className={HomePage.faqcontainer}>{tabela}</div>
           </div>
 
           <div className={HomePage.buttoncontainer}>
-            <a href="/#">
+            <a  target="__blank" href="https://github.com/Grupo-Syntax-Squad/CallGenie/wiki/Manual-de-Usu%C3%A1rio">
               <button className={HomePage.cadastrobutton}>Não encontrou uma resposta? Confira o manual de usuário!</button>
             </a>
           </div>
