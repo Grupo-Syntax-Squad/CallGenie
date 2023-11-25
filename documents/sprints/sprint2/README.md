@@ -12,8 +12,8 @@ Nesta Sprint foram desenvolvidas as funcionalidades de login e cadastro, assim c
 
 ## User Story's 📝
 
-| ID US | Sprint | US                                                                                                                                                                                                                               | ID Requisito          |
-|:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|
+| ID US | Sprint | US                                                                                                                                                                                                                               | ID Requisito          | US Points  |
+|:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|:--------:|
 | US01  | 2     | "Como um cliente, gostaria de me cadastrar no sistema, informando meus dados." chamado"                                                                                                                                      |  #1                  |
 | US02  | 2      | "Como um cliente, gostaria de fazer login no sistema, para realizar e vizualizar chamados." "                                                                    |  #1                  |
 | US03  | 2      | "Como um cleinte, gostaria de criar um chamado."                                                                           |  #10                  |
