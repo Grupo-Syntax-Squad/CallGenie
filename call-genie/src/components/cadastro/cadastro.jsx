@@ -75,4 +75,4 @@ function Footer() {
   );
 }
 
-export default Cadastro;
+// export default Cadastro;
