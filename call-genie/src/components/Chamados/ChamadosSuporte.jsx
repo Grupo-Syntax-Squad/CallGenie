@@ -87,6 +87,7 @@ export default function ChamadosSuporte() {
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [userName, setUserName] = useState("");
+  const [cpf, setCpf] = useState("");
 
   const handleCheckboxChange = (chamadoId) => {
     if (selectedChamados.includes(chamadoId)) {
@@ -97,12 +98,15 @@ export default function ChamadosSuporte() {
   };
 
   useEffect(() => {
+    const userCpf = localStorage.getItem("login");
+    setCpf(userCpf);
+
     const fetchUserName = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/${cpf.length === 1 ? "suportes" : "clientes"}/${cpf}`
+          `http://localhost:8080/${userCpf.length === 1 ? "suportes" : "clientes"}/${userCpf}`
         );
-        const name = cpf.length === 1 ? response.data.sup_nome : response.data.cli_nome;
+        const name = userCpf.length === 1 ? response.data.sup_nome : response.data.cli_nome;
         setUserName(name);
       } catch (error) {
         console.error("Erro ao obter o nome do usuário:", error);
@@ -110,7 +114,7 @@ export default function ChamadosSuporte() {
     };
 
     fetchUserName();
-  }, [cpf]);
+  }, []);
 
   return (
     <body className={ChamadosPageCSS.Body}>
