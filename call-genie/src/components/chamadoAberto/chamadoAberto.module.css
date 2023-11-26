@@ -77,6 +77,13 @@ main h2{
     width:300px;
 }
 
+main img {
+    max-width: 30%;
+    height: 5%;
+    margin: 0%;
+
+}
+
 .cadastroOpcoes{
     display: flex;
     justify-content: center;

@@ -95,6 +95,14 @@ main div {
     margin-left: 3%;
 }
 
+main div a {
+    margin-top: 0;
+    width: 30px;
+}
+
+.fudo
+
+
 
 @media (max-width: 768px) {
     .navbuttons{
