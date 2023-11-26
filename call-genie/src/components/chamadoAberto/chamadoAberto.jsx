@@ -83,8 +83,17 @@ export default function ChamadoAberto() {
               </div>
             </div>
             <div className={ChamadoAbertoCss.flexRow}>
+                <img
+                  src="assets/img/iconback.png"
+                  alt="Voltar"
+                  id={ChamadoAbertoCss.iconback}
+                  style={{cursor: "pointer"}}
+                  onClick={() => {window.location.replace("/chamados")}}
+                />
+              
               <div className={ChamadoAbertoCss.fundoChamadoAberto} >
                 <div className={ChamadoAbertoCss.colunaEsquerda} >
+                  
                   <p> {chamado.cham_descricao} </p>
                     {cpf.length < 11 ? <a href="/responderchamado" className={ChamadoAbertoCss.responder_a}>
                       <button className={ChamadoAbertoCss.responderbutton}>Responder Chamado</button>

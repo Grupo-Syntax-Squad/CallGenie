@@ -238,8 +238,8 @@ h1{
     padding:20px;
 }
 
-input {
-    width:500px;
+form input {
+    width: 100%;
     border: none;
     border-radius: 2px;
     padding: 15px;

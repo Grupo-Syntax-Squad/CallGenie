@@ -68,8 +68,11 @@ export default function ChamadoAberto() {
       </div>
       <div className={ChamadoAbertoCss.divFlex}>
         <main>
+          
           <div className={ChamadoAbertoCss.fundoChamadoAberto} >
+          
             <div className={ChamadoAbertoCss.divFlex}>
+              
               <div className={ChamadoAbertoCss.infoDispositivo}>
                 <p>Título: {chamado.cham_titulo}</p>
                 <p>ID: {cham_id}</p>
@@ -78,6 +81,13 @@ export default function ChamadoAberto() {
               </div>
             </div>
             <div className={ChamadoAbertoCss.respostachamado}>
+            <img
+                  src="assets/img/iconback.png"
+                  alt="Voltar"
+                  id={ChamadoAbertoCss.iconback}
+                  style={{cursor: "pointer"}}
+                  onClick={() => {window.location.replace("/chamados")}}
+                />
               <div className={ChamadoAbertoCss.colunaDireita}>
                 <div className={ChamadoAbertoCss.fundoChamadoAberto}>
                   <h2>Resposta</h2>
