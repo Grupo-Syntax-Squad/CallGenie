@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import CadastroCSS from "./cadastro.module.css";
 import axios from "axios";
 
@@ -19,9 +18,9 @@ function CadastrarSuporte() {
       senha: infos.senha,
       adm_id: infos.idsupervisor
     }).then(response => {
-      if (response.data.sup_id == undefined) {
+      if (response.data.sup_id === undefined) {
         console.log(response.data.errors[0].message);
-        if (response.data.errors[0].message == "sup_cpf must be unique") alert("CPF já cadastrado!");
+        if (response.data.errors[0].message === "sup_cpf must be unique") alert("CPF já cadastrado!");
         else alert("Erro ao cadastrar suporte tente novamente!");
       } else {
         alert(`Cadastro realizado com sucesso, ID de acesso: ${response.data.sup_id}`)

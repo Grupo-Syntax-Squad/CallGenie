@@ -12,6 +12,7 @@ import respostaRouter from "./rotas/resposta.js";
 import equipamentoRouter from "./rotas/equipamento.js";
 import logincadastroRouter from "./rotas/logincadastro.js";
 import relatorioRouter from "./rotas/relatorio.js";
+import faqRouter from "./rotas/faq.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -25,10 +26,6 @@ app.use(respostaRouter);
 app.use(equipamentoRouter);
 app.use(logincadastroRouter);
 app.use(relatorioRouter);
-
-app.get("/faq", async (req, res) => {
-    let faq = await Faq.findAll();
-    res.json(faq);
-});
+app.use(faqRouter);
 
 app.listen(8080);

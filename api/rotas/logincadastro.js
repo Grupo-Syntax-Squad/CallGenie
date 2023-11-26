@@ -1,6 +1,5 @@
 import express from "express";
-
-import { Adm, Chamado, Cliente, Equipamento, RespostaChamado, Suporte, Faq } from "../db.js";
+import { Cliente, Suporte } from "../db.js";
 import clienteRouter from "./cliente.js";
 import suporteRouter from "./suporte.js";
 

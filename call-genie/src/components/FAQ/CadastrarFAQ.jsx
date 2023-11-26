@@ -1,8 +1,6 @@
-import React from "react";
 import HomePage from "./FAQ.module.css";
 import HeaderChamado from "../HeaderChamado/headerChamado.module.css";
 import Abrirchamado from "../abrirChamado/abrirChamado.module.css"
-import axios from "axios";
 
 function handleChange(event) { };
 

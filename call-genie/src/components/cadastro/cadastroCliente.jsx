@@ -20,7 +20,7 @@ function handleSubmit(event) {
       senha: infos.senha
     }).then(response => {
       console.log(response);
-    if (response.data.cadastro == true) window.location.replace("/entrar");
+    if (response.data.cadastro === true) window.location.replace("/entrar");
     else alert(response.data.msg)
     });
   } else alert("CPF ou Telefone inválido!");

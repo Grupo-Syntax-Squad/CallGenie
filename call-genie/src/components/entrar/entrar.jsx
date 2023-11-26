@@ -14,17 +14,17 @@ function handleSubmit(event) {
     credencial: infos.cpf,
     senha: infos.senha
   }).then(response => {
-    if (response.data.login == false) alert(response.data.msg);
+    if (response.data.login === false) alert(response.data.msg);
     else {
-      if (response.data.token.tipo == "Admin") {
+      if (response.data.token.tipo === "Admin") {
         localStorage.setItem("admin", true);
         localStorage.setItem("login", response.data.token.id);
         window.location.replace("/admin");
-      } else if (response.data.token.tipo == "Cliente") {
+      } else if (response.data.token.tipo === "Cliente") {
         localStorage.setItem("cliente", true);
         localStorage.setItem("login", response.data.token.id);
         window.location.replace("/chamados");
-      } else if (response.data.token.tipo == "Suporte") {
+      } else if (response.data.token.tipo === "Suporte") {
         localStorage.setItem("suporte", true);
         localStorage.setItem("login", response.data.token.id);
         window.location.replace("/chamadosSuporte");

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ChamadoAbertoCss from "./chamadoAberto.module.css"
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import axios from "axios";
-import DoLogin from "../DoLogin";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
@@ -12,7 +11,6 @@ export default function ChamadoAberto() {
 
   const id = localStorage.getItem("cham_id");
   const cpf = localStorage.getItem("login");
-  const sup_id = localStorage.getItem("sup_id");
 
   useEffect(() => {
     axios.get(`http://localhost:8080/chamados/${id}`).then(response => { 

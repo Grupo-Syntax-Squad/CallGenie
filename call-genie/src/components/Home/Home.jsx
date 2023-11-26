@@ -1,4 +1,3 @@
-import React , { useEffect, useRef } from "react";
 import HomePage from "./home.module.css";
 
 export default function Home() {
