@@ -19,39 +19,16 @@ function handleDeleteChamados(selectedChamados) {
   window.location.replace("/chamados");
 };
 
-function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
-  const [chamados, setChamados] = useState([]);
+function Table({ selectedChamados, handleCheckboxChange, chamadoPage, chamados }) {
 
-  useEffect(() => {
-    axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
-    console.log(chamados);
-  });
-
-  let cham = [];
-
-  cham.sort((a, b) => new Date(b.cham_data_inicio) - new Date(a.cham_data_inicio));
-
-  const listaChamados = cham.map((chamado) => (
-
-    <tr key={chamado.cham_id}>
-      <td
-        id={chamado.cham_id}
-        onClick={chamadoPage}
-        style={{ cursor: "pointer", color: "blue", textDecoration: "underline" }}
-      >
-        {chamado.cham_titulo}
-      </td>
+  let table = chamados.map((chamado) => (
+    <tr>
+      <td id={chamado.cham_id} onClick={chamadoPage} style={{ cursor: "pointer", color: "blue", textDecoration: "underline" }}>{chamado.cham_titulo}</td>
       <td>{chamado.cham_id}</td>
       <td>{chamado.cham_urgencia}</td>
       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
       <td>{chamado.cham_status}</td>
-      <td>
-        <input
-          type="checkbox"
-          onChange={() => handleCheckboxChange(chamado.cham_id)}
-          checked={selectedChamados.includes(chamado.cham_id)}
-        />
-      </td>
+      <td><input type="checkbox" onChange={() => handleCheckboxChange(chamado.cham_id)} checked={selectedChamados.includes(chamado.cham_id)} /></td>
     </tr>
   ));
 
@@ -66,12 +43,86 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
           <th><p>Status</p></th>
         </tr>
       </thead>
-      <tbody>{listaChamados}</tbody>
+      <tbody>{table}</tbody>
     </table>
   );
 };
 
+// function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
+//   const [chamados, setChamados] = useState([]);
+
+//   useEffect(() => {
+//     axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
+//     console.log(chamados);
+//   });
+
+//   let cham = [];
+
+//   cham.sort((a, b) => new Date(b.cham_data_inicio) - new Date(a.cham_data_inicio));
+
+//   const listaChamados = cham.map((chamado) => (
+
+//     <tr key={chamado.cham_id}>
+//       <td
+//         id={chamado.cham_id}
+//         onClick={chamadoPage}
+//         style={{ cursor: "pointer", color: "blue", textDecoration: "underline" }}
+//       >
+//         {chamado.cham_titulo}
+//       </td>
+//       <td>{chamado.cham_id}</td>
+//       <td>{chamado.cham_urgencia}</td>
+//       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
+//       <td>{chamado.cham_status}</td>
+//       <td>
+//         <input
+//           type="checkbox"
+//           onChange={() => handleCheckboxChange(chamado.cham_id)}
+//           checked={selectedChamados.includes(chamado.cham_id)}
+//         />
+//       </td>
+//     </tr>
+//   ));
+
+//   return (
+//     <table>
+//       <thead>
+//         <tr className={StyleTableCSS.ptable}>
+//           <th><p>Título</p></th>
+//           <th><p>ID</p></th>
+//           <th><p>Prioridade</p></th>
+//           <th><p>Data de criação</p></th>
+//           <th><p>Status</p></th>
+//         </tr>
+//       </thead>
+//       <tbody>{listaChamados}</tbody>
+//     </table>
+//   );
+// };
+
 export default function Admin() {
+  const [selectedChamados, setSelectedChamados] = useState([]);
+  const [chamados, setChamados] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
+    console.log(chamados);
+  });
+
+  const handleCheckboxChange = (chamadoId) => {
+    if (selectedChamados.includes(chamadoId)) {
+      setSelectedChamados(selectedChamados.filter((id) => id !== chamadoId));
+    } else {
+      setSelectedChamados([...selectedChamados, chamadoId]);
+    }
+  };
+
+  function chamadoPage(e) {
+    console.log(e.target.id);
+    localStorage.setItem("cham_id", e.target.id);
+    window.location.replace("/chamadoAberto");
+  };
+
   return (
     <>
       <div className={ChamadosPageCSS.bodyChamados}>
@@ -140,7 +191,7 @@ export default function Admin() {
             </div>
             <div className={StyleTableCSS.mainTable}>
               <section className={StyleTableCSS.tableBody}>
-                <Table />
+                <Table selectedChamados={selectedChamados} handleCheckboxChange={handleCheckboxChange} chamadoPage={chamadoPage} chamados={chamados} />
               </section>
               <dialog>
                 <p>
