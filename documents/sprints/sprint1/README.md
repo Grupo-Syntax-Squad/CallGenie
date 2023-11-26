@@ -15,15 +15,15 @@ Nesta Sprint foram criados e apresentados o Backlog do Projeto, o wireframe do P
 <br>
 
 ## User Story's 📝
-
+  
 | ID US | Sprint | US                                                                                                                                                                                                                               | ID Requisito          | US Points  |
 |:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|:--------:|
-| US01  | 1     | "Eu, como um usuário, gostaria de criar um chamado"                                                                                                                                      |  #10                  |
-| US02  | 1      | "Eu, como um usuário, gostaria de poder cadastrar um equipamento ao criar um chamado, para auxiliar na resolução do problema. "                                                                    |  #10                  |
-| US03  | 1      | "Eu, como um usuário, quero acessar o chamado que criei, para poder ver os detalhes dele."                                                                           |  #10                  |
-| US04  | 1      | "Eu, como desenvolvedor , quero elaborar um wireframe e apartir deste um protótipo navegável, para criar uma perspectiva sobre como será a interface do sistema e auxiliar no desenvolvimento futuro. "                                          |  #08                  |
-| US05  | 1      | "Eu, como desenvolvedor, quero elaborar artefatos como: Sprint Backlog, Backlog total, MVP, Modelo de dados e User Stories, para auxiliar no desenvolvimento do projeto e ilustarar o que será entregue em cada sprint. "                                                        |  #08                  |
-| US06  | 1      | "Eu, como desenvolvedor, quero criar um banco de dados relacional usando MySQL, seguindo o modelo de dados que foi elaborado, para assim salvar e exibir os chamados e seus atributos, criados pelo usuário que utilizar o sistema. "                                            |  #09                  |
+| US01  | 1     | "Eu, como um usuário, gostaria de criar um chamado"                                                                                                                                                                                          |  #10               |  60    |
+| US02  | 1      | "Eu, como um usuário, gostaria de poder cadastrar um equipamento ao criar um chamado, para auxiliar na resolução do problema. "                                                                                                             |  #10               |  50    |
+| US03  | 1      | "Eu, como um usuário, quero acessar o chamado que criei, para poder ver os detalhes dele."                                                                                                                                                  |  #10               |  30    |
+| US04  | 1      | "Eu, como desenvolvedor , quero elaborar um wireframe e apartir deste um protótipo navegável, para criar uma perspectiva sobre como será a interface do sistema e auxiliar no desenvolvimento futuro. "                                     |  #08               |  80    |
+| US05  | 1      | "Eu, como desenvolvedor, quero elaborar artefatos como: Sprint Backlog, Backlog total, MVP, Modelo de dados e User Stories, para auxiliar no desenvolvimento do projeto e ilustarar o que será entregue em cada sprint. "                   |  #08               |  80    |
+| US06  | 1      | "Eu, como desenvolvedor, quero criar um banco de dados relacional usando MySQL, seguindo o modelo de dados que foi elaborado, para assim salvar e exibir os chamados e seus atributos, criados pelo usuário que utilizar o sistema. "       |  #09               |  30    |
 
 
 ## Protótipo Navegável 🚢
