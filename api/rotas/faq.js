@@ -1,9 +1,9 @@
 import express from "express";
-import { Faq } from "../db.js";
+import { Faq, database } from "../db.js";
 
 const faqRouter = express.Router();
 
-faqRouter.get("/faq", async (res) => {
+faqRouter.get("/faq", async (req, res) => {
     let faq = await Faq.findAll();
     res.json(faq);
 });

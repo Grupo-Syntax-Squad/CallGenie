@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from "sequelize";
 import mysql from "mysql";
 
-const PASSWORD = "negoney";
+const PASSWORD = "fatec";
 
 const con = mysql.createConnection({
     host: "localhost",
@@ -9,7 +9,7 @@ const con = mysql.createConnection({
     password: PASSWORD
 });
 
-const database = new Sequelize('callgenie', 'root', PASSWORD, {
+export const database = new Sequelize('callgenie', 'root', PASSWORD, {
     host: 'localhost',
     dialect: 'mysql'
 });
