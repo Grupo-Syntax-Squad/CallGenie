@@ -10,7 +10,7 @@ logincadastroRouter.use(suporteRouter);
 
 logincadastroRouter.post("/login", async (req, res) => {
     if (req.body.credencial == "admin" && req.body.senha == "fatec") res.json({ login: true, msg: "Login realizado com sucesso!", token: { tipo: "Admin" } });
-    if (req.body.credencial.match(/^(\#[0-9]{1,8})$/)) {
+    else if (req.body.credencial.match(/^(\#[0-9]{1,8})$/)) {
         if (await Suporte.findOne({ where: { sup_id: req.body.credencial.replace(/\#/, "") } }) == null) res.json({ login: false, msg: "Suporte não cadastrado!" });
         else {
             let suporte = await Suporte.findOne({ where: { sup_id: req.body.credencial.replace(/\#/, "") } });
