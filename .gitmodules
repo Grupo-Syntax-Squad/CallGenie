@@ -1,3 +1,6 @@
 [submodule "API"]
 	path = API
 	url = https://github.com/Grupo-Syntax-Squad/DataBaseCallGenie.git
+[submodule "Front"]
+	path = Front
+	url = https://github.com/Grupo-Syntax-Squad/FrontEndCallGenie.git
