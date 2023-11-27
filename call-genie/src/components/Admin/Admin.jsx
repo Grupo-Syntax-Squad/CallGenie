@@ -37,9 +37,12 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
     cham = chamados;
   } else {
     chamados.forEach(chamado => {
-      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro || chamado.cham_urgencia == filtro || chamado.cham_status == filtro) {
+      const formattedDataInicio = new Date(chamado.cham_data_inicio).toLocaleDateString(); // converte para o formato "27/11/2023"
+      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro || chamado.cham_urgencia == filtro || chamado.cham_status == filtro || formattedDataInicio == filtro ) {
         cham.push(chamado);
+        console.log(chamado.cham_data_inicio)
       }
+      console.log(chamado.cham_data_inicio)
     });
   }
 
