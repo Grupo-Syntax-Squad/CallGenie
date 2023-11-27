@@ -28,4 +28,4 @@ app.use(logincadastroRouter);
 app.use(relatorioRouter);
 app.use(faqRouter);
 
-app.listen(8080);
+app.listen(8080, "0.0.0.0");

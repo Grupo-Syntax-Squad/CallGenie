@@ -1,5 +1,6 @@
 import CadastroCSS from "./cadastro.module.css";
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 function CadastrarSuporte() {
   let infos = {};
@@ -10,7 +11,7 @@ function CadastrarSuporte() {
 
   function handleSubmit(event) {
 
-    axios.post("http://localhost:8080/suportes", {
+    axios.post(`${ipAPI}suportes`, {
       nome: infos.nome,
       email: infos.email,
       cpf: infos.cpf,

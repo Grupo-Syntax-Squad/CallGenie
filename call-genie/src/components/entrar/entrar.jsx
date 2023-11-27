@@ -1,6 +1,7 @@
 import React from "react";
 import EntrarPage from "./Entrar.module.css";
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 let infos = {};
 
@@ -10,7 +11,7 @@ function handleChange(event) {
 
 function handleSubmit(event) {
   console.log(infos);
-  axios.post("http://localhost:8080/login", {
+  axios.post(`${ipAPI}login`, {
     credencial: infos.cpf,
     senha: infos.senha
   }).then(response => {
@@ -49,7 +50,6 @@ export default function Entrar() {
           </a>
           <h2 className={EntrarPage.h2Entrar}>Bem-vindo(a)!</h2>
           <input
-            type="text"
             placeholder="CPF ou #ID"
             className={EntrarPage.input}
             name="cpf"

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Alterardados from "./alterarDados.module.css";
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 function AlterarDados() {
   const [showModifyDataDialog, setShowModifyDataDialog] = useState(false);
@@ -17,7 +18,7 @@ function AlterarDados() {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/clientes/${localStorage.getItem('login')}`)
+    axios.get(`${ipAPI}clientes/${localStorage.getItem('login')}`)
       .then(response => {
         setInf(response.data);
       });
@@ -28,7 +29,7 @@ function AlterarDados() {
   }
 
   function handleModifyData() {
-    axios.put(`http://localhost:8080/clientes/${localStorage.getItem("login")}`, {
+    axios.put(`${ipAPI}clientes/${localStorage.getItem("login")}`, {
        nome: inf.cli_nome,
        email: infos.inputNovoEmail || inf.cli_email,
        telefone: infos.inputNovoTelefone || inf.cli_telefone,
@@ -40,7 +41,7 @@ function AlterarDados() {
   }
 
   function handleSubmit(event) {
-    axios.get(`http://localhost:8080/clientes/${localStorage.getItem("login")}`).then(response => {
+    axios.get(`${ipAPI}clientes/${localStorage.getItem("login")}`).then(response => {
       if (infos.inputSenhaAtual !== response.data.cli_senha) {
         alert("Senha atual incorreta!");
       } else {

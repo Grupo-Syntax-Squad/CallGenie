@@ -4,6 +4,7 @@ import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import StyleTableCSS from './StyleTable.module.css'
 import axios from "axios";
 import { version } from "react-dom";
+import { ipAPI } from "../../constants/routes";
 
 function handleDeleteChamados(selectedChamados) {
   if (selectedChamados.length === 0) {
@@ -12,7 +13,7 @@ function handleDeleteChamados(selectedChamados) {
   }
 
   selectedChamados.forEach((chamadoId) => {
-    axios.delete(`http://localhost:8080/chamados/${chamadoId}`);
+    axios.delete(`${ipAPI}chamados/${chamadoId}`);
   });
   window.location.replace("/chamados");
 };
@@ -29,9 +30,9 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
 
   useEffect(() => {
     if (cpf.length === 1) {
-      axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
+      axios.get(`${ipAPI}chamados`).then(response => setChamados(response.data));
     } else {
-      axios.get(`http://localhost:8080/chamados/cpf/${cpf}`).then(response => setChamados(response.data));
+      axios.get(`${ipAPI}chamados/cpf/${cpf}`).then(response => setChamados(response.data));
     };
   });
 
@@ -103,7 +104,7 @@ export default function Chamados() {
     const fetchUsername = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/${isSupport ? "suportes" : "clientes"}/${userCpf}`
+          `${ipAPI}${isSupport ? "suportes" : "clientes"}/${userCpf}`
         );
         const name = isSupport ? response.data.sup_nome : response.data.cli_nome;
         setUserName(name);

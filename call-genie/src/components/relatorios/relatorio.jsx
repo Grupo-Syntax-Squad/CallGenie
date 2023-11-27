@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import RelatorioPag from "./relatorioPag.module.css";
+import { ipAPI } from "../../constants/routes";
 
 function Imprimir(event) {
   window.print();
@@ -18,7 +19,7 @@ export default function Relatorio() {
   const sup_id = localStorage.getItem("sup_id");
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/gerarRelatorio/${id}`).then(response => {
+    axios.get(`${ipAPI}gerarRelatorio/${id}`).then(response => {
       setEquipamento(response.data.equipamento);
       setChamado(response.data.chamado);
       setCliente(response.data.cliente);

@@ -4,6 +4,7 @@ import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import AbrirChamado from "../abrirChamado/abrirChamado";
 import Abrirchamado from "./abrirChamado.module.css"
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
@@ -13,7 +14,7 @@ export default function ChamadoAberto() {
   const sup_id = localStorage.getItem("login");
   const cham_id = localStorage.getItem("cham_id");
   useEffect(() => {
-    axios.get(`http://localhost:8080/chamados/${cham_id}`).then(response => {
+    axios.get(`${ipAPI}chamados/${cham_id}`).then(response => {
       setEquipamento(response.data.equipamento);
       setChamado(response.data.chamado);
     });
@@ -25,7 +26,7 @@ export default function ChamadoAberto() {
   };
 
   const handleSubmit = (event) => {
-    axios.post(`http://localhost:8080/responderChamado/${cham_id}`, {
+    axios.post(`${ipAPI}responderChamado/${cham_id}`, {
       soluc_comum: resposta,
       sup_id: sup_id,
     });
@@ -35,8 +36,8 @@ export default function ChamadoAberto() {
   };
 
   const handleClose = (event) => {
-    axios.get(`http://localhost:8080/chamados/${cham_id}`).then(response => {
-      axios.put(`http://localhost:8080/chamados/${cham_id}`, {
+    axios.get(`${ipAPI}chamados/${cham_id}`).then(response => {
+      axios.put(`${ipAPI}chamados/${cham_id}`, {
         titulo: response.data.chamado.cham_titulo,
         descricao: response.data.chamado.cham_descricao,
         data_inicio: response.data.chamado.cham_data_inicio,

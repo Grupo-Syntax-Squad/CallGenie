@@ -3,6 +3,7 @@ import ChamadosPageCSS from "./ChamadosPage.module.css";
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import StyleTableCSS from './StyleTable.module.css'
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 function handleSubmit(event) {
   let id = event.target.name;
@@ -23,9 +24,9 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
 
   useEffect(() => {
     if (cpf.length === 1) {
-      axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
+      axios.get(`${ipAPI}chamados`).then(response => setChamados(response.data));
     } else {
-      axios.get(`http://localhost:8080/chamados/cpf/${cpf}`).then(response => setChamados(response.data));
+      axios.get(`${ipAPI}chamados/cpf/${cpf}`).then(response => setChamados(response.data));
     }
   }, [cpf]);
 
@@ -104,7 +105,7 @@ export default function ChamadosSuporte() {
     const fetchUserName = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/${userCpf.length === 1 ? "suportes" : "clientes"}/${userCpf}`
+          `${ipAPI}${userCpf.length === 1 ? "suportes" : "clientes"}/${userCpf}`
         );
         const name = userCpf.length === 1 ? response.data.sup_nome : response.data.cli_nome;
         setUserName(name);

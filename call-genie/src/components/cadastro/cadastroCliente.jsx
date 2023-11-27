@@ -1,6 +1,7 @@
 import React from "react";
 import CadastroCSS from "./cadastro.module.css";
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 let infos = {};
 
@@ -10,7 +11,7 @@ function handleChange(event) {
 
 function handleSubmit(event) {
   if (infos.cpf.match(/^([0-9]{11})$/) && infos.tel.match(/^([0-9]{11})$/)) {
-    axios.post("http://localhost:8080/cadastrar/cliente", {
+    axios.post(`${ipAPI}cadastrar/cliente`, {
       nome: infos.nome,
       cpf: infos.cpf,
       email: infos.email,

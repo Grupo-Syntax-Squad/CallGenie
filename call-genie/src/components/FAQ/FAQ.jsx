@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import HomePage from "./FAQ.module.css";
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 export default function FAQ() {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      await axios.get(`http://localhost:8080/faq`).then((response) => {
+      await axios.get(`${ipAPI}faq`).then((response) => {
         setFaqs(response.data);
       }).catch((error) => {
         console.error("Error fetching FAQs:", error);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ChamadoAbertoCss from "./chamadoAberto.module.css"
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
@@ -11,7 +12,7 @@ export default function ChamadoAberto() {
   const cham_id = localStorage.getItem("cham_id");
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/verResposta/${cham_id}`).then(response => {
+    axios.get(`${ipAPI}verResposta/${cham_id}`).then(response => {
       setChamado(response.data.chamado);
       setResposta(response.data.resposta);
     });
@@ -21,7 +22,7 @@ export default function ChamadoAberto() {
     const fetchUserName = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/clientes/${userCpf}`
+          `${ipAPI}clientes/${userCpf}`
         );
         const name = response.data.cli_nome;
         setUserName(name);

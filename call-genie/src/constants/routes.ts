@@ -20,6 +20,6 @@ export const cadastrarFAQ = "/CadastrarFAQ"
 export const relatorios = "/relatorios"
 export const relatorio = "/relatorio"
 
-
+export const ipAPI = "http://192.168.3.8:8080/";
 
 

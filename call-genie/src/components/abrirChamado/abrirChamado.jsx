@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import HeaderChamado from "../HeaderChamado/headerChamado.module.css";
 import Abrirchamado from "./abrirChamado.module.css";
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 
 let chamado = {};
 let equipamento = {
@@ -41,7 +42,7 @@ export default function AbrirChamado() {
     const fetchUsername = async () => {
       try {
         const response = await axios.get(
-            `http://localhost:8080/${isSupport ? "suportes" : "clientes"}/${userCpf}`
+            `${ipAPI}${isSupport ? "suportes" : "clientes"}/${userCpf}`
         );
         const name = isSupport ? response.data.sup_nome : response.data.cli_nome;
         setUserName(name);
@@ -55,7 +56,7 @@ export default function AbrirChamado() {
   function handleSubmit(event) {
     let data = new Date();
     data.setDate(data.getDate() + 1);
-    console.log(axios.post("http://localhost:8080/chamados", {
+    console.log(axios.post(`${ipAPI}chamados`, {
       titulo: chamado.titulo,
       descricao: chamado.desc,
       status: chamado.status,

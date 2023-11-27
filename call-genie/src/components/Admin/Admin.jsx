@@ -5,6 +5,7 @@ import StyleTableCSS from './StyleTable.module.css'
 import AdminPage from "./AdminPage.module.css"
 
 import axios from "axios";
+import { ipAPI } from "../../constants/routes";
 import { useEffect, useState } from "react";
 
 function handleDeleteChamados(selectedChamados) {
@@ -14,7 +15,7 @@ function handleDeleteChamados(selectedChamados) {
   }
 
   selectedChamados.forEach((chamadoId) => {
-    axios.delete(`http://localhost:8080/chamados/${chamadoId}`);
+    axios.delete(`${ipAPI}chamados/${chamadoId}`);
   });
   window.location.replace("/chamados");
 };
@@ -26,7 +27,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
   let cpf = localStorage.getItem("login");
 
   useEffect(() => {
-      axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
+      axios.get(`${ipAPI}chamados`).then(response => setChamados(response.data));
 
   });
 
@@ -90,7 +91,7 @@ export default function Admin() {
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
+    axios.get(`${ipAPI}chamados`).then(response => setChamados(response.data));
     console.log(chamados);
   });
 
@@ -109,7 +110,7 @@ export default function Admin() {
     }
 
     selectedChamados.forEach((chamadoId) => {
-      axios.delete(`http://localhost:8080/chamados/${chamadoId}`);
+      axios.delete(`${ipAPI}chamados/${chamadoId}`);
     });
     window.location.replace("/chamados");
   };
