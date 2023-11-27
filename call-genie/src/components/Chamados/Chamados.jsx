@@ -41,7 +41,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
     cham = chamados;
   } else {
     chamados.forEach(chamado => {
-      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro) {
+      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro || chamado.cham_urgencia == filtro || chamado.cham_status == filtro) {
         cham.push(chamado);
       }
     });
@@ -170,7 +170,7 @@ export default function Chamados() {
               <div className={ChamadosPageCSS.filtro}>
                 <input
                   type="string"
-                  placeholder="escreva o ID que você quer procurar aqui."
+                  placeholder="escreva o que você quer procurar aqui."
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                 />

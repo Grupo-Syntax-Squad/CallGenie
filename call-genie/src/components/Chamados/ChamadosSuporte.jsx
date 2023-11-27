@@ -35,9 +35,9 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
     cham = chamados;
   } else {
     chamados.forEach(chamado => {
-      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro) {
+      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro || chamado.cham_urgencia == filtro || chamado.cham_status == filtro) {
         cham.push(chamado);
-        console.log((chamado))
+        console.log((chamado.cham_urgencia))
       }
     });
   }
@@ -156,35 +156,14 @@ export default function ChamadosSuporte() {
             </div>
             <div className={ChamadosPageCSS.filtrosContainer}>
 
-              <div>
-                <select name={"Filtar Chamados"} className={ChamadosPageCSS.filtrosLista} >
-                  <optgroup label={"Filtrar Chamados em geral"} >
-                    <option value={"Filtro01"}>Ordem Alfabética</option>
-                    <option value={"Filtro02"}>ID de pedido</option>
-                    <option value={"Filtro03"}>Status do pedido</option>
-
-
-                  </optgroup>
-                </select>
-              </div>
-
               <div className={ChamadosPageCSS.filtro}>
                 <input
                   type="string"
-                  placeholder="escreva o ID que você quer procurar aqui."
+                  placeholder="escreva o que você quer procurar aqui."
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
 
                 />
-              </div>
-              <div>
-                <select name={"Filtrar status"} className={ChamadosPageCSS.filtrosListaB}>
-                  <optgroup label={"Meus atendimentos"}>
-                    <option value={"Filtro01"}>Atendimentos em andamento</option>
-                    <option value={"Filtro02"}>Atendimentos concluidos</option>
-                    <option value={"Filtro03"}>Atendimentos em aberto</option>
-                  </optgroup>
-                </select>
               </div>
               <div>
                 <a href="/CadastrarFAQ" className={ChamadosPageCSS.postButtonsC}>

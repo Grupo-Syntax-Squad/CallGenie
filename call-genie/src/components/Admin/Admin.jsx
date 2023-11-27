@@ -19,16 +19,52 @@ function handleDeleteChamados(selectedChamados) {
   window.location.replace("/chamados");
 };
 
-function Table({ selectedChamados, handleCheckboxChange, chamadoPage, chamados }) {
 
-  let table = chamados.map((chamado) => (
-    <tr>
-      <td id={chamado.cham_id} onClick={chamadoPage} style={{ cursor: "pointer", color: "blue", textDecoration: "underline" }}>{chamado.cham_titulo}</td>
+
+function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) {
+  const [chamados, setChamados] = useState([]);
+  let cpf = localStorage.getItem("login");
+
+  useEffect(() => {
+      axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
+
+  });
+
+  let cham = [];
+
+  if (filtro === "") {
+    cham = chamados;
+  } else {
+    chamados.forEach(chamado => {
+      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro || chamado.cham_urgencia == filtro || chamado.cham_status == filtro) {
+        cham.push(chamado);
+      }
+    });
+  }
+
+  cham.sort((a, b) => new Date(a.cham_data_inicio) - new Date(b.cham_data_inicio));
+
+  const listaChamados = cham.map((chamado) => (
+
+    <tr key={chamado.cham_id}>
+      <td
+        id={chamado.cham_id}
+        onClick={chamadoPage}
+        style={{ cursor: "pointer", color: "blue", textDecoration: "underline" }}
+      >
+        {chamado.cham_titulo}
+      </td>
       <td>{chamado.cham_id}</td>
       <td>{chamado.cham_urgencia}</td>
       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
       <td>{chamado.cham_status}</td>
-      <td><input type="checkbox" onChange={() => handleCheckboxChange(chamado.cham_id)} checked={selectedChamados.includes(chamado.cham_id)} /></td>
+      <td>
+        <input
+          type="checkbox"
+          onChange={() => handleCheckboxChange(chamado.cham_id)}
+          checked={selectedChamados.includes(chamado.cham_id)}
+        />
+      </td>
     </tr>
   ));
 
@@ -43,7 +79,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, chamados }
           <th><p>Status</p></th>
         </tr>
       </thead>
-      <tbody>{table}</tbody>
+      <tbody>{listaChamados}</tbody>
     </table>
   );
 };
@@ -84,6 +120,8 @@ export default function Admin() {
     window.location.replace("/chamadoAberto");
   };
 
+  const [searchValue, setSearchValue] = useState("");
+
   return (
     <>
       <div className={ChamadosPageCSS.bodyChamados}>
@@ -118,33 +156,17 @@ export default function Admin() {
             </div>
             <div className={ChamadosPageCSS.filtrosContainer}>
 
-              <div>
-                <select name={"Filtar Chamados"} className={ChamadosPageCSS.filtrosLista}>
-                  <optgroup label={"Filtrar Chamados"}>
-                    <option value={"Filtro01"}>Em Aberto</option>
-                    <option value={"Filtro02"}>Em Andamento</option>
-                    <option value={"Filtro03"}>Concluído</option>
-                    <option value={"Filtro04"}>Equipamento Cadastrado</option>
-                    <option value={"Filtro05"}>ID do Chamado</option>
-                    <option value={"Filtro06"}>Ordem Alfabética</option>
-                  </optgroup>
-                </select>
+
+              <div className={ChamadosPageCSS.filtro}>
+                <input
+                  type="string"
+                  placeholder="escreva o que você quer procurar aqui."
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                />
               </div>
-              <div className={ChamadosPageCSS.filtros}>
-                <p>Buscar Chamado  <i className="fa-solid fa-magnifying-glass"></i></p>
-              </div>
-              <div>
-                <select name={"Filtrar Suporte"} className={ChamadosPageCSS.filtrosListaB}>
-                  <optgroup label={"Filtrar Suporte"}>
-                    <option value={"Filtro01"}>ID</option>
-                    <option value={"Filtro02"}>Nome</option>
-                    <option value={"Filtro03"}>CPF</option>
-                    <option value={"Filtro04"}>Telefone</option>
-                    <option value={"Filtro05"}>Email</option>
-                    <option value={"Filtro06"}>Ordem Alfabética</option>
-                  </optgroup>
-                </select>
-              </div>
+
+    
               <div>
                 <a href="/CadastrarFAQ" className={ChamadosPageCSS.postButtonsC}>
                   Respostas Frequentes </a>
@@ -152,7 +174,7 @@ export default function Admin() {
             </div>
             <div className={StyleTableCSS.mainTable}>
               <section className={StyleTableCSS.tableBody}>
-                <Table selectedChamados={selectedChamados} handleCheckboxChange={handleCheckboxChange} chamadoPage={chamadoPage} chamados={chamados} />
+              <Table selectedChamados={selectedChamados} handleCheckboxChange={handleCheckboxChange} chamadoPage={chamadoPage} filtro={searchValue} />
               </section>
               {showDeleteDialog && (
                 <dialog open>
