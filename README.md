@@ -20,7 +20,7 @@
   
 ## 📌Objetivo do Projeto
 > O produto tem como objetivo sanar problemas na Gestão de Chamados de Serviços, em que, existam 3 usuários para o sistema: cliente, suporte técnico e administrador, cada qual com suas próprias interfaces e funcionalidades únicas. Ademais o sistema deve fornecer informações sobre a disponibilização de funcionalidades de planejamento, acompanhamento e controle no atendimento e chamados de serviços. Adicionalmente gerar relatórios analíticos. 
-> **Status do Projeto: Em andamento🚧**
+> **Status do Projeto: Concluído✅**
 
 
 <span id="visão">
@@ -55,7 +55,7 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 1. Realizar Chamados: [clique aqui.](/documents/sprints/sprint1)
 2. Cadastro de Usuário: [clique aqui.](/documents/sprints/sprint2)
 3. Gerar Relatórios: [clique aqui.](/documents/sprints/sprint3)
-4. Documentação e aba de Contato: [working...⌛]()
+4. Documentação e aba de Contato: [clique aqui.](/documents/sprints/sprint4)
 
 <br>
 
@@ -71,7 +71,7 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 
 ### Sprint - 3️⃣ 🎯 ([Clique aqui](/documents/sprints/sprint3))  Concluído✅
 
-### Sprint - 4️⃣ 🎯   Em construção🚧
+### Sprint - 4️⃣ 🎯 ([Clique aqui](/documents/sprints/sprint4))  Concluído✅
 
 <span id="backlogArtefatos">
   
