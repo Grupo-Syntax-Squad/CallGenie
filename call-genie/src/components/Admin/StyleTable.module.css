@@ -48,6 +48,10 @@ thead th{
     left: 0;
 }
 
+th >p{
+    text-align: center;    
+}
+
 tr{
     color:#000;
 }

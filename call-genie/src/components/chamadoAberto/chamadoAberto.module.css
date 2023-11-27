@@ -470,11 +470,7 @@ header {
     align-items: center;
 }
 
-.responderbutton{
-    width:400px;
-}
-
-.responder_a{
+button.responder_a{
     margin:auto;
     margin-bottom:0%;
 }
@@ -485,9 +481,9 @@ header {
     }
 }
 
-button {
-    margin-inline: 3%;
+button.responderbutton{
     border: none;
+    margin:auto;
     margin-top: 5%;
     color: #FFFFFF;
     font-size: 20pt;
@@ -496,6 +492,5 @@ button {
     background-color: #0085FF;
     border-radius: 10px;
     cursor: pointer;
-    height: 70px;
 }
 
