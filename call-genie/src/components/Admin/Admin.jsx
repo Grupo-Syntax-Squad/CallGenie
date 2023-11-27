@@ -48,73 +48,34 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, chamados }
   );
 };
 
-// function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
-//   const [chamados, setChamados] = useState([]);
-
-//   useEffect(() => {
-//     axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
-//     console.log(chamados);
-//   });
-
-//   let cham = [];
-
-//   cham.sort((a, b) => new Date(b.cham_data_inicio) - new Date(a.cham_data_inicio));
-
-//   const listaChamados = cham.map((chamado) => (
-
-//     <tr key={chamado.cham_id}>
-//       <td
-//         id={chamado.cham_id}
-//         onClick={chamadoPage}
-//         style={{ cursor: "pointer", color: "blue", textDecoration: "underline" }}
-//       >
-//         {chamado.cham_titulo}
-//       </td>
-//       <td>{chamado.cham_id}</td>
-//       <td>{chamado.cham_urgencia}</td>
-//       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
-//       <td>{chamado.cham_status}</td>
-//       <td>
-//         <input
-//           type="checkbox"
-//           onChange={() => handleCheckboxChange(chamado.cham_id)}
-//           checked={selectedChamados.includes(chamado.cham_id)}
-//         />
-//       </td>
-//     </tr>
-//   ));
-
-//   return (
-//     <table>
-//       <thead>
-//         <tr className={StyleTableCSS.ptable}>
-//           <th><p>Título</p></th>
-//           <th><p>ID</p></th>
-//           <th><p>Prioridade</p></th>
-//           <th><p>Data de criação</p></th>
-//           <th><p>Status</p></th>
-//         </tr>
-//       </thead>
-//       <tbody>{listaChamados}</tbody>
-//     </table>
-//   );
-// };
-
 export default function Admin() {
   const [selectedChamados, setSelectedChamados] = useState([]);
   const [chamados, setChamados] = useState([]);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
   useEffect(() => {
     axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
     console.log(chamados);
   });
 
-  const handleCheckboxChange = (chamadoId) => {
+  function handleCheckboxChange(chamadoId) {
     if (selectedChamados.includes(chamadoId)) {
       setSelectedChamados(selectedChamados.filter((id) => id !== chamadoId));
     } else {
       setSelectedChamados([...selectedChamados, chamadoId]);
     }
+  };
+
+  function handleDeleteChamados(selectedChamados) {
+    if (selectedChamados.length === 0) {
+      alert('Nenhum chamado selecionado!');
+      return;
+    }
+
+    selectedChamados.forEach((chamadoId) => {
+      axios.delete(`http://localhost:8080/chamados/${chamadoId}`);
+    });
+    window.location.replace("/chamados");
   };
 
   function chamadoPage(e) {
@@ -193,20 +154,23 @@ export default function Admin() {
               <section className={StyleTableCSS.tableBody}>
                 <Table selectedChamados={selectedChamados} handleCheckboxChange={handleCheckboxChange} chamadoPage={chamadoPage} chamados={chamados} />
               </section>
-              <dialog>
-                <p>
-                  VOCÊ ESTÁ PRESTES A DELETAR UMA ORDEM DE SERVIÇO, DESEJA
-                  CONFIRMAR?
-                </p>
-                <button className={ChamadosPageCSS.sim}>SIM</button>
-                <button className={ChamadosPageCSS.nao}>NÃO</button>
-              </dialog>
+              {showDeleteDialog && (
+                <dialog open>
+                  <p>VOCÊ ESTÁ PRESTES A DELETAR UM OU MAIS CHAMADOS, DESEJA CONFIRMAR?</p>
+                  <button onClick={() => handleDeleteChamados(selectedChamados)} className={ChamadosPageCSS.sim}>SIM</button>
+                  <button onClick={() => setShowDeleteDialog(false)} className={ChamadosPageCSS.nao}>NÃO</button>
+                </dialog>
+              )}
             </div>
             <div className={ChamadosPageCSS.postButtons}>
               <div className={ChamadosPageCSS.postButtonsA}>
                 <a href="/cadastroSuporte" className={ChamadosPageCSS.buttonInput}>
                   Cadastrar suporte
                 </a>
+                <a href="/relatorio">
+                  <button className={ChamadosPageCSS.buttonInput}>Relatório</button>
+                </a>
+                <button onClick={() => setShowDeleteDialog(true)} className={ChamadosPageCSS.buttonInput}>Deletar Chamado</button>
               </div>
             </div>
           </div>

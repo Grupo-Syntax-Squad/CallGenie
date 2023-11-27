@@ -59,7 +59,7 @@ export const Chamado = database.define('Chamado', {
         type: DataTypes.STRING(100)
     },
     cham_status: {
-        type: DataTypes.ENUM('Aberto', 'Em andamento', 'Concluído', 'Atrasado'),
+        type: DataTypes.ENUM('Aberto', 'Andamento', 'Concluído', 'Atrasado'),
         defaultValue: 'Aberto'
     },
     cham_data_inicio: {

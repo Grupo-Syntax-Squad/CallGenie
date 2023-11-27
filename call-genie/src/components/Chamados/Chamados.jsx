@@ -48,9 +48,9 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) 
   }
 
   cham.sort((a, b) => new Date(a.cham_data_inicio) - new Date(b.cham_data_inicio));
-  
-      const listaChamados = cham.map((chamado) => (
-    
+
+  const listaChamados = cham.map((chamado) => (
+
     <tr key={chamado.cham_id}>
       <td
         id={chamado.cham_id}
@@ -96,16 +96,6 @@ export default function Chamados() {
   const [userName, setUserName] = useState("");
 
   const userCpf = localStorage.getItem("login");
-
-  const [chamados, setChamados] = useState([]);
-
-  useEffect(() => {
-    if (cpf.length === 1) {
-      axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
-    } else {
-      axios.get(`http://localhost:8080/chamados/cpf/${cpf}`).then(response => setChamados(response.data));
-    };
-  });
 
   useEffect(() => {
 
