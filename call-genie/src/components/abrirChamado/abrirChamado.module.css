@@ -271,6 +271,11 @@ dialog button.nao{
     margin: 0%;
 }
 
+.fundoAbrirChamado .flexRow h1{
+    margin-right: 45%;
+    
+}
+
 .flexRow h1{
     margin-block:0%;
 }
@@ -294,6 +299,7 @@ dialog button.nao{
     border: none;
     border-radius: 10px;
     text-align: center;
+    margin-left: 0;
 }
 
 @media screen and (max-width: 768px) {
