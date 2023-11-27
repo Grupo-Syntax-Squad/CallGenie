@@ -299,6 +299,7 @@ dialog button.nao{
     border: none;
     border-radius: 10px;
     text-align: center;
+    margin-left: 0;
 }
 
 @media screen and (max-width: 768px) {

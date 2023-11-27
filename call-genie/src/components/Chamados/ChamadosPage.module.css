@@ -15,6 +15,10 @@ h1{
     padding:20px;
 }
 
+div select{
+    margin-left: 50%;
+}
+
 input {
     width:500px;
     border: none;
@@ -317,7 +321,7 @@ dialog button.nao{
 .filtrosListaB{
     color:#363636;
     display: flex;
-    margin-left:0%;
+    margin-left:20%;
     margin-top: 2%;
     height:50px;
     width: 260px;
@@ -380,10 +384,9 @@ button.cadastrobutton {
   .filtro input{
       color:#363636;
       display: flex;
-      margin-left:0%;
-      height:70px;
+      margin:3%;
+      height:50px;
       padding:.5rem;
-      margin:.5%;
       background-color: #a3a3a395;
       border: 2px solid #000;
       border-radius: 10px;
@@ -405,10 +408,10 @@ button.cadastrobutton {
       color:#363636;
       display: flex;
       margin-left:0%;
-      height:70px;
+      height:50px;
       width: 100%;
       padding:.5rem;
-      margin:.5%;
+      margin: 3%;
       background-color: #a3a3a395;
       border: 2px solid #000;
       border-radius: 10px;
