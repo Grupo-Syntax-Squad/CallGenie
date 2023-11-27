@@ -9,7 +9,7 @@ const con = mysql.createConnection({
     password: PASSWORD
 });
 
-const database = new Sequelize('callgenie', 'root', PASSWORD, {
+export const database = new Sequelize('callgenie', 'root', PASSWORD, {
     host: 'localhost',
     dialect: 'mysql'
 });
@@ -59,7 +59,7 @@ export const Chamado = database.define('Chamado', {
         type: DataTypes.STRING(100)
     },
     cham_status: {
-        type: DataTypes.ENUM('Aberto', 'Andamento', 'Concluído'),
+        type: DataTypes.ENUM('Aberto', 'Andamento', 'Concluído', 'Atrasado'),
         defaultValue: 'Aberto'
     },
     cham_data_inicio: {
@@ -67,8 +67,8 @@ export const Chamado = database.define('Chamado', {
         defaultValue: new Date()
     },
     cham_urgencia: {
-        type: DataTypes.ENUM("baixa", "media", "alta", "urgente"),
-        defaultValue: "media",
+        type: DataTypes.ENUM("Baixa", "Média", "Alta", "Urgente"),
+        defaultValue: "Média",
         allowNull: false
     },
     cham_prazo: {
@@ -84,7 +84,6 @@ Chamado.belongsTo(Cliente, {
 export const Adm = database.define("Administrador", {
     adm_id: {
         type: DataTypes.INTEGER,
-        autoIncrement: true,
         primaryKey: true,
         allowNull: false
     },
@@ -137,6 +136,7 @@ Suporte.belongsTo(Adm, {
     foreignKey: "sup_adm_id",
     allowNull: false
 });
+
 
 export const RespostaChamado = database.define("RespostaChamado", {
     resp_id: {
@@ -201,33 +201,11 @@ export const Faq = database.define("Faq", {
         allowNull: false
     },
     faq_pergunta: {
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING(512),
         allowNull: false
     },
     faq_resposta: {
-        type: DataTypes.STRING(150),
+        type: DataTypes.STRING(512),
         allowNull: false
     }
 });
-
-Faq.belongsTo(Suporte, {
-    foreignKey: "faq_sup_id",
-    allowNull: false
-});
-
-(async () => {
-    await database.sync();
-    let adm = await Adm.findOne({where: {
-        adm_nome: "admin"
-    }});
-    if (adm == null) {
-        await Adm.create({
-            adm_nome: "admin",
-            adm_telefone: 12997881456,
-            adm_email: "emaildoadm@callgenie.com",
-            adm_senha: "admin"
-        });       
-    } else {
-        console.log("Adm já criado");
-    };
-})();

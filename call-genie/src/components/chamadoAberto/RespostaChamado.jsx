@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ChamadoAbertoCss from "./chamadoAberto.module.css"
-// import "./style/main.css";
 import HeaderChamado from '../HeaderChamado/headerChamado.module.css'
-// import "./style/style-table.css";
 import axios from "axios";
 
 export default function ChamadoAberto() {
   const [chamado, setChamado] = useState({});
   const [resposta, setResposta] = useState({});
+  const [userName, setUserName] = useState(""); // Adicione o estado para armazenar o nome do usuário
 
   const cham_id = localStorage.getItem("cham_id");
 
@@ -16,7 +15,23 @@ export default function ChamadoAberto() {
       setChamado(response.data.chamado);
       setResposta(response.data.resposta);
     });
-  });
+
+    const userCpf = localStorage.getItem("login");
+
+    const fetchUserName = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/clientes/${userCpf}`
+        );
+        const name = response.data.cli_nome;
+        setUserName(name);
+      } catch (error) {
+        console.error("Erro ao obter o nome do usuário:", error);
+      }
+    };
+
+    fetchUserName();
+  }, [cham_id]);
 
   return (
     <body className={ChamadoAbertoCss.Body}>
@@ -29,13 +44,15 @@ export default function ChamadoAberto() {
           />
         </a>
         <div className={HeaderChamado.headerItensRight}>
+          <a href="Chamados">
           <img
             src="assets/img/user.png"
             alt="Usuário"
             className={ChamadoAbertoCss.fotoUser}
             id="logo-fundo-brando"
           />
-          <h2>Olá, user</h2>
+          </a>
+          <h2>Olá, {userName}</h2>
           <a href="/entrar">
             <img
               src="assets/img/vector_logOut.svg"
@@ -47,12 +64,15 @@ export default function ChamadoAberto() {
       </header>
 
       <div className={ChamadoAbertoCss.ajuda}>
-        <a href="/chamadoAberto">Preciso de ajuda</a>
+        <a href="/faq">Preciso de ajuda?</a>
       </div>
       <div className={ChamadoAbertoCss.divFlex}>
         <main>
+          
           <div className={ChamadoAbertoCss.fundoChamadoAberto} >
+          
             <div className={ChamadoAbertoCss.divFlex}>
+              
               <div className={ChamadoAbertoCss.infoDispositivo}>
                 <p>Título: {chamado.cham_titulo}</p>
                 <p>ID: {cham_id}</p>
@@ -61,6 +81,13 @@ export default function ChamadoAberto() {
               </div>
             </div>
             <div className={ChamadoAbertoCss.respostachamado}>
+            <img
+                  src="assets/img/iconback.png"
+                  alt="Voltar"
+                  id={ChamadoAbertoCss.iconback}
+                  style={{cursor: "pointer"}}
+                  onClick={() => {window.location.replace("/chamados")}}
+                />
               <div className={ChamadoAbertoCss.colunaDireita}>
                 <div className={ChamadoAbertoCss.fundoChamadoAberto}>
                   <h2>Resposta</h2>

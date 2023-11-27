@@ -56,22 +56,19 @@ footer {
 }
 
 @media (max-width: 768px) {
-    main {
-        flex-direction: column; 
+    
+    .input{
+        width:100%;
+    }
+
+    main >.cadastro_container{
+        max-width: 60%;
         margin-left: 0;
-        align-items: center;
-        margin-left: 5%;
-    }
-    nav .nav-buttons {
-        flex-direction: column;
-        gap: 10px;
-        margin-right: 5%;
     }
 
-    main img {
-        margin-right: 0; 
+    footer.entrar{
+        margin-top: 100px;;
     }
-
 
 }
 
@@ -79,7 +76,7 @@ nav {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
-align-items: center; /* Centraliza verticalmente os itens */
+align-items: center;
 }
 nav a{
     padding-top: 1rem;
@@ -91,7 +88,7 @@ justify-content: space-between;
 align-items: center;
 }
 
-p{
+p.entrar{
     text-align: center;
 }
 
@@ -100,17 +97,18 @@ body p a {
 }
 
 .cadastro_container{
+    align-items: center;
+    justify-content: center;
     display:block;
     margin:auto;
     background-color: rgba(239, 239, 239, 0.216);
     padding:5%;
     padding-top: 100px;
     border-radius: 0px 0px 15px 15px;
-    width: 45%;
+    max-width: 45%;
 }
 
 .button_inputEntrar{ 
-    /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
@@ -123,10 +121,18 @@ body p a {
     margin:auto;
     margin-top: 50px;
 }
-#inputNome{
+.input{
+    width: 100%;
     margin-bottom: 40px;
 }
 
 .h2Entrar{
+    width:100%;
     margin-bottom: 50px;
+}
+
+main.entrar{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%, -50%); 
 }

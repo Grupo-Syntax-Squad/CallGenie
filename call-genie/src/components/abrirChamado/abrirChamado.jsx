@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import HeaderChamado from "../HeaderChamado/headerChamado.module.css";
 import Abrirchamado from "./abrirChamado.module.css";
 import axios from "axios";
@@ -31,6 +31,27 @@ function handleChange(event) {
 
 export default function AbrirChamado() {
   const [urgencia, setUrgencia] = useState("media")
+  const [userName, setUserName] = useState("");
+
+  const userCpf = localStorage.getItem("login");
+
+  useEffect(() => {
+
+    const isSupport = userCpf.length === 1;
+    const fetchUsername = async () => {
+      try {
+        const response = await axios.get(
+            `http://localhost:8080/${isSupport ? "suportes" : "clientes"}/${userCpf}`
+        );
+        const name = isSupport ? response.data.sup_nome : response.data.cli_nome;
+        setUserName(name);
+      } catch (error) {
+        console.error("Erro ao obter o nome do usuário:", error);
+      }
+    };
+
+    fetchUsername();
+  }, [userCpf]);
   function handleSubmit(event) {
     let data = new Date();
     data.setDate(data.getDate() + 1);
@@ -60,14 +81,13 @@ export default function AbrirChamado() {
           />
         </a>
         <div className={HeaderChamado.headerItensRight}>
-          <a href="/Chamados">
-            <img
-              src="assets/img/iconback.png"
-              alt="Voltar"
-              id={Abrirchamado.iconback}
-            />
+          <a href="/alterarDados">
+              <img
+                src="assets/img/iconeuser2.png"
+                alt="Usuário"
+              />
           </a>
-          <h2>Olá, user</h2>
+          <h2>Olá, {userName}</h2>
           <a href="/entrar">
             <img
               src="assets/img/iconexit.png"
@@ -88,7 +108,7 @@ export default function AbrirChamado() {
             />
             <h1>Novo chamado</h1>
           </div>
-          <form action="/abrirChamado" method="post" onSubmit={handleSubmit}>
+          <form action="/abrirChamado" method="post" onSubmit={handleSubmit} className={Abrirchamado.containerAbrirChamado}>
             <div className={Abrirchamado.container_colunas}>
               <div className={Abrirchamado.colunaEsquerda}>
                 <label>

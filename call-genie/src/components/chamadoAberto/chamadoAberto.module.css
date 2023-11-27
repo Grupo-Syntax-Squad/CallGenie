@@ -1,8 +1,4 @@
-/* Estilo para o conteúdo main de todas as páginas */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
-
-/*cadastrar.ejs  e  entrar.ejs*/
 
 .fundoCadastro{
     max-width: 100%;
@@ -79,6 +75,13 @@ main h2{
 
 .cadastroOpcoes img{
     width:300px;
+}
+
+main img {
+    max-width: 30%;
+    height: 5%;
+    margin: 0%;
+
 }
 
 .cadastroOpcoes{
@@ -296,8 +299,8 @@ textarea {
     background-color: #ffffff3f;
     border-radius: 20px;
     padding:2rem;
-    height:580px;
     margin-right: 2%;
+    height: 70%;
 }
 
 
@@ -340,7 +343,7 @@ textarea {
 
 .ajuda{
     text-align: right;
-    margin-right: 20%;
+    margin-right: 10%;
     padding: 1rem;
 }
 .ajuda a{
@@ -396,7 +399,7 @@ dialog button.nao{
 }
 
 .fotoUser {
- max-width: 20%;   
+ width: 120px;   
 }
 
 header div h2 {
@@ -413,6 +416,7 @@ header a {
     text-decoration: none;
     color: #FFFFFF;
     margin-inline: 2rem;
+    margin-top: 1rem;
 }
 
 .logo_genie {
@@ -444,7 +448,6 @@ header {
 
 .colunaEsquerda p {
     color: #000000;
-    background-color: #bed1f1;
     height: 90%;
     border-radius: 5%;
 }
@@ -459,7 +462,7 @@ header {
 .respostachamado {
     display: flex;
     flex-direction: row;
-    height: 85%;
+    height: 70%;
 }
 
 .respostachamado p {
@@ -495,3 +498,4 @@ button {
     cursor: pointer;
     height: 70px;
 }
+

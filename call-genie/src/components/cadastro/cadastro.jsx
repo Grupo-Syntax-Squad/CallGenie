@@ -43,26 +43,24 @@ function Main() {
   return (
     <div className={CadastroCSS.center}>
       <main className={CadastroCSS.main_div}>
-        <h2>Em qual das opções você se encaixa?</h2>
+        <h2 className={CadastroCSS.cadastro}>Em qual das opções você se encaixa?</h2>
         <div className={CadastroCSS.main_div_user}>
-          <a href="/cadastroSuporte">
+          <a href="/cadastroSuporte" className={CadastroCSS.opcaousuario}>
             <div className={CadastroCSS.cadastro_opcao}>
               <img src="assets/img/userTecnico.png" alt="SUPORTE" />
               <h3>SOU SUPORTE</h3>
             </div>
           </a>
-
-
-          <a href="/cadastroCliente">
+          <a href="/cadastroCliente" className={CadastroCSS.opcaousuario}>
             <div className={CadastroCSS.cadastro_opcao}>
               <img src="assets/img/user_cliente.png" alt="CLIENTE" />
               <h3>SOU CLIENTE</h3>
             </div>
           </a>
-
         </div>
-        <p>
-          Precisa de ajuda? <a href="/cadastrar">clique aqui</a>
+
+        <p className={CadastroCSS.cadastro}>
+          Precisa de ajuda? <a href="/FAQ">clique aqui</a>
         </p>
       </main>
     </div>
@@ -71,10 +69,10 @@ function Main() {
 
 function Footer() {
   return (
-    <footer>
+    <footer className={CadastroCSS.cadastro}>
       Copyright © 2023 Syntax Squad | Todos os direitos reservados
     </footer>
   );
 }
 
-export default Cadastro;
+// export default Cadastro;

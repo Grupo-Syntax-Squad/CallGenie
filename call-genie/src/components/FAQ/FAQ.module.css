@@ -1,6 +1,4 @@
-/* Estilos para Index e FAQ */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
+@import url('http.homes://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 
 *{
     margin:0px;
@@ -58,11 +56,8 @@ body h1{
     font-size: 40pt;
 }
 
-body h2{
-    text-indent: 8%;
-    width:523px;
+body h2, summary, p{
     text-align: justify;
-    padding-top: 5%;
 }
 
 a{
@@ -82,6 +77,10 @@ footer {
     justify-content: center 
 }
 
+main.main_texto{
+    min-width: 50vh;
+}
+
 .main_texto {
     flex: 1;
     display: flex;
@@ -97,17 +96,22 @@ main div {
 }
 
 main div a {
-    text-align: left;
-    flex: 1; 
-    margin-top: 50%;
+    margin-top: 0;
+    width: 30px;
 }
+
+.fudo
+
 
 
 @media (max-width: 768px) {
+    .navbuttons{
+        flex-direction: column;
+    }
     main {
         flex-direction: column; 
     }
-    nav .nav-buttons {
+    nav .navbuttons {
         flex-direction: column;
         gap: 10px;
         margin-right: 5%;
@@ -115,6 +119,21 @@ main div a {
 
     main img {
         margin-right: 0; 
+    }
+
+    .flex{
+        flex-direction: column;
+    }
+
+    .flex > h2{
+        width:100%;
+    }
+
+    button.cadastrobutton {
+        height:120px;
+    }
+    .faqcontainer{
+        max-width: 90%;
     }
 
 
@@ -130,33 +149,33 @@ button.cadastrobutton {
 }
 
 .buttoncontainer {
-    margin-top: 20px; /* Margem superior para afastar do texto */
+    margin-top: 20px;
 }
 
 .buttoncontainer a{
     text-decoration: none;
-    font-size: 16px; /* Tamanho do texto do botão */
+    font-size: 16px;
     font-weight: bolder;
-    color: #000000; /* Cor do texto */
+    color: #000000;
 }
 
 nav {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
-align-items: center; /* Centraliza verticalmente os itens */
+align-items: center;
 }
 nav a{
     padding-top: 1rem;
 }
 
 .navbuttons {
-gap: 100px; /* Ajuste o valor para alterar o espaço entre os botões */
+gap: 100px;
 }
 
 .navbuttons a {
-color: white; /* Cor do texto dos botões */
-text-decoration: none; /* Remove o sublinhado do link */
+color: white;
+text-decoration: none;
 }
 
 nav {
@@ -176,4 +195,52 @@ nav .navbuttons a{
 nav .navbuttons a {
 color: #fff;
 text-decoration: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.faq{
+    max-width: 700px;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #fff;
+    cursor:pointer;
+}
+
+.faqcontainer{
+    margin-top:2.5%;
+}
+
+details > p{
+    width:700px;
+    text-align: justify;
+}
+
+summary{
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.4rem;
+}
+
+.respostaFaq{
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade{
+    from {
+        opacity:0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.flexRow a {
+    text-align: left;
+    flex: 1; 
+    margin: 0;
 }

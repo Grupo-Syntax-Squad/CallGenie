@@ -1,9 +1,5 @@
-/* Estilo para o conteúdo main de todas as páginas */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&family=Poppins:ital,wght@0,300;1,200;1,300&display=swap');
-/*cadastrar.ejs  e  entrar.ejs*/
-
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -44,7 +40,6 @@ label{
 }
 
 .buttonInput{
-    /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
@@ -91,7 +86,6 @@ main h2{
 }
 
 html {
-    /* background-repeat: no-repeat; */
     height: 100%;
 }
 
@@ -178,7 +172,7 @@ input {
     border: none;
     border-radius: 2px;
     padding: 20px;
-    background-color: #EBE9E9; /* cor do plano de fundo */
+    background-color: #EBE9E9;
     margin-bottom: 2%;
 }
 
@@ -187,7 +181,6 @@ input {
 }
 
 .buttonInput{
-    /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
@@ -201,10 +194,6 @@ footer{
     text-align: center;
     position: static;
 }
-
-
-/*  abrirChamado.ejs */
-
 .fundoAbrirChamado{
     margin:2%;
     background-color: #ffffff69;
@@ -286,9 +275,7 @@ footer{
 
 textarea {
     resize: none;
-  }
-
-/* ChamadoAberto.ejs */
+}
 
 .infoDispositivo{
     display: flex;

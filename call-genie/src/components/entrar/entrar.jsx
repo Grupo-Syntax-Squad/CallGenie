@@ -10,15 +10,26 @@ function handleChange(event) {
 
 function handleSubmit(event) {
   console.log(infos);
-  if (infos.cpf=="admin") {
-    if (infos.senha == "fatec") window.location.replace("/admin"); localStorage.setItem('login',"admin");
-  } else axios.post("http://localhost:8080/login", {
+  axios.post("http://localhost:8080/login", {
     credencial: infos.cpf,
     senha: infos.senha
   }).then(response => {
-    if (response.data.login == false) alert(response.data.msg);
-    else {localStorage.setItem("login", response.data.token); window.location.replace("/chamados")};
-    console.log(response.data.login, response.data.msg);
+    if (response.data.login === false) alert(response.data.msg);
+    else {
+      if (response.data.token.tipo === "Admin") {
+        localStorage.setItem("admin", true);
+        localStorage.setItem("login", response.data.token.id);
+        window.location.replace("/admin");
+      } else if (response.data.token.tipo === "Cliente") {
+        localStorage.setItem("cliente", true);
+        localStorage.setItem("login", response.data.token.id);
+        window.location.replace("/chamados");
+      } else if (response.data.token.tipo === "Suporte") {
+        localStorage.setItem("suporte", true);
+        localStorage.setItem("login", response.data.token.id);
+        window.location.replace("/chamadosSuporte");
+      };
+    };
   });
 };
 
@@ -27,7 +38,7 @@ export default function Entrar() {
   return (
     <>
       <nav></nav>
-      <main>
+      <main className={EntrarPage.entrar} >
         <form action="" className={EntrarPage.cadastro_container} >
           <a href="/">
             <img
@@ -40,12 +51,11 @@ export default function Entrar() {
           <input
             type="text"
             placeholder="CPF ou #ID"
-            id={EntrarPage.inputNome}
+            className={EntrarPage.input}
             name="cpf"
             onChange={handleChange}
           />
-          <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
-          {/* <a href="#">Esqueci a minha senha</a> */}
+          <input className={EntrarPage.input} type="password" placeholder="Senha" name="senha" onChange={handleChange} />
           <input
             type="button"
             value="Entrar"
@@ -54,8 +64,8 @@ export default function Entrar() {
           />
         </form>
       </main>
-      <p>Novo no Callgenie? <a href="/cadastro">Cadastre-se</a></p>
-      <footer>
+      <p className={EntrarPage.entrar}>Novo no Callgenie? <a href="/cadastroCliente">Cadastre-se</a></p>
+      <footer className={EntrarPage.entrar}>
         Copyright © 2023 Syntax Squad | Todos os direitos reservados
       </footer>
     </>

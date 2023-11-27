@@ -1,8 +1,6 @@
-import React from "react";
+import HomePage from "./FAQ.module.css";
 import HeaderChamado from "../HeaderChamado/headerChamado.module.css";
 import Abrirchamado from "../abrirChamado/abrirChamado.module.css"
-import HomePage from "./FAQ.module.css";
-import axios from "axios";
 
 function handleChange(event) { };
 
@@ -38,11 +36,11 @@ export default function CadastrarespostaFAQ() {
       <main>
         <div className={Abrirchamado.fundoAbrirChamado}>
           <div className={Abrirchamado.flexRow}>
-            <img
+            <a href="/chamadosSuporte"><img
               src="assets/img/iconback.png"
               alt="Voltar"
               id={Abrirchamado.iconback}
-            />
+            /></a>
             <h1>Adicionar respostas ao FAQ</h1>
           </div>
           <form action="/CadastrarFAQ" method="post" onSubmit={handleSubmit}>

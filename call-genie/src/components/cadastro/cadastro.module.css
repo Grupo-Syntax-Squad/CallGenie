@@ -1,5 +1,3 @@
-/* Estilos para Index e FAQ */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 
 *{
@@ -68,9 +66,9 @@ a{
     padding-top: 3%;
 }
 
-footer {
+footer.cadastro {
+    margin-top: 100px;
     position: static;
-
     text-align: center;
     color: #ffffff;
     padding: 5px;
@@ -90,6 +88,7 @@ main img {
 
 }
 .main_div_user {
+    margin-top: 2%;
     width: 50%;
     height:50%;
     border-radius: 15px;
@@ -105,7 +104,8 @@ main img {
         align-items: center;
         margin-left: 5%;
     }
-    nav .nav-buttons {
+
+    nav .navbuttons {
         flex-direction: column;
         gap: 10px;
         margin-right: 5%;
@@ -113,6 +113,19 @@ main img {
 
     main img {
         margin-right: 0; 
+    }
+
+    .main_div_user{
+        flex-direction: column;
+        padding-top:10px;
+    }
+
+    .input{
+        width:100%;
+    }
+    main.main_div{
+        max-width: 60%;
+        margin-left: 0;
     }
 
 }
@@ -187,25 +200,32 @@ h3{
     width: 600px;
 }
 
+.input{
+    width:100%;
+    margin-bottom: 40px;
+}
+
+
 .cadastro_suporte_container{
     display:block;
     margin:auto;
-    margin-right:0%;
-    padding:5%;
     background-color: rgba(239, 239, 239, 0.562);
-    width:570px;
+    width:850px;
     border-radius:25px;
     position: relative;
 }
 
 .cadastro_container{
-    display:block;
-    margin:auto;
-    background-color: rgba(239, 239, 239, 0.562);
-    width:570px;
-    padding:2%;
-    border-radius:25px;
-    position: relative;
+        align-items: center;
+        justify-content: center;
+        display:block;
+        margin:auto;
+        background-color: rgba(239, 239, 239, 0.216);
+        padding:5%;
+        padding-top: 100px;
+        border-radius: 20px 20px 20px 20px;
+        max-width: 45%;
+        position: relative;
 }
 
 .cadastro_container input{
@@ -218,8 +238,8 @@ h1{
     padding:20px;
 }
 
-input {
-    width:500px;
+form input {
+    width: 100%;
     border: none;
     border-radius: 2px;
     padding: 15px;
@@ -246,7 +266,7 @@ label{
     border-radius: 10px;
     cursor: pointer;
     position: absolute;
-    left:105%;
+    left:50%;
     top:87%;
 }
 
@@ -264,10 +284,10 @@ main h2{
 
 .cadastro_opcao{
     background-color: #ffffff6a;
-    margin:30px;
     width: 300px;
     height: 250px;
     border-radius: 5%;
+    margin: 0 auto;
 }
 
 .cadastro_opcoes a {
@@ -301,7 +321,6 @@ h1{
 
 input {
     display: flex;
-    width:500px;
     border: none;
     border-radius: 2px;
     padding: 20px;
@@ -339,6 +358,13 @@ footer{
     margin-top: 2rem;
     margin-right: auto;
     margin-left: auto;
+}
+
+h2.cadastro{
+    font-size:15pt;
+}
+p.cadastro{
+    text-align: center;
 }
 
 .main_div_user a {
@@ -411,7 +437,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="number"] {
-    -webkit-appearance: textfield; /* Safari */
-    -moz-appearance: textfield; /* Firefox */
-    appearance: textfield; /* Outros navegadores */
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+p.cadastro{
+    margin-top: 1rem;
 }

@@ -15,6 +15,10 @@ h1{
     padding:20px;
 }
 
+div select{
+    margin-left: 50%;
+}
+
 input {
     width:500px;
     border: none;
@@ -72,19 +76,6 @@ a{
     border-radius: 20px;
     margin:0%;
 }
-
-.filtros{
-    color:#363636;
-    display: flex;
-    margin-left:0%;
-    height:50px;
-    padding:.5rem;
-    margin:.5%;
-    background-color: #a3a3a395;
-    border: 2px solid #000;
-    border-radius: 10px;
-}
-
 .titulo{
     height:50px;
     padding-top: .5%;
@@ -210,7 +201,7 @@ footer{
 
 .ajuda{
     text-align: right;
-    margin-right: 20%;
+    margin-right: 10%;
     padding: 1rem;
 }
 
@@ -330,7 +321,7 @@ dialog button.nao{
 .filtrosListaB{
     color:#363636;
     display: flex;
-    margin-left:0%;
+    margin-left:20%;
     margin-top: 2%;
     height:50px;
     width: 260px;
@@ -341,9 +332,6 @@ dialog button.nao{
     border-radius: 10px;
 }
 
-.buttoncontainer {
-    margin-top: 20px; /* Margem superior para afastar do texto */
-}
 
 .buttoncontainer a{
     text-decoration: none;
@@ -360,3 +348,72 @@ button.cadastrobutton {
     height: 80px;
     background-color: #0085FF;
 }
+
+#divBusca{
+    background-color:#E0EEEE;
+    border:solid 2px #5F9EA0;
+    border-radius:10px;
+    width:300px;
+    height:32px;
+  }
+  #txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:191px;
+  }
+  #btnBusca{
+    border:none;
+    float:left;
+    height:32px;
+    border-radius:0 7px 7px 0;
+    width:70px;
+    font-weight:bold;
+    background:#5F9EA0;
+  }
+  #divBusca img{
+    float:left;
+  }
+  .filtro{
+      display: flex;
+      align-items: inline;
+  }
+  .filtro input{
+      color:#363636;
+      display: flex;
+      margin:3%;
+      height:50px;
+      padding:.5rem;
+      background-color: #a3a3a395;
+      border: 2px solid #000;
+      border-radius: 10px;
+      width: 100%;
+  }
+  .filtro button{
+      background-color: #0085FF;
+      border-radius: 10px;
+      color:#ffffff;
+      margin-top: .5%;
+      height: 70px;
+      width: 150px;
+  }
+
+  tr td input{
+    width: 25px;
+  }
+  .filtros button{
+      color:#363636;
+      display: flex;
+      margin-left:0%;
+      height:50px;
+      width: 100%;
+      padding:.5rem;
+      margin: 3%;
+      background-color: #a3a3a395;
+      border: 2px solid #000;
+      border-radius: 10px;
+      align-items: center;
+  }

@@ -3,13 +3,12 @@
 }
 
 main{
-    min-width: 100vh;
     display: flex;
 }
 
 .mainTable{
     width:82vw;
-    height:350px;
+    height:450px;
     background-color:#ffffffaf;
     border-radius: .8rem;
     overflow:hidden;

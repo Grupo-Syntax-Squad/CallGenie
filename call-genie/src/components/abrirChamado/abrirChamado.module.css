@@ -29,7 +29,6 @@ label{
 }
  
 .buttonInput{ 
-    /* Estilo de inputs do tipo 'button' */
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
@@ -54,7 +53,6 @@ main h2{
 
 html {
     background-color: #adc4ed;
-    /* background-repeat: no-repeat; */
     height: 100%;
 }
 
@@ -72,7 +70,7 @@ input {
     border: none;
     border-radius: 2px;
     padding: 20px;
-    background-color: #EBE9E9; /* cor do plano de fundo */
+    background-color: #EBE9E9;
     margin-bottom: 2%;
 }
 
@@ -80,8 +78,7 @@ input {
     font-size: 15pt;
 }
 
-.buttonInput{ 
-    /* Estilo de inputs do tipo 'button' */
+.buttonInput{
     border: none;
     color: #FFFFFF;
     font-size: 15pt;
@@ -98,19 +95,19 @@ footer{
     margin-left: auto;
 }
 
-
-/*  abrirChamado.ejs */
-
 header h2{
     color: #FFF;
 }
 
 .fundoAbrirChamado{
     margin:2%;
-    /* height:630px; */
     background-color: #ffffffa2;
     padding:2%;
     border-radius: 20px;
+}
+
+.containerAbrirChamado{
+    padding:0%;
 }
 .fundoAbrirChamado h1{
     display: block;
@@ -274,12 +271,17 @@ dialog button.nao{
     margin: 0%;
 }
 
+.fundoAbrirChamado .flexRow h1{
+    margin-right: 45%;
+    
+}
+
 .flexRow h1{
     margin-block:0%;
 }
 .container_colunas{
     display:flex;
-    margin: 0%;;
+    margin-left: 10%;
 }
 
 .buttonInput{
@@ -297,4 +299,12 @@ dialog button.nao{
     border: none;
     border-radius: 10px;
     text-align: center;
+    margin-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .container_colunas{
+        flex-direction: column;
+    }
+
 }

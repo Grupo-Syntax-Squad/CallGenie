@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import CadastroCSS from "./cadastro.module.css";
 import axios from "axios";
 
@@ -19,15 +18,14 @@ function CadastrarSuporte() {
       senha: infos.senha,
       adm_id: infos.idsupervisor
     }).then(response => {
-      if (response.data.sup_id == undefined) {
+      if (response.data.sup_id === undefined) {
         console.log(response.data.errors[0].message);
-        if (response.data.errors[0].message == "sup_cpf must be unique") alert("CPF já cadastrado!");
+        if (response.data.errors[0].message === "sup_cpf must be unique") alert("CPF já cadastrado!");
         else alert("Erro ao cadastrar suporte tente novamente!");
       } else {
         alert(`Cadastro realizado com sucesso, ID de acesso: ${response.data.sup_id}`)
       };
     });
-    // window.location.replace("/entrar");
   };
   
   return (
@@ -55,19 +53,14 @@ function CadastrarSuporte() {
             </div>
           </div>
           <form action="" className={CadastroCSS.cadastro_suporte_container}>
-            <input type="text" placeholder="Nome" name="nome" onChange={handleChange} />
-            <input type="number" placeholder="CPF" name="cpf" onChange={handleChange} />
-            <input type="password" placeholder="Senha" name="senha" onChange={handleChange} />
-            <input type="email" placeholder="E-mail" name="email" onChange={handleChange} />
-            <input type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
-            <input type="button" value="Cadastrar-se" className={CadastroCSS.button_input} onClick={handleSubmit} />
+            <input className={CadastroCSS.input} type="text" placeholder="Nome" name="nome" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="number" placeholder="CPF" name="cpf" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="password" placeholder="Senha" name="senha" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="email" placeholder="E-mail" name="email" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="tel" placeholder="Telefone" name="tel" onChange={handleChange} />
+            <input className={CadastroCSS.input} type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
+            <input className={CadastroCSS.button_input} type="button" value="Cadastrar-se"  onClick={handleSubmit} />
           </form>
-        </div>
-        <div>
-          <img src="assets/img/user_adm.png" alt='' id={CadastroCSS.useradm} />
-          <div className={CadastroCSS.idsupervisor_container}>
-            <input type="number" placeholder="Insira aqui o Id so Supervisor" name="idsupervisor" id="idsupervisor" onChange={handleChange} />
-          </div>
         </div>
       </main>
       <footer>

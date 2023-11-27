@@ -17,7 +17,7 @@ function chamadoPage(e) {
   window.location.replace("/chamadoAberto");
 };
 
-function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
+function Table({ selectedChamados, handleCheckboxChange, chamadoPage, filtro }) {
   const [chamados, setChamados] = useState([]);
   let cpf = localStorage.getItem("login");
 
@@ -26,10 +26,24 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
       axios.get(`http://localhost:8080/chamados`).then(response => setChamados(response.data));
     } else {
       axios.get(`http://localhost:8080/chamados/cpf/${cpf}`).then(response => setChamados(response.data));
-    };
-  });
+    }
+  }, [cpf]);
 
-  const listaChamados = chamados.map((chamado) => (
+  let cham = [];
+
+  if (filtro === "") {
+    cham = chamados;
+  } else {
+    chamados.forEach(chamado => {
+      if (chamado.cham_id == filtro || chamado.cham_titulo == filtro) {
+        cham.push(chamado);
+        console.log((chamado))
+      }
+    });
+  }
+
+  const listaChamados = cham.map((chamado) => (
+    
     <tr key={chamado.cham_id}>
       <td
         id={chamado.cham_id}
@@ -39,6 +53,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
         {chamado.cham_titulo}
       </td>
       <td>{chamado.cham_id}</td>
+      <td>{chamado.cham_urgencia}</td>
       <td>{new Date(new Date().setDate(new Date(chamado.cham_data_inicio).getDate() + 1)).toLocaleDateString()}</td>
       <td>{chamado.cham_status}</td>
       <td>
@@ -57,6 +72,7 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
         <tr className={StyleTableCSS.ptable}>
           <th><p>Título</p></th>
           <th><p>ID</p></th>
+          <th><p>Prioridade</p></th>
           <th><p>Data de criação</p></th>
           <th><p>Status</p></th>
         </tr>
@@ -69,6 +85,9 @@ function Table({ selectedChamados, handleCheckboxChange, chamadoPage }) {
 export default function ChamadosSuporte() {
   const [selectedChamados, setSelectedChamados] = useState([]);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [userName, setUserName] = useState("");
+  const [cpf, setCpf] = useState("");
 
   const handleCheckboxChange = (chamadoId) => {
     if (selectedChamados.includes(chamadoId)) {
@@ -77,6 +96,25 @@ export default function ChamadosSuporte() {
       setSelectedChamados([...selectedChamados, chamadoId]);
     }
   };
+
+  useEffect(() => {
+    const userCpf = localStorage.getItem("login");
+    setCpf(userCpf);
+
+    const fetchUserName = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/${userCpf.length === 1 ? "suportes" : "clientes"}/${userCpf}`
+        );
+        const name = userCpf.length === 1 ? response.data.sup_nome : response.data.cli_nome;
+        setUserName(name);
+      } catch (error) {
+        console.error("Erro ao obter o nome do usuário:", error);
+      }
+    };
+
+    fetchUserName();
+  }, []);
 
   return (
     <body className={ChamadosPageCSS.Body}>
@@ -94,7 +132,7 @@ export default function ChamadosSuporte() {
               src="assets/img/iconeuser2.png"
               alt="Usuário"
             />
-            <h2>Olá, Suporte</h2>
+            <h2>Olá, {userName}</h2>
             <a href="/entrar">
               <img
                 src="assets/img/iconexit.png"
@@ -129,17 +167,15 @@ export default function ChamadosSuporte() {
                   </optgroup>
                 </select>
               </div>
-              {/* <div className={ChamadosPageCSS.filtrarMenu}>
-                  <i className="fa-solid fa-x"></i>
-                  <li>Em aberto</li>
-                  <li>Em andamento</li>
-                  <li>Concluído</li>
-                  <li>Com equipamento Cadastrado</li>
-                  <li>Meus chamados</li>
-                  <li>Ordem Alfabética</li>
-                </div> */}
-              <div className={ChamadosPageCSS.filtros}>
-                <p>Buscar Chamado  <i className="fa-solid fa-magnifying-glass"></i></p>
+
+              <div className={ChamadosPageCSS.filtro}>
+                <input
+                  type="string"
+                  placeholder="escreva o ID que você quer procurar aqui."
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+
+                />
               </div>
               <div>
                 <select name={"Filtrar status"} className={ChamadosPageCSS.filtrosListaB}>
@@ -157,7 +193,7 @@ export default function ChamadosSuporte() {
             </div>
             <div className={StyleTableCSS.mainTable}>
               <section className={StyleTableCSS.tableBody}>
-                <Table selectedChamados={selectedChamados} handleCheckboxChange={handleCheckboxChange} chamadoPage={chamadoPage} />
+                <Table selectedChamados={selectedChamados} handleCheckboxChange={handleCheckboxChange} chamadoPage={chamadoPage} filtro={searchValue} />
               </section>
             </div>
             <div className={ChamadosPageCSS.buttoncontainer}>

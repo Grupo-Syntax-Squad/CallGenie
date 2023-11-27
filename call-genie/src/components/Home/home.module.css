@@ -1,5 +1,3 @@
-/* Estilos para Index e FAQ */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap');
 
 *{
@@ -45,6 +43,10 @@ body h2{
     padding-top: 5%;
 }
 
+body h2.home{
+    margin-left: 20%;
+}
+
 a{
     text-align: center;
     color: aliceblue;
@@ -68,7 +70,9 @@ footer {
     justify-content: center;
     flex-wrap: wrap; 
     margin-left: 5%;
+    
 }
+
 
 .main_img {
     max-width: 80%; 
@@ -102,21 +106,21 @@ button.cadastrobutton {
 
 
 .buttoncontainer {
-    margin-top: 20px; /* Margem superior para afastar do texto */
+    margin-top: 20px;
 }
 
 .buttoncontainer a{
     text-decoration: none;
-    font-size: 16px; /* Tamanho do texto do botão */
+    font-size: 16px;
     font-weight: bolder;
-    color: #000000; /* Cor do texto */
+    color: #000000;
 }
 
 .navbuttons {
 display: flex;
 justify-content: space-between;
 margin-right: 5%;
-align-items: center; /* Centraliza verticalmente os itens */
+align-items: center;
 }
 
 nav a{
@@ -124,12 +128,12 @@ nav a{
 }
 
 .navbuttons {
-gap: 100px; /* Ajuste o valor para alterar o espaço entre os botões */
+gap: 100px;
 }
 
 .navbuttons a {
-color: white; /* Cor do texto dos botões */
-text-decoration: none; /* Remove o sublinhado do link */
+color: white;
+text-decoration: none;
 }
 
 nav {
@@ -161,11 +165,19 @@ span{
     margin: auto;
 }
 @media (max-width: 768px) {
+    .homefundo {
+        height: 100%;
+    }
+    
     main {
         flex-direction: column;
     }
     span{
         display:flex;
+    }
+
+    main.main_texto{
+        min-width: 50vh;
     }
 
     main img {
@@ -175,26 +187,35 @@ span{
     nav a{
         display:block;
         margin: 0%;
-        padding:0%;
+        gap:0%;
     }
     nav{
         padding:0%;
     }
+    nav .navbuttons{
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 5%;
+    }
     
     .texto h2{
         text-align: justify;
-    }
-    .main{
-        margin-left:0%;
-    }
-    .main h2{
-        max-width:300px;
+        width: 100%;
     }
     .main_img{
         margin: auto;
+    }
+
+    h2.home {
+        margin: 0%;
+        max-width:300px;
     }
     
     button.cadastrobutton {
         width:200px;
     }
+    body h2.home{
+        margin-left: 0%;
+    }
+    
 }
