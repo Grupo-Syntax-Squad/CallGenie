@@ -97,7 +97,6 @@ Estas foram as tecnologias utilizadas no desenvolvimento do projeto:
 <img src="/documents/img/3.png" alt="User Stories">
 <img src="/documents/img/4.png" alt="User Stories">
 <img src="/documents/img/5.png" alt="User Stories">
-<img src="/documents/img/6.png" alt="User Stories">
 
  
 
