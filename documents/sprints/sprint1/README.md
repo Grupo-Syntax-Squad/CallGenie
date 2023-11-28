@@ -16,8 +16,8 @@ Nesta Sprint foram criados e apresentados o Backlog do Projeto, o wireframe do P
 
 ## User Story's 📝
 
-| ID US | Sprint | US                                                                                                                                                                                                                               | Prioridade           |
-|:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|
+| ID US | Sprint | US                                                                                                                                                                                                                               | Prioridade           | US Points  |
+|:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|:--------:|
 | US01  | 1     | "Eu, como um usuário, gostaria de criar um chamado"                                                                                                                                      |  Alta                  |
 | US02  | 1      | "Eu, como um usuário, gostaria de poder cadastrar um equipamento ao criar um chamado, para auxiliar na resolução do problema. "                                                                    |  Baixa                  |
 | US03  | 1      | "Eu, como um usuário, quero acessar o chamado que criei, para poder ver os detalhes dele."                                                                           | Alta                  |
