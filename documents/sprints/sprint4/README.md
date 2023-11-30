@@ -12,8 +12,8 @@ Nesta Sprint foi desenvolvida a área de FAQ, assim como o refinamento de códig
 
 ## User Story's 📝
 
-| ID US | Sprint | US                                                                                                                                                                                                                               | Prioridade          |
-|:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|
+| ID US | Sprint | US                                                                                                                                                                                                                               | Prioridade          | US Points  |
+|:-------:|:--------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------:|:--------:|
 | US007  | 4     | "Como um cliente, gostaria de acessar um canal FAQ e pesquisar minhas duvidas por meio dele, para tirar dúvidas sobre o sistema."                                                                                                                                      |  Alta              |
 | US009  | 4      | "Como um cliente, gostaria de pesquisar por problemas comuns e analisar as soluções fornecidas, isso antes de criar meu chamado, para ter certeza de que vou precisar de atendimento do suporte."                                                                    |  Alta                |
 | US011  | 4      | "Como um cliente, gostaria de ter acesso à um manual do usuário, para saber como utilizar o sistema e sanar possíveis dúvidas."                                                                           |  Baixa                  |
