@@ -1,0 +1,19 @@
+name: Close Issue on Card Move
+
+on:
+  project_card:
+    types: [moved]
+
+jobs:
+  closeIssue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if card is in 'Done' column
+        if: github.event.project_card.column_name == 'Done'
+        run: |
+          # Extraia o número da issue do URL do card
+          issue_number=$(echo "${{ github.event.project_card.content_url }}" | grep -oP '(?<=issues\/)\d+(?=\/?)')
+          # Feche a issue usando a API do GitHub
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/issues/${issue_number}/comments" -d '{"body":"Issue closed by moving card to Concluído column."}'
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/issues/${issue_number}/lock"
+          curl -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/issues/${issue_number}" -d '{"state":"closed"}'
