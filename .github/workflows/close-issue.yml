@@ -8,8 +8,8 @@ jobs:
   closeIssue:
     runs-on: ubuntu-latest
     steps:
-      - name: Check if card is in 'Done' column
-        if: github.event.project_card.column_name == 'Done'
+      - name: Check if card is in '✅ Done' column
+        if: github.event.project_card.column_name == '✅ Done'
         run: |
           # Extraia o número da issue do URL do card
           issue_number=$(echo "${{ github.event.project_card.content_url }}" | grep -oP '(?<=issues\/)\d+(?=\/?)')
